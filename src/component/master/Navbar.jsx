@@ -100,20 +100,128 @@ const menuItems = [
           { name: 'Other Relevant Acts', href: '/regulations/acts/other' },
         ],
       },
-      { name: 'Rules', href: '/regulations/rules' },
-      { name: 'SROs', href: '/regulations/sros' },
-      { name: 'General Orders', href: '/regulations/general-orders' },
+      { name: 'Rules', 
+        submenu: [
+      { name: 'Baggage Rules', href: '/regulations/rules/finance' },
+      { name: 'VAT Rules', href: '/regulations/rules/vat' },
+      { name: 'Income Tax Rules', href: '/regulations/rules/customs' },
+      { name: 'Customs Rules', href: '/regulations/rules/customs' },
+      { name: 'Excise Rules', href: '/regulations/rules/customs' },
+      { name: 'Others Relevant Rules', href: '/regulations/rules/customs' },
+        ]
+       },
+      { name: 'SROs', 
+        submenu: [
+      { name: 'VAT SROs', href: '/regulations/sros/finance' },
+      { name: 'Income Tax SROs', href: '/regulations/sros/finance' },
+      { name: 'Customs SROs', href: '/regulations/sros/finance' },
+      { name: 'Excise SROs', href: '/regulations/sros/finance' },
+      { name: 'Others Relevant SROs', href: '/regulations/sros/finance' },
+        ]
+       },
+      { name: 'General Orders', 
+        submenu: [
+      { name: 'VAT GOs', href: '/regulations/general/finance' },
+      { name: 'Income Tax GOs', href: '/regulations/general/finance' },
+      { name: 'Customs GOs', href: '/regulations/general/finance' },
+      { name: 'Excise GOs', href: '/regulations/general/finance' },
+        ]
+       },
       { name: 'Advance Ruling', href: '/regulations/advance-ruling' },
       { name: 'Bond Entitlement', href: '/regulations/bond-entitlement' },
       { name: 'Policy', href: '/regulations/policy' },
     ],
   },
-  { name: 'Form', href: '/form' },
-  { name: 'Tax Types', href: '/tax-types' },
+  { name: 'Form', 
+    submenu: [
+      { name: 'e-Return Training Registration', href: '/form/income-tax' },
+      { name: 'VAT', 
+        submenu: [
+      { name: 'VAT 1991', href: '/form/vat' },
+      { name: 'VAT 2012', href: '/form/vat' },
+        ]
+       },
+      { name: 'Income Tax', href: '/form/vat' },
+      { name: 'Others Relevant Forms', href: '/form/vat' },
+    ]
+   },
+  { name: 'Tax Types', 
+    submenu: [
+      { name: 'VAT', 
+        submenu: [
+      { name: 'VAT eService', href: '/tax-types/vat' },
+      { name: 'VAT FAQ', href: '/tax-types/vat' },
+      { name: 'VAT Strategic Statement', href: '/tax-types/vat' },
+      { name: 'VAT Compliance Guides', href: '/tax-types/vat' },
+      { name: 'VAT Act', href: '/tax-types/vat' },
+      { name: 'VAT Rules', href: '/tax-types/vat' },
+      { name: 'VAT Forms', href: '/tax-types/vat' },
+      { name: 'VAT SROs', href: '/tax-types/vat' },
+      { name: 'VAT GOs', href: '/tax-types/vat' },
+      { name: 'VAT Apeal', href: '/tax-types/vat' },
+        ]
+       },
+      { name: 'Customs Duty', 
+        submenu: [
+      { name: 'Operative Tariff', href: '/tax-types/customs-duty' },
+      { name: 'Customs eService', href: '/tax-types/customs-duty' },
+      { name: 'Customs FAQ', href: '/tax-types/customs-duty' },
+      { name: 'Customs Acts', href: '/tax-types/customs-duty' },
+      { name: 'Customs SROs', href: '/tax-types/customs-duty' },
+      { name: 'Customs GOs', href: '/tax-types/customs-duty' },
+      { name: 'Customs Apeal', href: '/tax-types/customs-duty' },
+      
+        ]
+       },
+      { name: 'Excise Duty', 
+        submenu: [
+      { name: 'Excise Act', href: '/tax-types/excise-duty' },
+      { name: 'Excise Rules', href: '/tax-types/excise-duty' },
+      { name: 'Excise SROs', href: '/tax-types/excise-duty' },
+      { name: 'Excise GOs', href: '/tax-types/excise-duty' },
+        ]
+       },
+      { name: 'Surcharge', href: '/tax-types/income-tax' },
+      { name: 'Income Tax', 
+        submenu: [
+      { name: 'Income Tax Paripatra', href: '/tax-types/income-tax' },
+      { name: 'Income Tax FAQ', href: '/tax-types/income-tax' },
+      { name: 'Income Tax Act', href: '/tax-types/income-tax' },
+      { name: 'Income Tax Rules', href: '/tax-types/income-tax' },
+      { name: 'Income Tax Forms', href: '/tax-types/income-tax' },
+      { name: 'Income Tax SROs', href: '/tax-types/income-tax' },
+      { name: 'Income Tax GOs', href: '/tax-types/income-tax' },
+      { name: 'Income Tax Apeal', href: '/tax-types/income-tax' },
+        ]
+       },
+      { name: 'Tariff Schedule', href: '/tax-types/income-tax' },
+    ]
+   },
   { name: 'Budget', href: '/budget' },
-  { name: 'Project', href: '/project' },
-  { name: 'Publications', href: '/publications' },
-  { name: 'EFDMS', href: '/efdms' },
+  { name: 'Project', 
+    submenu: [
+      { name: 'CMID (ACCESS Program)', href: '/project/development' },
+      { name: 'BMAP', href: '/project/non-development' },
+      { name: 'NSW', href: '/project/foreign-aided' },
+      { name: 'VOP VAT', href: '/project/foreign-aided' },
+    ]
+   },
+  { name: 'Publications', 
+    submenu: [
+      { name: 'VAT', href: '/publications/annual-report' },
+      { name: 'Income Tax', href: '/publications/tax-statistics' },
+      { name: 'Customs', href: '/publications/research-analysis' },
+      { name: 'General', href: '/publications/research-analysis' },
+      { name: 'Research & Statistics', href: '/publications/research-analysis' },
+      { name: 'All Publication', href: '/publications/research-analysis' },
+    ]
+   },
+  { name: 'EFDMS', 
+    submenu: [
+      { name: 'List of Organizations (Devices of Genex)', href: 'https://efdms.nbr.gov.bd/' },
+      { name: 'List of Organizations', href: 'https://efdms.nbr.gov.bd/' },
+    ]
+   },
   { name: 'FAQ', href: '/faq' },
 ]
 
@@ -128,7 +236,7 @@ function Navbar() {
   }
 
   return (
-    <nav className="bg-green-700 text-white relative">
+    <nav className="bg-green-700 text-white relative z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Mobile Hamburger */}
