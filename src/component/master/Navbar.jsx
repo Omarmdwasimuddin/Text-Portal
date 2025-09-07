@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { HomeIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
 
@@ -227,6 +227,16 @@ const menuItems = [
 
 function Navbar() {
   const [openMenus, setOpenMenus] = useState({})
+  const [isSticky, setIsSticky] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsSticky(window.scrollY > 50)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const toggleMenu = (name) => {
     setOpenMenus((prev) => ({
@@ -236,16 +246,16 @@ function Navbar() {
   }
 
   return (
-    <nav className="bg-green-700 text-white relative z-50">
+    <nav className={`w-full transition-all duration-300 ${isSticky ? 'fixed top-0 left-0 z-50 bg-gradient-to-r from-green-400/95 to-red-400/95 shadow-lg' : 'bg-green-700 relative'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Mobile Hamburger */}
           <div className="md:hidden">
-            <MobileMenu items={menuItems} />
+            <MobileMenu items={menuItems} isSticky={isSticky} />
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-4 items-center justify-center w-full">
+          <div className="hidden md:flex space-x-4 items-center justify-center w-full z-50">
             {menuItems.map((item, idx) => (
               <div key={idx} className="relative group/menu">
                 {item.submenu ? (
@@ -338,7 +348,7 @@ function Navbar() {
 }
 
 // Mobile Menu Component
-function MobileMenu({ items }) {
+function MobileMenu({ items, isSticky }) {
   const [open, setOpen] = useState(false)
   const [openSubMenus, setOpenSubMenus] = useState({})
 
@@ -394,7 +404,7 @@ function MobileMenu({ items }) {
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0 left-0 h-full w-64 bg-green-700 z-50 transform transition-transform duration-300 ${
+        className={`fixed top-0 left-0 h-full w-64 ${isSticky ? 'bg-gradient-to-b from-green-400/95 to-red-400/95' : 'bg-green-700'} z-50 transform transition-transform duration-300 ${
           open ? 'translate-x-0' : '-translate-x-full'
         }`}
       >

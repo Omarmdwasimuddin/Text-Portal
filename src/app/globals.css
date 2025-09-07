@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+.dual-border {
+  border-width: 3px;
+  border-style: solid;
+  border-image: linear-gradient(to right, green 50%, red 50%);
+  border-image-slice: 1;
+  border-radius: 0.75rem; /* Tailwind's rounded-xl */
+}
