@@ -49,9 +49,14 @@ const books = [
 export default function Publication() {
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6 text-center text-grey-800">
+      <h1 className="text-4xl sm:text-5xl font-extrabold text-center mb-10">
+      <span className="bg-gradient-to-r from-green-400 via-yellow-500 to-red-600 bg-clip-text text-transparent">
         Publications
-      </h1>
+      </span>
+      <div className="mt-2 flex justify-center">
+        <span className="inline-block w-24 h-1 bg-gradient-to-r from-green-400 to-red-600 rounded-full"></span>
+      </div>
+    </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {books.map((book) => (
           <PublicationCard key={book.id} book={book} />
