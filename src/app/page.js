@@ -3,6 +3,8 @@ import HeroSection from '@/component/HeroSection';
 import PopularLaws from '@/component/PopularLaws';
 import LatestUpdate from '@/component/LatestUpdate';
 import Tool from '@/component/Tool';
+import Blogs from '@/component/Blogs';
+import Publication from '@/component/publication/Publication';
 
 const HOME = () => {
   return (
@@ -11,6 +13,8 @@ const HOME = () => {
       <PopularLaws/>
       <LatestUpdate/>
       <Tool/>
+      <Blogs/>
+      <Publication/>
     </Master>
   );
 };
