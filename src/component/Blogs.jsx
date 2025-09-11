@@ -53,11 +53,11 @@ export const blogs = [
 
 export default function BlogListPage() {
   return (
-    <div className="bg-gradient-to-b from-[#0f2027] via-[#2c5364] to-[#203a43] py-24 sm:py-32">
+    <div className=" py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Section Header */}
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
+          <h2 className="text-4xl font-bold tracking-tight bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent sm:text-5xl">
             Latest Blogs
           </h2>
           <p className="mt-2 text-lg text-gray-300">

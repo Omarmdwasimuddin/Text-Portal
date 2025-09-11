@@ -5,6 +5,10 @@ import LatestUpdate from '@/component/LatestUpdate';
 import Tool from '@/component/Tool';
 import Blogs from '@/component/Blogs';
 import Publication from '@/component/publication/Publication';
+import Consultancy from '@/component/Consultancy';
+import Subscription from '@/component/Subscription';
+import About from '@/component/About';
+import NewsLetter from '@/component/NewsLetter';
 
 const HOME = () => {
   return (
@@ -13,8 +17,14 @@ const HOME = () => {
       <PopularLaws/>
       <LatestUpdate/>
       <Tool/>
-      <Blogs/>
-      <Publication/>
+      <div className="bg-gradient-to-b from-[#0f2027] via-[#2c5364] to-[#203a43]">
+        <Blogs/>
+        <Publication/>
+        <Consultancy/>
+        <Subscription/>
+      </div>
+      <About/>
+      <NewsLetter/>
     </Master>
   );
 };

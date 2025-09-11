@@ -1,31 +1,34 @@
-'use client'
+"use client";
 
-import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import Link from "next/link";
 
-export default function SubscriptionSection() {
-  const subscriptions = [
-    { id: 1, plan: "Yearly Subscription", price: "৳1200", features: ["Unlimited Reading", "Softcopy Access", "All Guides Included"] },
-    { id: 2, plan: "Monthly Subscription", price: "৳150", features: ["Unlimited Reading", "Softcopy Access"] },
-  ]
-
+const SubscriptionPlans = () => {
   return (
-    <section>
-      <h2 className="text-2xl font-bold mb-6">🔑 Subscription Plans</h2>
-      <div className="grid gap-6 md:grid-cols-2">
-        {subscriptions.map((sub) => (
-          <Card key={sub.id} className="p-6 shadow-lg rounded-2xl border hover:border-green-500 transition">
-            <h3 className="text-xl font-semibold mb-2">{sub.plan}</h3>
-            <p className="text-2xl font-bold text-green-600 mb-4">{sub.price}</p>
-            <ul className="text-gray-600 mb-4 space-y-2">
-              {sub.features.map((f, i) => (
-                <li key={i}>✅ {f}</li>
-              ))}
-            </ul>
-            <Button className="w-full bg-green-600 hover:bg-green-700">Subscribe Now</Button>
-          </Card>
-        ))}
+    <section className=" text-white py-16 px-6">
+      <div className="max-w-4xl mx-auto text-center">
+        {/* Heading */}
+        <h2 className="text-4xl sm:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+          Subscription Plans
+        </h2>
+
+        {/* Description */}
+        <p className="text-lg sm:text-xl text-gray-300 mb-10">
+          Unlock access to all premium books and resources with our yearly
+          subscription. Get unlimited reading of softcopy books, exclusive
+          updates, and priority support.
+        </p>
+
+        {/* Button */}
+        <Link
+          href="/subscription"
+          className="inline-block px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 
+          text-white font-semibold shadow-lg hover:shadow-2xl hover:scale-105 transform transition"
+        >
+          Subscribe Now
+        </Link>
       </div>
     </section>
-  )
-}
+  );
+};
+
+export default SubscriptionPlans;
