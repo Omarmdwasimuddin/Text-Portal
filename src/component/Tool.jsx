@@ -31,22 +31,22 @@ const calculators = [
 
 export default function FeaturedCalculators() {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-12 bg-gray-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-10">Featured Tools & Calculators</h2>
-        <div className="grid gap-8 md:grid-cols-3">
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">Featured Tools & Calculators</h2>
+        <div className="grid gap-6 md:grid-cols-3">
           {calculators.map((calc, idx) => (
-            <div key={idx} className="bg-white p-6 flex flex-col justify-between shadow-lg hover:shadow-xl transition dual-border rounded-xl">
-              <div className="flex items-center space-x-4 mb-4">
-                <div className={`text-3xl rounded-full p-3 text-white ${calc.bgColor}`}>
+            <div key={idx} className="bg-white p-4 md:p-5 flex flex-col justify-between shadow-md hover:shadow-lg transition dual-border rounded-lg">
+              <div className="flex items-center space-x-3 mb-3">
+                <div className={`text-2xl md:text-3xl rounded-full p-2 md:p-3 text-white ${calc.bgColor}`}>
                   {calc.icon}
                 </div>
-                <h3 className="text-xl font-semibold">{calc.title}</h3>
+                <h3 className="text-lg md:text-xl font-semibold">{calc.title}</h3>
               </div>
-              <p className="text-gray-600 mb-6">{calc.description}</p>
+              <p className="text-gray-600 text-sm md:text-base mb-4">{calc.description}</p>
               <a 
                 href={calc.link} 
-                className={`inline-block text-white font-medium px-6 py-2 rounded ${calc.bgColor} hover:opacity-90 transition text-center`}
+                className={`inline-block text-white font-medium px-4 md:px-6 py-2 rounded ${calc.bgColor} hover:opacity-90 transition text-center text-sm md:text-base`}
               >
                 {calc.buttonText}
               </a>

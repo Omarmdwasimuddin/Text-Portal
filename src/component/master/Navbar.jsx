@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { HomeIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
+import { HomeIcon, ChevronRightIcon, UserIcon, ShoppingCartIcon } from '@heroicons/react/24/outline'
 
 const menuItems = [
   { name: 'Home', href: '/' },
@@ -195,6 +195,9 @@ const menuItems = [
     ]
    },
   { name: 'FAQ', href: '/faq' },
+  { name: 'Blogs', href: '/blogs' },
+  { name: 'Login', href: '/login', icon: UserIcon },
+  { name: 'Cart', href: '/cart', icon: ShoppingCartIcon, onlyIcon: true },
 ]
 
 function Navbar() {
@@ -217,7 +220,7 @@ function Navbar() {
     }))
   }
 
-  return (
+    return (
     <nav className={`w-full transition-all duration-300 ${isSticky ? 'fixed top-0 left-0 z-50 bg-gradient-to-r from-green-400/95 to-red-400/95 shadow-lg' : 'bg-green-800 relative'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
@@ -295,6 +298,14 @@ function Navbar() {
                       </div>
                     </div>
                   </>
+                ) : item.icon ? (
+                  <Link
+                    href={item.href}
+                    className={`px-3 py-2 ${isSticky ? 'text-gray-900' : 'text-white'} hover:bg-green-600 rounded-md transition-colors duration-200 flex items-center`}
+                  >
+                    <item.icon className="w-5 h-5" />
+                    {!item.onlyIcon && <span className="ml-1">{item.name}</span>}
+                  </Link>
                 ) : item.name === 'Home' ? (
                   <Link
                     href={item.href}
@@ -325,14 +336,11 @@ function MobileMenu({ items, isSticky }) {
   const [openSubMenus, setOpenSubMenus] = useState({})
 
   const toggleSubMenu = (name) => {
-    setOpenSubMenus((prev) => ({
-      ...prev,
-      [name]: !prev[name],
-    }))
+    setOpenSubMenus((prev) => ({ ...prev, [name]: !prev[name] }))
   }
 
   const renderMobileSubMenu = (submenu, level = 1) => (
-    <ul className={`pl-${level * 4}`}>
+    <ul className={`${level === 1 ? 'pl-4' : level === 2 ? 'pl-8' : 'pl-12'}`}>
       {submenu.map((item, idx) => (
         <li key={idx} className="w-full">
           {item.submenu ? (
@@ -345,14 +353,30 @@ function MobileMenu({ items, isSticky }) {
               </button>
               {openSubMenus[item.name] && renderMobileSubMenu(item.submenu, level + 1)}
             </>
+          ) : item.icon ? (
+            <Link
+              href={item.href}
+              className="py-2 px-2 text-white hover:bg-green-600 rounded flex items-center"
+              onClick={() => setOpen(false)}
+            >
+              <item.icon className="w-5 h-5" />
+              {!item.onlyIcon && <span className="ml-2">{item.name}</span>}
+            </Link>
+          ) : item.name === 'Home' ? (
+            <Link
+              href={item.href}
+              className="py-2 px-2 text-white hover:bg-green-600 rounded flex items-center"
+              onClick={() => setOpen(false)}
+            >
+              <HomeIcon className="w-5 h-5 mr-2" />
+            </Link>
           ) : (
             <Link
               href={item.href}
-              className=" py-2 px-2 text-white hover:bg-green-600 rounded flex items-center"
+              className="block py-2 px-2 text-white hover:bg-green-600 rounded"
               onClick={() => setOpen(false)}
             >
-              {item.name === 'Home' && <HomeIcon className="w-5 h-5 mr-2" />}
-              {item.name !== 'Home' && item.name}
+              {item.name}
             </Link>
           )}
         </li>
@@ -370,15 +394,11 @@ function MobileMenu({ items, isSticky }) {
       </button>
 
       {/* Overlay */}
-      {open && (
-        <div className="fixed inset-0 bg-black/30 z-40" onClick={() => setOpen(false)}></div>
-      )}
+      {open && <div className="fixed inset-0 bg-black/30 z-40" onClick={() => setOpen(false)}></div>}
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0 left-0 h-full w-64 ${isSticky ? 'bg-gradient-to-b from-green-400/95 to-red-400/95' : 'bg-green-800'} z-50 transform transition-transform duration-300 ${
-          open ? 'translate-x-0' : '-translate-x-full'
-        }`}
+        className={`fixed top-0 left-0 h-full w-64 ${isSticky ? 'bg-gradient-to-b from-green-400/95 to-red-400/95' : 'bg-green-800'} z-50 transform transition-transform duration-300 ${open ? 'translate-x-0' : '-translate-x-full'}`}
       >
         <div className="p-4">
           <button
@@ -400,6 +420,15 @@ function MobileMenu({ items, isSticky }) {
                     </button>
                     {openSubMenus[item.name] && renderMobileSubMenu(item.submenu)}
                   </>
+                ) : item.icon ? (
+                  <Link
+                    href={item.href}
+                    className="py-2 px-2 text-white hover:bg-green-600 rounded flex items-center"
+                    onClick={() => setOpen(false)}
+                  >
+                    <item.icon className="w-5 h-5" />
+                    {!item.onlyIcon && <span className="ml-2">{item.name}</span>}
+                  </Link>
                 ) : item.name === 'Home' ? (
                   <Link
                     href={item.href}
