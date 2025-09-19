@@ -10,20 +10,12 @@ const menuItems = [
     name: 'About',
     submenu: [
       { name: 'Vision & Mission', href: '/about/vision-mission' },
-      { name: 'About Abu Sufian', href: '/about/abu-sufian' },
+      { name: 'About Us', href: '/about/abu-sufian' },
       { name: 'Gallery', href: '/about/gallery' },
     ],
   },
   { name: 'Service', 
     submenu: [
-      { name: 'NBR ICT', 
-        submenu: [
-      { name: 'ePass System', href: '/service/epass-system' },
-      { name: 'PMIS', href: '/service/nbr-website' },
-      { name: 'Database of Digital Services', href: '/service/nbr-website' },
-      { name: 'eRequisition', href: '/service/nbr-website' },
-        ]
-       },
       { name: 'Income Tax', 
         submenu: [
       { name: 'Higher Court Case Management', href: '/service/higher-court-case-management' },
@@ -68,12 +60,6 @@ const menuItems = [
       { name: 'Apply for VAT Advisor', href: '/vat/apply-for-vat-advisor' },
       { name: 'Apply for VAT Agent', href: '/vat/apply-for-vat-agent' },
       { name: 'Learn VAT Online', href: '/vat/learn-vat-online' },
-        ]
-       },
-      { name: 'Payment & Chalan', 
-        submenu: [
-      { name: 'ePayment', href: '/about/epayment' },
-      { name: 'a-Chalan', href: '/about/a-chalan' },
         ]
        },
     ],
@@ -198,14 +184,6 @@ const menuItems = [
     ]
    },
   { name: 'Budget', href: '/budget' },
-  { name: 'Project', 
-    submenu: [
-      { name: 'CMID (ACCESS Program)', href: '/project/development' },
-      { name: 'BMAP', href: '/project/non-development' },
-      { name: 'NSW', href: '/project/foreign-aided' },
-      { name: 'VOP VAT', href: '/project/foreign-aided' },
-    ]
-   },
   { name: 'Publications', 
     submenu: [
       { name: 'VAT', href: '/publications/annual-report' },
@@ -214,12 +192,6 @@ const menuItems = [
       { name: 'General', href: '/publications/research-analysis' },
       { name: 'Research & Statistics', href: '/publications/research-analysis' },
       { name: 'All Publication', href: '/publications/research-analysis' },
-    ]
-   },
-  { name: 'EFDMS', 
-    submenu: [
-      { name: 'List of Organizations (Devices of Genex)', href: 'https://efdms.nbr.gov.bd/' },
-      { name: 'List of Organizations', href: 'https://efdms.nbr.gov.bd/' },
     ]
    },
   { name: 'FAQ', href: '/faq' },
@@ -246,7 +218,7 @@ function Navbar() {
   }
 
   return (
-    <nav className={`w-full transition-all duration-300 ${isSticky ? 'fixed top-0 left-0 z-50 bg-gradient-to-r from-green-400/95 to-red-400/95 shadow-lg' : 'bg-green-700 relative'}`}>
+    <nav className={`w-full transition-all duration-300 ${isSticky ? 'fixed top-0 left-0 z-50 bg-gradient-to-r from-green-400/95 to-red-400/95 shadow-lg' : 'bg-green-800 relative'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Mobile Hamburger */}
@@ -260,7 +232,7 @@ function Navbar() {
               <div key={idx} className="relative group/menu">
                 {item.submenu ? (
                   <>
-                    <button className="px-3 py-2 hover:bg-green-600 rounded-md transition-colors duration-200 flex items-center">
+                    <button className={`px-3 py-2 ${isSticky ? 'text-gray-900' : 'text-white'} hover:bg-green-600 rounded-md transition-colors duration-200 flex items-center`}>
                       {item.name}
                       <ChevronRightIcon className="w-4 h-4 ml-1 transform group-hover/menu:rotate-90 transition-transform" />
                     </button>
@@ -270,7 +242,7 @@ function Navbar() {
                           <div key={subIdx} className="relative group/subitem">
                             {subItem.submenu ? (
                               <>
-                                <div className="flex justify-between items-center px-4 py-2 hover:bg-green-600 cursor-pointer">
+                                <div className="flex justify-between items-center px-4 py-2 text-white hover:bg-green-600 cursor-pointer">
                                   {subItem.name}
                                   <ChevronRightIcon className="w-4 h-4 ml-2" />
                                 </div>
@@ -279,7 +251,7 @@ function Navbar() {
                                     {subItem.submenu.map((subSubItem, subSubIdx) => (
                                       subSubItem.submenu ? (
                                         <div key={subSubIdx} className="relative group/subsubitem">
-                                          <div className="flex justify-between items-center px-4 py-2 hover:bg-green-600 cursor-pointer">
+                                          <div className="flex justify-between items-center px-4 py-2 text-white hover:bg-green-600 cursor-pointer">
                                             {subSubItem.name}
                                             <ChevronRightIcon className="w-4 h-4 ml-2" />
                                           </div>
@@ -289,7 +261,7 @@ function Navbar() {
                                                 <Link
                                                   key={subSubSubIdx}
                                                   href={subSubSubItem.href}
-                                                  className="block px-4 py-2 hover:bg-green-600"
+                                                  className="block px-4 py-2 text-white hover:bg-green-600"
                                                 >
                                                   {subSubSubItem.name}
                                                 </Link>
@@ -301,7 +273,7 @@ function Navbar() {
                                         <Link
                                           key={subSubIdx}
                                           href={subSubItem.href}
-                                          className="block px-4 py-2 hover:bg-green-600"
+                                          className="block px-4 py-2 text-white hover:bg-green-600"
                                         >
                                           {subSubItem.name}
                                         </Link>
@@ -313,7 +285,7 @@ function Navbar() {
                             ) : (
                               <Link
                                 href={subItem.href}
-                                className="block px-4 py-2 hover:bg-green-600"
+                                className="block px-4 py-2 text-white hover:bg-green-600"
                               >
                                 {subItem.name}
                               </Link>
@@ -326,14 +298,14 @@ function Navbar() {
                 ) : item.name === 'Home' ? (
                   <Link
                     href={item.href}
-                    className="px-3 py-2 hover:bg-green-600 rounded-md transition-colors duration-200 flex items-center"
+                    className={`px-3 py-2 ${isSticky ? 'text-gray-900' : 'text-white'} hover:bg-green-600 rounded-md transition-colors duration-200 flex items-center`}
                   >
                     <HomeIcon className="w-5 h-5" />
                   </Link>
                 ) : (
                   <Link
                     href={item.href}
-                    className="px-3 py-2 hover:bg-green-600 rounded-md transition-colors duration-200"
+                    className={`px-3 py-2 ${isSticky ? 'text-gray-900' : 'text-white'} hover:bg-green-600 rounded-md transition-colors duration-200`}
                   >
                     {item.name}
                   </Link>
@@ -367,7 +339,7 @@ function MobileMenu({ items, isSticky }) {
             <>
               <button
                 onClick={() => toggleSubMenu(item.name)}
-                className="w-full text-left py-2 px-2 hover:bg-green-600 rounded flex justify-between items-center"
+                className="w-full text-left py-2 px-2 text-white hover:bg-green-600 rounded flex justify-between items-center"
               >
                 {item.name} <ChevronRightIcon className={`w-4 h-4 ml-2 transition-transform ${openSubMenus[item.name] ? 'rotate-90' : ''}`} />
               </button>
@@ -376,7 +348,7 @@ function MobileMenu({ items, isSticky }) {
           ) : (
             <Link
               href={item.href}
-              className=" py-2 px-2 hover:bg-green-600 rounded flex items-center"
+              className=" py-2 px-2 text-white hover:bg-green-600 rounded flex items-center"
               onClick={() => setOpen(false)}
             >
               {item.name === 'Home' && <HomeIcon className="w-5 h-5 mr-2" />}
@@ -392,7 +364,7 @@ function MobileMenu({ items, isSticky }) {
     <div className="relative z-50">
       <button
         onClick={() => setOpen(!open)}
-        className="text-white focus:outline-none px-3 py-2 border border-white rounded-md"
+        className={`${isSticky ? 'text-gray-900 border-gray-900' : 'text-white border-white'} focus:outline-none px-3 py-2 border rounded-md`}
       >
         ☰
       </button>
@@ -404,7 +376,7 @@ function MobileMenu({ items, isSticky }) {
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0 left-0 h-full w-64 ${isSticky ? 'bg-gradient-to-b from-green-400/95 to-red-400/95' : 'bg-green-700'} z-50 transform transition-transform duration-300 ${
+        className={`fixed top-0 left-0 h-full w-64 ${isSticky ? 'bg-gradient-to-b from-green-400/95 to-red-400/95' : 'bg-green-800'} z-50 transform transition-transform duration-300 ${
           open ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
@@ -422,7 +394,7 @@ function MobileMenu({ items, isSticky }) {
                   <>
                     <button
                       onClick={() => toggleSubMenu(item.name)}
-                      className="w-full text-left py-2 px-2 hover:bg-green-600 rounded flex justify-between items-center"
+                      className="w-full text-left py-2 px-2 text-white hover:bg-green-600 rounded flex justify-between items-center"
                     >
                       {item.name} <ChevronRightIcon className={`w-4 h-4 ml-2 transition-transform ${openSubMenus[item.name] ? 'rotate-90' : ''}`} />
                     </button>
@@ -431,7 +403,7 @@ function MobileMenu({ items, isSticky }) {
                 ) : item.name === 'Home' ? (
                   <Link
                     href={item.href}
-                    className="py-2 px-2 hover:bg-green-600 rounded flex items-center"
+                    className="py-2 px-2 text-white hover:bg-green-600 rounded flex items-center"
                     onClick={() => setOpen(false)}
                   >
                     <HomeIcon className="w-5 h-5 mr-2" />
@@ -439,7 +411,7 @@ function MobileMenu({ items, isSticky }) {
                 ) : (
                   <Link
                     href={item.href}
-                    className="block py-2 px-2 hover:bg-green-600 rounded"
+                    className="block py-2 px-2 text-white hover:bg-green-600 rounded"
                     onClick={() => setOpen(false)}
                   >
                     {item.name}
