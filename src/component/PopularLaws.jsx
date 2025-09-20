@@ -6,37 +6,37 @@ import { ScaleIcon, BookOpenIcon, DocumentTextIcon, GlobeAltIcon } from "@heroic
 const popularLaws = [
   {
     title: "VAT Act & Rules",
-    description: "Latest VAT laws and regulations",
+    description: "সর্বশেষ ভ্যাট আইন ও বিধিমালা একসাথে দেখুন",
     icon: <ScaleIcon className="h-7 w-7 text-indigo-600" />,
     href: "/vat",
   },
   {
     title: "Customs Act",
-    description: "Customs laws, schedules, SROs",
+    description: "কাস্টমস আইন, শিডিউল, এসআরও",
     icon: <GlobeAltIcon className="h-7 w-7 text-green-600" />,
     href: "/customs",
   },
   {
     title: "Income Tax Act",
-    description: "Income tax and finance acts",
+    description: "আয়কর আইন ও ফাইন্যান্স অ্যাক্ট",
     icon: <DocumentTextIcon className="h-7 w-7 text-amber-600" />,
     href: "/income-tax",
   },
   {
     title: "Import & Export",
-    description: "Import-export policy guidelines",
+    description: "আমদানি ও রপ্তানি নীতি নির্দেশিকা",
     icon: <BookOpenIcon className="h-7 w-7 text-blue-600" />,
     href: "/import-export",
   },
   {
     title: "Excise Duty",
-    description: "Excise duty & surcharge laws",
+    description: "এক্সসাইজ শুল্ক ও সারচার্জ আইন",
     icon: <ScaleIcon className="h-7 w-7 text-red-600" />,
     href: "/excise",
   },
   {
     title: "Other Laws",
-    description: "Bond, money laundering, anti-corruption",
+    description: "বন্ড, মানি লন্ডারিং, দুর্নীতি দমন আইন",
     icon: <BookOpenIcon className="h-7 w-7 text-gray-600" />,
     href: "/others",
   },
