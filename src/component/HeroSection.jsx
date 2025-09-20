@@ -36,6 +36,7 @@ const calculators = [
 export default function HeroSection() {
   const [search, setSearch] = useState('')
   const [filter, setFilter] = useState('all')
+  const [isFocused, setIsFocused] = useState(false)
 
   const handleSearch = (e) => {
     e.preventDefault()
@@ -59,41 +60,48 @@ export default function HeroSection() {
           className="flex flex-col md:flex-row items-center justify-center gap-3 max-w-3xl mx-auto mb-12"
         >
           <div className="relative w-full md:flex-1">
-            <FiSearch className="absolute left-5 top-1/2 transform -translate-y-1/2 text-gray-400" />
+            <FiSearch className="absolute left-5 top-1/2 transform -translate-y-1/2 text-gray-900" />
             <input
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-12 pr-5 py-3 rounded-full bg-white/80 backdrop-blur-md border border-gray-300 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              onFocus={() => setIsFocused(true)}
+              onBlur={() => setIsFocused(false)}
+              className={`w-full pl-12 pr-5 py-3 rounded-full bg-white/10 backdrop-blur-md border border-gray-300 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 
+              ${search !== '' ? 'text-gray-300' : 'text-black'}`}
             />
-            <TypeAnimation
-              sequence={[
-                'Search by law, section, year, or keyword...',
-                1000,
-                'Search by law, section, year...',
-                1000,
-              ]}
-              wrapper="span"
-              speed={50}
-              style={{
-                position: 'absolute',
-                top: '50%',
-                left: '2rem',
-                transform: 'translateY(-50%)',
-                color: '#00ccff',
-                fontSize: '1rem',
-                textShadow: '0 0 2px rgba(0, 0, 0, 0.5)',
-                pointerEvents: 'none',
-              }}
-              repeat={Infinity}
-            />
+
+            {/* Animation placeholder */}
+            {search === '' && !isFocused && (
+              <TypeAnimation
+                sequence={[
+                  'Search by law, section, year, or keyword...',
+                  1000,
+                  'Search by law, section, year...',
+                  1000,
+                ]}
+                wrapper="span"
+                speed={50}
+                style={{
+                  position: 'absolute',
+                  top: '50%',
+                  left: '2rem',
+                  transform: 'translateY(-50%)',
+                  color: '#00ccff',
+                  fontSize: '1rem',
+                  textShadow: '0 0 2px rgba(0, 0, 0, 0.5)',
+                  pointerEvents: 'none',
+                }}
+                repeat={Infinity}
+              />
+            )}
           </div>
 
           <div className="relative">
             <select
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
-              className="px-5 py-3 pr-10 rounded-full bg-white/80 backdrop-blur-md border border-gray-300 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none"
+              className="px-5 py-3 pr-10 rounded-full text-gray-400 bg-white/10 backdrop-blur-md border border-gray-300 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none"
             >
               <option value="all">All Laws</option>
               <option value="vat">VAT</option>
@@ -105,7 +113,7 @@ export default function HeroSection() {
 
           <button
             type="submit"
-            className="px-8 py-3 rounded-full bg-gradient-to-r from-blue-600 to-blue-800 text-white font-medium shadow-lg hover:scale-105 transition-transform flex items-center gap-2"
+            className="px-8 py-3 rounded-full bg-gradient-to-r from-green-600 to-green-800 text-white font-medium shadow-lg hover:scale-105 transition-transform flex items-center gap-2"
           >
             <FiSearch size={18} />
             Search
