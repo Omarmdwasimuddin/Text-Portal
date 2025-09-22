@@ -70,7 +70,7 @@ const menuItems = [
        },
     ],
   },
-  { name: 'Form', 
+  { name: 'Forms', 
     submenu: [
       { name: 'VAT', href: '/form/vat' },
       { name: 'Customs', href: '/form/customs' },
