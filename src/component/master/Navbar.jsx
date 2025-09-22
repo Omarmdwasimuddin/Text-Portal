@@ -195,7 +195,7 @@ const menuItems = [
     ]
    },
   { name: 'FAQ', href: '/faq' },
-  { name: 'Blogs', href: '/blogs' },
+  { name: 'Blogs', href: '#Blogs' },
   { name: 'Login', href: '/login', icon: UserIcon },
   { name: 'Cart', href: '/cart', icon: ShoppingCartIcon, onlyIcon: true },
 ]

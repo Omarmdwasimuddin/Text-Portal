@@ -53,7 +53,7 @@ export const blogs = [
 
 export default function BlogListPage() {
   return (
-    <div className=" py-12 sm:py-12">
+    <div className=" py-12 sm:py-12" id = "Blogs">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Section Header */}
         <div className="mx-auto max-w-2xl text-center">
