@@ -9,6 +9,7 @@ import Consultancy from '@/component/Consultancy';
 import Subscription from '@/component/Subscription';
 import About from '@/component/About';
 import NewsLetter from '@/component/NewsLetter';
+import FlagBackground from '@/component/FlagBackground';
 
 const HOME = () => {
   return (
@@ -16,14 +17,19 @@ const HOME = () => {
       <HeroSection/>
       <PopularLaws/>
       <LatestUpdate/>
-      <div className="bg-gradient-to-b from-[#0f2027] via-[#2c5364] to-[#203a43]">
-        <Blogs/>
+      
+      <FlagBackground>
         <Publication/>
         <Consultancy/>
-        <Subscription/>
-      </div>
+        <Blogs/>
+      </FlagBackground>
+
       <About/>
+
+      <FlagBackground>
       <NewsLetter/>
+      </FlagBackground>
+
     </Master>
   );
 };

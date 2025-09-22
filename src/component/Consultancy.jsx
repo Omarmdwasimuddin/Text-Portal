@@ -7,12 +7,12 @@ const ConsultancyForm = () => {
       
       {/* Left Side */}
       <div>
-        <h1 className="text-4xl sm:text-5xl font-extrabold">
-          Get Your Free <br />
-          <span className="text-cyan-400">Consultation Today!</span>
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-snug">
+          আজই নিন আপনার ফ্রি <br />
+          <span className="text-cyan-400">কনসালটেশন সেবা!</span>
         </h1>
-        <p className="text-base mt-4 text-gray-300">
-          Take the first step towards success. Schedule your free consultation today!
+        <p className="text-sm sm:text-base mt-4 text-gray-300">
+          সাফল্যের পথে প্রথম পদক্ষেপ নিন। এখনই আপনার ফ্রি কনসালটেশন বুক করুন।
         </p>
 
         {/* Student Avatars */}

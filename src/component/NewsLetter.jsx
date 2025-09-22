@@ -39,12 +39,12 @@ export default function NewsletterSection() {
   };
 
   return (
-    <section className="relative isolate overflow-hidden bg-gradient-to-b from-[#0f2027] via-[#2c5364] to-[#203a43] py-16 sm:py-24 lg:py-32">
+    <section className="relative isolate overflow-hidden  py-16 sm:py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
           {/* Left: Text + Form */}
           <div className="max-w-xl lg:max-w-lg">
-            <h2 className="text-4xl font-semibold tracking-tight bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Subscribe to our newsletter</h2>
+            <h2 className="text-4xl font-semibold tracking-tight bg-gradient-to-r from-red-400 to-red-500 bg-clip-text text-transparent">আপডেট পেতে ইমেইল করুন</h2>
             <p className="mt-4 text-lg text-gray-300">
               পেশাদার ট্যাক্স, ভ্যাট ও কাস্টমস আপডেট, সিলেকটেড আর্টিকেল ও নতুন প্রকাশনা—সপ্তাহে একবার আপনার ইনবক্সে।
             </p>
@@ -68,7 +68,7 @@ export default function NewsletterSection() {
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="flex-none rounded-md bg-gradient-to-r from-cyan-500 to-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-md hover:shadow-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-500 hover:scale-[1.02] active:scale-[0.98]"
+                className="flex-none rounded-md bg-gradient-to-r from-green-500 to-green-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-md hover:shadow-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-500 hover:scale-[1.02] active:scale-[0.98]"
               >
                 {status === 'loading' ? (
                   <span className="flex items-center justify-center">
@@ -76,9 +76,9 @@ export default function NewsletterSection() {
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
-                    Subscribing...
+                    Sending...
                   </span>
-                ) : 'Subscribe'}
+                ) : 'Send'}
               </button>
             </form>
 

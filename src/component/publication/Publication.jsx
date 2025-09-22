@@ -50,11 +50,11 @@ export default function Publication() {
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-4xl sm:text-5xl font-extrabold text-center mb-10">
-      <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-        Publications
+      <span className="bg-gradient-to-r from-red-400 to-red-500 bg-clip-text text-transparent">
+        আমাদের প্রকাশনা
       </span>
       <div className="mt-2 flex justify-center">
-        <span className="inline-block w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"></span>
+        <span className="inline-block w-24 h-1 bg-gradient-to-r from-red-400 to-red-500 rounded-full"></span>
       </div>
     </h1>
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">

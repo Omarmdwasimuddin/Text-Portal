@@ -59,7 +59,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="w-72 bg-white p-4 rounded-lg shadow-xl">
+    <div className="w-full sm:w-72 bg-white p-4 rounded-lg shadow-xl">
       <h2 className="text-lg font-bold text-white text-center bg-green-600 mb-4 py-2 rounded">
         Information Library
       </h2>
@@ -82,10 +82,10 @@ const Sidebar = () => {
 
 const UpdateItem = ({ sl, subject, date, link }) => (
   <tr className="border border-gray-400 hover:bg-red-300">
-    <td className="py-2 px-4 text-sm border border-gray-400 text-center">{sl}</td>
-    <td className="py-2 px-4 text-sm border border-gray-400">{subject}</td>
-    <td className="py-2 px-4 text-sm border border-gray-400 text-center">{date}</td>
-    <td className="py-2 px-4 border border-gray-400 text-center">
+    <td className="py-2 px-2 sm:px-4 text-xs sm:text-sm border border-gray-400 text-center">{sl}</td>
+    <td className="py-2 px-2 sm:px-4 text-xs sm:text-sm border border-gray-400">{subject}</td>
+    <td className="py-2 px-2 sm:px-4 text-xs sm:text-sm border border-gray-400 text-center">{date}</td>
+    <td className="py-2 px-2 sm:px-4 border border-gray-400 text-center">
       <a 
         href={link} 
         className="inline-flex items-center justify-center"
@@ -96,7 +96,7 @@ const UpdateItem = ({ sl, subject, date, link }) => (
         <img 
           src="/pdf-logo.png" 
           alt="PDF Download" 
-          className="h-10 w-10 hover:opacity-80 transition-opacity"
+          className="h-8 w-8 sm:h-10 sm:w-10 hover:opacity-80 transition-opacity"
         />
       </a>
     </td>
@@ -126,32 +126,28 @@ const LatestUpdates = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto p-6">
-      <div className="flex gap-6">
+    <div className="max-w-7xl mx-auto p-4 sm:p-6">
+      <div className="flex flex-col lg:flex-row gap-6">
         <Sidebar />
         <div className="flex-1">
-          <div className="bg-gray-100 p-3 rounded mb-4">
-            
-          </div>
-          
           {/* Tab navigation */}
           <div className="mb-4">
-            <div className="flex space-x-2">
+            <div className="flex flex-wrap gap-2">
               <button
                 onClick={() => handleTabClick('latest')}
-                className={`px-4 py-2 rounded transition-colors text-sm ${activeTab === 'latest' ? 'bg-orange-500 text-white' : 'bg-gray-200 text-black hover:bg-gray-300'}`}
+                className={`px-3 sm:px-4 py-2 rounded transition-colors text-xs sm:text-sm ${activeTab === 'latest' ? 'bg-orange-500 text-white' : 'bg-gray-200 text-black hover:bg-gray-300'}`}
               >
                 Latest Updates
               </button>
               <button
                 onClick={() => handleTabClick('press')}
-                className={`px-4 py-2 rounded transition-colors text-sm ${activeTab === 'press' ? 'bg-orange-500 text-white' : 'bg-gray-200 text-black hover:bg-gray-300'}`}
+                className={`px-3 sm:px-4 py-2 rounded transition-colors text-xs sm:text-sm ${activeTab === 'press' ? 'bg-orange-500 text-white' : 'bg-gray-200 text-black hover:bg-gray-300'}`}
               >
                 Press Notes
               </button>
               <button
                 onClick={() => handleTabClick('news')}
-                className={`px-4 py-2 rounded transition-colors text-sm ${activeTab === 'news' ? 'bg-orange-500 text-white' : 'bg-gray-200 text-black hover:bg-gray-300'}`}
+                className={`px-3 sm:px-4 py-2 rounded transition-colors text-xs sm:text-sm ${activeTab === 'news' ? 'bg-orange-500 text-white' : 'bg-gray-200 text-black hover:bg-gray-300'}`}
               >
                 News & Media
               </button>
@@ -159,13 +155,13 @@ const LatestUpdates = () => {
           </div>
 
           <div className="overflow-x-auto">
-            <table className="w-full border-collapse border border-gray-400">
+            <table className="w-full border-collapse border border-gray-400 text-xs sm:text-sm">
               <thead>
                 <tr className="bg-gray-100">
-                  <th className="border border-gray-400 p-2 text-sm text-white bg-green-600">SL.</th>
-                  <th className="border border-gray-400 p-2 text-sm text-white bg-green-600">Subject</th>
-                  <th className="border border-gray-400 p-2 text-sm text-white bg-green-600">Issue Date</th>
-                  <th className="border border-gray-400 p-2 text-sm text-white bg-green-600">Download</th>
+                  <th className="border border-gray-400 p-2 text-xs sm:text-sm text-white bg-green-600">SL.</th>
+                  <th className="border border-gray-400 p-2 text-xs sm:text-sm text-white bg-green-600">Subject</th>
+                  <th className="border border-gray-400 p-2 text-xs sm:text-sm text-white bg-green-600">Issue Date</th>
+                  <th className="border border-gray-400 p-2 text-xs sm:text-sm text-white bg-green-600">Download</th>
                 </tr>
               </thead>
               <tbody>
@@ -178,7 +174,7 @@ const LatestUpdates = () => {
           <div className="text-right mt-3">
             <a 
               href="/all-updates" 
-              className="text-blue-600 hover:underline font-medium text-sm"
+              className="text-blue-600 hover:underline font-medium text-xs sm:text-sm"
             >
               more...
             </a>

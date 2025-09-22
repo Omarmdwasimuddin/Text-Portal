@@ -53,15 +53,15 @@ export const blogs = [
 
 export default function BlogListPage() {
   return (
-    <div className=" py-24 sm:py-32">
+    <div className=" py-12 sm:py-12">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Section Header */}
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-4xl font-bold tracking-tight bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent sm:text-5xl">
-            Latest Blogs
+          <h2 className="text-4xl font-bold tracking-tight bg-gradient-to-r from-red-400 to-red-500 bg-clip-text text-transparent sm:text-5xl">
+            সর্বশেষ ব্লগ
           </h2>
           <p className="mt-2 text-lg text-gray-300">
-            Learn about taxation and customs with our expert insights.
+            ভ্যাট, কাস্টমস, আয়করসহ বিভিন্ন আইন ও বিধিমালার বিশ্লেষণ, আপডেট এবং সহজ ব্যাখ্যা পড়ুন আমাদের বিশেষজ্ঞদের লেখায়।
           </p>
         </div>
 
