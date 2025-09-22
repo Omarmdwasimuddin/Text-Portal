@@ -14,7 +14,7 @@ const menuItems = [
   },
   { name: 'Service', 
     submenu: [
-      { name: 'VAT', herf:'/service/vat'},
+      { name: 'VAT', href:'/service/vat'},
       { name: 'Cusotoms', href:'/service/customs'},
       { name: 'Income Tax', href:'/service/income-tax'},
       { name: 'RJSC', href:'/service/income-tax'},
