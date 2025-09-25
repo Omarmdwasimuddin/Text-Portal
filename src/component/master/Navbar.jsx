@@ -99,8 +99,22 @@ const menuItems = [
       { name: 'Others', href: '/publications/research-analysis' },
     ]
    },
-  { name: 'FAQ', href: '/faq' },
-  { name: 'Blogs', href: '#Blogs' },
+  { name: 'FAQ', 
+    submenu: [
+      { name: 'VAT', href: '/publications/annual-report' },
+      { name: 'Customs', href: '/publications/tax-statistics' },
+      { name: 'Income Tax', href: '/publications/research-analysis' },
+      { name: 'Others', href: '/publications/research-analysis' },
+    ]
+   },
+  { name: 'Blogs', 
+    submenu: [
+      { name: 'VAT', href: '/publications/annual-report' },
+      { name: 'Customs', href: '/publications/tax-statistics' },
+      { name: 'Income Tax', href: '/publications/research-analysis' },
+      { name: 'Others', href: '/publications/research-analysis' },
+    ]
+   },
   { name: 'Login', href: '/login', icon: UserIcon },
   { name: 'Cart', href: '/cart', icon: ShoppingCartIcon, onlyIcon: true },
 ]
@@ -140,7 +154,7 @@ function Navbar() {
               <div key={idx} className="relative group/menu">
                 {item.submenu ? (
                   <>
-                    <button className={`px-3 py-2 ${isSticky ? 'text-gray-900' : 'text-white'} hover:bg-green-600 rounded-md transition-colors duration-200 flex items-center`}>
+                    <button className={`px-3 py-2 whitespace-nowrap ${isSticky ? 'text-gray-900' : 'text-white'} hover:bg-green-600 rounded-md transition-colors duration-200 flex items-center`}>
                       {item.name}
                       <ChevronRightIcon className="w-4 h-4 ml-1 transform group-hover/menu:rotate-90 transition-transform" />
                     </button>

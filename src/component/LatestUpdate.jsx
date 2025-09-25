@@ -25,7 +25,6 @@ import {
   ComputerDesktopIcon,
   CheckCircleIcon,
   GlobeAltIcon,
-  CogIcon,
   TruckIcon
 } from "@heroicons/react/24/outline";
 
@@ -104,8 +103,6 @@ const UpdateItem = ({ sl, subject, date, link }) => (
 );
 
 const LatestUpdates = () => {
-  const [activeTab, setActiveTab] = useState('latest');
-
   const updates = [
     { sl: '11356', subject: 'National Single Window (NSW) 5th Crew System Celebrating Half a Million CLP\'s, Champion on Paperless Customs & Conferring a-Return Champion Certificate to the Tax Payers will be 5th Crew System\'s Addicted Do Years (Add?)', date: '19-09-2025', link: '/documents/nsw-celebration.pdf' },
     { sl: '11354', subject: 'Bulk SMS 9th Crew (6th Stocks?)', date: '18-09-2025', link: '/documents/bulk-sms.pdf' },
@@ -121,38 +118,15 @@ const LatestUpdates = () => {
     { sl: '11344', subject: 'Transfer/posting Order of Assistant Revenue Officer (No 2791)', date: '16-09-2025', link: '/documents/aro-2791.pdf' },
   ];
 
-  const handleTabClick = (tabName) => {
-    setActiveTab(tabName);
-  };
-
   return (
     <div className="max-w-7xl mx-auto p-4 sm:p-6">
       <div className="flex flex-col lg:flex-row gap-6">
         <Sidebar />
         <div className="flex-1">
-          {/* Tab navigation */}
-          <div className="mb-4">
-            <div className="flex flex-wrap gap-2">
-              <button
-                onClick={() => handleTabClick('latest')}
-                className={`px-3 sm:px-4 py-2 rounded transition-colors text-xs sm:text-sm ${activeTab === 'latest' ? 'bg-orange-500 text-white' : 'bg-gray-200 text-black hover:bg-gray-300'}`}
-              >
-                Latest Updates
-              </button>
-              <button
-                onClick={() => handleTabClick('press')}
-                className={`px-3 sm:px-4 py-2 rounded transition-colors text-xs sm:text-sm ${activeTab === 'press' ? 'bg-orange-500 text-white' : 'bg-gray-200 text-black hover:bg-gray-300'}`}
-              >
-                Press Notes
-              </button>
-              <button
-                onClick={() => handleTabClick('news')}
-                className={`px-3 sm:px-4 py-2 rounded transition-colors text-xs sm:text-sm ${activeTab === 'news' ? 'bg-orange-500 text-white' : 'bg-gray-200 text-black hover:bg-gray-300'}`}
-              >
-                News & Media
-              </button>
-            </div>
-          </div>
+          {/* Heading instead of tab */}
+          <h2 className="text-lg sm:text-xl font-bold text-orange-600 mb-4">
+            Latest Updates
+          </h2>
 
           <div className="overflow-x-auto">
             <table className="w-full border-collapse border border-gray-400 text-xs sm:text-sm">
