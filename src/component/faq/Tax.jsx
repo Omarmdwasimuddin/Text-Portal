@@ -67,12 +67,35 @@ const faqs = [
 export default function FAQComponent() {
   const [openIndex, setOpenIndex] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('all');
 
-  // Filter FAQs based on search term
-  const filteredFaqs = faqs.filter(faq => 
-    faq.question.toLowerCase().includes(searchTerm.toLowerCase()) || 
-    faq.answer.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const categories = [
+    { value: 'all', label: 'সব ক্যাটাগরি' },
+    { value: 'basic', label: 'মৌলিক ধারণা' },
+    { value: 'filing', label: 'ফাইলিং প্রক্রিয়া' },
+    { value: 'tin', label: 'টিআইএন সম্পর্কিত' },
+    { value: 'deduction', label: 'ছাড় ও করমুক্তি' },
+    { value: 'legal', label: 'আইনগত বিষয়' },
+  ];
+
+  // Categorize FAQs
+  const categorizedFaqs = faqs.map((faq, index) => {
+    let category = 'basic';
+    if (faq.question.includes('টিআইএন') || faq.question.includes('নম্বর')) category = 'tin';
+    else if (faq.question.includes('ফাইল') || faq.question.includes('দাখিল') || faq.question.includes('রিটার্ন')) category = 'filing';
+    else if (faq.question.includes('ছাড়') || faq.question.includes('করমুক্ত') || faq.question.includes('খরচ')) category = 'deduction';
+    else if (faq.question.includes('শাস্তি') || faq.question.includes('আইন') || faq.question.includes('অফিস')) category = 'legal';
+    
+    return { ...faq, category, id: index };
+  });
+
+  // Filter FAQs based on search term and category
+  const filteredFaqs = categorizedFaqs.filter(faq => {
+    const matchesSearch = faq.question.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                         faq.answer.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesCategory = selectedCategory === 'all' || faq.category === selectedCategory;
+    return matchesSearch && matchesCategory;
+  });
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12 sm:py-16">
@@ -87,8 +110,9 @@ export default function FAQComponent() {
           </p>
         </div>
 
-        {/* Search Bar */}
-        <div className="mb-8">
+        {/* Search and Filter Section */}
+        <div className="mb-8 space-y-4">
+          {/* Search Bar */}
           <div className="relative max-w-xl mx-auto">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
               <svg className="h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
@@ -103,16 +127,38 @@ export default function FAQComponent() {
               onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
+
+          {/* Category Filter */}
+          <div className="flex flex-wrap justify-center gap-2">
+            {categories.map((category) => (
+              <button
+                key={category.value}
+                onClick={() => setSelectedCategory(category.value)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
+                  selectedCategory === category.value
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'
+                }`}
+              >
+                {category.label}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* FAQ Counter */}
         <div className="mb-5 flex justify-between items-center">
           <p className="text-sm text-gray-600">
-            {filteredFaqs.length}টি প্রশ্ন পাওয়া গেছে {searchTerm && `"${searchTerm}" এর জন্য`}
+            {filteredFaqs.length}টি প্রশ্ন পাওয়া গেছে 
+            {searchTerm && ` "${searchTerm}" এর জন্য`}
+            {selectedCategory !== 'all' && ` ${categories.find(c => c.value === selectedCategory)?.label} ক্যাটাগরিতে`}
           </p>
-          {searchTerm && (
+          {(searchTerm || selectedCategory !== 'all') && (
             <button 
-              onClick={() => setSearchTerm('')}
+              onClick={() => {
+                setSearchTerm('');
+                setSelectedCategory('all');
+              }}
               className="text-blue-600 hover:text-blue-800 text-sm font-medium"
             >
               সব প্রশ্ন দেখুন
@@ -125,12 +171,12 @@ export default function FAQComponent() {
           {filteredFaqs.length > 0 ? (
             filteredFaqs.map((faq, index) => (
               <div 
-                key={index} 
+                key={faq.id} 
                 className="bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-200 hover:shadow-md border border-gray-100"
               >
                 <button
                   className="w-full text-left p-4 focus:outline-none flex justify-between items-center"
-                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                  onClick={() => setOpenIndex(openIndex === faq.id ? null : faq.id)}
                 >
                   <div className="flex items-start space-x-3">
                     <div className="flex-shrink-0 mt-0.5">
@@ -138,15 +184,20 @@ export default function FAQComponent() {
                         <span className="text-blue-600 font-semibold text-sm">Q</span>
                       </div>
                     </div>
-                    <span className="text-base font-medium text-gray-900">{faq.question}</span>
+                    <div className="text-left">
+                      <span className="text-base font-medium text-gray-900 block">{faq.question}</span>
+                      <span className="text-xs text-blue-500 bg-blue-50 px-2 py-1 rounded-full mt-1 inline-block">
+                        {categories.find(c => c.value === faq.category)?.label}
+                      </span>
+                    </div>
                   </div>
-                  <span className={`text-gray-500 transition-transform duration-200 ${openIndex === index ? 'transform rotate-180' : ''}`}>
+                  <span className={`text-gray-500 transition-transform duration-200 ${openIndex === faq.id ? 'transform rotate-180' : ''}`}>
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </span>
                 </button>
-                <div className={`overflow-hidden transition-all duration-200 ${openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+                <div className={`overflow-hidden transition-all duration-200 ${openIndex === faq.id ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
                   <div className="px-4 pb-4">
                     <div className="flex space-x-3">
                       <div className="flex-shrink-0">
@@ -168,25 +219,67 @@ export default function FAQComponent() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <h3 className="mt-2 text-base font-medium text-gray-900">কোন ফলাফল পাওয়া যায়নি</h3>
-              <p className="mt-1 text-sm text-gray-500">আপনার অনুসন্ধানের সাথে মিলে এমন কোন প্রশ্ন পাওয়া যায়নি</p>
+              <p className="mt-1 text-sm text-gray-500">
+                {searchTerm || selectedCategory !== 'all' 
+                  ? 'আপনার অনুসন্ধানের সাথে মিলে এমন কোন প্রশ্ন পাওয়া যায়নি' 
+                  : 'বর্তমানে কোন প্রশ্ন পাওয়া যায়নি'}
+              </p>
             </div>
           )}
         </div>
 
-        {/* Contact Section */}
-        <div className="mt-10 bg-blue-50 rounded-lg p-5 border border-blue-100">
-          <div className="flex items-center">
-            <div className="flex-shrink-0">
-              <svg className="h-8 w-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-            </div>
-            <div className="ml-3">
-              <h3 className="text-base font-medium text-gray-900">আরও সাহায্য প্রয়োজন?</h3>
-              <p className="text-sm text-gray-600">আয়কর সংক্রান্ত আরও তথ্যের জন্য সরাসরি যোগাযোগ করুন এনবিআর হেল্পলাইনে</p>
-              <p className="text-blue-600 font-medium mt-1 text-sm">হেল্পলাইন: ১৬১৫</p>
+        {/* Important Notice Section */}
+        <div className="mt-8 bg-yellow-50 rounded-lg p-4 border border-yellow-200">
+          <div className="flex items-start space-x-3">
+            <svg className="w-5 h-5 text-yellow-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+            </svg>
+            <div>
+              <h4 className="text-sm font-medium text-yellow-800">গুরুত্বপূর্ণ তথ্য</h4>
+              <p className="text-sm text-yellow-700 mt-1">
+                আয়কর সংক্রান্ত সর্বশেষ তথ্য ও হালনাগাদকৃত হার জানতে এনবিআরের অফিসিয়াল ওয়েবসাইট নিয়মিত ভিজিট করুন। 
+                কর সংক্রান্ত যেকোনো সমস্যায় আইনজীবী বা কর বিশেষজ্ঞের পরামর্শ নেওয়া উচিত।
+              </p>
             </div>
           </div>
+        </div>
+
+        {/* Contact Section */}
+        <div className="mt-8 bg-blue-50 rounded-lg p-5 border border-blue-200">
+          <div className="flex items-center">
+            <svg className="h-8 w-8 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            <div className="ml-4">
+              <h3 className="text-base font-medium text-gray-900">আয়কর সম্পর্কিত সাহায্য প্রয়োজন?</h3>
+              <p className="text-sm text-gray-600 mt-1">আয়কর সংক্রান্ত যেকোনো তথ্য ও সহায়তার জন্য যোগাযোগ করুন</p>
+              <div className="mt-2 space-y-1">
+                <p className="text-blue-600 font-medium text-sm">জাতীয় রাজস্ব বোর্ড হেল্পলাইন: ১৬১৫</p>
+                <p className="text-blue-600 font-medium text-sm">ইমেইল: info@nbr.gov.bd</p>
+                <p className="text-blue-600 font-medium text-sm">ওয়েবসাইট: www.nbr.gov.bd</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Quick Links */}
+        <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+          <a href="https://nbr.gov.bd" target="_blank" rel="noopener noreferrer" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-blue-300 transition-colors duration-200">
+            <div className="flex items-center space-x-3">
+              <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+              <span className="text-sm font-medium text-gray-700">এনবিআর ওয়েবসাইট</span>
+            </div>
+          </a>
+          <a href="#" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-blue-300 transition-colors duration-200">
+            <div className="flex items-center space-x-3">
+              <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              <span className="text-sm font-medium text-gray-700">আয়কর ফরম ডাউনলোড</span>
+            </div>
+          </a>
         </div>
       </div>
     </div>
