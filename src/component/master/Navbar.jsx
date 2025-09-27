@@ -101,10 +101,10 @@ const menuItems = [
    },
   { name: 'FAQ', 
     submenu: [
-      { name: 'VAT', href: '/publications/annual-report' },
-      { name: 'Customs', href: '/publications/tax-statistics' },
-      { name: 'Income Tax', href: '/publications/research-analysis' },
-      { name: 'Others', href: '/publications/research-analysis' },
+      { name: 'VAT', href: '/faq/vat' },
+      { name: 'Customs', href: '/faq/customs' },
+      { name: 'Income Tax', href: '/faq/tax' },
+      { name: 'Others', href: '/faq/others' },
     ]
    },
   { name: 'Blogs', 
