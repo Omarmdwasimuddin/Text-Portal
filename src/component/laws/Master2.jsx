@@ -1,5 +1,5 @@
 import Navbar from '@/component/laws/Navbar';
-import Footer from '@/component/laws/Footer';
+import Footer2 from '@/component/laws/Footer2';
 
 
 const Master = ({ children }) => {
@@ -8,7 +8,7 @@ const Master = ({ children }) => {
       
       <Navbar/>
       {children}
-      <Footer/>
+      <Footer2/>
     </div>
   );
 };
