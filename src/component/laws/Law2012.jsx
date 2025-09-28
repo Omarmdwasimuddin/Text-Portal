@@ -307,21 +307,31 @@ const HomePage = () => {
   // Flatten all sections for searching
   const allSections = useMemo(() => {
     const sections = [];
+    
     chapters.forEach(chapter => {
-      if (chapter.sections[0]?.subtitle) {
-        // For chapters with subsections
+      const hasSubsections = chapter.sections && chapter.sections.some(section => section.subsections);
+      
+      if (hasSubsections) {
         chapter.sections.forEach(section => {
-          section.subsections?.forEach(subsection => {
+          if (section.subsections) {
+            section.subsections.forEach(subsection => {
+              sections.push({
+                ...subsection,
+                chapterTitle: chapter.title || '',
+                chapterSubtitle: chapter.subtitle || '',
+                sectionSubtitle: section.subtitle || ''
+              });
+            });
+          } else {
             sections.push({
-              ...subsection,
+              ...section,
               chapterTitle: chapter.title || '',
               chapterSubtitle: chapter.subtitle || '',
-              sectionSubtitle: section.subtitle || ''
+              sectionSubtitle: ''
             });
-          });
+          }
         });
       } else {
-        // For regular chapters
         chapter.sections?.forEach(section => {
           sections.push({
             ...section,
@@ -332,28 +342,93 @@ const HomePage = () => {
         });
       }
     });
+    
     return sections;
   }, []);
 
-  // Filter sections based on search term
+  // Filter sections based on search term - WITH PRIORITY RANKING
   const filteredSections = useMemo(() => {
     if (!searchTerm.trim()) return [];
     
-    const term = searchTerm.toLowerCase();
-    return allSections.filter(section => {
-      const text = section.text?.toLowerCase() || '';
-      const chapterTitle = section.chapterTitle?.toLowerCase() || '';
-      const chapterSubtitle = section.chapterSubtitle?.toLowerCase() || '';
-      const sectionSubtitle = section.sectionSubtitle?.toLowerCase() || '';
-      
-      return (
-        text.includes(term) ||
-        chapterTitle.includes(term) ||
-        chapterSubtitle.includes(term) ||
-        sectionSubtitle.includes(term)
+    const term = searchTerm.toLowerCase().trim();
+    
+    // If search term includes "ধারা" followed by a number, search specifically by section number
+    const sectionNumberMatch = term.match(/ধারা\s*(\d+\.?\d*)/);
+    if (sectionNumberMatch) {
+      const sectionNumber = sectionNumberMatch[1];
+      const exactMatch = allSections.filter(section => 
+        section.number.toString() === sectionNumber
       );
-    });
+      return exactMatch.map(section => ({ ...section, priority: 1 }));
+    }
+    
+    // Search by section number directly
+    if (/^\d+\.?\d*$/.test(term)) {
+      const exactMatch = allSections.filter(section => 
+        section.number.toString() === term
+      );
+      return exactMatch.map(section => ({ ...section, priority: 1 }));
+    }
+    
+    const searchResults = allSections.map(section => {
+      const searchFields = [
+        section.text?.toLowerCase() || '',
+        section.chapterTitle?.toLowerCase() || '',
+        section.chapterSubtitle?.toLowerCase() || '',
+        section.sectionSubtitle?.toLowerCase() || '',
+      ].join(' ');
+      
+      let priority = 0;
+      
+      // Exact match (পুরো বাক্য exact মিলে গেলে)
+      if (searchFields.includes(term)) {
+        priority = 1; // Highest priority
+      }
+      // Starts with match (শুরুতে মিলে গেলে)
+      else if (searchFields.startsWith(term)) {
+        priority = 2;
+      }
+      // Contains all words in order (সব words সঠিক order এ থাকলে)
+      else if (searchFields.includes(term)) {
+        priority = 3;
+      }
+      // Contains all words but not necessarily in order (সব words থাকলে)
+      else {
+        const searchWords = term.split(/\s+/).filter(word => word.length > 0);
+        const containsAllWords = searchWords.every(word => searchFields.includes(word));
+        if (containsAllWords) {
+          priority = 4;
+        }
+        // Contains some words (কিছু word মিললে)
+        else {
+          const containsSomeWords = searchWords.some(word => searchFields.includes(word));
+          if (containsSomeWords) {
+            priority = 5;
+          }
+        }
+      }
+      
+      return { ...section, priority };
+    }).filter(section => section.priority > 0);
+    
+    // Sort by priority (lower number = higher priority)
+    return searchResults.sort((a, b) => a.priority - b.priority);
   }, [searchTerm, allSections]);
+
+  // Close search when clicking outside
+  React.useEffect(() => {
+    const handleClickOutside = () => {
+      setIsSearchOpen(false);
+    };
+
+    if (isSearchOpen) {
+      document.addEventListener('click', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isSearchOpen]);
 
   const regularChapters = chapters.filter(ch => 
     ch.title !== 'তফসিল' && ch.title !== 'গেজেটেড অনুলিপি'
@@ -373,17 +448,19 @@ const HomePage = () => {
           
           {/* Search Bar */}
           <div className="mt-6 max-w-2xl relative">
-            <div className="relative">
+            <div className="relative" onClick={(e) => e.stopPropagation()}>
               <input
                 type="text"
                 placeholder="আইন অনুসন্ধান করুন... (বাংলা বা ইংরেজি)"
                 value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+                onChange={(e) => {
+                  setSearchTerm(e.target.value);
+                  setIsSearchOpen(true);
+                }}
                 onFocus={() => setIsSearchOpen(true)}
                 className="w-full px-4 py-3 pl-12 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent"
               />
               
-              {/* Search Icon SVG */}
               <svg 
                 className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/70 w-5 h-5" 
                 fill="none" 
@@ -398,10 +475,12 @@ const HomePage = () => {
                 />
               </svg>
               
-              {/* Clear button */}
               {searchTerm && (
                 <button
-                  onClick={() => setSearchTerm('')}
+                  onClick={() => {
+                    setSearchTerm('');
+                    setIsSearchOpen(false);
+                  }}
                   className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white/70 hover:text-white"
                 >
                   ✕
@@ -411,24 +490,42 @@ const HomePage = () => {
 
             {/* Search Results Dropdown */}
             {isSearchOpen && searchTerm && (
-              <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-lg shadow-xl max-h-96 overflow-y-auto z-50">
+              <div 
+                className="absolute top-full left-0 right-0 mt-2 bg-white rounded-lg shadow-xl max-h-96 overflow-y-auto z-50"
+                onClick={(e) => e.stopPropagation()}
+              >
                 {filteredSections.length > 0 ? (
                   <div className="py-2">
                     <div className="px-4 py-2 text-sm text-gray-500 border-b">
                       {filteredSections.length}টি ফলাফল পাওয়া গেছে
+                      <span className="text-xs ml-2 bg-blue-100 text-blue-800 px-2 py-1 rounded">
+                        Exact match: {filteredSections.filter(s => s.priority === 1).length}
+                      </span>
                     </div>
                     {filteredSections.map((section, index) => (
                       <Link
                         key={index}
                         href={section.href}
-                        onClick={() => setIsSearchOpen(false)}
-                        className="block px-4 py-3 hover:bg-blue-50 border-b last:border-b-0 transition-colors duration-200"
+                        onClick={() => {
+                          setIsSearchOpen(false);
+                          setSearchTerm('');
+                        }}
+                        className={`block px-4 py-3 hover:bg-blue-50 border-b last:border-b-0 transition-colors duration-200 ${
+                          section.priority === 1 ? 'bg-yellow-50 border-l-4 border-yellow-400' : ''
+                        }`}
                       >
                         <div className="flex justify-between items-start">
                           <span className="font-medium text-blue-700">ধারা {section.number}</span>
-                          <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
-                            {section.chapterTitle}
-                          </span>
+                          <div className="flex items-center space-x-2">
+                            <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
+                              {section.chapterTitle}
+                            </span>
+                            {section.priority === 1 && (
+                              <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">
+                                Exact Match
+                              </span>
+                            )}
+                          </div>
                         </div>
                         <p className="text-gray-800 mt-1">{section.text}</p>
                         {section.sectionSubtitle && (
@@ -447,14 +544,6 @@ const HomePage = () => {
             )}
           </div>
         </div>
-
-        {/* Click outside to close search results */}
-        {isSearchOpen && (
-          <div 
-            className="fixed inset-0 z-40" 
-            onClick={() => setIsSearchOpen(false)}
-          />
-        )}
       </header>
 
       {/* Main Content */}
@@ -464,7 +553,7 @@ const HomePage = () => {
           <h2 className="text-xl font-semibold text-gray-800 mb-3">আইনের সংক্ষিপ্ত বিবরণ</h2>
           <p className="text-gray-600">
             এই আইনটি মূল্য সংযোজন কর, সম্পূরক শুল্ক এবং টার্নওভার কর সম্পর্কিত বিধানাবলী সমন্বিত একটি পূর্ণাঙ্গ আইন। 
-            আইনটি ২০১২ সালে প্রণীত হয় এবং বাংলাদেশের কর ব্যবস্থায় গুরুত্বপূর্ণ ভূমিকা পালন করে আসছে。
+            আইনটি ২০১২ সালে প্রণীত হয় এবং বাংলাদেশের কর ব্যবস্থায় গুরুত্বপূর্ণ ভূমিকা পালন করে আসছে।
           </p>
         </div>
 
