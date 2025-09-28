@@ -1,4 +1,5 @@
-import React from 'react';
+'use client'
+import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
 
 const chapters = [
@@ -6,193 +7,559 @@ const chapters = [
     title: 'প্রথম অধ্যায়',
     subtitle: 'প্রারম্ভিক',
     sections: [
-      { href: '/section1', text: 'সূচিপত্র সংযোজন এবং পরিবর্তন' },
-      { href: '/section2', text: 'সূচনা' },
-      { href: '/section3', text: 'অধ্যায়ের প্রকাশনা' },
+      { href: '/section1', text: 'সংক্ষিপ্ত শিরোনাম ও প্রবর্তন', number: 1 },
+      { href: '/section2', text: 'সংজ্ঞা', number: 2 },
+      { href: '/section3', text: 'আইনের প্রাধান্য', number: 3 },
     ],
   },
   {
     title: 'দ্বিতীয় অধ্যায়',
-    subtitle: 'মূলক নির্দেশনা ও তথ্যের কার অনলাইনকরণ',
+    subtitle: 'মূসক নিবন্ধন এবং টার্নওভার কর তালিকাভুক্তি',
     sections: [
-      { href: '/section4', text: 'মূলক নির্দেশনারা বাফিক' },
-      { href: '/section5', text: 'নির্দেশন' },
-      { href: '/section6', text: 'মূলক নির্দেশনা পাঠ্য' },
-      { href: '/section7', text: 'নির্দেশিত বাফিকারের অনলাইন প্রকাশ ও সংরক্ষণ' },
-      { href: '/section8', text: 'রেখা মূলক নির্দেশন' },
-      { href: '/section9', text: 'মূলক নির্দেশনা রাখা' },
-      { href: '/section10', text: 'অনলাইনকরণের বাফিক ও অনলাইনকরণ' },
-      { href: '/section11', text: '["*"] হর মধ্যে নির্দেশনেরা ও অনলাইনকরণেরা বাফিক নির্দেশন বা অনলাইনকরণের' },
-      { href: '/section12', text: 'সন্ধানের মধ্যে নির্দেশিত বা অনলাইনকরণ বাফিকের দ্রষ্টব্য' },
-      { href: '/section13', text: 'প্রকাশিত তথা অধ্যায়েরা নির্দেশিত বা অনলাইনকরণ বাফিকের দ্রষ্টব্য' },
+      { href: '/section4', text: 'মূসক নিবন্ধনযোগ্য ব্যক্তি', number: 4 },
+      { href: '/section5', text: 'নিবন্ধন', number: 5 },
+      { href: '/section6', text: 'মূসক নিবন্ধন পদ্ধতি', number: 6 },
+      { href: '/section7', text: 'নিবন্ধিত ব্যক্তিবর্গের তালিকা প্রকাশ ও সংরক্ষণ', number: 7 },
+      { href: '/section8', text: 'স্বেচ্ছা মূসক নিবন্ধন', number: 8 },
+      { href: '/section9', text: 'মূসক নিবন্ধন বাতিল', number: 9 },
+      { href: '/section10', text: 'তালিকাভুক্তিযোগ্য ব্যক্তি ও তালিকাভুক্তি', number: 10 },
+      { href: '/section11', text: 'তালিকাভুক্তি বাতিল', number: 11 },
+      { href: '/section12', text: '[***] স্ব-উদ্যোগে নিবন্ধনযোগ্য ও তালিকাভুক্তিযোগ্য ব্যক্তিকে নিবন্ধন বা তালিকাভুক্তিকরণ', number: 12 },
+      { href: '/section13', text: 'সনদপত্র প্রদর্শনে নিবন্ধিত বা তালিকাভুক্ত ব্যক্তির দায়িত্ব', number: 13 },
+      { href: '/section14', text: 'পরিবর্তিত তথ্য অবহিতকরণে নিবন্ধিত বা তালিকাভুক্ত ব্যক্তির দায়িত্ব', number: 14 },
     ],
   },
   {
     title: 'তৃতীয় অধ্যায়',
-    subtitle: 'উন্নত নীতিমালা ও নিয়মাবলী',
+    subtitle: 'মূল্য সংযোজন কর আরোপ',
     sections: [
-      { href: '/section14', text: 'উন্নত নীতিমালা ও নিয়মাবলী' },
-      { href: '/section15', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী' },
-      { href: '/section16', text: 'প্রকাশনার নীতিমালা ও নিয়মাবলী' },
-      { href: '/section17', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংশোধন' },
-      { href: '/section18', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংরক্ষণ' },
-      { href: '/section19', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী পরিবর্তন' },
-      { href: '/section20', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংযোজন' },
-      { href: '/section21', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী প্রকাশনা' },
-      { href: '/section22', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংরক্ষণ ও পরিবর্তন' },
-      { href: '/section23', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংযোজন ও সংরক্ষণ' },
+      { href: '/section15', text: 'মূসক আরোপ', number: 15 },
+      { href: '/section16', text: 'মূল্য সংযোজন কর পরিশোধে দায়ী ব্যক্তি', number: 16 },
+      { href: '/section17', text: 'বাংলাদেশে প্রদত্ত সরবরাহ', number: 17 },
+      { href: '/section18', text: 'নিবন্ধিত সরবরাহকারী এবং সরবরাহগ্রহীতা', number: 18 },
+      { href: '/section19', text: 'অনাবাসিক ব্যক্তির মূসক এজেন্ট', number: 19 },
+      { href: '/section20', text: 'আমদানিকৃত সেবার ক্ষেত্রে গ্রহীতার নিকট হইতে (reverse charged) কর আদায়', number: 20 },
+      { href: '/section21', text: 'শূন্যহার বিশিষ্ট সরবরাহ', number: 21 },
+      { href: '/section22', text: 'বাংলাদেশের বাহিরে অবস্থিত ভূমি', number: 22 },
+      { href: '/section23', text: 'রপ্তানির নিমিত্ত পণ্য সরবরাহ', number: 23 },
+      { href: '/section24', text: 'শূন্যহার বিশিষ্ট সেবা সরবরাহ', number: 24 },
+      { href: '/section25', text: 'ট্রাভেল এজেন্ট এবং ট্যুর অপারেটর', number: 25 },
+      { href: '/section26', text: 'অব্যাহতিপ্রাপ্ত সরবরাহ বা অব্যাহতিপ্রাপ্ত আমদানি', number: 26 },
     ],
   },
   {
     title: 'চতুর্থ অধ্যায়',
-    subtitle: 'বিভিন্ন ক্ষেত্রে',
+    subtitle: 'মূসক আদায় পদ্ধতি',
     sections: [
-      { href: '/section24', text: 'বিভিন্ন ক্ষেত্রে নীতিমালা ও নিয়মাবলী' },
-      { href: '/section25', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী' },
-      { href: '/section26', text: 'প্রকাশনার নীতিমালা ও নিয়মাবলী' },
-      { href: '/section27', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংশোধন' },
-      { href: '/section28', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংরক্ষণ' },
-      { href: '/section29', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী পরিবর্তন' },
-      { href: '/section30', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংযোজন' },
-      { href: '/section31', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী প্রকাশনা' },
-      { href: '/section32', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংরক্ষণ ও পরিবর্তন' },
-      { href: '/section33', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংযোজন ও সংরক্ষণ' },
+      { 
+        subtitle: 'খণ্ড ‘ক’- আমদানির ক্ষেত্রে',
+        subsections: [
+          { href: '/section27', text: 'করযোগ্য আমদানির ক্ষেত্রে মূসক আদায় পদ্ধতি', number: 27 },
+          { href: '/section28', text: 'করযোগ্য আমদানির মূসক আরোপযোগ্য ভিত্তিমূল্য নির্ধারণ', number: 28 },
+          { href: '/section29', text: 'পুনঃআমদানিকৃত পণ্যের মূল্য নির্ধারণ', number: 29 },
+          { href: '/section30', text: 'রপ্তানির নিমিত্ত আমদানি', number: 30 },
+          { href: '/section31', text: 'আমদানিকালে আগাম কর পরিশোধ ও সমন্বয়', number: 31 },
+        ]
+      },
+      { 
+        subtitle: 'খন্ড ‘খ’- সাধারণ সরবরাহের ক্ষেত্রে',
+        subsections: [
+          { href: '/section32', text: 'করযোগ্য সরবরাহের মূল্য নির্ধারণ', number: 32 },
+          { href: '/section32.1', text: 'বোর্ড কর্তৃক ব্যাখ্যা প্রদান', number: 32.1 },
+          { href: '/section33', text: 'করযোগ্য সরবরাহের উপর মূসক প্রদানকাল', number: 33 },
+          { href: '/section34', text: 'আনুক্রমিক বা পর্যাবৃত্ত সরবরাহ', number: 34 },
+          { href: '/section35', text: 'একই চালানে একাধিক ধরনের পণ্য ও সেবা সরবরাহ', number: 35 },
+        ]
+      },
+      { 
+        subtitle: 'খন্ড ‘গ’- বিশেষ সরবরাহের ক্ষেত্রে',
+        subsections: [
+          { href: '/section36', text: 'চলমান ব্যবসা হিসাবে প্রতিষ্ঠান বিক্রয়', number: 36 },
+          { href: '/section37', text: 'অধিকার (rights), ভবিষ্য ক্রয় বা বিক্রয়ের অধিকার (option) এবং ভাউচার', number: 37 },
+          { href: '/section38', text: 'আগাম মূল্য পরিশোধিত টেলিযোগাযোগ দ্রব্য বা সেবা সরবরাহ', number: 38 },
+          { href: '/section39', text: 'লটারী, লাকী ড্র, হাউজি, র‌্যাফেল ড্র এবং অনুরূপ উদ্যোগ', number: 39 },
+          { href: '/section40', text: 'কর্মচারী বা কর্মকর্তাকে নগদ অর্থের পরিবর্তে দ্রব্যের মাধ্যমে প্রদত্ত সুবিধার মূল্য', number: 40 },
+          { href: '/section41', text: 'কিস্তিতে পণ্য বিক্রয়', number: 41 },
+          { href: '/section42', text: 'বাতিলকৃত লেনদেন', number: 42 },
+          { href: '/section43', text: 'ঋণ পরিশোধে সম্পত্তি বিক্রয়', number: 43 },
+          { href: '/section44', text: 'বিক্রয় যন্ত্র', number: 44 },
+        ]
+      },
     ],
   },
   {
     title: 'পঞ্চম অধ্যায়',
-    subtitle: 'উন্নত নীতিমালা ও নিয়মাবলী সংশোধন',
+    subtitle: 'করদাতা কর্তৃক প্রদেয় নীট কর নিরূপণ ও পরিশোধ',
     sections: [
-      { href: '/section34', text: 'উন্নত নীতিমালা ও নিয়মাবলী সংশোধন' },
-      { href: '/section35', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংশোধন' },
-      { href: '/section36', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংশোধন ও সংরক্ষণ' },
-      { href: '/section37', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংশোধন ও পরিবর্তন' },
-      { href: '/section38', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংশোধন ও সংযোজন' },
-      { href: '/section39', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংশোধন ও প্রকাশনা' },
-      { href: '/section40', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংশোধন ও সংরক্ষণ ও পরিবর্তন' },
-      { href: '/section41', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংশোধন ও সংযোজন ও সংরক্ষণ' },
-      { href: '/section42', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংশোধন ও প্রকাশনা ও সংরক্ষণ' },
-      { href: '/section43', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংশোধন ও পরিবর্তন ও সংযোজন' },
+      { href: '/section45', text: 'সরবরাহের উপর প্রদেয় নীট কর নিরূপণ ও পরিশোধ পদ্ধতি', number: 45 },
+      { href: '/section46', text: 'উপকরণ কর রেয়াত', number: 46 },
+      { href: '/section47', text: 'আংশিক উপকরণ কর রেয়াত', number: 47 },
+      { href: '/section48', text: 'সমন্বয়', number: 48 },
+      { href: '/section49', text: 'উৎসে কর কর্তনকারী সত্তা কর্তৃক উৎসে কর কর্তন ও বৃদ্ধিকারী সমন্বয়', number: 49 },
+      { href: '/section50', text: 'উৎসে কর কর্তনের পর সরবরাহকারী কর্তৃক হ্রাসকারী সমন্বয়', number: 50 },
     ],
   },
   {
     title: 'ষষ্ঠ অধ্যায়',
-    subtitle: 'নীতিমালা ও নিয়মাবলী সংক্রান্ত বিভিন্ন বিষয়',
+    subtitle: 'চালানপত্র এবং দলিলপত্র',
     sections: [
-      { href: '/section44', text: 'নীতিমালা ও নিয়মাবলী সংক্রান্ত বিভিন্ন বিষয়' },
-      { href: '/section45', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী' },
-      { href: '/section46', text: 'প্রকাশনার নীতিমালা ও নিয়মাবলী' },
-      { href: '/section47', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংশোধন' },
-      { href: '/section48', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংরক্ষণ' },
-      { href: '/section49', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী পরিবর্তন' },
-      { href: '/section50', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংযোজন' },
-      { href: '/section51', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী প্রকাশনা' },
-      { href: '/section52', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংরক্ষণ ও পরিবর্তন' },
-      { href: '/section53', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংযোজন ও সংরক্ষণ' },
+      { href: '/section51', text: 'কর চালানপত্র', number: 51 },
+      { href: '/section52', text: 'ক্রেডিট নোট এবং ডেবিট নোট', number: 52 },
+      { href: '/section53', text: 'উৎসে কর কর্তন সনদপত্র', number: 53 },
+      { href: '/section54', text: 'কর দলিলাদি সংক্রান্ত অন্যান্য বিধান', number: 54 },
     ],
   },
   {
     title: 'সপ্তম অধ্যায়',
-    subtitle: 'প্রকাশনা ও সংরক্ষণ',
+    subtitle: 'সম্পূরক শুল্ক আরোপ ও আদায়',
     sections: [
-      { href: '/section54', text: 'প্রকাশনা ও সংরক্ষণ' },
-      { href: '/section55', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী' },
-      { href: '/section56', text: 'প্রকাশনার নীতিমালা ও নিয়মাবলী' },
-      { href: '/section57', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংশোধন' },
-      { href: '/section58', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংরক্ষণ' },
-      { href: '/section59', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী পরিবর্তন' },
-      { href: '/section60', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংযোজন' },
-      { href: '/section61', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী প্রকাশনা' },
-      { href: '/section62', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংরক্ষণ ও পরিবর্তন' },
-      { href: '/section63', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংযোজন ও সংরক্ষণ' },
+      { href: '/section55', text: 'সম্পূরক শুল্ক আরোপ', number: 55 },
+      { href: '/section56', text: 'সম্পূরক শুল্ক পরিশোধে দায়ী ব্যক্তি', number: 56 },
+      { href: '/section57', text: 'সম্পূরক শুল্ক আরোপযোগ্য মূল্য', number: 57 },
+      { href: '/section58', text: 'তামাক এবং এ্যালকোহলযুক্ত পণ্যের ক্ষেত্রে বিশেষ পরিকল্প (special scheme)', number: 58 },
+      { href: '/section59', text: 'আমদানির উপর সম্পূরক শুল্ক আদায়', number: 59 },
+      { href: '/section60', text: 'সরবরাহের উপর সম্পূরক শুল্ক আদায়', number: 60 },
+      { href: '/section61', text: 'সম্পূরক শুল্ক আরোপযোগ্য পণ্যের অনুমিত সরবরাহ', number: 61 },
+      { href: '/section62', text: 'সম্পূরক শুল্কের নিমিত্ত হ্রাসকারী সমন্বয়', number: 62 },
     ],
   },
   {
     title: 'অষ্টম অধ্যায়',
-    subtitle: 'উন্নত নীতিমালা ও নিয়মাবলী প্রকাশনা',
+    subtitle: 'টার্নওভার কর আরোপ ও আদায়',
     sections: [
-      { href: '/section64', text: 'উন্নত নীতিমালা ও নিয়মাবলী প্রকাশনা' },
-      { href: '/section65', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী' },
-      { href: '/section66', text: 'প্রকাশনার নীতিমালা ও নিয়মাবলী' },
-      { href: '/section67', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংশোধন' },
-      { href: '/section68', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংরক্ষণ' },
-      { href: '/section69', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী পরিবর্তন' },
-      { href: '/section70', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংযোজন' },
-      { href: '/section71', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী প্রকাশনা' },
-      { href: '/section72', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংরক্ষণ ও পরিবর্তন' },
-      { href: '/section73', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংযোজন ও সংরক্ষণ' },
+      { href: '/section63', text: 'টার্নওভার কর আরোপ ও আদায়', number: 63 },
     ],
   },
   {
     title: 'নবম অধ্যায়',
-    subtitle: 'নীতিমালা ও নিয়মাবলী সংক্রান্ত বিভিন্ন বিষয়',
+    subtitle: 'দাখিলপত্র পেশ ও উহার সংশোধন',
     sections: [
-      { href: '/section74', text: 'নীতিমালা ও নিয়মাবলী সংক্রান্ত বিভিন্ন বিষয়' },
-      { href: '/section75', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী' },
-      { href: '/section76', text: 'প্রকাশনার নীতিমালা ও নিয়মাবলী' },
-      { href: '/section77', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংশোধন' },
-      { href: '/section78', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংরক্ষণ' },
-      { href: '/section79', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী পরিবর্তন' },
-      { href: '/section80', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংযোজন' },
-      { href: '/section81', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী প্রকাশনা' },
-      { href: '/section82', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংরক্ষণ ও পরিবর্তন' },
-      { href: '/section83', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংযোজন ও সংরক্ষণ' },
+      { href: '/section64', text: 'দাখিলপত্র পেশ', number: 64 },
+      { href: '/section65', text: 'বিলম্বে দাখিলপত্র পেশ', number: 65 },
+      { href: '/section66', text: 'দাখিলপত্রে সংশোধন', number: 66 },
+      { href: '/section67', text: 'পূর্ণ, অতিরিক্ত বা বিকল্প দাখিলপত্র পেশ', number: 67 },
     ],
   },
   {
     title: 'দশম অধ্যায়',
-    subtitle: 'প্রকাশনা ও সংশোধন',
+    subtitle: 'ঋণাত্মক নীট অর্থ জের টানা ও ফেরত প্রদান',
     sections: [
-      { href: '/section84', text: 'প্রকাশনা ও সংশোধন' },
-      { href: '/section85', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী' },
-      { href: '/section86', text: 'প্রকাশনার নীতিমালা ও নিয়মাবলী' },
-      { href: '/section87', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংশোধন' },
-      { href: '/section88', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংরক্ষণ' },
-      { href: '/section89', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী পরিবর্তন' },
-      { href: '/section90', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংযোজন' },
-      { href: '/section91', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী প্রকাশনা' },
-      { href: '/section92', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংরক্ষণ ও পরিবর্তন' },
-      { href: '/section93', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংযোজন ও সংরক্ষণ' },
+      { href: '/section68', text: 'ঋণাত্নক নীট অর্থ জের টানা ও ফেরত প্রদান', number: 68 },
+      { href: '/section69', text: 'ঋণাত্মক নীট পরিমাণ অর্থ জের টানা ব্যতিরেকে ফেরৎ প্রদান', number: 69 },
+      { href: '/section70', text: 'ফেরৎ প্রদত্ত অর্থের প্রয়োগ', number: 70 },
+      { href: '/section71', text: 'কূটনৈতিক এবং অন্যান্য আন্তর্জাতিক সংস্থা কর্তৃক প্রদত্ত কর ফেরত প্রদান', number: 71 },
+      { href: '/section72', text: 'অতিরিক্ত পরিশোধিত কর সমন্বয় বা ফেরত প্রদান', number: 72 },
     ],
   },
   {
     title: 'একাদশ অধ্যায়',
-    subtitle: 'প্রকাশনা ও পরিবর্তন',
+    subtitle: '[***] কর নির্ধারণ',
     sections: [
-      { href: '/section94', text: 'প্রকাশনা ও পরিবর্তন' },
-      { href: '/section95', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী' },
-      { href: '/section96', text: 'প্রকাশনার নীতিমালা ও নিয়মাবলী' },
-      { href: '/section97', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংশোধন' },
-      { href: '/section98', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংরক্ষণ' },
-      { href: '/section99', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী পরিবর্তন' },
-      { href: '/section100', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংযোজন' },
-      { href: '/section101', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী প্রকাশনা' },
-      { href: '/section102', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংরক্ষণ ও পরিবর্তন' },
-      { href: '/section103', text: 'প্রকাশিত নীতিমালা ও নিয়মাবলী সংযোজন ও সংরক্ষণ' },
+      { href: '/section73', text: 'কর নির্ধারণ', number: 73 },
+      { href: '/section74', text: 'সরবরাহ গ্রহীতার মিথ্যা ঘোষণা', number: 74 },
+      { href: '/section75', text: 'সরবরাহকারীর মিথ্যা বর্ণনা', number: 75 },
+      { href: '/section76', text: 'কর সুবিধা প্রদান ও রদকরণ (negation)', number: 76 },
+      { href: '/section77', text: 'কর নির্ধারণী নোটিশের গ্রহণযোগ্যতা', number: 77 },
+    ],
+  },
+  {
+    title: 'দ্বাদশ অধ্যায়',
+    subtitle: 'মূল্য সংযোজন কর কর্তৃপক্ষ',
+    sections: [
+      { href: '/section78', text: 'মূল্য সংযোজন কর কর্তৃপক্ষ এবং উহার কর্মকর্তা', number: 78 },
+      { href: '/section79', text: 'মূসক কর্তৃপক্ষের দায়িত্ব এবং কর্তব্য', number: 79 },
+      { href: '/section80', text: 'মূসক কর্মকর্তার আদেশ বা সিদ্ধান্ত সংশোধনে বোর্ডের ক্ষমতা', number: 80 },
+      { href: '/section81', text: 'ক্ষমতা অর্পণ', number: 81 },
+      { href: '/section82', text: 'মূসক কর্মকর্তাকে সহায়তা প্রদান', number: 82 },
+      { href: '/section83', text: 'মূসক কর্মকর্তার প্রবেশ ও তল্লাশির ক্ষমতা', number: 83 },
+      { href: '/section84', text: 'পণ্য জব্দকরণ ও উহার নিষ্পত্তি', number: 84 },
+      { href: '/section85', text: '[ব্যর্থতা, অনিয়ম বা কর ফাঁকির ক্ষেত্রে] জরিমানা আরোপ', number: 85 },
+      { href: '/section86', text: 'ন্যায় নির্ণয়ার্থ (adjudication) কার্যধারা গ্রহণে মূসক কর্মকর্তাগণের আর্থিক সীমা', number: 86 },
+      { href: '/section87', text: 'সমন প্রেরণ', number: 87 },
+      { href: '/section88', text: 'কাস্টমস কর্মকর্তাগণের দায়িত্ব এবং ক্ষমতা', number: 88 },
+      { href: '/section89', text: 'গোপনীয়তা', number: 89 },
+      { href: '/section89.1', text: 'মূল্য সংযোজন কর আইনের ক্ষেত্রে অন্যান্য আইনের প্রয়োগ', number: 89.1 },
+    ],
+  },
+  {
+    title: 'ত্রয়োদশ অধ্যায়',
+    subtitle: 'নিরীক্ষা এবং অনুসন্ধান',
+    sections: [
+      { href: '/section90', text: 'করদাতার অর্থনৈতিক কার্যক্রম নিরীক্ষা এবং অনুসন্ধান', number: 90 },
+      { href: '/section90.1', text: 'বার্ষিক নিরীক্ষিত আর্থিক বিবরণী দাখিল', number: 90.1 },
+      { href: '/section91', text: 'মূসক কর্মকর্তাগণের ক্ষমতা', number: 91 },
+      { href: '/section92', text: 'তত্ত্বাবধানাধীন সরবরাহ, পর্যবেক্ষণ ও নজরদারী', number: 92 },
+      { href: '/section93', text: 'একাধিক দাপ্তরিক নিরীক্ষা', number: 93 },
+      { href: '/section94', text: 'বিশেষ নিরীক্ষা', number: 94 },
+    ],
+  },
+  {
+    title: 'চতুর্দশ অধ্যায়',
+    subtitle: 'বকেয়া কর আদায়',
+    sections: [
+      { href: '/section95', text: 'বকেয়া কর আদায়', number: 95 },
+      { href: '/section96', text: 'দেওয়ানী কার্যবিধির অধীন মূসক কর্মকর্তার ক্ষমতা', number: 96 },
+      { href: '/section97', text: 'বকেয়া কর আদায়ের ক্ষেত্রে অধিক্ষেত্রের পরিবর্তন', number: 96 },
+      { href: '/section98', text: 'আদায়কৃত অর্থ বা জামানতের বিলিবন্টন', number: 98 },
+      { href: '/section99', text: 'খেলাপি করদাতার স্থাবর সম্পত্তির উপর সরকারের পূর্বস্বত্ব (lien) ও উহার ক্রোক', number: 99 },
+      { href: '/section100', text: 'পণ্য জব্দকরণ, উহার বিক্রয় ও বিক্রয়লব্ধ অর্থের বিলিবন্টন', number: 100 },
+      { href: '/section101', text: 'প্রতিনিধির দায়দায়িত্ব এবং বাধ্যবাধকতা', number: 101 },
+      { href: '/section102', text: 'রিসিভারের দায়িত্ব', number: 102 },
+      { href: '/section103', text: 'কোম্পানী বা ব্যক্তি সংঘ বা সম্পত্তি উন্নয়নে যৌথ উদ্যোগের পরিচালক বা উদ্যোক্তার দায়', number: 103 },
+      { href: '/section104', text: 'অংশীদারি কারবার বা অনিগমিত সংঘের ধারাবাহিকতা', number: 104 },
+      { href: '/section105', text: 'করদাতার মৃত্যু বা দেউলিয়াত্ব ঘোষণা', number: 105 },
+      { href: '/section106', text: 'বকেয়া কর কিস্তিতে পরিশোধ', number: 106 },
+    ],
+  },
+  {
+    title: 'পঞ্চদশ অধ্যায়',
+    subtitle: 'ফরম, নোটিশ এবং রেকর্ডপত্র সংরক্ষণ',
+    sections: [
+      { href: '/section107', text: 'রেকর্ডপত্র এবং হিসাব সংরক্ষণ', number: 107 },
+      { href: '/section108', text: 'ফরম, নোটিশ এবং দলিলাদির সত্যায়ন', number: 108 },
+      { href: '/section109', text: 'নোটিশ জারি', number: 109 },
+      { href: '/section110', text: 'দলিলপত্রের বৈধতা', number: 110 },
+    ],
+  },
+  {
+    title: 'ষোড়শ অধ্যায়',
+    subtitle: 'অপরাধ, বিচার ও দণ্ড',
+    sections: [
+      { href: '/section111', text: 'মূসক নিবন্ধন বা টার্নওভার কর সনদপত্র ও কর দলিল সংক্রান্ত অপরাধ ও দণ্ড', number: 111 },
+      { href: '/section112', text: 'মিথ্যা বা বিভ্রান্তিকর বিবৃতি বা বিবরণ প্রদানের অপরাধ ও দণ্ড', number: 112 },
+      { href: '/section113', text: 'প্রতিবন্ধকতা সৃষ্টির অপরাধ ও দণ্ড', number: 113 },
+      { href: '/section114', text: 'অপরাধের তদন্ত, বিচার ও আপীল', number: 114 },
+      { href: '/section115', text: 'জুডিসিয়াল ম্যাজিস্ট্রেট বা মেট্রোপলিটন ম্যাজিস্ট্রেটের অতিরিক্ত ক্ষমতা', number: 115 },
+      { href: '/section116', text: 'কোম্পানী, ব্যক্তি সংঘ বা সম্পত্তি উন্নয়নে যৌথ উদ্যোগ কর্তৃক অপরাধ সংঘটন', number: 116 },
+      { href: '/section117', text: 'অপরাধে সহায়তাকারী', number: 117 },
+      { href: '/section118', text: 'মামলা দায়েরের পূর্বানুমোদন।', number: 118 },
+      { href: '/section119', text: 'অপরাধের আপোষরফা', number: 119 },
+      { href: '/section120', text: 'অর্থদণ্ড প্রদেয় করের অতিরিক্ত', number: 120 },
+    ],
+  },
+  {
+    title: 'সপ্তদশ অধ্যায়',
+    subtitle: 'আপীল ও রিভিশন',
+    sections: [
+      { href: '/section121', text: 'কমিশনার (আপীল) এর নিকট আপীল', number: 121 },
+      { href: '/section122', text: '[আপিল ট্রাইব্যুনালে] আপীল', number: 122 },
+      { href: '/section123', text: 'কার্যধারায় সাক্ষ্য প্রমাণের দায়', number: 123 },
+      { href: '/section124', text: 'হাইকোর্ট বিভাগে [আপিল]', number: 124 },
+      { href: '/section125', text: 'বিকল্প উপায়ে বিরোধ নিষ্পত্তি', number: 125 },
+    ],
+  },
+  {
+    title: 'অষ্টাদশ অধ্যায়',
+    subtitle: 'বিবিধ',
+    sections: [
+      { href: '/section126', text: 'অব্যাহতি', number: 126 },
+      { href: '/section126.1', text: 'পুরস্কার ও কর্মদক্ষতা প্রণোদনা প্রদান', number: 126.1 },
+      { href: '/section127', text: 'প্রদেয় করের উপর সুদ আরোপ', number: 127 },
+      { href: '/section127.1', text: 'সরকারি পাওনা অবলোপনের ক্ষমতা', number: 127.1 },
+      { href: '/section127.2', text: 'কতিপয় পণ্য বা সেবার ক্ষেত্রে কর পরিশোধের সময় ও পদ্ধতি নির্ধারণ', number: 127.2 },
+      { href: '/section128', text: 'অনলাইনে কার্যসম্পাদন, দাখিলপত্র পেশকরণ এবং কর পরিশোধ, ইত্যাদি', number: 128 },
+      { href: '/section129', text: 'আদালতে মামলা দায়েরের ক্ষেত্রে প্রতিবন্ধকতা', number: 129 },
+      { href: '/section129.1', text: 'সরল বিশ্বাসে কৃত কাজকর্ম রক্ষণ', number: 129.1 },
+      { href: '/section130', text: 'মূসক পরামর্শক নিয়োগ', number: 130 },
+      { href: '/section131', text: 'করণিক ত্রুটি, ইত্যাদির সংশোধন', number: 131 },
+      { href: '/section132', text: 'দলিলপত্রের প্রত্যায়িত অনুলিপি', number: 132 },
+      { href: '/section133', text: 'মূসক ছাড়পত্র প্রদান', number: 133 },
+      { href: '/section134', text: 'ব্যক্তি মালিকানাধীন প্রতিষ্ঠানের মাধ্যমে কার্যক্রম সম্পাদন', number: 134 },
+      { href: '/section135', text: 'বিধি প্রণয়নের ক্ষমতা', number: 135 },
+      { href: '/section135.1', text: 'মূসক কর্মকর্তা ও কর্মচারীদের ইউনিফর্ম এবং ভাতা নির্ধারণ', number: 135.1 },
+      { href: '/section136', text: 'ইংরেজিতে অনূদিত পাঠ প্রকাশ', number: 136 },
+      { href: '/section137', text: 'রহিতকরণ ও হেফাজত', number: 137 },
+      { href: '/section138', text: 'ক্রান্তিকালীন কর হিসাব', number: 138 },
+      { href: '/section139', text: 'এই আইন প্রবর্তনের পর আবদ্ধ চুক্তি', number: 139 },
+    ],
+  },
+  {
+    title: 'তফসিল',
+    sections: [
+      { 
+        href: '/pdfs/schedule.pdf', 
+        text: 'তফসিল',
+        isPdf: true
+      },
+    ],
+  },
+  {
+    title: 'গেজেটেড অনুলিপি',
+    sections: [
+      { 
+        href: '/pdfs/gazette.pdf', 
+        text: 'মূল্য সংযোজন কর ও সম্পূরক শুল্ক আইন, ২০১২ এর কার্যকারিতা সংক্রান্ত গেজেট কপি',
+        isPdf: true
+      },
     ],
   },
 ];
 
 const HomePage = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  const handlePdfClick = (e, href) => {
+    e.preventDefault();
+    window.open(href, '_blank');
+  };
+
+  // Flatten all sections for searching
+  const allSections = useMemo(() => {
+    const sections = [];
+    chapters.forEach(chapter => {
+      if (chapter.sections[0]?.subtitle) {
+        // For chapters with subsections
+        chapter.sections.forEach(section => {
+          section.subsections?.forEach(subsection => {
+            sections.push({
+              ...subsection,
+              chapterTitle: chapter.title || '',
+              chapterSubtitle: chapter.subtitle || '',
+              sectionSubtitle: section.subtitle || ''
+            });
+          });
+        });
+      } else {
+        // For regular chapters
+        chapter.sections?.forEach(section => {
+          sections.push({
+            ...section,
+            chapterTitle: chapter.title || '',
+            chapterSubtitle: chapter.subtitle || '',
+            sectionSubtitle: ''
+          });
+        });
+      }
+    });
+    return sections;
+  }, []);
+
+  // Filter sections based on search term
+  const filteredSections = useMemo(() => {
+    if (!searchTerm.trim()) return [];
+    
+    const term = searchTerm.toLowerCase();
+    return allSections.filter(section => {
+      const text = section.text?.toLowerCase() || '';
+      const chapterTitle = section.chapterTitle?.toLowerCase() || '';
+      const chapterSubtitle = section.chapterSubtitle?.toLowerCase() || '';
+      const sectionSubtitle = section.sectionSubtitle?.toLowerCase() || '';
+      
+      return (
+        text.includes(term) ||
+        chapterTitle.includes(term) ||
+        chapterSubtitle.includes(term) ||
+        sectionSubtitle.includes(term)
+      );
+    });
+  }, [searchTerm, allSections]);
+
+  const regularChapters = chapters.filter(ch => 
+    ch.title !== 'তফসিল' && ch.title !== 'গেজেটেড অনুলিপি'
+  );
+  
+  const specialChapters = chapters.filter(ch => 
+    ch.title === 'তফসিল' || ch.title === 'গেজেটেড অনুলিপি'
+  );
+
   return (
-    <div className="container mx-auto max-w-7xl p-6">
-      {chapters.map((chapter, index) => (
-        <div key={index}>
-          <div className="bg-green-500 text-red-950 text-center p-4 mb-4 rounded">
-            <h1 className="text-xl font-bold">{chapter.title}</h1>
-            <h2 className="text-md">{chapter.subtitle}</h2>
-          </div>
-          <div className="bg-white p-4 mb-4 rounded shadow">
-            <ul className="list-decimal list-inside text-blue-600">
-              {chapter.sections.map((section, idx) => (
-                <li key={idx}>
-                  <Link href={section.href}>{section.text}</Link>
-                </li>
-              ))}
-            </ul>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50">
+      {/* Header */}
+      <header className="bg-gradient-to-r from-green-600 to-blue-700 text-white shadow-lg relative">
+        <div className="container mx-auto max-w-7xl px-6 py-8">
+          <h1 className="text-3xl md:text-4xl font-bold mb-2">মূল্য সংযোজন কর ও সম্পূরক শুল্ক আইন, ২০১২</h1>
+          <p className="text-lg opacity-90">Value Added Tax and Supplementary Duty Act, 2012</p>
+          
+          {/* Search Bar */}
+          <div className="mt-6 max-w-2xl relative">
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="আইন অনুসন্ধান করুন... (বাংলা বা ইংরেজি)"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                onFocus={() => setIsSearchOpen(true)}
+                className="w-full px-4 py-3 pl-12 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent"
+              />
+              
+              {/* Search Icon SVG */}
+              <svg 
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/70 w-5 h-5" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  strokeWidth={2} 
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" 
+                />
+              </svg>
+              
+              {/* Clear button */}
+              {searchTerm && (
+                <button
+                  onClick={() => setSearchTerm('')}
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white/70 hover:text-white"
+                >
+                  ✕
+                </button>
+              )}
+            </div>
+
+            {/* Search Results Dropdown */}
+            {isSearchOpen && searchTerm && (
+              <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-lg shadow-xl max-h-96 overflow-y-auto z-50">
+                {filteredSections.length > 0 ? (
+                  <div className="py-2">
+                    <div className="px-4 py-2 text-sm text-gray-500 border-b">
+                      {filteredSections.length}টি ফলাফল পাওয়া গেছে
+                    </div>
+                    {filteredSections.map((section, index) => (
+                      <Link
+                        key={index}
+                        href={section.href}
+                        onClick={() => setIsSearchOpen(false)}
+                        className="block px-4 py-3 hover:bg-blue-50 border-b last:border-b-0 transition-colors duration-200"
+                      >
+                        <div className="flex justify-between items-start">
+                          <span className="font-medium text-blue-700">ধারা {section.number}</span>
+                          <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
+                            {section.chapterTitle}
+                          </span>
+                        </div>
+                        <p className="text-gray-800 mt-1">{section.text}</p>
+                        {section.sectionSubtitle && (
+                          <p className="text-sm text-gray-600 mt-1">{section.sectionSubtitle}</p>
+                        )}
+                        <p className="text-xs text-gray-500 mt-1">{section.chapterSubtitle}</p>
+                      </Link>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="p-4 text-center text-gray-500">
+                    কোন ফলাফল পাওয়া যায়নি। অন্য শব্দ দিয়ে চেষ্টা করুন।
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         </div>
-      ))}
+
+        {/* Click outside to close search results */}
+        {isSearchOpen && (
+          <div 
+            className="fixed inset-0 z-40" 
+            onClick={() => setIsSearchOpen(false)}
+          />
+        )}
+      </header>
+
+      {/* Main Content */}
+      <main className="container mx-auto max-w-7xl px-6 py-8">
+        {/* Introduction */}
+        <div className="bg-white rounded-xl shadow-md p-6 mb-8 border-l-4 border-blue-500">
+          <h2 className="text-xl font-semibold text-gray-800 mb-3">আইনের সংক্ষিপ্ত বিবরণ</h2>
+          <p className="text-gray-600">
+            এই আইনটি মূল্য সংযোজন কর, সম্পূরক শুল্ক এবং টার্নওভার কর সম্পর্কিত বিধানাবলী সমন্বিত একটি পূর্ণাঙ্গ আইন। 
+            আইনটি ২০১২ সালে প্রণীত হয় এবং বাংলাদেশের কর ব্যবস্থায় গুরুত্বপূর্ণ ভূমিকা পালন করে আসছে。
+          </p>
+        </div>
+
+        {/* Chapters Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {regularChapters.map((chapter, index) => (
+            <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+              <div className="bg-gradient-to-r from-green-500 to-blue-600 text-white p-4">
+                <h2 className="text-lg font-bold">{chapter.title}</h2>
+                <p className="text-sm opacity-90">{chapter.subtitle}</p>
+              </div>
+              
+              <div className="p-4">
+                {chapter.sections[0]?.subtitle ? (
+                  <div className="space-y-4">
+                    {chapter.sections.map((section, idx) => (
+                      <div key={idx}>
+                        <h3 className="text-md font-semibold text-blue-800 mb-2 border-b border-blue-100 pb-1">
+                          {section.subtitle}
+                        </h3>
+                        <ul className="space-y-1">
+                          {section.subsections?.map((subsection, subIdx) => (
+                            <li key={subIdx} className="flex items-start">
+                              <span className="font-medium text-blue-700 min-w-[2rem]">{subsection.number}</span>
+                              <Link 
+                                href={subsection.href} 
+                                className="text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-200"
+                              >
+                                {subsection.text}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <ul className="space-y-2">
+                    {chapter.sections?.map((section, idx) => (
+                      <li key={idx} className="flex items-start">
+                        <span className="font-medium text-blue-700 min-w-[2rem]">{section.number}</span>
+                        <Link 
+                          href={section.href} 
+                          className="text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-200"
+                        >
+                          {section.text}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Special Chapters */}
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+          {specialChapters.map((specialChapter, idx) => (
+            <div key={idx} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+              <div className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white p-4">
+                <h2 className="text-lg font-bold">{specialChapter.title}</h2>
+                <p className="text-sm opacity-90">{specialChapter.subtitle}</p>
+              </div>
+              <div className="p-4">
+                <ul className="space-y-2">
+                  {specialChapter.sections?.map((section, secIdx) => (
+                    <li key={secIdx} className="flex items-start">
+                      {section.isPdf ? (
+                        <a 
+                          href={section.href} 
+                          onClick={(e) => handlePdfClick(e, section.href)}
+                          className="text-purple-600 hover:text-purple-800 hover:underline transition-colors duration-200 flex items-center"
+                        >
+                          <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                          </svg>
+                          {section.text}
+                        </a>
+                      ) : (
+                        <Link 
+                          href={section.href} 
+                          className="text-purple-600 hover:text-purple-800 hover:underline transition-colors duration-200"
+                        >
+                          {section.text}
+                        </Link>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      </main>
     </div>
   );
 };

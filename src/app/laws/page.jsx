@@ -1,4 +1,4 @@
-import Master from '@/component/master/Master';
+import Master from '@/component/laws/Master';
 import Law2012 from '@/component/laws/Law2012';
 import React from 'react';
 
