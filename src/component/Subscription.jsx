@@ -32,3 +32,32 @@ const SubscriptionPlans = () => {
 };
 
 export default SubscriptionPlans;
+
+
+
+
+/* 
+
+ {Subscription Section}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                className="bg-white/80 backdrop-blur-md p-6 rounded-lg shadow-md max-w-md mx-auto"
+              >
+                <p className="text-gray-700 text-justify mb-4">
+                  বার্ষিক সাবস্ক্রিপশনে আনলক করুন সব VAT, কাস্টমস, বন্ড ও পরীক্ষার সহায়িকা বইয়ের সফটকপি। 
+                  যেকোনো সময় অনলাইনে পড়ুন এবং এক বছরের জন্য আপডেটেড কনটেন্ট উপভোগ করুন।
+                </p>
+                <div className="flex justify-center">
+                <a
+                  href="/subscribe"
+                  className="w-48 py-2 rounded-full bg-gradient-to-r from-green-600 to-green-800 text-white font-medium shadow-lg text-center hover:scale-105 transition-transform flex items-center justify-center gap-2"
+                >
+                  <FiBell size={16} />
+                  Subscribe
+                </a>
+                </div>
+              </motion.div>
+
+*/

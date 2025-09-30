@@ -11,27 +11,21 @@ import About from '@/component/About';
 import NewsLetter from '@/component/NewsLetter';
 import FlagBackground from '@/component/FlagBackground';
 
-const HOME = () => {
+const Home = () => {
   return (
     <Master>
-      <HeroSection/>
-      <PopularLaws/>
-      <LatestUpdate/>
-      
-      <FlagBackground>
-        <Publication/>
-        <Consultancy/>
-        <Blogs/>
-      </FlagBackground>
-
-      <About/>
-
-      <FlagBackground>
-      <NewsLetter/>
-      </FlagBackground>
-
+      <HeroSection />
+      <PopularLaws />
+      <LatestUpdate />
+      <Publication />
+      <div className="bg-gradient-to-br from-gray-900 to-gray-950 py-10">
+        <Consultancy />
+      </div>
+      <Blogs />
+      <About />
+      <NewsLetter />
     </Master>
   );
 };
 
-export default HOME;
+export default Home;
