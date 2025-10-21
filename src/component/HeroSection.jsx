@@ -86,24 +86,21 @@ const ProductCard = ({ book, isActive, onClick }) => {
           <p className="text-gray-400 text-sm mb-2">By {book.writer}</p>
           
           <div className="flex items-center justify-between mb-3">
-            <div className="flex items-center gap-1">
-              <FaStar className="text-yellow-400 text-sm" />
-              <span className="text-gray-300 font-medium">{book.rating}</span>
-              <span className="text-gray-500 text-sm">/5</span>
-            </div>
-            
-            <div className="text-right">
-              <p className={`font-bold text-red-400 ${isActive ? 'text-2xl' : 'text-xl'}`}>
-                ${book.price.toFixed(2)}
-              </p>
-            </div>
+          <div className="flex items-center gap-1">
+            <FaStar className="text-yellow-400 text-sm" />
+            <span className="text-gray-300 font-medium">{book.rating}</span>
+            <span className="text-gray-500 text-sm">/5</span>
           </div>
 
-          {book.description && (
-            <p className="text-gray-400 text-sm line-clamp-2 mb-3">
-              {book.description}
-            </p>
-          )}
+          <div className="text-right">
+          <p className={`font-bold text-red-400 ${isActive ? 'text-2xl' : 'text-md'}`}>
+            {book.price.toLocaleString('bn-BD')}৳
+          </p>
+        </div>
+
+        </div>
+
+
         </div>
 
         {/* Hover Actions - Only show for active card */}
@@ -181,7 +178,7 @@ const products = [
     name: 'VAT Guide 2024',
     writer: 'John Doe',
     image: '/Books/vatguide.jpeg',
-    price: 29.99,
+    price: 350,
     rating: 4.5,
     description: 'Complete guide to Value Added Tax with latest updates',
     category: 'VAT'
@@ -191,7 +188,7 @@ const products = [
     name: 'Customs Regulations',
     writer: 'Jane Smith',
     image: '/Books/customguide.jpeg',
-    price: 34.99,
+    price: 270,
     rating: 4.7,
     description: 'Comprehensive customs regulations and procedures guide',
     category: 'Customs'
@@ -201,7 +198,7 @@ const products = [
     name: 'Tax Master',
     writer: 'Alice Johnson',
     image: '/Books/porikkhasohayika.jpeg',
-    price: 39.99,
+    price: 300,
     rating: 4.8,
     description: 'Master taxation principles and practices',
     category: 'Tax'
@@ -211,7 +208,7 @@ const products = [
     name: 'Bond Management',
     writer: 'Bob Brown',
     image: '/Books/nan.jpeg',
-    price: 24.99,
+    price: 220,
     rating: 4.3,
     description: 'Complete bond management and compliance guide',
     category: 'Finance'
@@ -221,7 +218,7 @@ const products = [
     name: 'Legal Handbook',
     writer: 'Charlie Davis',
     image: '/Books/vatguide.jpeg',
-    price: 31.99,
+    price: 230,
     rating: 4.6,
     description: 'Essential legal handbook for professionals',
     category: 'Law'
