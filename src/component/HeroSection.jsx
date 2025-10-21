@@ -27,8 +27,8 @@ const ProductCard = ({ book, isActive, onClick }) => {
     <motion.div
       className={`relative cursor-pointer ${
         isActive 
-          ? 'w-80 h-96 z-10' 
-          : 'w-64 h-80 opacity-80 scale-90'
+          ? 'w-64 h-80 z-10' 
+          : 'w-48 h-64 opacity-80 scale-90'
       } transition-all duration-500 ease-in-out`}
       onClick={onClick}
       whileHover={{ scale: isActive ? 1.05 : 0.95 }}
@@ -139,10 +139,10 @@ const calculators = [
     title: "VAT",
     component: (
       <Calculator 
-        description="Calculate VAT quickly and accurately for any transaction." 
+        description="যেকোনো লেনদেনের জন্য দ্রুত এবং নির্ভুলভাবে ভ্যাট গণনা করুন।" 
         primaryField="Amount" 
         defaultRate={15} 
-        rateLabel="VAT Rate (%)" 
+        rateLabel="ভ্যাট হার (%)" 
         calcType="vat" 
       />
     )
@@ -151,10 +151,10 @@ const calculators = [
     title: "Income Tax",
     component: (
       <Calculator 
-        description="Compute your yearly or monthly income tax easily." 
+        description="বার্ষিক বা মাসিক আয়কর সহজে হিসাব করুন।" 
         primaryField="Income" 
         defaultRate={10} 
-        rateLabel="Tax Rate (%)" 
+        rateLabel="কর হার (%)" 
         calcType="income" 
       />
     )
@@ -163,15 +163,16 @@ const calculators = [
     title: "Customs",
     component: (
       <Calculator 
-        description="Estimate customs duty for imported goods." 
+        description="আমদানিকৃত পণ্যের জন্য কাস্টমস শুল্ক অনুমান করুন।" 
         primaryField="Item Value" 
         defaultRate={25} 
-        rateLabel="Duty Rate (%)" 
+        rateLabel="শুল্ক হার (%)" 
         calcType="customs" 
       />
     )
   },
 ]
+
 
 // Mock product data
 const products = [
@@ -359,7 +360,7 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7 }}
-                className="text-3xl md:text-3xl font-extrabold text-white leading-snug text-center"
+                className="text-3xl md:text-3xl font-extrabold text-white leading-snug text-center mb-2"
               >
                 <span className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">
                   বাংলাদেশের ট্যাক্স, ভ্যাট, কাস্টমস আইন
@@ -372,11 +373,11 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: 60 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="relative mt-8"
+                className="relative mt-0"
               >
                 {/* Section Title */}
-                <div className="text-center mb-8">
-                  <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                <div className="text-center mb-10">
+                  <h2 className="text-2xl md:text-2xl font-bold text-white mb-2">
                     <span className="bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
                       জনপ্রিয় বইসমূহ
                     </span>
@@ -402,7 +403,7 @@ export default function HeroSection() {
                   </button>
 
                   {/* Products Slider */}
-                  <div className="flex items-center justify-center gap-4 px-12">
+                  <div className="flex items-center justify-center gap-4 px-12 h-64">
                     {visibleProducts.map((product, index) => (
                       <ProductCard
                         key={product.id}
@@ -418,7 +419,7 @@ export default function HeroSection() {
                 </div>
 
                 {/* Dots Indicator */}
-                <div className="flex justify-center mt-6 gap-2">
+                <div className="flex justify-center mt-12 gap-2">
                   {products.map((_, index) => (
                     <button
                       key={index}
