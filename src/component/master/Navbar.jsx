@@ -115,7 +115,12 @@ const menuItems = [
       { name: 'Others', href: '/publications/research-analysis' },
     ]
    },
-  { name: 'Login', href: '/login', icon: UserIcon },
+  { name: 'Login', 
+    submenu: [
+      { name: 'Login', href: '/publications/annual-report' },
+      { name: 'Subscribe', href: '/publications/tax-statistics' },
+    ]
+   },
   { name: 'Cart', href: '/cart', icon: ShoppingCartIcon, onlyIcon: true },
 ]
 

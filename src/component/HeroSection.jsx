@@ -175,7 +175,7 @@ const calculators = [
 const products = [
   {
     id: '1',
-    name: 'VAT Guide 2024',
+    name: 'ভ্যাট গাইড 2024',
     writer: 'John Doe',
     image: '/Books/vatguide.jpeg',
     price: 350,
@@ -185,8 +185,8 @@ const products = [
   },
   {
     id: '2',
-    name: 'Customs Regulations',
-    writer: 'Jane Smith',
+    name: 'কাস্টম গাইড',
+    writer: 'Abu Sufian',
     image: '/Books/customguide.jpeg',
     price: 270,
     rating: 4.7,
@@ -195,8 +195,8 @@ const products = [
   },
   {
     id: '3',
-    name: 'Tax Master',
-    writer: 'Alice Johnson',
+    name: 'পরীক্ষা সহায়িকা',
+    writer: 'Abu Sufian',
     image: '/Books/porikkhasohayika.jpeg',
     price: 300,
     rating: 4.8,
@@ -205,8 +205,8 @@ const products = [
   },
   {
     id: '4',
-    name: 'Bond Management',
-    writer: 'Bob Brown',
+    name: 'বন্ড গাইড',
+    writer: 'Abu Sufian',
     image: '/Books/nan.jpeg',
     price: 220,
     rating: 4.3,
@@ -215,8 +215,8 @@ const products = [
   },
   {
     id: '5',
-    name: 'Legal Handbook',
-    writer: 'Charlie Davis',
+    name: 'ভ্যাট গাইড',
+    writer: 'Abu Sufian',
     image: '/Books/vatguide.jpeg',
     price: 230,
     rating: 4.6,

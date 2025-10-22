@@ -9,7 +9,6 @@ import Consultancy from '@/component/Consultancy';
 import Subscription from '@/component/Subscription';
 import About from '@/component/About';
 import NewsLetter from '@/component/NewsLetter';
-import FlagBackground from '@/component/FlagBackground';
 
 const Home = () => {
   return (
@@ -18,9 +17,7 @@ const Home = () => {
       <PopularLaws />
       <LatestUpdate />
       <Publication />
-      <div className="bg-gradient-to-br from-gray-900 to-gray-950 py-10">
-        <Consultancy />
-      </div>
+      <Consultancy />
       <Blogs />
       <About />
       <NewsLetter />

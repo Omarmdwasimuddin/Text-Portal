@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import PublicationCard from '@/component/publication/PublicationCard';
 
-// Mock data
 const books = [
   {
     id: '1',
@@ -59,7 +58,6 @@ const books = [
 
 export default function PublicationPage() {
   const [selectedCategory, setSelectedCategory] = useState('all');
-
   const categories = ['all', ...new Set(books.map(book => book.category))].filter(Boolean);
 
   const filteredBooks = selectedCategory === 'all' 
@@ -67,20 +65,20 @@ export default function PublicationPage() {
     : books.filter(book => book.category === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-950 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-white via-green-50 to-green-100 py-8">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-red-400 via-red-500 to-red-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-green-600 via-red-500 to-green-700 bg-clip-text text-transparent">
               আমাদের প্রকাশনা
             </span>
           </h1>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Discover our collection of professional books and guides
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            Discover our collection of professional tax and finance guides
           </p>
           <div className="mt-4 flex justify-center">
-            <div className="w-32 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full" />
+            <div className="w-32 h-1 bg-gradient-to-r from-green-600 to-red-500 rounded-full" />
           </div>
         </div>
 
@@ -92,8 +90,8 @@ export default function PublicationPage() {
               onClick={() => setSelectedCategory(category)}
               className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${
                 selectedCategory === category
-                  ? 'bg-red-500 text-white shadow-lg shadow-red-500/25'
-                  : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                  ? 'bg-green-600 text-white shadow-lg shadow-green-400/30'
+                  : 'bg-white text-red-700 border border-green-300 hover:bg-green-400'
               }`}
             >
               {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -111,7 +109,7 @@ export default function PublicationPage() {
         {/* Empty State */}
         {filteredBooks.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-gray-400 text-xl">No books found in this category.</p>
+            <p className="text-gray-500 text-xl">No books found in this category.</p>
           </div>
         )}
       </div>
