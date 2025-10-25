@@ -175,12 +175,12 @@ export default function OurServicesSection() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center justify-center p-2 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full mb-4 shadow-lg">
             <MdWorkspacePremium className="text-white mr-2" />
-            <span className="text-white text-sm font-bold uppercase tracking-wider">আমাদের সেবাসমূহ</span>
+            <span className="text-white text-xl font-bold uppercase tracking-wider">আমাদের সেবাসমূহ</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
             আপনার ব্যবসার জন্য <span className="text-blue-600">সম্পূর্ণ সমাধান</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-md text-gray-600 max-w-3xl mx-auto leading-relaxed">
             ব্যবসায়িক সাফল্যের জন্য প্রয়োজন সঠিক পরিকল্পনা ও আইনি কমপ্লায়েন্স। 
             আমরা আপনাকে দিচ্ছি সম্পূর্ণ গাইডেন্স — শুরু থেকে শেষ পর্যন্ত।
           </p>
