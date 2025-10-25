@@ -15,10 +15,10 @@ const menuItems = [
   { name: 'Service', 
     submenu: [
       { name: 'VAT', href:'/service/vat'},
-      { name: 'Cusotoms', href:'/service/customs'},
+      { name: 'Customs', href:'/service/customs'},
       { name: 'Income Tax', href:'/service/income-tax'},
-      { name: 'RJSC', href:'/service/income-tax'},
-      { name: 'Trade Solutions', href:'/service/income-tax'},
+      { name: 'RJSC', href:'/service/rjsc'},
+      { name: 'Trade Solutions', href:'/service/trade-solutions'},
     ],
    },
   {
@@ -118,7 +118,7 @@ const menuItems = [
   { name: 'Login', 
     submenu: [
       { name: 'Login', href: '/publications/annual-report' },
-      { name: 'Subscribe', href: '/publications/tax-statistics' },
+      { name: 'Subscribe', href: '/subscribe' },
     ]
    },
   { name: 'Cart', href: '/cart', icon: ShoppingCartIcon, onlyIcon: true },

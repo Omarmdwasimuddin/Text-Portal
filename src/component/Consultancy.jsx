@@ -39,7 +39,7 @@ const ConsultancyForm = () => {
             <span className="text-cyan-400">কনসালটেশন সেবা!</span>
           </h1>
           <p className="text-sm sm:text-base mt-4 text-gray-300">
-            সাফল্যের পথে প্রথম পদক্ষেপ নিন। এখনই আপনার ফ্রি কনসালটেশন বুক করুন।
+            Tax & Trade Solution একটি নির্ভরযোগ্য কনসালটেন্সি সেবা প্রদানকারী প্রতিষ্ঠান। আমরা কর, ট্রেড এবং ব্যবসা সংক্রান্ত বিভিন্ন সমস্যার সমাধান প্রদান করি।
           </p>
         </header>
 

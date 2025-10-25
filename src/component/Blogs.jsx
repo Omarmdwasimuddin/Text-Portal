@@ -60,7 +60,7 @@ export default function BlogListPage() {
           <h2 className="text-4xl font-bold tracking-tight bg-gradient-to-r from-green-400 via-red-500 to-red-600 bg-clip-text text-transparent sm:text-5xl lg:text-6xl">
             সর্বশেষ ব্লগ
           </h2>
-          <p className="mt-4 text-xl text-gray-600 leading-relaxed">
+          <p className="mt-4 text-md text-gray-600 leading-relaxed">
             ভ্যাট, কাস্টমস, আয়করসহ বিভিন্ন আইন ও বিধিমালার বিশ্লেষণ, আপডেট এবং সহজ ব্যাখ্যা পড়ুন আমাদের বিশেষজ্ঞদের লেখায়।
           </p>
         </div>
@@ -141,19 +141,7 @@ export default function BlogListPage() {
             </article>
           ))}
         </div>
-
-        {/* View All Button */}
-        <div className="text-center mt-12">
-          <Link
-            href="/blogs"
-            className="inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-red-500 to-red-600 rounded-xl hover:from-red-600 hover:to-red-700 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-red-500/25"
-          >
-            সকল ব্লগ দেখুন
-            <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </Link>
-        </div>
+        
       </div>
     </section>
   );

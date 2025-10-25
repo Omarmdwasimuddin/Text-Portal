@@ -6,7 +6,7 @@ import Tool from '@/component/Tool';
 import Blogs from '@/component/Blogs';
 import Publication from '@/component/publication/Publication';
 import Consultancy from '@/component/Consultancy';
-import Subscription from '@/component/Subscription';
+import OurService from '@/component/OurService';
 import About from '@/component/About';
 import NewsLetter from '@/component/NewsLetter';
 
@@ -19,6 +19,7 @@ const Home = () => {
       <Publication />
       <Consultancy />
       <Blogs />
+      <OurService/>
       <About />
       <NewsLetter />
     </Master>

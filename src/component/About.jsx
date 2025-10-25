@@ -83,9 +83,6 @@ const AboutPlatform = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-cyan-100 rounded-full mb-4">
-            <FaBalanceScale className="text-2xl text-cyan-600" />
-          </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             About the Platform
           </h2>
@@ -100,7 +97,7 @@ const AboutPlatform = () => {
           {sections.map((section, index) => (
             <div
               key={index}
-              className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 text-left border border-gray-100 hover:border-cyan-200 relative overflow-hidden"
+              className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 text-left border border-cyan-600 hover:border-cyan-800 relative overflow-hidden"
             >
               {/* Background Decoration */}
               <div className="absolute top-0 right-0 w-20 h-20 bg-cyan-50 rounded-full -translate-y-10 translate-x-10 group-hover:scale-150 transition-transform duration-300"></div>
@@ -123,21 +120,6 @@ const AboutPlatform = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <div className="bg-white rounded-2xl shadow-lg p-8 max-w-4xl mx-auto border border-gray-100">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Ready to Explore?
-            </h3>
-            <p className="text-gray-600 mb-6 text-lg">
-              আপনার আইনি গবেষণা শুরু করুন আজই
-            </p>
-            <button className="bg-cyan-600 hover:bg-cyan-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-              Get Started
-            </button>
-          </div>
         </div>
       </div>
     </section>
