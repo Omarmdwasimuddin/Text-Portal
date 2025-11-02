@@ -1,5 +1,10 @@
 // tailwind.config.js
 module.exports = {
+  content: [
+    "./src/**/*.{js,ts,jsx,tsx}",  // src ফোল্ডারের সব ফাইল স্ক্যান করবে
+    "./component/**/*.{js,ts,jsx,tsx}", // যদি আলাদা components ফোল্ডার থাকে
+    "./app/**/*.{js,ts,jsx,tsx}",  // Next.js App Router
+  ],
   theme: {
     extend: {
       keyframes: {
@@ -28,4 +33,5 @@ module.exports = {
       },
     },
   },
+  plugins: [],
 };
