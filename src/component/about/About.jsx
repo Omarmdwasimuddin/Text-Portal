@@ -10,10 +10,47 @@ import {
   FaFileContract,
   FaBalanceScale,
   FaChartLine,
-  FaHeart, 
-  FaRocket, 
-  FaArrowRight
+  FaAward, 
+  FaClock, 
+  FaShieldAlt
 } from 'react-icons/fa';
+import { 
+  MdOutlinePayment,
+  MdBusinessCenter
+} from "react-icons/md";
+
+const whyChooseUs = [
+  {
+    icon: <FaAward className="text-2xl" />,
+    title: "অভিজ্ঞ ও লাইসেন্সপ্রাপ্ত কনসালটেন্ট টিম",
+    description: "বিষয়ভিত্তিক অভিজ্ঞতা সম্পন্ন প্রফেশনাল টিম"
+  },
+  {
+    icon: <FaClock className="text-2xl" />,
+    title: "সময়মতো সেবা প্রদানে অঙ্গীকারবদ্ধ",
+    description: "নির্দিষ্ট সময়সীমার মধ্যে কাজ সম্পন্নের গ্যারান্টি"
+  },
+  {
+    icon: <MdBusinessCenter className="text-2xl" />,
+    title: "ব্যবসার ধরন অনুযায়ী কাস্টমাইজড সলুশন",
+    description: "আপনার ব্যবসার প্রয়োজন অনুসারে পার্সোনালাইজড সেবা"
+  },
+  {
+    icon: <MdOutlinePayment className="text-2xl" />,
+    title: "স্বচ্ছ ফি ও নির্ভরযোগ্য সাপোর্ট",
+    description: "কোনো হিডেন ফি নেই, সম্পূর্ণ স্বচ্ছ মূল্য কাঠামো"
+  },
+  {
+    icon: <FaShieldAlt className="text-2xl" />,
+    title: "নো হিডেন ফি",
+    description: "শুরুতে যা বলা হবে, শেষ পর্যন্ত তাই"
+  },
+  {
+    icon: <FaUsers className="text-2xl" />,
+    title: "ব্যবসায়ের সকল সেবা একই প্লাটফর্মে",
+    description: "একই জায়গায় সব ধরনের ব্যবসায়িক সেবা"
+  }
+];
 
 const AboutPage = () => {
   return (
@@ -194,15 +231,15 @@ const AboutPage = () => {
           <div className="relative bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 animate-fade-in-up group-hover:border-gray-200 backdrop-blur-sm">
             
             {/* Icon Container */}
-            <div className={`inline-flex items-center justify-center w-15 h-15 rounded-3xl ${value.bgColor} ${value.color} mb-8 group-hover:scale-110 transition-all duration-500 shadow-lg group-hover:shadow-xl border ${value.borderColor}`}>
-              <value.icon className="w-7 h-7" />
+            <div className={`inline-flex items-center justify-center w-12 h-12 rounded-3xl ${value.bgColor} ${value.color} mb-8 group-hover:scale-110 transition-all duration-500 shadow-lg group-hover:shadow-xl border ${value.borderColor}`}>
+              <value.icon className="w-5 h-5" />
             </div>
             
             {/* Content */}
             <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-gray-800 transition-colors duration-300">
               {value.title}
             </h3>
-            <p className="text-gray-600 leading-relaxed text-lg group-hover:text-gray-700 transition-colors duration-300">
+            <p className="text-gray-600 leading-relaxed text-sm group-hover:text-gray-700 transition-colors duration-300">
               {value.description}
             </p>
             
@@ -215,123 +252,131 @@ const AboutPage = () => {
   </div>
 </section>
 
-      {/* Team Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Expertise</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Backed by a team of licensed professionals with decades of combined experience
+      {/* Team Section - Enhanced */}
+<section className="py-24 bg-gradient-to-br from-white to-blue-50/30">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-20">
+      <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 border border-blue-200 mb-6">
+        <FaAward className="w-4 h-4 text-blue-600" />
+        <span className="text-sm font-medium text-blue-700">Expert Team</span>
+      </div>
+      <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-gray-900 to-blue-900 bg-clip-text text-transparent">
+        Our Expertise
+      </h2>
+      <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+        Backed by a team of <span className="font-semibold text-blue-600">licensed professionals</span> with decades of combined experience in tax and customs consultancy
+      </p>
+    </div>
+    
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+      {[
+        {
+          icon: FaUsers,
+          area: "Tax Consultants",
+          count: "15+",
+          description: "Licensed VAT & Tax practitioners with NBR accreditation and extensive industry experience",
+          color: "text-blue-600",
+          bgColor: "bg-blue-500",
+          delay: 0
+        },
+        {
+          icon: FaFileContract,
+          area: "Customs Experts",
+          count: "12+",
+          description: "Seasoned professionals in customs clearance, HS coding, and international trade compliance",
+          color: "text-green-600",
+          bgColor: "bg-green-500",
+          delay: 200
+        },
+        {
+          icon: FaBalanceScale,
+          area: "Legal Advisors",
+          count: "8+",
+          description: "Legal experts specializing in tax litigation, compliance, and regulatory advisory services",
+          color: "text-purple-600",
+          bgColor: "bg-purple-500",
+          delay: 400
+        }
+      ].map((expertise, index) => (
+        <div 
+          key={index}
+          className="relative group cursor-pointer"
+        >
+          {/* Background Glow Effect */}
+          <div className={`absolute inset-0 ${expertise.bgColor} rounded-3xl blur-xl opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
+          
+          <div 
+            className="relative bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl border border-gray-100 transition-all duration-500 hover:-translate-y-3 animate-fade-in-up group"
+            style={{ animationDelay: `${expertise.delay}ms` }}
+          >
+            {/* Icon Container with Gradient */}
+            <div className="flex justify-center mb-6">
+              <div className={`relative w-12 h-12 rounded-2xl bg-gradient-to-br from-white to-gray-50 shadow-lg flex items-center justify-center group-hover:scale-110 transition-all duration-500 border border-gray-200`}>
+                <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${expertise.color === 'text-blue-600' ? 'from-blue-500/10 to-blue-600/10' : expertise.color === 'text-green-600' ? 'from-green-500/10 to-green-600/10' : 'from-purple-500/10 to-purple-600/10'} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+                <expertise.icon className={`w-5 h-5 ${expertise.color} relative z-10`} />
+              </div>
+            </div>
+
+            {/* Count with Animated Background */}
+            <div className="relative inline-block mb-4">
+              <div className={`text-6xl font-bold ${expertise.color} relative z-10`}>
+                {expertise.count}
+              </div>
+              <div className={`absolute -inset-4 ${expertise.bgColor} rounded-2xl blur-2xl opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
+            </div>
+
+            {/* Title */}
+            <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-gray-800 transition-colors duration-300">
+              {expertise.area}
+            </h3>
+
+            {/* Description */}
+            <p className="text-gray-600 text-sm leading-relaxed mb-6 group-hover:text-gray-700 transition-colors duration-300">
+              {expertise.description}
+            </p>
+
+            {/* Hover Indicator */}
+            <div className={`w-12 h-1 ${expertise.bgColor} rounded-full mx-auto opacity-0 group-hover:opacity-100 transform group-hover:scale-110 transition-all duration-500`}></div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+      {/* Why Choose Us Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
+              কেন আমাদের <span className="text-green-600">বেছে নেবেন?</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              শতাধিক সন্তুষ্ট ক্লায়েন্টের বিশ্বাসের কারণ
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: FaUsers,
-                area: "Tax Consultants",
-                count: "15+",
-                description: "Licensed VAT & Tax practitioners with NBR accreditation",
-                color: "text-blue-600"
-              },
-              {
-                icon: FaFileContract,
-                area: "Customs Experts",
-                count: "12+",
-                description: "Seasoned professionals in customs clearance and HS coding",
-                color: "text-green-600"
-              },
-              {
-                icon: FaBalanceScale,
-                area: "Legal Advisors",
-                count: "8+",
-                description: "Legal experts specializing in tax litigation and compliance",
-                color: "text-purple-600"
-              }
-            ].map((expertise, index) => (
-              <div 
-                key={index}
-                className="text-center p-8 bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in-up group"
-                style={{ animationDelay: `${index * 300}ms` }}
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {whyChooseUs.map((item, idx) => (
+              <div
+                key={idx}
+                className="group bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-green-200 transform hover:-translate-y-1"
               >
-                <div className="flex justify-center mb-4">
-                  <div className="w-16 h-16 bg-white rounded-2xl shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <expertise.icon className={`w-8 h-8 ${expertise.color}`} />
+                <div className="flex items-start mb-4">
+                  <div className="bg-gradient-to-r from-green-500 to-green-600 p-3 rounded-xl text-white mr-4 group-hover:scale-110 transition-transform duration-300">
+                    {item.icon}
                   </div>
+                  <h3 className="text-lg font-bold text-gray-800">{item.title}</h3>
                 </div>
-                <div className="text-5xl font-bold text-blue-600 mb-4">{expertise.count}</div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">{expertise.area}</h3>
-                <p className="text-gray-600">{expertise.description}</p>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {item.description}
+                </p>
               </div>
             ))}
           </div>
         </div>
-      </section>
-
-      {/* Additional Features Section */}
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Us?</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive solutions tailored to meet your tax and trade needs
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: FaChartLine,
-                title: "Digital Transformation",
-                description: "Streamlining tax compliance through innovative digital solutions and automation"
-              },
-              {
-                icon: FaHandshake,
-                title: "Client Success",
-                description: "Dedicated to your success with personalized support and strategic guidance"
-              },
-              {
-                icon: FaGlobeAmericas,
-                title: "National Reach",
-                description: "Serving clients across Bangladesh with local expertise and global standards"
-              }
-            ].map((feature, index) => (
-              <div 
-                key={index}
-                className="bg-white rounded-xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in-up"
-                style={{ animationDelay: `${index * 200}ms` }}
-              >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl mb-6">
-                  <feature.icon className="w-8 h-8" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </div>
-            ))}
-          </div>
         </div>
-      </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Ready to Simplify Your Tax Compliance?
-          </h2>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Join thousands of professionals and businesses who trust Tax & Trade Solution 
-            for their tax and customs needs.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-300 transform hover:scale-105">
-              Explore Our Services
-            </button>
-            <button className="border border-gray-300 hover:border-gray-400 text-gray-700 px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-gray-50">
-              Contact Our Team
-            </button>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
