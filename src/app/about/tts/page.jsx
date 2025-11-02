@@ -1,12 +1,14 @@
-import Master from "@/component/master/Master";
+import React from 'react';
+import Master from '@/component/about/Master';
+import About from '@/component/about/About';
 
-export default function TTSPage() {
+
+const page = () => {
     return (
-        <Master className="container mx-auto p-4">
-            <h1 className="text-2xl font-bold mb-4">Tax & Trade Solution</h1>
-            <div>
-                <p>This is the TTS (Tax & Trade Solution) page content.</p>
-            </div>
+        <Master>
+            <About/>
         </Master>
     );
-}
+};
+
+export default page;

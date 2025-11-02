@@ -42,7 +42,7 @@ export default function PublicationCard({ book }) {
 
   return (
     <div
-      className="group relative bg-white border border-green-900 rounded-2xl shadow-md hover:shadow-xl overflow-hidden transition-all duration-500 hover:-translate-y-2"
+      className="group relative bg-white border border-green-800 rounded-2xl shadow-md hover:shadow-xl overflow-hidden transition-all duration-500 hover:-translate-y-2"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
