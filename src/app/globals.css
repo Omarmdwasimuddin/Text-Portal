@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+.font-bangla {
+  font-family: 'Hind Siliguri', 'Arial', sans-serif;
+}
+
+.font-english {
+  font-family: 'Arial', sans-serif;
+}
+
+
 html, body {
   margin: 0;
   padding: 0;

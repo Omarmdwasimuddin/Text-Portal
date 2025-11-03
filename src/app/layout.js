@@ -1,9 +1,15 @@
 import "./globals.css";
+import { Hind_Siliguri } from 'next/font/google'
 
+const banglaFont = Hind_Siliguri({
+  weight: ['400','500','600','700'],
+  subsets: ['latin','bengali'],
+  display: 'swap',
+})
 
 
 export const metadata = {
-  metadataBase: new URL("https://taxlaw-portal.vercel.app"), // Canonical Base URL
+  metadataBase: new URL("https://taxportalbd.vercel.app/"), // Canonical Base URL
   title: "Tax & Trade Solutions",
   description:
     "One-stop digital platform for VAT, Customs & Income Tax laws, rules, SROs, orders, schedules, circulars, and amendments with consolidated and point-in-time views. Reliable references for officers, practitioners, taxpayers, and students.",
@@ -59,8 +65,7 @@ export function generateViewportMetadata() {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+      <body className={banglaFont.className} >
         {children}
       </body>
     </html>
