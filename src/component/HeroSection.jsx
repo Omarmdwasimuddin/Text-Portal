@@ -357,7 +357,7 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7 }}
-                className="text-3xl md:text-3xl font-extrabold text-white font-bangla  leading-snug text-center mb-2"
+                className="text-3xl md:text-3xl font-extrabold text-white  leading-snug text-center mb-2"
               >
                 <span className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">
                   বাংলাদেশের ট্যাক্স, ভ্যাট, কাস্টমস আইন
@@ -374,7 +374,7 @@ export default function HeroSection() {
               >
                 {/* Section Title */}
                 <div className="text-center mb-10">
-                  <h2 className="text-2xl md:text-2xl font-bold text-white mb-2">
+                  <h2 className="text-2xl md:text-2xl font-bold myFont text-white mb-2">
                     <span className="bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
                       জনপ্রিয় বইসমূহ
                     </span>

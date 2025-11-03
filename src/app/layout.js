@@ -1,10 +1,16 @@
+import { Hind_Siliguri, Roboto } from 'next/font/google'
 import "./globals.css";
-import { Hind_Siliguri } from 'next/font/google'
 
 const banglaFont = Hind_Siliguri({
-  weight: ['400','500','600','700'],
-  subsets: ['latin','bengali'],
-  display: 'swap',
+  weight: ['300','400','500','600','700'],
+  subsets: ['bengali'],
+  variable: '--font-bangla',
+})
+
+const englishFont = Roboto({
+  weight: ['200','300','400','500'],
+  subsets: ['latin'],
+  variable: '--font-english',
 })
 
 
@@ -64,8 +70,8 @@ export function generateViewportMetadata() {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={banglaFont.className} >
+    <html lang="en" className={`${banglaFont.className} ${englishFont.className}`}>
+      <body>
         {children}
       </body>
     </html>
