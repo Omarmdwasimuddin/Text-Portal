@@ -1,11 +1,12 @@
 import React from 'react';
 import FinanceActs from '@/component/acts/FinanceActs';
+import Master from '@/component/acts/Master';
 
 const page = () => {
     return (
-        <div>
+        <Master>
             <FinanceActs/>
-        </div>
+        </Master>
     );
 };
 
