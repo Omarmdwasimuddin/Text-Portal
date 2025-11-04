@@ -101,7 +101,7 @@ const FinanceActsPage = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Page Header with Animation */}
         <div className="text-center mb-10 animate-fade-in">
-          <h1 className="text-4xl font-bold text-gray-900 mb-3">Finance Acts & Ordinances</h1>
+          <h1 className="text-4xl text-gray-900 mb-3">Finance Acts & Ordinances</h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Comprehensive collection of Finance Acts and Ordinances from 2009 to present. 
             Download official documents for reference and compliance.
