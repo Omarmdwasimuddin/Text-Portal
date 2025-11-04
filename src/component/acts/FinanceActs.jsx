@@ -7,34 +7,106 @@ const FinanceActsPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
-  const [sortOrder, setSortOrder] = useState('desc'); // 'asc' or 'desc'
+  const [sortOrder, setSortOrder] = useState('desc');
+  const [downloadingId, setDownloadingId] = useState(null);
   const itemsPerPage = 10;
+
+  // PDF files mapping - আপনার একচুয়াল PDF files দিয়ে replace করুন
+  const pdfFiles = {
+    1: '/pdfs/finance-act-2025-amendment.pdf',
+    2: '/pdfs/finance-ordinance-2025.pdf',
+    3: '/pdfs/finance-act-2024.pdf',
+    4: '/pdfs/finance-act-2023.pdf',
+    5: '/pdfs/finance-act-2022.pdf',
+    6: '/pdfs/finance-act-2021.pdf',
+    7: '/pdfs/finance-act-2020.pdf',
+    8: '/pdfs/finance-act-2019.pdf',
+    9: '/pdfs/finance-act-2018.pdf',
+    10: '/pdfs/finance-act-2017.pdf',
+    11: '/pdfs/finance-act-2016.pdf',
+    12: '/pdfs/finance-act-2015.pdf',
+    13: '/pdfs/finance-act-2014.pdf',
+    14: '/pdfs/finance-act-2013.pdf',
+    15: '/pdfs/finance-act-2012.pdf',
+    16: '/pdfs/finance-act-2011.pdf',
+    17: '/pdfs/finance-act-2010.pdf',
+    18: '/pdfs/finance-act-2009.pdf',
+  };
+
+  // Download PDF function
+  const downloadPdf = async (actId, actTitle) => {
+    try {
+      setDownloadingId(actId);
+      
+      // Get the PDF file path
+      const pdfPath = pdfFiles[actId];
+      
+      if (!pdfPath) {
+        throw new Error('PDF file not found');
+      }
+
+      // Fetch the PDF file
+      const response = await fetch(pdfPath);
+      
+      if (!response.ok) {
+        throw new Error('Failed to fetch PDF');
+      }
+
+      // Convert to blob
+      const blob = await response.blob();
+      
+      // Create download link
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      
+      // Create filename from act title
+      const fileName = `${actTitle.replace(/\s+/g, '-').toLowerCase()}.pdf`;
+      link.download = fileName;
+      
+      // Trigger download
+      document.body.appendChild(link);
+      link.click();
+      
+      // Cleanup
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+      
+      // Success notification (you can replace with toast notification)
+      console.log(`Downloaded: ${fileName}`);
+      
+    } catch (error) {
+      console.error('Download error:', error);
+      alert('Download failed: ' + error.message);
+    } finally {
+      setDownloadingId(null);
+    }
+  };
 
   // Simulate API call
   useEffect(() => {
     setIsLoading(true);
     
-    // Simulate API delay
     const timer = setTimeout(() => {
       const actsData = [
-        { id: 1, title: 'Certain Laws Relating to Finance (Amendment) Ordinance-2025', date: '29-06-2025', downloadLink: '#', type: 'Ordinance' },
-        { id: 2, title: 'Finance Ordinance-2025', date: '03-06-2025', downloadLink: '#', type: 'Ordinance' },
-        { id: 3, title: 'Finance Act-2024', date: '01-07-2024', downloadLink: '#', type: 'Act' },
-        { id: 4, title: 'Finance Act-2023', date: '02-07-2023', downloadLink: '#', type: 'Act' },
-        { id: 5, title: 'Finance Act-2022', date: '10-06-2022', downloadLink: '#', type: 'Act' },
-        { id: 6, title: 'Finance Act-2021', date: '01-07-2021', downloadLink: '#', type: 'Act' },
-        { id: 7, title: 'Finance Act-2020', date: '01-07-2020', downloadLink: '#', type: 'Act' },
-        { id: 8, title: 'Finance Act-2019', date: '01-07-2019', downloadLink: '#', type: 'Act' },
-        { id: 9, title: 'Finance Act-2018', date: '09-07-2018', downloadLink: '#', type: 'Act' },
-        { id: 10, title: 'Finance Act-2017', date: '30-06-2017', downloadLink: '#', type: 'Act' },
-        { id: 11, title: 'Finance Act-2016', date: '09-08-2016', downloadLink: '#', type: 'Act' },
-        { id: 12, title: 'Finance Act-2015', date: '08-04-2016', downloadLink: '#', type: 'Act' },
-        { id: 13, title: 'Finance Act-2014', date: '08-04-2016', downloadLink: '#', type: 'Act' },
-        { id: 14, title: 'Finance Act-2013', date: '08-04-2016', downloadLink: '#', type: 'Act' },
-        { id: 15, title: 'Finance Act-2012', date: '08-04-2016', downloadLink: '#', type: 'Act' },
-        { id: 16, title: 'Finance Act-2011', date: '08-04-2016', downloadLink: '#', type: 'Act' },
-        { id: 17, title: 'Finance Act-2010', date: '08-04-2016', downloadLink: '#', type: 'Act' },
-        { id: 18, title: 'Finance Act-2009', date: '08-04-2016', downloadLink: '#', type: 'Act' },
+        { id: 1, title: 'Certain Laws Relating to Finance (Amendment) Ordinance-2025', date: '29-06-2025', type: 'Ordinance' },
+        { id: 2, title: 'Finance Ordinance-2025', date: '03-06-2025', type: 'Ordinance' },
+        { id: 3, title: 'Finance Act-2024', date: '01-07-2024', type: 'Act' },
+        { id: 4, title: 'Finance Act-2023', date: '02-07-2023', type: 'Act' },
+        { id: 5, title: 'Finance Act-2022', date: '10-06-2022', type: 'Act' },
+        { id: 6, title: 'Finance Act-2021', date: '01-07-2021', type: 'Act' },
+        { id: 7, title: 'Finance Act-2020', date: '01-07-2020', type: 'Act' },
+        { id: 8, title: 'Finance Act-2019', date: '01-07-2019', type: 'Act' },
+        { id: 9, title: 'Finance Act-2018', date: '09-07-2018', type: 'Act' },
+        { id: 10, title: 'Finance Act-2017', date: '30-06-2017', type: 'Act' },
+        { id: 11, title: 'Finance Act-2016', date: '09-08-2016', type: 'Act' },
+        { id: 12, title: 'Finance Act-2015', date: '08-04-2016', type: 'Act' },
+        { id: 13, title: 'Finance Act-2014', date: '08-04-2016', type: 'Act' },
+        { id: 14, title: 'Finance Act-2013', date: '08-04-2016', type: 'Act' },
+        { id: 15, title: 'Finance Act-2012', date: '08-04-2016', type: 'Act' },
+        { id: 16, title: 'Finance Act-2011', date: '08-04-2016', type: 'Act' },
+        { id: 17, title: 'Finance Act-2010', date: '08-04-2016', type: 'Act' },
+        { id: 18, title: 'Finance Act-2009', date: '08-04-2016', type: 'Act' },
       ];
       
       setFinanceActs(actsData);
@@ -80,7 +152,6 @@ const FinanceActsPage = () => {
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
-    // Scroll to top of table
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -253,15 +324,32 @@ const FinanceActsPage = () => {
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                           <div className="flex space-x-2">
-                            <a
-                              href={act.downloadLink}
-                              className="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-full shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-all duration-200 transform group-hover:scale-105"
+                            <button
+                              onClick={() => downloadPdf(act.id, act.title)}
+                              disabled={downloadingId === act.id}
+                              className={`inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-full shadow-sm text-white transition-all duration-200 transform group-hover:scale-105 ${
+                                downloadingId === act.id 
+                                  ? 'bg-gray-400 cursor-not-allowed' 
+                                  : 'bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500'
+                              }`}
                             >
-                              <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                              </svg>
-                              Download
-                            </a>
+                              {downloadingId === act.id ? (
+                                <>
+                                  <svg className="animate-spin -ml-1 mr-1 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                  </svg>
+                                  Downloading...
+                                </>
+                              ) : (
+                                <>
+                                  <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                  </svg>
+                                  Download PDF
+                                </>
+                              )}
+                            </button>
                             <button className="inline-flex items-center px-3 py-1.5 border border-gray-300 text-xs font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-all duration-200">
                               <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
@@ -318,7 +406,6 @@ const FinanceActsPage = () => {
                   {/* Page Numbers */}
                   {[...Array(totalPages)].map((_, index) => {
                     const pageNumber = index + 1;
-                    // Show only a subset of pages if there are many
                     if (
                       pageNumber === 1 ||
                       pageNumber === totalPages ||
