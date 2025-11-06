@@ -1,9 +1,12 @@
 import Master2 from '@/component/laws/Master2';
 import Law1991 from '@/component/laws/Law1991';
 import React from 'react';
+import Law2012  from '@/component/laws/Law2012';
 
 export default async function Page({ params }) {
   const { slug } = await params
+
+  //const law = lawsData.find(l => l.slug === slug);
 
   if (slug === "value-added-tax-act") {
     return (
@@ -11,6 +14,12 @@ export default async function Page({ params }) {
         <Law1991 />
       </Master2>
     );
+  }else if(slug === "value-added-tax-and-supplementary-duty-act") {
+    return (
+      <Master2>
+        <Law2012 />
+      </Master2>
+    )
   }
 
   return (

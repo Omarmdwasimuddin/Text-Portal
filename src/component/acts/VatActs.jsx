@@ -6,10 +6,7 @@ import { useRouter } from "next/navigation";
 const lawsData = [
   { id: 1, title: "Value Added Tax Act", year: 1991, slug:"value-added-tax-act"},
   { id: 2, title: "Value Added Tax and Supplementary Duty Act", year: 2012, slug:"value-added-tax-and-supplementary-duty-act"},
-  { id: 3, title: "Income Tax Ordinance", year: 1984, slug:"Income-tax-ordinance"},
-  { id: 4, title: "Customs Act", year: 1969, slug:"customs-act"},
-  { id: 5, title: "Company Act", year: 1994, slug:"company-act"},
-  { id: 6, title: "Bank Company Act", year: 1991, slug:"bank-company-act"},
+  { id: 3, title: "Development Surcharge and Levy (Imposition and Collection) Act, 2015", year: 1984, slug:"Income-tax-ordinance"},
 ];
 
 
