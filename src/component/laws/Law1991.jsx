@@ -180,7 +180,7 @@ const Law1991 = () => {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50">
       {/* Header */}
       <header className="bg-gradient-to-r from-green-600 to-blue-700 text-white shadow-lg relative">
-        <div className="container mx-auto max-w-7xl px-6 py-8">
+        <div className="container mx-auto max-w-6xl px-6 py-8">
           <h1 className="text-3xl md:text-4xl font-bold mb-2">মূল্য সংযোজন কর আইন, ১৯৯১</h1>
           <p className="text-lg opacity-90">Value Added Tax Act, 1991</p>
           
@@ -271,7 +271,7 @@ const Law1991 = () => {
       {/* Main Content */}
       <main className="container mx-auto max-w-7xl px-6 py-8">
         {/* Introduction */}
-        <div className="bg-white rounded-xl shadow-md p-6 mb-8 border-l-4 border-blue-500">
+        <div className="bg-white rounded-xl shadow-md p-6 mb-8 border-l-4 border-green-500">
           <h2 className="text-xl font-semibold text-gray-800 mb-3">আইনের সংক্ষিপ্ত বিবরণ</h2>
           <p className="text-gray-600 mb-4">
             মূল্য সংযোজন কর আইন, ১৯৯১ বাংলাদেশের কর ব্যবস্থায় একটি মাইলফলক হিসেবে পরিচিত। 
@@ -309,7 +309,7 @@ const Law1991 = () => {
 
         {/* Sections Grid */}
         <div className="bg-white rounded-xl shadow-md overflow-hidden mb-8">
-          <div className="bg-gradient-to-r from-green-500 to-blue-600 text-white p-4">
+          <div className="bg-gradient-to-r from-green-500 to-green-600 text-white p-4">
             <h2 className="text-xl font-bold">ধারাসমূহ</h2>
             <p className="text-sm opacity-90">মূল্য সংযোজন কর আইন, ১৯৯১ এর সকল ধারা</p>
           </div>
@@ -347,8 +347,8 @@ const Law1991 = () => {
         <div className="mt-8">
           {specialSections.map((specialChapter, idx) => (
             <div key={idx} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-              <div className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white p-4">
-                <h2 className="text-lg font-bold">{specialChapter.title}</h2>
+              <div className="bg-gradient-to-r from-green-500 to-green-600 text-white p-4">
+                <h2 className="text-xl">{specialChapter.title}</h2>
               </div>
               <div className="p-4">
                 <ul className="space-y-2">
@@ -358,7 +358,7 @@ const Law1991 = () => {
                         <a 
                           href={section.href} 
                           onClick={(e) => handlePdfClick(e, section.href)}
-                          className="text-purple-600 hover:text-purple-800 hover:underline transition-colors duration-200 flex items-center"
+                          className="text-red-600 hover:text-red-800 hover:underline transition-colors duration-200 flex items-center"
                         >
                           <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -368,7 +368,7 @@ const Law1991 = () => {
                       ) : (
                         <Link 
                           href={section.href} 
-                          className="text-purple-600 hover:text-purple-800 hover:underline transition-colors duration-200"
+                          className="text-green-600 hover:text-green-800 hover:underline transition-colors duration-200"
                         >
                           {section.text}
                         </Link>
