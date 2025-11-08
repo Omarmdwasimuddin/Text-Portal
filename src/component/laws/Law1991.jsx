@@ -180,7 +180,7 @@ const Law1991 = () => {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50">
       {/* Header */}
       <header className="bg-gradient-to-r from-green-600 to-blue-700 text-white shadow-lg relative">
-        <div className="container mx-auto max-w-6xl px-6 py-8">
+        <div className="container mx-auto max-w-5xl px-6 py-8">
           <h1 className="text-3xl md:text-4xl font-bold mb-2">মূল্য সংযোজন কর আইন, ১৯৯১</h1>
           <p className="text-lg opacity-90">Value Added Tax Act, 1991</p>
           
