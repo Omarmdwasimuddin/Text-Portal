@@ -310,7 +310,7 @@ const Law1991 = () => {
         {/* Sections Grid */}
         <div className="bg-white rounded-xl shadow-md overflow-hidden mb-8">
           <div className="bg-gradient-to-r from-green-500 to-green-600 text-white p-4">
-            <h2 className="text-xl font-bold">ধারাসমূহ</h2>
+            <h2 className="text-2xl">ধারাসমূহ</h2>
             <p className="text-sm opacity-90">মূল্য সংযোজন কর আইন, ১৯৯১ এর সকল ধারা</p>
           </div>
           
