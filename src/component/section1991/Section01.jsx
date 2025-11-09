@@ -21,7 +21,7 @@ export default function LawPage() {
 
           {/* Back to Home Button */}
           <Link
-            href="/regulations/acts/vat-acts/value-added-tax-act"
+            href="/"
             className="absolute top-4 left-4 flex items-center gap-2 bg-white text-green-700 hover:bg-green-100 transition-all px-3 py-2 rounded-full shadow"
           >
             <svg
@@ -41,10 +41,10 @@ export default function LawPage() {
         {/* New Heading and Paragraph Section */}
         <div className="border-b border-gray-300 bg-blue-25">
           <div className="p-6 text-center">
-            <h1 className="text-xl md:text-xl font-bold text-gray-800 mb-6">
+            <h1 className="text-lg md:text-lg font-bold text-gray-800 mb-6">
               পণ্য ও সেবার উপর মূল্য সংযোজন কর আরোপের বিধানকরণকল্পে প্রণীত আইন৷
             </h1>
-            <div className="text-gray-700 text-left leading-relaxed max-w-4xl mx-auto">
+            <div className="text-gray-700 text-md text-left leading-relaxed max-w-4xl mx-auto">
               <p className="mb-3">যেহেতু মূল্য সংযোজন কর আরোপ করার উদ্দেশ্যে বিধান করা সমীচীন ও প্রয়োজনীয়;</p>
               <p>সেহেতু এতদ্‌দ্বারা নিম্নরূপ আইন করা হইল:-</p>
             </div>
@@ -67,7 +67,7 @@ export default function LawPage() {
                 {/* Section 1 */}
                 <div>
                   <p className="mb-4">
-                    <span className="font-semibold">১৷</span> (১) এই আইন মূল্য সংযোজন কর আইন, ১৯৯১ নামে অভিহিত হইবে৷
+                    <span className="font-semibold">১৷</span> (১) এই আইন <span> সংযোজন কর আইন, ১৯৯১</span> নামে অভিহিত হইবে৷
                   </p>
                   
                   <p className="mb-4">
