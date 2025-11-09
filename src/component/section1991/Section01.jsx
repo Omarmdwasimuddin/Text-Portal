@@ -21,7 +21,7 @@ export default function LawPage() {
 
           {/* Back to Home Button */}
           <Link
-            href="/"
+            href="/regulations/acts/vat-acts/value-added-tax-act"
             className="absolute top-4 left-4 flex items-center gap-2 bg-white text-green-700 hover:bg-green-100 transition-all px-3 py-2 rounded-full shadow"
           >
             <svg
