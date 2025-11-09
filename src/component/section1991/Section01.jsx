@@ -95,7 +95,7 @@ export default function LawPage() {
             <div className="border-b border-gray-400 pb-2 mb-4">
               {/* Horizontal line */}
             </div>
-            <p className="text-sm text-gray-600 italic">
+            <p className="text-xs text-gray-600 italic">
               ১ ", প্রয়োগ" কমা ও শব্দটি অর্থ আইন, ১৯৯৮ (১৯৯৮ সনের ১৪ নং আইন) এর ৭ ধারাবলে বিলুপ্ত
             </p>
 
