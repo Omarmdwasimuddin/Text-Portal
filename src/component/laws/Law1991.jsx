@@ -3,7 +3,7 @@ import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
 
 const sections = [
-  { href: '/section1', text: 'সংক্ষিপ্ত শিরোনামা,[***] ও প্রবর্তন', number: '১' },
+  { href: '/laws/law1991/section/section01', text: 'সংক্ষিপ্ত শিরোনামা,[***] ও প্রবর্তন', number: '১' },
   { href: '/section2', text: 'সংজ্ঞা', number: '২' },
   { href: '/section2.1', text: 'আইনের প্রাধান্য', number: '২.ক' },
   { href: '/section3', text: 'মূল্য সংযোজন কর আরোপ', number: '৩' },
