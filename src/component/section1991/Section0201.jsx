@@ -41,14 +41,14 @@ export default function LawPage() {
         <div className="border-b border-gray-300">
           <div className="flex flex-col md:flex-row">
             {/* Left Side - Heading */}
-            <div className="md:w-2/5 bg-blue-50 p-6 border-r border-gray-300">
+            <div className="md:w-1/5 bg-blue-50 p-6 border-r border-gray-300">
               <h1 className="text-xl md:text-xl font-bold text-gray-800 leading-tight">
                 আইনের প্রাধান্য
               </h1>
             </div>
             
             {/* Right Side - Law Text */}
-            <div className="md:w-3/5 p-6">
+            <div className="md:w-4/5 p-6">
               <div className="space-y-6 text-gray-700">
                 {/* Section 1 */}
                 <div>
