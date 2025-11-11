@@ -37,20 +37,6 @@ export default function LawPage() {
           </Link>
         </div>
 
-
-        {/* New Heading and Paragraph Section */}
-        <div className="border-b border-gray-300 bg-blue-25">
-          <div className="p-6 text-center">
-            <h1 className="text-lg md:text-lg font-bold text-gray-800 mb-6">
-              পণ্য ও সেবার উপর মূল্য সংযোজন কর আরোপের বিধানকরণকল্পে প্রণীত আইন৷
-            </h1>
-            <div className="text-gray-700 text-md text-left leading-relaxed max-w-4xl mx-auto">
-              <p className="mb-3">যেহেতু মূল্য সংযোজন কর আরোপ করার উদ্দেশ্যে বিধান করা সমীচীন ও প্রয়োজনীয়;</p>
-              <p>সেহেতু এতদ্‌দ্বারা নিম্নরূপ আইন করা হইল:-</p>
-            </div>
-          </div>
-        </div>
-
         {/* Header Section */}
         <div className="border-b border-gray-300">
           <div className="flex flex-col md:flex-row">
