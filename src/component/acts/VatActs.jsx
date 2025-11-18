@@ -2,19 +2,17 @@
 
 import { useRouter } from "next/navigation";
 
-
 const lawsData = [
-  { id: 1, title: "Value Added Tax Act", year: 1991, slug:"value-added-tax-act"},
-  { id: 2, title: "Value Added Tax and Supplementary Duty Act", year: 2012, slug:"value-added-tax-and-supplementary-duty-act"},
-  { id: 3, title: "Development Surcharge and Levy (Imposition and Collection) Act, 2015", year: 1984, slug:"Income-tax-ordinance"},
+  { id: 1, title: "Value Added Tax Act 1991", slug: "value-added-tax-act" },
+  { id: 2, title: "Value Added Tax and Supplementary Duty Act 2012", slug: "value-added-tax-and-supplementary-duty-act" },
+  { id: 3, title: "Development Surcharge and Levy (Imposition and Collection) Act, 2015", slug: "Income-tax-ordinance" },
 ];
-
 
 export default function LawsPage() {
   const router = useRouter(); 
 
   const handleLawClick = (law) => {
-     router.push(`/regulations/acts/vat-acts/${law.slug}`);
+    router.push(`/regulations/acts/vat-acts/${law.slug}`);
   };
 
   return (
@@ -45,9 +43,6 @@ export default function LawsPage() {
                     Acts Title & Description
                   </th>
                   <th className="p-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-                    Enactment Year
-                  </th>
-                  <th className="p-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
                     Action
                   </th>
                 </tr>
@@ -76,11 +71,6 @@ export default function LawsPage() {
                         <p className="text-sm text-gray-500 mt-1">
                           Official legislation document with full provisions and amendments
                         </p>
-                      </div>
-                    </td>
-                    <td className="p-4">
-                      <div className="flex items-center space-x-2">
-                        <span className="text-gray-900 font-medium">{law.year}</span>
                       </div>
                     </td>
                     <td className="p-4">
