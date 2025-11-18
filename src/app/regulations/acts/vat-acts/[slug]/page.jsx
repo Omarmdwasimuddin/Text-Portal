@@ -23,13 +23,13 @@ export default async function Page({ params }) {
   }else if(slug === "value-added-bekhapotro"){
     return (
       <Master2>
-
+        <h1>Content not found</h1>
       </Master2>
     )
   }else if(slug === "Income-tax-ordinance"){
     return (
       <Master2>
-        
+        <h1>Content not found</h1>
       </Master2>
     )
   }
