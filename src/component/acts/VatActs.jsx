@@ -68,9 +68,6 @@ export default function LawsPage() {
                         >
                           {law.title}
                         </button>
-                        <p className="text-sm text-gray-500 mt-1">
-                          Official legislation document with full provisions and amendments
-                        </p>
                       </div>
                     </td>
                     <td className="p-4">
