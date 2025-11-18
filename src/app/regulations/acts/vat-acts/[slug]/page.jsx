@@ -20,6 +20,18 @@ export default async function Page({ params }) {
         <Law2012 />
       </Master2>
     )
+  }else if(slug === "value-added-bekhapotro"){
+    return (
+      <Master2>
+
+      </Master2>
+    )
+  }else if(slug === "Income-tax-ordinance"){
+    return (
+      <Master2>
+        
+      </Master2>
+    )
   }
 
   return (
