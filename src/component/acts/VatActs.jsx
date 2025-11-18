@@ -64,7 +64,7 @@ export default function LawsPage() {
                       <div className="flex flex-col">
                         <button 
                           onClick={() => handleLawClick(law)}
-                          className="text-lg font-semibold text-gray-900 hover:text-green-600 text-left transition-colors duration-200 group-hover:translate-x-1 transform"
+                          className="text-lg font-semibold text-black hover:text-green-600 text-left transition-colors duration-200 group-hover:translate-x-1 transform"
                         >
                           {law.title}
                         </button>
