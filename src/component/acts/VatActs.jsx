@@ -3,9 +3,10 @@
 import { useRouter } from "next/navigation";
 
 const lawsData = [
-  { id: 1, title: "Value Added Tax Act 1991", slug: "value-added-tax-act" },
-  { id: 2, title: "Value Added Tax and Supplementary Duty Act 2012", slug: "value-added-tax-and-supplementary-duty-act" },
-  { id: 3, title: "Development Surcharge and Levy (Imposition and Collection) Act, 2015", slug: "Income-tax-ordinance" },
+  { id: 1, title: "ব্যাখ্যা পত্র নং-০৭/মুসক/২০২০, (মুসক ৪.৩) দাখিল সংক্রান্ত বিষয়ে স্পষ্টীকরণ ও দিক নির্দেশনা প্রদান ", slug: "value-added-bekhapotro" },
+  { id: 2, title: "Value Added Tax Act 1991", slug: "value-added-tax-act" },
+  { id: 3, title: "Value Added Tax and Supplementary Duty Act 2012", slug: "value-added-tax-and-supplementary-duty-act" },
+  { id: 4, title: "Development Surcharge and Levy (Imposition and Collection) Act, 2015", slug: "Income-tax-ordinance" },
 ];
 
 export default function LawsPage() {
@@ -47,7 +48,7 @@ export default function LawsPage() {
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-400">
+              <tbody className="divide-y divide-gray-300">
                 {lawsData.map((law, index) => (
                   <tr 
                     key={law.id}
