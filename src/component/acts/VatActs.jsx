@@ -47,7 +47,7 @@ export default function LawsPage() {
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-600">
+              <tbody className="divide-y divide-gray-400">
                 {lawsData.map((law, index) => (
                   <tr 
                     key={law.id}
