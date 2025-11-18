@@ -47,7 +47,7 @@ export default function LawsPage() {
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-200">
+              <tbody className="divide-y divide-gray-600">
                 {lawsData.map((law, index) => (
                   <tr 
                     key={law.id}
@@ -64,7 +64,7 @@ export default function LawsPage() {
                       <div className="flex flex-col">
                         <button 
                           onClick={() => handleLawClick(law)}
-                          className="text-lg font-semibold text-black hover:text-green-600 text-left transition-colors duration-200 group-hover:translate-x-1 transform"
+                          className="text-md font-semibold text-black hover:text-green-600 text-left transition-colors duration-200 group-hover:translate-x-1 transform"
                         >
                           {law.title}
                         </button>
