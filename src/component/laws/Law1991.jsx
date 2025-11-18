@@ -294,7 +294,7 @@ const Law1991 = () => {
             <p className="text-sm opacity-90">মূল্য সংযোজন কর আইন, ১৯৯১ এর সকল ধারা</p>
           </div>
           
-          <div className="p-0">
+          <div className="p-6">
             <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1">
               {sections.map((section, index) => (
                 <div 
