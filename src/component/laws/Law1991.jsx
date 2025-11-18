@@ -272,50 +272,30 @@ const Law1991 = () => {
       <main className="container mx-auto max-w-7xl px-6 py-8">
         {/* Introduction */}
         <div className="bg-white rounded-xl shadow-md p-6 mb-8 border-l-4 border-green-500">
-          <h2 className="text-xl font-semibold text-gray-800 mb-3">আইনের সংক্ষিপ্ত বিবরণ</h2>
-          <p className="text-gray-600 mb-4">
-            মূল্য সংযোজন কর আইন, ১৯৯১ বাংলাদেশের কর ব্যবস্থায় একটি মাইলফলক হিসেবে পরিচিত। 
-            এই আইনটি ১৯৯১ সালে প্রণীত হয় এবং পরবর্তীতে বিভিন্ন সময়ে সংশোধিত হয়। 
-            আইনটি মূল্য সংযোজন কর, সম্পূরক শুল্ক এবং টার্নওভার কর সম্পর্কিত বিধানাবলী সমন্বিত করে।
-          </p>
+          <h2 className="text-md font-semibold text-red-800 mb-3">এই আইন মূল্য সংযোজন কর ও সম্পূরক শুল্ক আইন, ২০১২ (২০১২ সনের  ৪৭নং আইন) দ্বারা রহিত করা হইয়াছে।</h2>
           
           {/* Added important legal phrases */}
           <div className="bg-gray-50 border-l-4 border-red-500 p-4 my-4 rounded-r-lg">
-            <p className="text-gray-700 italic mb-3">
+            <p className="text-black italic mb-3">
               <span className="font-semibold">পণ্য ও সেবার উপর মূল্য সংযোজন কর আরোপের বিধানকরণকল্পে প্রণীত আইন৷</span>
             </p>
-            <p className="text-gray-700 italic">
+            <p className="text-black italic">
               <span className="font-semibold">যেহেতু</span> মূল্য সংযোজন কর আরোপ করার উদ্দেশ্যে বিধান করা সমীচীন ও প্রয়োজনীয়;
               <br />
               <span className="font-semibold">সেহেতু</span> এতদ্‌দ্বারা নিম্নরূপ আইন করা হইল:-
             </p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
-            <div className="bg-blue-50 p-4 rounded-lg">
-              <h3 className="font-semibold text-blue-800 mb-2">আইনের উদ্দেশ্য</h3>
-              <p className="text-sm text-gray-600">আধুনিক ও স্বচ্ছ কর ব্যবস্থা প্রতিষ্ঠা</p>
-            </div>
-            <div className="bg-green-50 p-4 rounded-lg">
-              <h3 className="font-semibold text-green-800 mb-2">প্রবর্তনের তারিখ</h3>
-              <p className="text-sm text-gray-600">১৯৯১ সাল</p>
-            </div>
-            <div className="bg-purple-50 p-4 rounded-lg">
-              <h3 className="font-semibold text-purple-800 mb-2">মূল বৈশিষ্ট্য</h3>
-              <p className="text-sm text-gray-600">মূসক, সম্পূরক শুল্ক ও টার্নওভার কর ব্যবস্থা</p>
-            </div>
-          </div>
         </div>
 
         {/* Sections Grid */}
         <div className="bg-white rounded-xl shadow-md overflow-hidden mb-8">
-          <div className="bg-gradient-to-r from-green-500 to-green-600 text-white p-4">
+          <div className="bg-gradient-to-r from-green-900 to-green-500 text-white p-4">
             <h2 className="text-2xl">ধারাসমূহ</h2>
             <p className="text-sm opacity-90">মূল্য সংযোজন কর আইন, ১৯৯১ এর সকল ধারা</p>
           </div>
           
-          <div className="p-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="p-0">
+            <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1">
               {sections.map((section, index) => (
                 <div 
                   key={index}
@@ -332,9 +312,7 @@ const Law1991 = () => {
                       >
                         {section.text}
                       </Link>
-                      <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">
-                        ধারা {section.number}
-                      </span>
+                      
                     </div>
                   </div>
                 </div>
