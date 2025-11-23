@@ -168,39 +168,28 @@ const FinanceActsPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-8">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-<<<<<<< HEAD
-=======
-        {/* Page Header with Animation */}
-        <div className="text-center mb-10 animate-fade-in">
-          <h1 className="text-4xl text-gray-900 mb-3">Finance Acts & Ordinances</h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Comprehensive collection of Finance Acts and Ordinances from 2009 to present. 
-            Download official documents for reference and compliance.
-          </p>
-        </div>
->>>>>>> 96b004558ff83baa87e169c8c6fac33586bc1404
+    <div className="min-h-screen py-8 bg-gradient-to-br from-gray-50 to-gray-100">
+      <div className="max-w-6xl px-4 mx-auto sm:px-6 lg:px-8">
 
         {/* Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <div className="bg-white rounded-xl shadow-md p-6 transform transition-transform duration-300 hover:scale-105">
+        <div className="grid grid-cols-1 gap-6 mb-8 md:grid-cols-3">
+          <div className="p-6 transition-transform duration-300 transform bg-white shadow-md rounded-xl hover:scale-105">
             <div className="flex items-center">
-              <div className="p-3 rounded-full bg-green-100 text-green-600 mr-4">
+              <div className="p-3 mr-4 text-green-600 bg-green-100 rounded-full">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
               </div>
               <div>
-                <p className="text-sm font-medium text-gray-500">Total Documents</p>
+                <p className="text-sm font-medium text-gray-500">Documents</p>
                 <p className="text-2xl font-bold text-gray-900">{financeActs.length}</p>
               </div>
             </div>
           </div>
           
-          <div className="bg-white rounded-xl shadow-md p-6 transform transition-transform duration-300 hover:scale-105">
+          <div className="p-6 transition-transform duration-300 transform bg-white shadow-md rounded-xl hover:scale-105">
             <div className="flex items-center">
-              <div className="p-3 rounded-full bg-blue-100 text-blue-600 mr-4">
+              <div className="p-3 mr-4 text-blue-600 bg-blue-100 rounded-full">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
@@ -212,9 +201,9 @@ const FinanceActsPage = () => {
             </div>
           </div>
           
-          <div className="bg-white rounded-xl shadow-md p-6 transform transition-transform duration-300 hover:scale-105">
+          <div className="p-6 transition-transform duration-300 transform bg-white shadow-md rounded-xl hover:scale-105">
             <div className="flex items-center">
-              <div className="p-3 rounded-full bg-purple-100 text-purple-600 mr-4">
+              <div className="p-3 mr-4 text-purple-600 bg-purple-100 rounded-full">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
@@ -228,26 +217,26 @@ const FinanceActsPage = () => {
         </div>
 
         {/* Main Content Card */}
-        <div className="bg-white shadow-xl rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl">
+        <div className="overflow-hidden transition-all duration-300 bg-white shadow-xl rounded-2xl hover:shadow-2xl">
           {/* Card Header with Search and Filters */}
-          <div className="bg-gradient-to-r from-green-600 to-green-700 px-6 py-5">
-            <div className="flex flex-col md:flex-row md:items-center justify-between">
+          <div className="px-6 py-5 bg-gradient-to-r from-green-600 to-green-700">
+            <div className="flex flex-col justify-between md:flex-row md:items-center">
               <div className="mb-4 md:mb-0">
                 <h2 className="text-2xl font-bold text-white">Finance Acts Directory</h2>
-                <p className="text-green-100 mt-1">Browse, search and download documents</p>
+                <p className="mt-1 text-green-100">Browse, search and download documents</p>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-3">
+              <div className="flex flex-col gap-3 sm:flex-row">
                 {/* Search Box */}
                 <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <svg className="h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <svg className="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                       <path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd" />
                     </svg>
                   </div>
                   <input
                     type="text"
-                    className="block w-full pl-10 pr-3 py-2 rounded-lg border border-transparent bg-white/90 focus:bg-white focus:outline-none focus:ring-2 focus:ring-white focus:border-white text-gray-800 placeholder-gray-500 transition-all duration-200"
+                    className="block w-full py-2 pl-10 pr-3 text-gray-800 placeholder-gray-500 transition-all duration-200 border border-transparent rounded-lg bg-white/90 focus:bg-white focus:outline-none focus:ring-2 focus:ring-white focus:border-white"
                     placeholder="Search by title or year..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
@@ -257,7 +246,7 @@ const FinanceActsPage = () => {
                 {/* Sort Button */}
                 <button
                   onClick={sortActs}
-                  className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg text-green-700 bg-white hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors duration-200"
+                  className="inline-flex items-center px-4 py-2 text-sm font-medium text-green-700 transition-colors duration-200 bg-white border border-transparent rounded-lg hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
                 >
                   <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4h13M3 8h9m-9 4h9m5-4v12m0 0l-4-4m4 4l4-4" />
@@ -274,11 +263,11 @@ const FinanceActsPage = () => {
               // Loading Skeleton
               <div className="p-6 space-y-4">
                 {[...Array(5)].map((_, index) => (
-                  <div key={index} className="animate-pulse flex space-x-4">
-                    <div className="rounded-full bg-gray-200 h-10 w-10"></div>
-                    <div className="flex-1 space-y-2 py-1">
-                      <div className="h-4 bg-gray-200 rounded w-3/4"></div>
-                      <div className="h-4 bg-gray-200 rounded w-1/2"></div>
+                  <div key={index} className="flex space-x-4 animate-pulse">
+                    <div className="w-10 h-10 bg-gray-200 rounded-full"></div>
+                    <div className="flex-1 py-1 space-y-2">
+                      <div className="w-3/4 h-4 bg-gray-200 rounded"></div>
+                      <div className="w-1/2 h-4 bg-gray-200 rounded"></div>
                     </div>
                   </div>
                 ))}
@@ -287,19 +276,19 @@ const FinanceActsPage = () => {
               <table className="min-w-full divide-y divide-gray-200">
                 <thead className="bg-gray-50">
                   <tr>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th scope="col" className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                       SI
                     </th>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th scope="col" className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                       Document Type
                     </th>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th scope="col" className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                       Acts Title
                     </th>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th scope="col" className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                       Date
                     </th>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th scope="col" className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                       Action
                     </th>
                   </tr>
@@ -309,9 +298,9 @@ const FinanceActsPage = () => {
                     currentActs.map((act, index) => (
                       <tr 
                         key={act.id} 
-                        className="hover:bg-gray-50 transition-colors duration-150 group"
+                        className="transition-colors duration-150 hover:bg-gray-50 group"
                       >
-                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                        <td className="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">
                           {indexOfFirstItem + index + 1}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
@@ -319,13 +308,13 @@ const FinanceActsPage = () => {
                             {act.type}
                           </span>
                         </td>
-                        <td className="px-6 py-4 text-sm text-gray-800 group-hover:text-green-700 transition-colors duration-200">
+                        <td className="px-6 py-4 text-sm text-gray-800 transition-colors duration-200 group-hover:text-green-700">
                           {act.title}
                         </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
                           {formatDate(act.date)}
                         </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                        <td className="px-6 py-4 text-sm font-medium whitespace-nowrap">
                           <div className="flex space-x-2">
                             <button
                               onClick={() => downloadPdf(act.id, act.title)}
@@ -338,7 +327,7 @@ const FinanceActsPage = () => {
                             >
                               {downloadingId === act.id ? (
                                 <>
-                                  <svg className="animate-spin -ml-1 mr-1 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                  <svg className="w-4 h-4 mr-1 -ml-1 text-white animate-spin" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                                   </svg>
@@ -367,11 +356,11 @@ const FinanceActsPage = () => {
                     <tr>
                       <td colSpan="5" className="px-6 py-12 text-center">
                         <div className="flex flex-col items-center justify-center">
-                          <svg className="w-16 h-16 text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <svg className="w-16 h-16 mb-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
                           <h3 className="text-lg font-medium text-gray-900">No documents found</h3>
-                          <p className="text-gray-500 mt-1">Try adjusting your search or filter to find what you're looking for.</p>
+                          <p className="mt-1 text-gray-500">Try adjusting your search or filter to find what you're looking for.</p>
                         </div>
                       </td>
                     </tr>
@@ -383,9 +372,9 @@ const FinanceActsPage = () => {
 
           {/* Table Footer with Pagination */}
           {filteredActs.length > 0 && (
-            <div className="bg-gray-50 px-6 py-4 border-t border-gray-200">
-              <div className="flex flex-col sm:flex-row items-center justify-between">
-                <p className="text-sm text-gray-700 mb-4 sm:mb-0">
+            <div className="px-6 py-4 border-t border-gray-200 bg-gray-50">
+              <div className="flex flex-col items-center justify-between sm:flex-row">
+                <p className="mb-4 text-sm text-gray-700 sm:mb-0">
                   Showing <span className="font-medium">{indexOfFirstItem + 1}</span> to{' '}
                   <span className="font-medium">
                     {Math.min(indexOfLastItem, filteredActs.length)}
@@ -454,11 +443,11 @@ const FinanceActsPage = () => {
         </div>
 
         {/* Additional Info Section */}
-        <div className="mt-8 bg-white rounded-2xl shadow-md p-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">About Finance Acts</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="p-6 mt-8 bg-white shadow-md rounded-2xl">
+          <h3 className="mb-4 text-lg font-semibold text-gray-900">About Finance Acts</h3>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <div>
-              <p className="text-gray-600 mb-4">
+              <p className="mb-4 text-gray-600">
                 Finance Acts are annual legislation that implement the financial proposals of the government 
                 for the following financial year. They contain amendments to various direct and indirect tax laws.
               </p>
@@ -467,13 +456,13 @@ const FinanceActsPage = () => {
                 but must be approved by Parliament when it reconvenes.
               </p>
             </div>
-            <div className="bg-green-50 rounded-lg p-4 border border-green-100">
-              <h4 className="font-medium text-green-800 mb-2">Need Help?</h4>
-              <p className="text-green-700 text-sm mb-3">
+            <div className="p-4 border border-green-100 rounded-lg bg-green-50">
+              <h4 className="mb-2 font-medium text-green-800">Need Help?</h4>
+              <p className="mb-3 text-sm text-green-700">
                 If you can't find the document you're looking for or need assistance, 
                 please contact our support team.
               </p>
-              <button className="inline-flex items-center text-sm font-medium text-green-700 hover:text-green-800 transition-colors duration-200">
+              <button className="inline-flex items-center text-sm font-medium text-green-700 transition-colors duration-200 hover:text-green-800">
                 Contact Support
                 <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
