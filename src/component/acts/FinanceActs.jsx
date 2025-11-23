@@ -170,6 +170,17 @@ const FinanceActsPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-8">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<<<<<<< HEAD
+=======
+        {/* Page Header with Animation */}
+        <div className="text-center mb-10 animate-fade-in">
+          <h1 className="text-4xl text-gray-900 mb-3">Finance Acts & Ordinances</h1>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Comprehensive collection of Finance Acts and Ordinances from 2009 to present. 
+            Download official documents for reference and compliance.
+          </p>
+        </div>
+>>>>>>> 96b004558ff83baa87e169c8c6fac33586bc1404
 
         {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
