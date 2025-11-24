@@ -3,26 +3,26 @@ import Link from 'next/link';
 
 export default function LawPage() {
   return (
-    <div className="min-h-screen bg-gray-50 py-8 px-4">
-      <div className="max-w-6xl mx-auto bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+    <div className="min-h-screen px-4 py-8 bg-gray-50">
+      <div className="max-w-6xl mx-auto overflow-hidden bg-white border border-gray-200 rounded-lg shadow-sm">
         {/* Banner Section */}
-        <div className="bg-gradient-to-r from-green-600 to-green-800 text-white py-8 px-4 md:px-8 relative">
+        <div className="relative px-4 py-8 text-white bg-gradient-to-r from-green-600 to-green-800 md:px-8">
           <div className="text-center">
-            <h1 className="text-2xl md:text-4xl font-bold mb-2">
+            <h1 className="mb-2 text-2xl font-bold md:text-4xl">
               মূল্য সংযোজন কর আইন, ১৯৯১
             </h1>
             <p className="text-lg md:text-xl opacity-90">
               ( ১৯৯১ সনের ২২ নং আইন )
             </p>
-            <div className="mt-3 inline-block bg-green-500 px-4 py-1 rounded-full shadow-md">
-              <p className="text-sm md:text-base font-medium">[ ৩০ জুন, ১৯৯১ ]</p>
+            <div className="inline-block px-4 py-1 mt-3 bg-green-500 rounded-full shadow-md">
+              <p className="text-sm font-medium md:text-base">[ ৩০ জুন, ১৯৯১ ]</p>
             </div>
           </div>
 
           {/* Back to Home Button */}
           <Link
             href="/regulations/acts/vat-acts/value-added-tax-act"
-            className="absolute top-4 left-4 flex items-center gap-2 bg-white text-green-700 hover:bg-green-100 transition-all px-3 py-2 rounded-full shadow"
+            className="absolute flex items-center gap-2 px-3 py-2 text-green-700 transition-all bg-white rounded-full shadow top-4 left-4 hover:bg-green-100"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -40,22 +40,14 @@ export default function LawPage() {
 
 
         {/* Header Section */}
-        <div className="border-b border-gray-300">
+        <div className="">
           <div className="flex flex-col md:flex-row">
-            {/* Left Side - Heading */}
-            <div className="md:w-1/5 bg-blue-50 p-6 border-r border-gray-300">
-              <h1 className="text-xl md:text-xl font-bold text-gray-800 leading-tight">
-                কর রেয়াত
-              </h1>
-            </div>
-            
-            {/* Right Side - Law Text */}
-              <div className="md:w-4/5 p-6">
-                <div className="space-y-6 text-gray-700">
+              <div className="p-6">
+                <div className="space-y-6 text-justify text-black">
                   {/* Section 1 */}
                   <div>
                     <p className="mb-4">
-                      ৯৷<sup className="text-blue-500" title='উপ-ধারা (১) অর্থ আইন, ২০০০ (২০০০ সনের ১৫ নং আইন) এর ৮৯ ধারাবলে প্রতিস্থাপিত'>১</sup>[(১) করযোগ্য পণ্যের সরবরাহকারী, ব্যবসায়ী <sup className='text-blue-500' title='“, বাণিজ্যিক আমদানিকারক” কমা ও শব্দগুলি “ব্যবসায়ী” শব্দটির পর অর্থ আইন, ২০১৩ (২০১৩ সনের ২৫ নং আইন) এর ৩৯ (ক) ধারাবলে সন্নিবেশিত।'>২</sup>[, বাণিজ্যিক আমদানিকারক] বা করযোগ্য সেবা প্রদানকারী প্রতি কর মেয়াদে তত্কর্তৃক সরবরাহকৃত পণ্য বা প্রদত্ত সেবার উপর প্রদেয় উত্পাদ করের (output tax) বিপরীতে, নিম্নবর্ণিত ক্ষেত্র ব্যতীত, উপকরণ কর রেয়াত গ্রহণ করিতে পারিবেন, যথা:-
+                      <span className="text-xl font-bold leading-tight text-gray-950 md:text-xl">৯৷ কর রেয়াত---</span><sup className="text-blue-500" title='উপ-ধারা (১) অর্থ আইন, ২০০০ (২০০০ সনের ১৫ নং আইন) এর ৮৯ ধারাবলে প্রতিস্থাপিত'>১</sup>[(১) করযোগ্য পণ্যের সরবরাহকারী, ব্যবসায়ী <sup className='text-blue-500' title='“, বাণিজ্যিক আমদানিকারক” কমা ও শব্দগুলি “ব্যবসায়ী” শব্দটির পর অর্থ আইন, ২০১৩ (২০১৩ সনের ২৫ নং আইন) এর ৩৯ (ক) ধারাবলে সন্নিবেশিত।'>২</sup>[, বাণিজ্যিক আমদানিকারক] বা করযোগ্য সেবা প্রদানকারী প্রতি কর মেয়াদে তত্কর্তৃক সরবরাহকৃত পণ্য বা প্রদত্ত সেবার উপর প্রদেয় উত্পাদ করের (output tax) বিপরীতে, নিম্নবর্ণিত ক্ষেত্র ব্যতীত, উপকরণ কর রেয়াত গ্রহণ করিতে পারিবেন, যথা:-
                       <br /><br />
                       (ক) অব্যাহতিপ্রাপ্ত পণ্য উৎপাদনে <sup className='text-blue-500' title='“বা সেবা প্রদানে” শব্দগুলি “পণ্য উৎপাদনে” শব্দগুলির পর অর্থ আইন, ২০১৪ (২০১৪ সনের ৪ নং আইন) এর ৫৮ ধারাবলে সন্নিবেশিত।'>৩</sup>[বা সেবা প্রদানে] ব্যবহৃত উপকরণের উপর পরিশোধিত মূল্য সংযোজন কর;
                       <br /><br />
@@ -121,87 +113,87 @@ export default function LawPage() {
         </div>
 
         {/* Footer Section */}
-          <div className="border-t border-gray-300">
+          <div className="">
             <div className="p-6">
-              <div className="border-b border-gray-400 pb-2 mb-4">
+              <div className="w-1/2 pb-2 mb-4 border-b border-gray-400">
                 {/* Horizontal line */}
               </div>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className='font-bold'>১</sup> উপ-ধারা (১) অর্থ আইন, ২০০০ (২০০০ সনের ১৫ নং আইন) এর ৮৯ ধারাবলে প্রতিস্থাপিত
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className='font-bold'>২</sup> ", বাণিজ্যিক আমদানিকারক" কমা ও শব্দগুলি "ব্যবসায়ী" শব্দটির পর অর্থ আইন, ২০১৩ (২০১৩ সনের ২৫ নং আইন) এর ৩৯ (ক) ধারাবলে সন্নিবেশিত।
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className='font-bold'>৩</sup> "বা সেবা প্রদানে" শব্দগুলি "পণ্য উৎপাদনে" শব্দগুলির পর অর্থ আইন, ২০১৪ (২০১৪ সনের ৪ নং আইন) এর ৫৮ ধারাবলে সন্নিবেশিত।
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className='font-bold'>৪</sup> "প্রতিস্থাপন, সম্প্রসারণ," শব্দগুলি ও কমাগুলি অর্থ আইন, ২০০১ (২০০১ সনের ৩০ নং আইন) এর ৭৫ ধারাবলে সন্নিবেশিত
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className='font-bold'>৫</sup> "জেনারেটর ক্রয় বা মেরামতকরণ, স্থাপত্য পরিকল্পনা ও নকশা, যানবাহন ভাড়া বা লীজ গ্রহণ এবং উহাদের" শব্দগুলি ও কমাগুলি "জেনারেটর ইত্যাদি ক্রয় বা মেরামতকরণ, স্থাপত্য পরিকল্পনা ও নকশা, যানবাহন, ইত্যাদি ভাড়া বা লীজ গ্রহণ, ইত্যাদির" শব্দগুলি ও কমাগুলির পরিবর্তে অর্থ আইন, ২০১৬ (২০১৬ সনের ২৮ নং আইন) এর ৬৮(ক) ধারাবলে প্রতিস্থাপিত (with effect from 1st July 2016).
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className='font-bold'>৬</sup> দফা (চ) অর্থ আইন, ২০০৪ (২০০৪ সনের ১৬ নং আইন) এর ৪৮ ধারাবলে প্রতিস্থাপিত
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className='font-bold'>৭</sup> দফা (ছছ) অর্থ আইন, ২০০৩ (২০০৩ সনের ১৭ নং আইন) এর ৩৮ ধারাবলে প্রতিস্থাপিত
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className='font-bold'>৮</sup> "মূল্য বা" শব্দগুলি অর্থ আইন, ২০১০ (২০১০ সনের ৩৩ নং আইন) এর ৭৬ ধারাবলে বিলুপ্ত।
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className='font-bold'>৯</sup> উপ-দফা (অঅ) অর্থ আইন, ২০১৩ (২০১৩ সনের ২৫ নং আইন) এর ৩৯ (খ) ধারাবলে সন্নিবেশিত।
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className='font-bold'>১০</sup> দফা (জজ) অর্থ আইন, ২০০২ (২০০২ সনের ১৪ নং আইন) এর ৮০ ধারাবলে সন্নিবেশিত
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className='font-bold'>১১</sup> "ও সেবা প্রদানকারী" শব্দগুলি "পণ্য সরবরাহকারী" শব্দগুলির পর অর্থ আইন, ২০০৯ (২০০৯ সনের ১০ নং আইন) এর ৪২ ধারাবলে সন্নিবেশিত যাহা ১ জুলাই ২০০৮ তারিখ হইতে কার্যকর।
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className='font-bold'>১২</sup> দফা (ঞ) অর্থ আইন, ২০১২ এর ৬২ ধারাবলে প্রতিস্থাপিত ।
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className='font-bold'>১৩</sup> দফা "(ট),(ঠ),(ড) এবং (ঢ)" দফা(ট) এর পরিবর্তে অর্থ আইন, ২০১০ (২০১০ সনের ৩৩ নং আইন) এর ৭৬ ধারাবলে প্রতিস্থাপিত।
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className='font-bold'>১৪</sup> "একই মালিকানাধীন নিবন্ধিত সরবরাহকারী ও সরবরাহ গ্রহীতার মধ্যে উপকরণ আদান-প্রদানের ক্ষেত্র ব্যতীত" শব্দগুলি "পণ্য" শব্দের পূর্বে অর্থ আইন, ২০১৩ (২০১৩ সনের ২৫ নং আইন) এর ৩৯ (গ) ধারাবলে সন্নিবেশিত।
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className='font-bold'>১৫</sup> 'ব্যাখ্যা' <Link href='/' className='text-blue-500'>অর্থ আইন, ২০১৮</Link> (২০১৮ সনের ২২ নং আইন) এর ৪৮ ধারাবলে সন্নিবেশিত। যাহা ১ জুলাই ২০১৮ তারিখ হইতে কার্যকর।
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className='font-bold'>১৬</sup> উপ-ধারা (১ক) অর্থ আইন, ২০১১ (২০১১ সনের ১২ নং আইন) এর ৬৭ ধারাবলে বিলুপ্ত।
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className='font-bold'>১৭</sup> উপ-ধারা (২) অর্থ আইন, ২০০০ (২০০০ সনের ১৫ নং আইন) এর ৮৯ ধারাবলে প্রতিস্থাপিত
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className='font-bold'>১৮</sup> "গৃহীত রেয়াত নাকচ করিবার লক্ষ্যে কারণ দর্শানের নোটিশ জারি করিয়া এবং শুনানির সুযোগ প্রদান করিয়া চলতি হিসাব বা দাখিলপত্রে প্রয়োজনীয় সমন্বয় সাধন করিতে পারিবেন অথবা সমন্বয় সাধন করিবার নির্দেশ দিতে পারিবেন" শব্দগুলি "গৃহীত রেয়াত নাকচ করিয়া চলতি হিসাব বা দাখিলপত্রে প্রয়োজনীয় সমন্বয় সাধনের নির্দেশ দিতে পারিবেন" শব্দগুলির পরিবর্তে অর্থ আইন, ২০১৬ (২০১৬ সনের ২৮ নং আইন) এর ৬৮(খ) ধারাবলে প্রতিস্থাপিত (with effect from 1st July 2016).
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className='font-bold'>১৯</sup> উপ-ধারা (২ক) অর্থ আইন, ২০০৯ (২০০৯ সনের ৩৬ নং আইন) এর ৫১ ধারাবলে প্রতিস্থাপিত যাহা ১ জুলাই ২০০৯ তারিখ হইতে কার্যকর।
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className='font-bold'>২০</sup> "সিদ্ধান্তের" শব্দ "নির্দেশের" শব্দের পরিবর্তে অর্থ আইন, ২০১৬ (২০১৬ সনের ২৮ নং আইন) এর ৬৮(গ) ধারাবলে প্রতিস্থাপিত (with effect from 1st July 2016).
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className='font-bold'>২১</sup> "সিদ্ধান্তের" শব্দ "নির্দেশের" শব্দের পরিবর্তে অর্থ আইন, ২০১৬ (২০১৬ সনের ২৮ নং আইন) এর ৬৮(গ) ধারাবলে প্রতিস্থাপিত (with effect from 1st July 2016).
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className='font-bold'>২২</sup> "সিদ্ধান্ত" শব্দ "নির্দেশ" শব্দের পরিবর্তে অর্থ আইন, ২০১৬ (২০১৬ সনের ২৮ নং আইন) এর ৬৮(গ) ধারাবলে প্রতিস্থাপিত (with effect from 1st July 2016).
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className='font-bold'>২৩</sup> "পনের কার্যদিবসের" শব্দগুলি "সাত কার্যদিবসের" শব্দগুলির পরিবর্তে অর্থ আইন, ২০০৯ (২০০৯ সনের ৯ নং আইন) এর ৬০ ধারাবলে প্রতিস্থাপিত যাহা ১ জুলাই ২০০৭ তারিখ হইতে কার্যকর।
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className='font-bold'>২৪</sup> "ত্রিশ" শব্দ "পনের" শব্দের পরিবর্তে অর্থ আইন, ২০১৬ (২০১৬ সনের ২৮ নং আইন) এর ৬৮(ঘ) ধারাবলে প্রতিস্থাপিত (with effect from 1st July 2016).
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className='font-bold'>২৫</sup> "এবং উক্ত কর্মকর্তার অনুরূপ কোন আদেশ চূড়ান্ত হইবে" শব্দগুলি অর্থ আইন, ২০১৬ (২০১৬ সনের ২৮ নং আইন) এর ৬৮(ঘ) ধারাবলে বিলুপ্ত (with effect from 1st July 2016).
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className='font-bold'>২৬</sup> উপ-ধারা (৪) অর্থ আইন, ২০০২ (২০০২ সনের ১৪ নং আইন) এর ৮০ ধারাবলে সংযোজিত।
               </p>
             </div>

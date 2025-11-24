@@ -3,26 +3,26 @@ import Link from 'next/link';
 
 export default function LawPage() {
   return (
-    <div className="min-h-screen bg-gray-50 py-8 px-4">
-      <div className="max-w-6xl mx-auto bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+    <div className="min-h-screen px-4 py-8 bg-gray-50">
+      <div className="max-w-6xl mx-auto overflow-hidden bg-white border border-gray-200 rounded-lg shadow-sm">
         {/* Banner Section */}
-        <div className="bg-gradient-to-r from-green-600 to-green-800 text-white py-8 px-4 md:px-8 relative">
+        <div className="relative px-4 py-8 text-white bg-gradient-to-r from-green-600 to-green-800 md:px-8">
           <div className="text-center">
-            <h1 className="text-2xl md:text-4xl font-bold mb-2">
+            <h1 className="mb-2 text-2xl font-bold md:text-4xl">
               মূল্য সংযোজন কর আইন, ১৯৯১
             </h1>
             <p className="text-lg md:text-xl opacity-90">
               ( ১৯৯১ সনের ২২ নং আইন )
             </p>
-            <div className="mt-3 inline-block bg-green-500 px-4 py-1 rounded-full shadow-md">
-              <p className="text-sm md:text-base font-medium">[ ৩০ জুন, ১৯৯১ ]</p>
+            <div className="inline-block px-4 py-1 mt-3 bg-green-500 rounded-full shadow-md">
+              <p className="text-sm font-medium md:text-base">[ ৩০ জুন, ১৯৯১ ]</p>
             </div>
           </div>
 
           {/* Back to Home Button */}
           <Link
             href="/regulations/acts/vat-acts/value-added-tax-act"
-            className="absolute top-4 left-4 flex items-center gap-2 bg-white text-green-700 hover:bg-green-100 transition-all px-3 py-2 rounded-full shadow"
+            className="absolute flex items-center gap-2 px-3 py-2 text-green-700 transition-all bg-white rounded-full shadow top-4 left-4 hover:bg-green-100"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -38,29 +38,21 @@ export default function LawPage() {
         </div>
 
         {/* Header Section */}
-        <div className="border-b border-gray-300">
+        <div className="">
           <div className="flex flex-col md:flex-row">
-            {/* Left Side - Heading */}
-            <div className="md:w-1/5 bg-blue-50 p-6 border-r border-gray-300">
-              <h1 className="text-xl md:text-xl font-bold text-gray-800 leading-tight">
-                নিবন্ধন
-              </h1>
-            </div>
-            
-            {/* Right Side - Law Text */}
-              <div className="md:w-4/5 p-6">
-                <div className="space-y-6 text-gray-700">
+              <div className="p-6">
+                <div className="space-y-6 text-justify text-black">
                   {/* Section 1 */}
                   <div>
                     <p className="mb-4">
-                      ১৫৷ (১) করযোগ্য পণ্যের সরবরাহকারী বা করযোগ্য সেবা প্রদানকারী বা <sup className='text-blue-500 cursor-pointer' title='“যে কোন পণ্য বা সেবার আমদানিকারক বা” শব্দগুলি “যে কোন পণ্যের আমদানিকারক বা যে কোন পণ্য বা সেবার” শব্দগুলির পরিবর্তে অর্থ আইন, ২০১৮ (২০১৮ সনের ২২ নং আইন) এর ৪৯(ক) ধারাবলে প্রতিস্থাপিত। যাহা ১ জুলাই ২০১৮ তারিখ হইতে কার্যকর।'>১</sup>[ যে কোন পণ্য বা সেবার আমদানিকারক বা] রপ্তানিকারককে বিধি দ্বারা নির্ধারিত পদ্ধতিতে সংশ্লিষ্ট কর্মকর্তার নিকট নিবন্ধিত হইতে হইবে৷
+                       <span className="text-xl font-bold leading-tight text-gray-950 md:text-xl">১৫৷ নিবন্ধন---</span>(১) করযোগ্য পণ্যের সরবরাহকারী বা করযোগ্য সেবা প্রদানকারী বা <sup className='text-blue-500 cursor-pointer' title='“যে কোন পণ্য বা সেবার আমদানিকারক বা” শব্দগুলি “যে কোন পণ্যের আমদানিকারক বা যে কোন পণ্য বা সেবার” শব্দগুলির পরিবর্তে অর্থ আইন, ২০১৮ (২০১৮ সনের ২২ নং আইন) এর ৪৯(ক) ধারাবলে প্রতিস্থাপিত। যাহা ১ জুলাই ২০১৮ তারিখ হইতে কার্যকর।'>১</sup>[ যে কোন পণ্য বা সেবার আমদানিকারক বা] রপ্তানিকারককে বিধি দ্বারা নির্ধারিত পদ্ধতিতে সংশ্লিষ্ট কর্মকর্তার নিকট নিবন্ধিত হইতে হইবে৷
                     </p>
 
                     <p className="mb-4">
                       (২) যদি কোন ব্যক্তি দুই বা ততোধিক স্থান হইতে উক্তরূপ পণ্য সরবরাহ করেন বা সেবা প্রদান করেন বা আমদানি বা রপ্তানির ব্যবসায় পরিচালনা করেন তাহা হইলে তাহাকে প্রতিটি স্থানের জন্য পৃথকভাবে নিবন্ধিত হইতে হইবে <sup className='text-blue-500 cursor-pointer' title='দাঁড়ির (৷) পরিবর্তে কোলন (:) প্রতিস্থাপিত এবং অতঃপর শর্তাংশটি অর্থ আইন, ১৯৯৪ (১৯৯৪ সনের ১১ নং আইন) এর ৯ ধারাবলে সংযোজিত'>২</sup>:
                     </p>
 
-                    <p className="mb-4 pl-4">
+                    <p className="pl-4 mb-4">
                       <sup className='text-blue-500 cursor-pointer' title='শর্তাংশ অর্থ আইন, ২০১৬ (২০১৬ সনের ২৮ নং আইন) এর ৬৯ ধারাবলে প্রতিস্থাপিত (with effect from 1st July 2016).'>৩</sup>[ <sup className='text-blue-500 cursor-pointer' title='প্রথম শর্তাংশ অর্থ আইন, ২০১৮ (২০১৮ সনের ২২ নং আইন) এর ৪৯(খ)(অ) ধারাবলে বিলুপ্ত। যাহা ১ জুলাই ২০১৮ তারিখ হইতে কার্যকর।'>৪</sup>[ ***] <sup className='text-blue-500 cursor-pointer' title='“তবে” শব্দটি “আরও” শব্দটির পরিবর্তে অর্থ আইন, ২০১৮ (২০১৮ সনের ২২ নং আইন) এর ৪৯(খ)(আ) ধারাবলে প্রতিস্থাপিত। যাহা ১ জুলাই ২০১৮ তারিখ হইতে কার্যকর।'>৫</sup>[ তবে] শর্ত থাকে যে, যদি কোন ব্যক্তি দুই বা ততোধিক স্থান হইতে তাহার করযোগ্য পণ্যের উৎপাদন, সরবরাহ বা সেবা প্রদান বা আমদানি বা রপ্তানি ব্যবসা পরিচালনা করেন এবং সকল হিসাব-নিকাশ একত্রে সংরক্ষণ করেন, তাহা হইলে তিনি, স্বেচ্ছায়, বিধি দ্বারা নির্ধারিত পদ্ধতিতে কেন্দ্রীয়ভাবে নিবন্ধিত হইতে পারিবেন।]]
                     </p>
 
@@ -87,33 +79,33 @@ export default function LawPage() {
         </div>
 
         {/* Footer Section */}
-          <div className="border-t border-gray-300">
+          <div className="">
             <div className="p-6">
-              <div className="w-1/2 border-b border-gray-400 pb-2 mb-4">
+              <div className="w-1/2 pb-2 mb-4 border-b border-gray-400">
                 {/* Horizontal line */}
               </div>
-              <p className="text-xs text-gray-600 italic mb-2">
+              <p className="mb-2 text-xs italic text-gray-600">
                 <sup className="font-bold">১</sup>“যে কোন পণ্য বা সেবার আমদানিকারক বা” শব্দগুলি “যে কোন পণ্যের আমদানিকারক বা যে কোন পণ্য বা সেবার” শব্দগুলির পরিবর্তে <Link href='/' className='text-blue-500'>অর্থ আইন, ২০১৮</Link> (২০১৮ সনের ২২ নং আইন) এর ৪৯(ক) ধারাবলে প্রতিস্থাপিত। যাহা ১ জুলাই ২০১৮ তারিখ হইতে কার্যকর।
               </p>
-              <p className="text-xs text-gray-600 italic mb-2">
+              <p className="mb-2 text-xs italic text-gray-600">
                 <sup className="font-bold">২</sup>দাঁড়ির (৷) পরিবর্তে কোলন (:) প্রতিস্থাপিত এবং অতঃপর শর্তাংশটি অর্থ আইন, ১৯৯৪ (১৯৯৪ সনের ১১ নং আইন) এর ৯ ধারাবলে সংযোজিত
               </p>
-              <p className="text-xs text-gray-600 italic mb-2">
+              <p className="mb-2 text-xs italic text-gray-600">
                 <sup className="font-bold">৩</sup>শর্তাংশ অর্থ আইন, ২০১৬ (২০১৬ সনের ২৮ নং আইন) এর ৬৯ ধারাবলে প্রতিস্থাপিত (with effect from 1st July 2016).
               </p>
-              <p className="text-xs text-gray-600 italic mb-2">
+              <p className="mb-2 text-xs italic text-gray-600">
                 <sup className="font-bold">৪</sup>প্রথম শর্তাংশ <Link href='/' className='text-blue-500'>অর্থ আইন, ২০১৮</Link> (২০১৮ সনের ২২ নং আইন) এর ৪৯(খ)(অ) ধারাবলে বিলুপ্ত। যাহা ১ জুলাই ২০১৮ তারিখ হইতে কার্যকর।
               </p>
-              <p className="text-xs text-gray-600 italic mb-2">
+              <p className="mb-2 text-xs italic text-gray-600">
                 <sup className="font-bold">৫</sup>“তবে” শব্দটি “আরও” শব্দটির পরিবর্তে <Link href='/' className='text-blue-500'>অর্থ আইন, ২০১৮</Link> (২০১৮ সনের ২২ নং আইন) এর ৪৯(খ)(আ) ধারাবলে প্রতিস্থাপিত। যাহা ১ জুলাই ২০১৮ তারিখ হইতে কার্যকর।
               </p>
-              <p className="text-xs text-gray-600 italic mb-2">
+              <p className="mb-2 text-xs italic text-gray-600">
                 <sup className="font-bold">৬</sup>উপ-ধারা (৩ক) অর্থ আইন, ২০১৪ (২০১৪ সনের ৪ নং আইন) এর ৫৯ ধারাবলে বিলুপ্ত।
               </p>
-              <p className="text-xs text-gray-600 italic mb-2">
+              <p className="mb-2 text-xs italic text-gray-600">
                 <sup className="font-bold">৭</sup>“নিবন্ধিত করিয়া তাহাকে অবহিত করিবেন” শব্দগুলি “নিবন্ধিত হইতে বাধ্য করিবেন” শব্দগুলির পরিবর্তে অর্থ আইন, ১৯৯২ (১৯৯২ সনের ২১ নং আইন) এর ১১ ধারাবলে প্রতিস্থাপিত
               </p>
-              <p className="text-xs text-gray-600 italic">
+              <p className="text-xs italic text-gray-600">
                 <sup className="font-bold">৮</sup>উপ ধারা (৫) অর্থ আইন, ২০০৯ ( ২০০৯ সনের ৯ নং আইন) এর ৬১ ধারাবলে সন্নিবেশিত।
               </p>
             </div>

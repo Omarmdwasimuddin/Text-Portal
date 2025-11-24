@@ -3,26 +3,26 @@ import Link from 'next/link';
 
 export default function LawPage() {
   return (
-    <div className="min-h-screen bg-gray-50 py-8 px-4">
-      <div className="max-w-6xl mx-auto bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+    <div className="min-h-screen px-4 py-8 bg-gray-50">
+      <div className="max-w-6xl mx-auto overflow-hidden bg-white border border-gray-200 rounded-lg shadow-sm">
         {/* Banner Section */}
-        <div className="bg-gradient-to-r from-green-600 to-green-800 text-white py-8 px-4 md:px-8 relative">
+        <div className="relative px-4 py-8 text-white bg-gradient-to-r from-green-600 to-green-800 md:px-8">
           <div className="text-center">
-            <h1 className="text-2xl md:text-4xl font-bold mb-2">
+            <h1 className="mb-2 text-2xl font-bold md:text-4xl">
               মূল্য সংযোজন কর আইন, ১৯৯১
             </h1>
             <p className="text-lg md:text-xl opacity-90">
               ( ১৯৯১ সনের ২২ নং আইন )
             </p>
-            <div className="mt-3 inline-block bg-green-500 px-4 py-1 rounded-full shadow-md">
-              <p className="text-sm md:text-base font-medium">[ ৩০ জুন, ১৯৯১ ]</p>
+            <div className="inline-block px-4 py-1 mt-3 bg-green-500 rounded-full shadow-md">
+              <p className="text-sm font-medium md:text-base">[ ৩০ জুন, ১৯৯১ ]</p>
             </div>
           </div>
 
           {/* Back to Home Button */}
           <Link
             href="/regulations/acts/vat-acts/value-added-tax-act"
-            className="absolute top-4 left-4 flex items-center gap-2 bg-white text-green-700 hover:bg-green-100 transition-all px-3 py-2 rounded-full shadow"
+            className="absolute flex items-center gap-2 px-3 py-2 text-green-700 transition-all bg-white rounded-full shadow top-4 left-4 hover:bg-green-100"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -38,22 +38,14 @@ export default function LawPage() {
         </div>
 
         {/* Header Section */}
-        <div className="border-b border-gray-300">
+        <div className="">
           <div className="flex flex-col md:flex-row">
-            {/* Left Side - Heading */}
-            <div className="md:w-1/5 bg-blue-50 p-6 border-r border-gray-300">
-              <h1 className="text-xl md:text-xl font-bold text-gray-800 leading-tight">
-                পরিশোধের সময় ও পদ্ধতি
-              </h1>
-            </div>
-            
-            {/* Right Side - Law Text */}
-            <div className="md:w-4/5 p-6">
-              <div className="space-y-6 text-gray-700">
+            <div className="p-6">
+              <div className="space-y-6 text-justify text-black">
                 {/* Section 1 */}
                 <div>
                   <p className="mb-4">
-                    ৬৷ (১) আমদানিকৃত পণ্যের উপর মূল্য সংযোজন কর Customs Act এবং উহার অধীন প্রণীত বিধি মোতাবেক আমদানি শুল্কের মত এইরূপ একই পদ্ধতি ও সময়ে প্রদত্ত হইবে যেন উহা উক্ত Act এর অধীন একটি আমদানি শুল্ক; এবং উক্ত মূল্য সংযোজন কর বা, ক্ষেত্রমত, সম্পূরক শুল্ক সংক্রান্ত কোন বিষয় নিয়ন্ত্রণের জন্য এই আইনের অধীন প্রদত্ত বা জারীকৃত বিধিমালা, আদেশসমূহ বা নির্দেশাবলী, যদি থাকে, সাপেক্ষে উক্ত Act এবং তদধীনে জারীকৃত বা প্রদত্ত বিধিমালা, আদেশসমূহ বা নির্দেশাবলী, যতদূর সম্ভব, মূল্য সংযোজন কর বা, ক্ষেত্রমত, সম্পূরক শুল্কের প্রতি এইরূপে প্রযোজ্য হইবে যেইরূপে উহা আমদানি শুল্কের প্রতি প্রযোজ্য হয়৷
+                    <span className="text-xl font-bold leading-tight text-gray-950 md:text-xl">৬৷ পরিশোধের সময় ও পদ্ধতি---</span>(১) আমদানিকৃত পণ্যের উপর মূল্য সংযোজন কর Customs Act এবং উহার অধীন প্রণীত বিধি মোতাবেক আমদানি শুল্কের মত এইরূপ একই পদ্ধতি ও সময়ে প্রদত্ত হইবে যেন উহা উক্ত Act এর অধীন একটি আমদানি শুল্ক; এবং উক্ত মূল্য সংযোজন কর বা, ক্ষেত্রমত, সম্পূরক শুল্ক সংক্রান্ত কোন বিষয় নিয়ন্ত্রণের জন্য এই আইনের অধীন প্রদত্ত বা জারীকৃত বিধিমালা, আদেশসমূহ বা নির্দেশাবলী, যদি থাকে, সাপেক্ষে উক্ত Act এবং তদধীনে জারীকৃত বা প্রদত্ত বিধিমালা, আদেশসমূহ বা নির্দেশাবলী, যতদূর সম্ভব, মূল্য সংযোজন কর বা, ক্ষেত্রমত, সম্পূরক শুল্কের প্রতি এইরূপে প্রযোজ্য হইবে যেইরূপে উহা আমদানি শুল্কের প্রতি প্রযোজ্য হয়৷
                   </p>
                   <p className="mb-4">
                     (২) কোন নিবন্ধিত বা নিবন্ধনযোগ্য ব্যক্তি কর্তৃক ব্যবসায় কার্য পরিচালনা বা সম্প্রসারণের লক্ষ্যে <sup className='text-blue-500 cursor-pointer' title='“প্রস্তুতকৃত বা উত্পাদিত পণ্য বা আমদানীকৃত, ক্রয়কৃত, অর্জিত বা অন্য কোনভাবে সংগৃহীত পণ্যের” শব্দগুলি ও কমাগুলি “প্রস্তুতকৃত বা উত্পাদিত পণ্যের” শব্দগুলির পরিবর্তে অর্থ আইন, ১৯৯৬ (১৯৯৬ সনের ১৮ নং আইন) এর ৬ ধারাবলে প্রতিস্থাপিত'>১</sup>[প্রস্তুতকৃত বা উৎপাদিত পণ্য বা আমদানীকৃত, ক্রয়কৃত, অর্জিত বা অন্য কোনভাবে সংগৃহীত পণ্যের] উপর মূল্য সংযোজন কর প্রদেয় হইবে নিম্নবর্ণিত কার্যাবলীর মধ্যে যাহা সর্বাগ্রে ঘটে, উহা সংঘটিত হওয়ার সময়ে-
@@ -165,54 +157,54 @@ export default function LawPage() {
         </div>
 
         {/* Footer Section */}
-          <div className="border-t border-gray-300">
+          <div className="">
             <div className="p-6">
-              <div className="border-b border-gray-400 pb-2 mb-4">
+              <div className="w-1/2 pb-2 mb-4 border-b border-gray-400">
                 {/* Horizontal line */}
               </div>
-              <p className="text-xs text-gray-600 italic">
+              <p className="text-xs italic text-gray-600">
                 <sup className="font-bold">১</sup>"প্রস্তুতকৃত বা উত্পাদিত পণ্য বা আমদানীকৃত, ক্রয়কৃত, অর্জিত বা অন্য কোনভাবে সংগৃহীত পণ্যের" শব্দগুলি ও কমাগুলি "প্রস্তুতকৃত বা উত্পাদিত পণ্যের" শব্দগুলির পরিবর্তে অর্থ আইন, ১৯৯৬ (১৯৯৬ সনের ১৮ নং আইন) এর ৬ ধারাবলে প্রতিস্থাপিত
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className="font-bold">২</sup>দফা (গ) এর প্রান্তস্থিত "।" দাড়ির পরিব্রর্তে ";" সেমি-কোলোন প্রতিস্থাপিত এবং অতঃপর দফা (ঘ) অর্থ আইন, ২০১০ (২০১০ সনের ৩৩ নং আইন) এর ৭৫ ধারাবলে সংযোজিত।
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className="font-bold">৩</sup>উপ-ধারা (৪) অর্থ আইন, ১৯৯৯ (১৯৯৯ সনের ১৬ নং আইন) এর ৭ ধারাবলে প্রতিস্থাপিত
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className="font-bold">৪</sup>"বা উৎসে কর্তনের" শব্দগুলি অর্থ আইন, ২০১০ (২০১০ সনের ৩৩ নং আইন) এর ৭৫ ধারাবলে সন্নিবেশিত।
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className="font-bold">৫</sup>উপ-ধারা (৪ক), (৪খ) এবং (৪গ) অর্থ আইন, ১৯৯৩ (১৯৯৩ সনের ১৮ নং আইন) এর ৮ ধারাবলে সন্নিবেশিত
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className="font-bold">৬</sup>উপ-ধারা (৪ক), (৪কক) পূর্ববর্তী উপ-ধারা (৪ক) এর পরিবর্তে অর্থ আইন, ২০০০ (২০০০ সনের ১৫ নং আইন) এর ৮৮ ধারাবলে প্রতিস্থাপিত
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className="font-bold">৭</sup>"স্ট্যাম্প বা ব্যাণ্ডরোল" শব্দগুলি "ব্যাণ্ডরোল" শব্দটির পরিবর্তে অর্থ আইন, ২০০১ (২০০১ সনের ৩০ নং আইন) এর ৭৪ ধারাবলে প্রতিস্থাপিত
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className="font-bold">৮</sup>"(৪কক), (৪খ) এবং (৪ঘ) " উপ-ধারা গুলি "(৪কক),(৪খ)এবং (৪ঘ) " উপ-ধারার পরিবর্তে অর্থ আইন, (২০১১ সনের ১২ নং আইন) এর ৬৫ ধারাবলে প্রতিস্থাপিত।
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className="font-bold">৯</sup>, প্রযোজ্য হারে," শব্দগুলি ও কমাগুলি "সেবার মূল্য বা কমিশন পরিশোধকালে" শব্দগুলির পর অর্থ আইন, ২০১৩ (২০১৩ সনের ২৫ নং আইন) এর ৩৮ (ক) ধারাবলে সন্নিবেশিত।
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className="font-bold">১০</sup>বৈদেশিক সাহায্যপুষ্ট" শব্দগুলি অর্থ আইন, ২০১৩ (২০১৩ সনের ২৫ নং আইন) এর ৩৮ (খ) ধারাবলে বিলুপ্ত।
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className="font-bold">১১</sup>উপ-ধারা (৪ককক) অর্থ আইন, ২০১১ (২০১১ সনের ১২ নং আইন) এর ৬৫(গ) ধারাবলে সন্নিবেশিত।
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className="font-bold">১২</sup>উপ-ধারা (৪গ) অর্থ আইন, ২০১২ এর ৬০ ধারাবলে বিলুপ্ত।
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className="font-bold">১৩</sup>উপ-ধারা (৪ছ) অর্থ আইন, ২০১১ (২০১১ সনের ১২ নং আইন) এর ৬৫(ঙ) ধারাবলে সন্নিবেশিত।
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className="font-bold">১৪</sup>উপ-ধারা(৫) অর্থ আইন, ২০১০ (২০১০ সনের ৩৩ নং আইন) এর ৭৫ ধারাবলে প্রতিস্থাপিত।
               </p>
-              <p className="text-xs text-gray-600 italic mt-2">
+              <p className="mt-2 text-xs italic text-gray-600">
                 <sup className="font-bold">১৫</sup>উপ-ধারা (৬) অর্থ আইন, ২০১১ (২০১১ সনের ১২ নং আইন) এর ৬৫(চ) ধারাবলে সংযোজিত।
               </p>
             </div>
