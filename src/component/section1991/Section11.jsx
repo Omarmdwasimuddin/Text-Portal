@@ -38,7 +38,7 @@ export default function LawPage() {
         </div>
 
         {/* Header Section */}
-        <div className="border-b border-gray-300">
+        <div className="">
           <div className="flex flex-col md:flex-row">
               <div className="p-6">
                 <div className="space-y-6 text-justify text-black">
