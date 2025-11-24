@@ -38,14 +38,14 @@ export default function LawPage() {
         </div>
 
         {/* Header Section */}
-        <div className="border-b border-gray-300">
+        <div className="">
           <div className="flex flex-col md:flex-row">
             <div className="p-6">
-              <div className="space-y-6 text-gray-700">
+              <div className="space-y-6 text-justify text-black">
                 {/* Section 1 */}
                 <div>
-                  <p className="mb-4 text-justify">
-                    <span className="text-xl font-bold leading-tight text-gray-800 md:text-xl">২ক। আইনের প্রাধান্য---</span><sup className="text-blue-500 cursor-pointer" title='ধারা ২ক অর্থ আইন, ২০১১ (২০১১ সনের ১২ নং আইন) এর ৬৩ ধারাবলে সন্নিবেশিত।'>১</sup>[ আপাততঃ বলবৎ অন্য কোন আইন, বিধি, প্রবিধান, চুক্তি বা আইনের ক্ষমতাসম্পন্ন অন্য কোন দলিলে যাহা কিছুই থাকুক না কেন, এই আইনের বিধানাবলী প্রাধান্য পাইবে।]
+                  <p className="mb-4">
+                    <span className="text-xl font-bold leading-tight text-gray-950 md:text-xl">২ক। আইনের প্রাধান্য---</span><sup className="text-blue-500 cursor-pointer" title='ধারা ২ক অর্থ আইন, ২০১১ (২০১১ সনের ১২ নং আইন) এর ৬৩ ধারাবলে সন্নিবেশিত।'>১</sup>[ আপাততঃ বলবৎ অন্য কোন আইন, বিধি, প্রবিধান, চুক্তি বা আইনের ক্ষমতাসম্পন্ন অন্য কোন দলিলে যাহা কিছুই থাকুক না কেন, এই আইনের বিধানাবলী প্রাধান্য পাইবে।]
                   </p>
                 </div>
               </div>
@@ -56,7 +56,7 @@ export default function LawPage() {
         {/* Footer Section */}
         <div className="">
           <div className="p-6">
-            <div className="pb-2 mb-4 border-b border-gray-400">
+            <div className="w-1/2 pb-2 mb-4 border-b border-gray-400">
               {/* Horizontal line */}
             </div>
             <p className="text-xs italic text-gray-600">

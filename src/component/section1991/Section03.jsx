@@ -41,20 +41,20 @@ export default function LawPage() {
         <div className="">
           <div className="flex flex-col md:flex-row">
               <div className="p-6">
-                <div className="space-y-6 text-gray-700">
+                <div className="space-y-6 text-justify text-black">
                   {/* Section 1 */}
                   <div>
-                    <p className="mb-4 text-justify text-black">
-                      <span className="text-xl font-bold leading-tight text-gray-900 md:text-xl">৩৷ মূল্য সংযোজন কর আরোপ---</span> (১) প্রথম তফসিলে উল্লিখিত পণ্যসমূহ ব্যতীত বাংলাদেশে আমদানিকৃত সকল পণ্য এবং উক্ত তফসিলে উল্লিখিত পণ্যসমূহ ব্যতীত সকল পণ্যের সরবরাহের উপর এবং <sup className='text-blue-500 cursor-pointer' title='“দ্বিতীয় তফসিলে উল্লিখিত সেবাসমূহ ব্যতীত” শব্দগুলি “দ্বিতীয় তফসিলে উল্লিখিত” শব্দগুলির পরিবর্তে অর্থ আইন, ২০০০ (২০০০ সনের ১৫ নং আইন) এর ৮৬ ধারাবলে প্রতিস্থাপিত'>1</sup>[দ্বিতীয় তফসিলে উল্লিখিত সেবাসমূহ ব্যতীত]<sup className='text-blue-500 cursor-pointer' title='‘‘বাংলাদেশে আমদানিকৃত বা’’ শব্দগুলি ‘‘সেবাসমুহ ব্যতীত’’ শব্দগুলির পর অর্থ আইন, ২০১২ এর ৫৯ ধারাবলে সন্নিবেশিত।
+                    <p className="mb-4">
+                      <span className="text-xl font-bold leading-tight text-gray-950 md:text-xl">৩৷ মূল্য সংযোজন কর আরোপ---</span> (১) প্রথম তফসিলে উল্লিখিত পণ্যসমূহ ব্যতীত বাংলাদেশে আমদানিকৃত সকল পণ্য এবং উক্ত তফসিলে উল্লিখিত পণ্যসমূহ ব্যতীত সকল পণ্যের সরবরাহের উপর এবং <sup className='text-blue-500 cursor-pointer' title='“দ্বিতীয় তফসিলে উল্লিখিত সেবাসমূহ ব্যতীত” শব্দগুলি “দ্বিতীয় তফসিলে উল্লিখিত” শব্দগুলির পরিবর্তে অর্থ আইন, ২০০০ (২০০০ সনের ১৫ নং আইন) এর ৮৬ ধারাবলে প্রতিস্থাপিত'>1</sup>[দ্বিতীয় তফসিলে উল্লিখিত সেবাসমূহ ব্যতীত]<sup className='text-blue-500 cursor-pointer' title='‘‘বাংলাদেশে আমদানিকৃত বা’’ শব্দগুলি ‘‘সেবাসমুহ ব্যতীত’’ শব্দগুলির পর অর্থ আইন, ২০১২ এর ৫৯ ধারাবলে সন্নিবেশিত।
 
         '>2</sup>[বাংলাদেশে আমদানিকৃত বা] <sup className='text-blue-500 cursor-pointer' title='“বাংলাদেশ প্রদত্ত” শব্দগুলি অর্থ আইন, ১৯৯৮ (১৯৯৮ সনের ১৪ নং আইন) এর ৭ ধারাবলে সংযোজিত'>3</sup>[বাংলাদেশে প্রদত্ত] সকল সেবার উপর ধারা ৫ এ বর্ণিত মূল্যের ভিত্তিতে পনের শতাংশ হারে মূল্য সংযোজন কর ধার্য ও প্রদেয় হইবে৷
                     </p>
                     
-                    <p className="mb-4 text-black">
+                    <p className="mb-4 ">
                       (২) উপ-ধারা (১) এ যাহা কিছুই থাকুক না কেন, নিম্নবর্ণিত পণ্য বা সেবার উপর শূন্য হারে কর আরোপিত হইবে; যথা:-
                     </p>
                     
-                    <div className="mb-4 ml-6 text-black">
+                    <div className="mb-4 ml-6 ">
                       <p className="mb-2">(ক) বাংলাদেশ হইতে রপ্তানিকৃত বা রপ্তানিকৃত বলিয়া গণ্য কোন পণ্য বা সেবা;</p>
                       
                       <p className="mb-2"><sup className='text-blue-500 cursor-pointer' title='দফা(কক) অর্থ আইন, ২০১০ (২০১০ সনের ৩৩ নং আইন) এর ৭২ ধারাবলে বিলুপ্ত।'>4</sup>[ *** ]</p>
@@ -67,7 +67,7 @@ export default function LawPage() {
                         তবে শর্ত থাকে যে, নিম্নবর্ণিত পণ্যের বা সেবার ক্ষেত্রে এই উপ-ধারা প্রযোজ্য হইবে না, যথা:-
                       </p>
                       
-                      <div className="ml-6 text-black">
+                      <div className="ml-6">
                         <p className="mb-2">(অ) বাংলাদেশে পুনঃ আমদানিকৃত বা পুনঃ আমদানির জন্য অভিপ্রেত কোন পণ্য বা সেবা;</p>
                         
                         <p className="mb-2">
@@ -76,39 +76,39 @@ export default function LawPage() {
                       </div>
                     </div>
                     
-                    <p className="mb-4 text-black">
+                    <p className="mb-4">
                       <sup className='text-blue-500 cursor-pointer' title='উপ-ধারা (৩) অর্থ আইন, ১৯৯৬ (১৯৯৬ সনের ১৮ নং আইন) এর ৬ ধারাবলে প্রতিস্থাপিত'>6</sup>[(৩) মূল্য সংযোজন কর প্রদান করিবেন,-
                     </p>
                     
-                    <div className="mb-4 ml-6 text-black">
+                    <div className="mb-4 ml-6">
                       <p className="mb-2">(ক) আমদানীকৃত পণ্যের ক্ষেত্রে, আমদানী পর্যায়ে আমদানীকারক;</p>
                       
                       <p className="mb-2">(খ) বাংলাদেশে প্রস্তুতকৃত বা উত্পাদিত পণ্যের ক্ষেত্রে, প্রস্তুতকরণ বা উত্পাদন পর্যায়ে সরবরাহকারী;</p>
                       
                       <p className="mb-2">(গ) সেবা প্রদানের ক্ষেত্রে, সেবা প্রদানকারী; এবং</p>
                       
-                      <p className="mb-2 text-black">
+                      <p className="mb-2">
                         <sup className='text-blue-500 cursor-pointer' title='দফা(ঘ) ও (ঙ), দফা (ঘ) এর পরিবর্তে অর্থ আইন, ২০১০ (২০১০ সনের ৩৩ নং আইন) এর ৭২ ধারাবলে প্রতিস্থাপিত ।'>7</sup>[(ঘ) বাংলাদেশের ভৌগলিক সীমারেখার বাহির হইতে সেবা সরবরাহের ক্ষেত্রে, সেবা গ্রহণকারী; এবং
                       </p>
                       
-                      <p className="mb-2 text-black">
+                      <p className="mb-2">
                         (ঙ) অন্যান্য ক্ষেত্রে, <sup className='text-blue-500 cursor-pointer' title='দফা(ঘ) ও (ঙ), দফা (ঘ) এর পরিবর্তে অর্থ আইন, ২০১০ (২০১০ সনের ৩৩ নং আইন) এর ৭২ ধারাবলে প্রতিস্থাপিত ।'>8</sup>[সরবরাহকারী ও সেবাগ্রহণকারী]।]]
                       </p>
                     </div>
                     
-                    <p className="mb-4 text-black">
+                    <p className="mb-4">
                       (৩ক) <Link href='/' className='text-blue-500'>অর্থ আইন, ২০০১</Link> (২০০১ সনের ৩০ নং আইন) এর ৭২ ধারাবলে বিলুপ্ত৷
                     </p>
                     
-                    <p className="mb-4 text-black">
+                    <p className="mb-4 ">
                       <sup className='text-blue-500 cursor-pointer' title='উপ-ধারা (৪) অর্থ আইন, ১৯৯২ (১৯৯২ সনের ২১ নং আইন) এর ১১ ধারাবলে সংযোজিত'>9</sup>[(৪) এই ধারার অধীন মূল্য সংযোজন কর ধার্য ও প্রদানের উদ্দেশ্যে কোন আমদানিকৃত বা সরবরাহকৃত পণ্যের শ্রেণীবিন্যাস (Classification) এর ক্ষেত্রে Customs Act এর অধীন উক্ত পণ্যের শ্রেণীবিন্যাস প্রযোজ্য হইবে৷]
                     </p>
                     
-                    <p className="mb-4 text-black">
+                    <p className="mb-4 ">
                       <sup className='text-blue-500 cursor-pointer' title='উপ-ধারা (৫) অর্থ আইন, ২০০০ (২০০০ সনের ১৫ নং আইন) এর ৮৬ ধারাবলে সংযোজিত'>10</sup>[(৫) এই ধারার উদ্দেশ্য পূরণকল্পে বোর্ড, জনস্বার্থে, সরকারী গেজেটে প্রজ্ঞাপন দ্বারা-
                     </p>
                     
-                    <div className="ml-6 text-black">
+                    <div className="ml-6 ">
                       <p className="mb-2">
                         (ক) যে কোন করযোগ্য পণ্য বা পণ্য শ্রেণীকে করযোগ্য সেবা এবং যে কোন করযোগ্য সেবাকে করযোগ্য পণ্য হিসাবে ঘোষণা করিতে পারিবে; এবং
                       </p>
@@ -127,7 +127,7 @@ export default function LawPage() {
         {/* Footer Section */}
           <div className="">
             <div className="p-6">
-              <div className="pb-2 mb-4 border-b border-gray-400">
+              <div className="w-1/2 pb-2 mb-4 border-b border-gray-400">
                 {/* Horizontal line */}
               </div>
               <p className="text-xs italic text-gray-600">

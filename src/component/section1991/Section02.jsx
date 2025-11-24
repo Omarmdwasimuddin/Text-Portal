@@ -41,11 +41,11 @@ export default function LawPage() {
         <div className="">
           <div className="flex flex-col md:flex-row">
             <div className="p-6">
-              <div className="space-y-6 text-gray-700">
+              <div className="space-y-6 text-justify text-black">
                 {/* Section 1 */}
                 <div>
-                  <p className="mb-4 text-justify">
-                    <span className="text-xl font-bold leading-tight text-gray-800 md:text-xl">২৷ সংজ্ঞা---</span> <sup className="text-blue-500 cursor-pointer" title='বিষয় বা প্রসঙ্গের” শব্দগুলি  “বিষয় এবং প্রসঙ্গের” শব্দগুলির পরিবর্তে অর্থ আইন, ১৯৯২ (১৯৯২ সনের ২১ নং আইন) এর ১১ ধারাবলে প্রতিস্থাপিত'>১</sup>[ বিষয় বা প্রসঙ্গের] পরিপন্থী কিছু না থাকিলে, এই আইনে-
+                  <p className="mb-4">
+                    <span className="text-xl font-bold leading-tight text-gray-950 md:text-xl">২৷ সংজ্ঞা---</span> <sup className="text-blue-500 cursor-pointer" title='বিষয় বা প্রসঙ্গের” শব্দগুলি  “বিষয় এবং প্রসঙ্গের” শব্দগুলির পরিবর্তে অর্থ আইন, ১৯৯২ (১৯৯২ সনের ২১ নং আইন) এর ১১ ধারাবলে প্রতিস্থাপিত'>১</sup>[ বিষয় বা প্রসঙ্গের] পরিপন্থী কিছু না থাকিলে, এই আইনে-
                   </p>
                   
                   <div className="ml-6 space-y-3">
@@ -321,7 +321,7 @@ export default function LawPage() {
         {/* Footer Section */}
           <div className="">
             <div className="p-6">
-              <div className="pb-2 mb-4 border-b border-gray-400">
+              <div className="w-1/2 pb-2 mb-4 border-b border-gray-400">
                 {/* Horizontal line */}
               </div>
               <p className="text-xs italic text-gray-600">
