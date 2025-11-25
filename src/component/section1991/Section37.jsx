@@ -3,26 +3,26 @@ import Link from 'next/link';
 
 export default function LawPage() {
   return (
-    <div className="min-h-screen bg-gray-50 py-8 px-4">
-      <div className="max-w-6xl mx-auto bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+    <div className="min-h-screen px-4 py-8 bg-gray-50">
+      <div className="max-w-6xl mx-auto overflow-hidden bg-white border border-gray-200 rounded-lg shadow-sm">
         {/* Banner Section */}
-        <div className="bg-gradient-to-r from-green-600 to-green-800 text-white py-8 px-4 md:px-8 relative">
+        <div className="relative px-4 py-8 text-white bg-gradient-to-r from-green-600 to-green-800 md:px-8">
           <div className="text-center">
-            <h1 className="text-2xl md:text-4xl font-bold mb-2">
+            <h1 className="mb-2 text-2xl font-bold md:text-4xl">
               মূল্য সংযোজন কর আইন, ১৯৯১
             </h1>
             <p className="text-lg md:text-xl opacity-90">
               ( ১৯৯১ সনের ২২ নং আইন )
             </p>
-            <div className="mt-3 inline-block bg-green-500 px-4 py-1 rounded-full shadow-md">
-              <p className="text-sm md:text-base font-medium">[ ৩০ জুন, ১৯৯১ ]</p>
+            <div className="inline-block px-4 py-1 mt-3 bg-green-500 rounded-full shadow-md">
+              <p className="text-sm font-medium md:text-base">[ ৩০ জুন, ১৯৯১ ]</p>
             </div>
           </div>
 
           {/* Back to Home Button */}
           <Link
             href="/regulations/acts/vat-acts/value-added-tax-act"
-            className="absolute top-4 left-4 flex items-center gap-2 bg-white text-green-700 hover:bg-green-100 transition-all px-3 py-2 rounded-full shadow"
+            className="absolute flex items-center gap-2 px-3 py-2 text-green-700 transition-all bg-white rounded-full shadow top-4 left-4 hover:bg-green-100"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -38,68 +38,60 @@ export default function LawPage() {
         </div>
 
         {/* Header Section */}
-        <div className="border-b border-gray-300">
+        <div className="">
           <div className="flex flex-col md:flex-row">
-            {/* Left Side - Heading */}
-            <div className="md:w-1/5 bg-blue-50 p-6 border-r border-gray-300">
-              <h1 className="text-xl md:text-xl font-bold text-gray-800 leading-tight">
-                অপরাধ ও দণ্ডসমূহ
-              </h1>
-            </div>
-            
-            {/* Right Side - Law Text */}
-            <div className="md:w-4/5 p-6">
-            <div className="space-y-6 text-gray-700">
+            <div className="p-6">
+            <div className="space-y-6 text-justify text-black">
                 {/* Section 1 */}
                 <div>
                 <p className="mb-4">
-                    <sup className='text-blue-500 cursor-pointer' title='উপ-ধারা (১), (২), (২ক) ও (২খ) উপ-ধারা (১) ও (২) এর পরিবর্তে অর্থ আইন, ২০১২ এর ৭১(ক) ধারাবলে প্রতিস্থাপিত ।'>১</sup>[৩৭। (১) নিম্নে টেবিলে উল্লিখিত বিধানাবলী লংঘন বা উহাতে উল্লিখিত নির্দেশ অমান্যকরণ বা অন্যান্য কার্যাবলীর জন্য উহার বিপরীতে উল্লিখিত দন্ড আরোপনীয় হইবে, যথা:-
+                    <sup className='text-blue-500 cursor-pointer' title='উপ-ধারা (১), (২), (২ক) ও (২খ) উপ-ধারা (১) ও (২) এর পরিবর্তে অর্থ আইন, ২০১২ এর ৭১(ক) ধারাবলে প্রতিস্থাপিত ।'>১</sup>[<span className="text-xl font-bold leading-tight text-gray-950 md:text-xl">৩৭। অপরাধ ও দণ্ডসমূহ---</span> (১) নিম্নে টেবিলে উল্লিখিত বিধানাবলী লংঘন বা উহাতে উল্লিখিত নির্দেশ অমান্যকরণ বা অন্যান্য কার্যাবলীর জন্য উহার বিপরীতে উল্লিখিত দন্ড আরোপনীয় হইবে, যথা:-
                 </p>
 
-                <div className="overflow-x-auto mb-4">
+                <div className="mb-4 overflow-x-auto">
                     <table className="min-w-full border border-gray-300">
                     <thead>
                         <tr className="bg-gray-100">
-                        <th className="border border-gray-300 px-4 py-2 text-center">ক্রমিক নং</th>
-                        <th className="border border-gray-300 px-4 py-2 text-center">অপরাধের বর্ণনা</th>
-                        <th className="border border-gray-300 px-4 py-2 text-center">আরোপনীয় দন্ড</th>
+                        <th className="px-4 py-2 text-center border border-gray-300">ক্রমিক নং</th>
+                        <th className="px-4 py-2 text-center border border-gray-300">অপরাধের বর্ণনা</th>
+                        <th className="px-4 py-2 text-center border border-gray-300">আরোপনীয় দন্ড</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                        <td className="border border-gray-300 px-4 py-2 text-center">(১)</td>
-                        <td className="border border-gray-300 px-4 py-2">(২)</td>
-                        <td className="border border-gray-300 px-4 py-2">(৩)</td>
+                        <td className="px-4 py-2 text-center border border-gray-300">(১)</td>
+                        <td className="px-4 py-2 border border-gray-300">(২)</td>
+                        <td className="px-4 py-2 border border-gray-300">(৩)</td>
                         </tr>
                         <tr>
-                        <td className="border border-gray-300 px-4 py-2 text-center">১।</td>
-                        <td className="border border-gray-300 px-4 py-2">এই আইনের অধীন নিবন্ধনের জন্য আবেদন করার প্রয়োজনীয়তা থাকা সত্ত্বেও নিবন্ধনের জন্য আবেদন করিতে ব্যর্থ হওয়া</td>
-                        <td className="border border-gray-300 px-4 py-2">অন্যূন দশ হাজার টাকা এবং অনূর্ধ্ব বিশ হাজার টাকা।</td>
+                        <td className="px-4 py-2 text-center border border-gray-300">১।</td>
+                        <td className="px-4 py-2 border border-gray-300">এই আইনের অধীন নিবন্ধনের জন্য আবেদন করার প্রয়োজনীয়তা থাকা সত্ত্বেও নিবন্ধনের জন্য আবেদন করিতে ব্যর্থ হওয়া</td>
+                        <td className="px-4 py-2 border border-gray-300">অন্যূন দশ হাজার টাকা এবং অনূর্ধ্ব বিশ হাজার টাকা।</td>
                         </tr>
                         <tr>
-                        <td className="border border-gray-300 px-4 py-2 text-center">২।</td>
-                        <td className="border border-gray-300 px-4 py-2">নির্ধারিত তারিখের মধ্যে কোন দাখিলপত্র পেশ করিতে ব্যর্থ হওয়া</td>
-                        <td className="border border-gray-300 px-4 py-2">অন্যূন দশ হাজার টাকা এবং অনূর্ধ্ব বিশ হাজার টাকা।</td>
+                        <td className="px-4 py-2 text-center border border-gray-300">২।</td>
+                        <td className="px-4 py-2 border border-gray-300">নির্ধারিত তারিখের মধ্যে কোন দাখিলপত্র পেশ করিতে ব্যর্থ হওয়া</td>
+                        <td className="px-4 py-2 border border-gray-300">অন্যূন দশ হাজার টাকা এবং অনূর্ধ্ব বিশ হাজার টাকা।</td>
                         </tr>
                         <tr>
-                        <td className="border border-gray-300 px-4 py-2 text-center">৩।</td>
-                        <td className="border border-gray-300 px-4 py-2">নিবন্ধন সম্পর্কিত তথ্যের কোন পরিবর্তন সম্পর্কে মূল্য সংযোজন কর কর্মকর্তাকে অবহিত করিতে ব্যর্থ হওয়া</td>
-                        <td className="border border-gray-300 px-4 py-2">অন্যূন পাঁচ হাজার টাকা এবং অনূর্ধ্ব দশ হাজার টাকা।</td>
+                        <td className="px-4 py-2 text-center border border-gray-300">৩।</td>
+                        <td className="px-4 py-2 border border-gray-300">নিবন্ধন সম্পর্কিত তথ্যের কোন পরিবর্তন সম্পর্কে মূল্য সংযোজন কর কর্মকর্তাকে অবহিত করিতে ব্যর্থ হওয়া</td>
+                        <td className="px-4 py-2 border border-gray-300">অন্যূন পাঁচ হাজার টাকা এবং অনূর্ধ্ব দশ হাজার টাকা।</td>
                         </tr>
                         <tr>
-                        <td className="border border-gray-300 px-4 py-2 text-center">৪।</td>
-                        <td className="border border-gray-300 px-4 py-2">ধারা ২৫ এর অধীন কোন সমনের নির্দেশ পালনে ব্যর্থ হওয়া</td>
-                        <td className="border border-gray-300 px-4 py-2">অন্যূন দশ হাজার টাকা এবং অনূর্ধ্ব ত্রিশ হাজার টাকা।</td>
+                        <td className="px-4 py-2 text-center border border-gray-300">৪।</td>
+                        <td className="px-4 py-2 border border-gray-300">ধারা ২৫ এর অধীন কোন সমনের নির্দেশ পালনে ব্যর্থ হওয়া</td>
+                        <td className="px-4 py-2 border border-gray-300">অন্যূন দশ হাজার টাকা এবং অনূর্ধ্ব ত্রিশ হাজার টাকা।</td>
                         </tr>
                         <tr>
-                        <td className="border border-gray-300 px-4 py-2 text-center">৫।</td>
-                        <td className="border border-gray-300 px-4 py-2">উপ-ধারা (২) এর দফা (জ) তে উল্লিখিত নথিপত্র, ইলেক্ট্রনিক ক্যাশ রেজিস্টার বা Point of Sales (POS) Software বা কম্পিউটার সংরক্ষণে ব্যর্থ হওয়া</td>
-                        <td className="border border-gray-300 px-4 py-2">অন্যূন বিশ হাজার টাকা এবং অনূর্ধ্ব পঞ্চাশ হাজার টাকা।</td>
+                        <td className="px-4 py-2 text-center border border-gray-300">৫।</td>
+                        <td className="px-4 py-2 border border-gray-300">উপ-ধারা (২) এর দফা (জ) তে উল্লিখিত নথিপত্র, ইলেক্ট্রনিক ক্যাশ রেজিস্টার বা Point of Sales (POS) Software বা কম্পিউটার সংরক্ষণে ব্যর্থ হওয়া</td>
+                        <td className="px-4 py-2 border border-gray-300">অন্যূন বিশ হাজার টাকা এবং অনূর্ধ্ব পঞ্চাশ হাজার টাকা।</td>
                         </tr>
                         <tr>
-                        <td className="border border-gray-300 px-4 py-2 text-center">৬।</td>
-                        <td className="border border-gray-300 px-4 py-2">এই আইনের অন্য কোনো বিধান লংঘন করা</td>
-                        <td className="border border-gray-300 px-4 py-2">অন্যূন দশ হাজার টাকা এবং অনূর্ধ্ব ত্রিশ হাজার টাকা।</td>
+                        <td className="px-4 py-2 text-center border border-gray-300">৬।</td>
+                        <td className="px-4 py-2 border border-gray-300">এই আইনের অন্য কোনো বিধান লংঘন করা</td>
+                        <td className="px-4 py-2 border border-gray-300">অন্যূন দশ হাজার টাকা এবং অনূর্ধ্ব ত্রিশ হাজার টাকা।</td>
                         </tr>
                     </tbody>
                     </table>
@@ -244,12 +236,12 @@ export default function LawPage() {
         </div>
 
         {/* Footer Section */}
-        <div className="border-t border-gray-300">
+        <div className="">
         <div className="p-6">
-            <div className="w-1/2 border-b border-gray-400 pb-2 mb-4">
+            <div className="w-1/2 pb-2 mb-4 border-b border-gray-400">
             {/* Horizontal line */}
             </div>
-            <div className="text-xs text-gray-600 italic space-y-2">
+            <div className="space-y-2 text-xs italic text-gray-600">
             <p>
                 <sup className="font-bold">১</sup>উপ-ধারা (১), (২), (২ক) ও (২খ) উপ-ধারা (১) ও (২) এর পরিবর্তে অর্থ আইন, ২০১২ এর ৭১(ক) ধারাবলে প্রতিস্থাপিত ।
             </p>

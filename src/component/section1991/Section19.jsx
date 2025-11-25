@@ -3,26 +3,26 @@ import Link from 'next/link';
 
 export default function LawPage() {
   return (
-    <div className="min-h-screen bg-gray-50 py-8 px-4">
-      <div className="max-w-6xl mx-auto bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+    <div className="min-h-screen px-4 py-8 bg-gray-50">
+      <div className="max-w-6xl mx-auto overflow-hidden bg-white border border-gray-200 rounded-lg shadow-sm">
         {/* Banner Section */}
-        <div className="bg-gradient-to-r from-green-600 to-green-800 text-white py-8 px-4 md:px-8 relative">
+        <div className="relative px-4 py-8 text-white bg-gradient-to-r from-green-600 to-green-800 md:px-8">
           <div className="text-center">
-            <h1 className="text-2xl md:text-4xl font-bold mb-2">
+            <h1 className="mb-2 text-2xl font-bold md:text-4xl">
               মূল্য সংযোজন কর আইন, ১৯৯১
             </h1>
             <p className="text-lg md:text-xl opacity-90">
               ( ১৯৯১ সনের ২২ নং আইন )
             </p>
-            <div className="mt-3 inline-block bg-green-500 px-4 py-1 rounded-full shadow-md">
-              <p className="text-sm md:text-base font-medium">[ ৩০ জুন, ১৯৯১ ]</p>
+            <div className="inline-block px-4 py-1 mt-3 bg-green-500 rounded-full shadow-md">
+              <p className="text-sm font-medium md:text-base">[ ৩০ জুন, ১৯৯১ ]</p>
             </div>
           </div>
 
           {/* Back to Home Button */}
           <Link
             href="/regulations/acts/vat-acts/value-added-tax-act"
-            className="absolute top-4 left-4 flex items-center gap-2 bg-white text-green-700 hover:bg-green-100 transition-all px-3 py-2 rounded-full shadow"
+            className="absolute flex items-center gap-2 px-3 py-2 text-green-700 transition-all bg-white rounded-full shadow top-4 left-4 hover:bg-green-100"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -38,25 +38,17 @@ export default function LawPage() {
         </div>
 
         {/* Header Section */}
-        <div className="border-b border-gray-300">
+        <div className="">
           <div className="flex flex-col md:flex-row">
-            {/* Left Side - Heading */}
-            <div className="md:w-1/5 bg-blue-50 p-6 border-r border-gray-300">
-              <h1 className="text-xl md:text-xl font-bold text-gray-800 leading-tight">
-                নিবন্ধন বাতিলকরণ
-              </h1>
-            </div>
-            
-            {/* Right Side - Law Text */}
-            <div className="md:w-4/5 p-6">
-              <div className="space-y-6 text-gray-700">
+            <div className="p-6">
+              <div className="space-y-6 text-justify text-black">
                 {/* Section 1 */}
                 <div>
                   <p className="mb-4">
-                    ১৯৷ (১) কোন নিবন্ধিত <sup className='text-blue-500 cursor-pointer' title='“অথবা তালিকাভূক্ত” শব্দগুলি “নিবন্ধিত” শব্দের পর অর্থ আইন, ২০০৯ (২০০৯ সনের ৩৬ নং আইন) এর ৫২ ধারাবলে সন্নিবেশিত যাহা ১ জুলাই ২০০৯ তারিখ হইতে কার্যকর।'>১</sup>[অথবা তালিকাভূক্ত] ব্যক্তি করযোগ্য পণ্য সরবরাহ বা সেবা প্রদান বা করযোগ্য পণ্য আমদানি বা যে কোন পণ্য বা সেবা রপ্তানির ব্যবসায় কার্য পরিচালনা হইতে বিরত হইলে তিনি উক্তরূপ বিরত হওয়ার চৌদ্দ দিনের মধ্যে তত্সম্পর্কে সংশ্লিষ্ট কর্মকর্তাকে অবহিত করিবেন এবং সংশ্লিষ্ট কর্মকর্তা যদি সন্তুষ্ট হন যে, উক্ত ব্যক্তির মূল্য সংযোজন কর বা, ক্ষেত্রমত, সম্পূরক শুল্ক সম্পর্কিত কোন অনিষ্পন্ন দায়-দায়িত্ব নাই তাহা হইলে তিনি বিধি দ্বারা নির্ধারিত পদ্ধতিতে তত্কর্তৃক নিধার্য তারিখে উক্ত ব্যক্তির নিবন্ধন <sup className='text-blue-500 cursor-pointer' title='“অথবা তালিকাভূক্তি সংখ্যা” শব্দগুলি “নিবন্ধন” শব্দের পর অর্থ আইন, ২০০৯ (২০০৯ সনের ৩৬ নং আইন) এর ৫২ ধারাবলে সন্নিবেশিত যাহা ১ জুলাই ২০০৯ তারিখ হইতে কার্যকর।'>২</sup>[অথবা তালিকাভূক্তি সংখ্যা] বাতিল করিবেন <sup className='text-blue-500 cursor-pointer' title='“কোলন” চিহ্নটি “দাড়ি” চিহ্নের পরিবর্তে প্রতিস্থাপিত এবং অতঃপর শর্তাংশ অর্থ আইন, ২০০৯ (২০০৯ সনের ৩৬ নং আইন) এর ৫২ ধারাবলে সংযোজিত যাহা ১ জুলাই ২০০৯ তারিখ হইতে কার্যকর।'>৩</sup>:
+                     <span className="text-xl font-bold leading-tight text-gray-950 md:text-xl">১৯৷ নিবন্ধন বাতিলকরণ---</span>(১) কোন নিবন্ধিত <sup className='text-blue-500 cursor-pointer' title='“অথবা তালিকাভূক্ত” শব্দগুলি “নিবন্ধিত” শব্দের পর অর্থ আইন, ২০০৯ (২০০৯ সনের ৩৬ নং আইন) এর ৫২ ধারাবলে সন্নিবেশিত যাহা ১ জুলাই ২০০৯ তারিখ হইতে কার্যকর।'>১</sup>[অথবা তালিকাভূক্ত] ব্যক্তি করযোগ্য পণ্য সরবরাহ বা সেবা প্রদান বা করযোগ্য পণ্য আমদানি বা যে কোন পণ্য বা সেবা রপ্তানির ব্যবসায় কার্য পরিচালনা হইতে বিরত হইলে তিনি উক্তরূপ বিরত হওয়ার চৌদ্দ দিনের মধ্যে তত্সম্পর্কে সংশ্লিষ্ট কর্মকর্তাকে অবহিত করিবেন এবং সংশ্লিষ্ট কর্মকর্তা যদি সন্তুষ্ট হন যে, উক্ত ব্যক্তির মূল্য সংযোজন কর বা, ক্ষেত্রমত, সম্পূরক শুল্ক সম্পর্কিত কোন অনিষ্পন্ন দায়-দায়িত্ব নাই তাহা হইলে তিনি বিধি দ্বারা নির্ধারিত পদ্ধতিতে তত্কর্তৃক নিধার্য তারিখে উক্ত ব্যক্তির নিবন্ধন <sup className='text-blue-500 cursor-pointer' title='“অথবা তালিকাভূক্তি সংখ্যা” শব্দগুলি “নিবন্ধন” শব্দের পর অর্থ আইন, ২০০৯ (২০০৯ সনের ৩৬ নং আইন) এর ৫২ ধারাবলে সন্নিবেশিত যাহা ১ জুলাই ২০০৯ তারিখ হইতে কার্যকর।'>২</sup>[অথবা তালিকাভূক্তি সংখ্যা] বাতিল করিবেন <sup className='text-blue-500 cursor-pointer' title='“কোলন” চিহ্নটি “দাড়ি” চিহ্নের পরিবর্তে প্রতিস্থাপিত এবং অতঃপর শর্তাংশ অর্থ আইন, ২০০৯ (২০০৯ সনের ৩৬ নং আইন) এর ৫২ ধারাবলে সংযোজিত যাহা ১ জুলাই ২০০৯ তারিখ হইতে কার্যকর।'>৩</sup>:
                   </p>
 
-                  <p className="mb-4 pl-4">
+                  <p className="pl-4 mb-4">
                     তবে শর্ত থাকে যে, ধারা ১৫ এর উপ-ধারা (২) এর শর্তাংশের আলোকে বোর্ডে নির্দেশ মোতাবেক বিভাগীয় কর্মকর্তা কর্তৃক নিবন্ধন প্রদান করা হইলে উক্তরূপ নিবন্ধান বাতিলের পূর্বে সংশ্লিষ্ট কমিশনার এতদ্সংক্রান্ত সকল তথ্য উল্লেখপূর্বক নিবন্ধন বাতিলের সুপারিশসহ একটি প্রতিবেদন বোর্ডে প্রেরণ করিবেন এবং বোর্ড সংশ্লিষ্ট প্রতিষ্ঠানের শুনানী গ্রহণপূর্বক নিবন্ধন প্রদান সংক্রান্ত তদ্‌কর্তৃক প্রদত্ত আদেশ বাতিলের সিদ্ধান্ত প্রদান করিলে উক্তরূপ সিদ্ধান্তের আলোকে সংশ্লিষ্ট কর্মকর্তা নিবন্ধন বাতিলের কার্যক্রম গ্রহণ করিবেন।]
                   </p>
 
@@ -83,36 +75,36 @@ export default function LawPage() {
         </div>
 
         {/* Footer Section */}
-          <div className="border-t border-gray-300">
+          <div className="">
             <div className="p-6">
-              <div className="w-1/2 border-b border-gray-400 pb-2 mb-4">
+              <div className="w-1/2 pb-2 mb-4 border-b border-gray-400">
                 {/* Horizontal line */}
               </div>
-              <p className="text-xs text-gray-600 italic mb-2">
+              <p className="mb-2 text-xs italic text-gray-600">
                 <sup className="font-bold">১</sup>“অথবা তালিকাভূক্ত” শব্দগুলি “নিবন্ধিত” শব্দের পর অর্থ আইন, ২০০৯ (২০০৯ সনের ৩৬ নং আইন) এর ৫২ ধারাবলে সন্নিবেশিত যাহা ১ জুলাই ২০০৯ তারিখ হইতে কার্যকর।
               </p>
-              <p className="text-xs text-gray-600 italic mb-2">
+              <p className="mb-2 text-xs italic text-gray-600">
                 <sup className="font-bold">২</sup>“অথবা তালিকাভূক্তি সংখ্যা” শব্দগুলি “নিবন্ধন” শব্দের পর অর্থ আইন, ২০০৯ (২০০৯ সনের ৩৬ নং আইন) এর ৫২ ধারাবলে সন্নিবেশিত যাহা ১ জুলাই ২০০৯ তারিখ হইতে কার্যকর।
               </p>
-              <p className="text-xs text-gray-600 italic mb-2">
+              <p className="mb-2 text-xs italic text-gray-600">
                 <sup className="font-bold">৩</sup>“কোলন” চিহ্নটি “দাড়ি” চিহ্নের পরিবর্তে প্রতিস্থাপিত এবং অতঃপর শর্তাংশ অর্থ আইন, ২০০৯ (২০০৯ সনের ৩৬ নং আইন) এর ৫২ ধারাবলে সংযোজিত যাহা ১ জুলাই ২০০৯ তারিখ হইতে কার্যকর।
               </p>
-              <p className="text-xs text-gray-600 italic mb-2">
+              <p className="mb-2 text-xs italic text-gray-600">
                 <sup className="font-bold">৪</sup>উপ-ধারা (১ক) অর্থ আইন, ২০০২ (২০০২ সনের ১৪ নং আইন) এর ৮২ ধারাবলে সন্নিবেশিত
               </p>
-              <p className="text-xs text-gray-600 italic mb-2">
+              <p className="mb-2 text-xs italic text-gray-600">
                 <sup className="font-bold">৫</sup>“অথবা তালিকাভূক্ত” শব্দগুলি “নিবন্ধিত” শব্দের পর অর্থ আইন, ২০০৯ (২০০৯ সনের ৩৬ নং আইন) এর ৫২ ধারাবলে সন্নিবেশিত যাহা ১ জুলাই ২০০৯ তারিখ হইতে কার্যকর।
               </p>
-              <p className="text-xs text-gray-600 italic mb-2">
+              <p className="mb-2 text-xs italic text-gray-600">
                 <sup className="font-bold">৬</sup>“নিবন্ধন অথবা তালিকাভুক্তি সংখ্যা গ্রহণ করিয়াছেন অথবা ধারা ৩৭ এর উপ-ধারা (৪) এর দফা (ক) অনুসারে নিন্ধন বাতিল করা হইয়াছে” শব্দগুলি, সংখ্যাগুলি, বর্ণ ও বন্ধনীগুলি “নিবন্ধন গ্রহণ করিয়াছেন” শব্দগুলির পরিবর্তে অর্থ আইন, ২০০৯ (২০০৯ সনের ৩৬ নং আইন) এর ৫২ ধারাবলে সন্নিবেশিত যাহা ১ জুলাই ২০০৯ তারিখ হইতে কার্যকর।
               </p>
-              <p className="text-xs text-gray-600 italic mb-2">
+              <p className="mb-2 text-xs italic text-gray-600">
                 <sup className="font-bold">৭</sup>“অথবা তালিকাভূক্ত” শব্দগুলি “নিবন্ধিত” শব্দের পর অর্থ আইন, ২০০৯ (২০০৯ সনের ৩৬ নং আইন) এর ৫২ ধারাবলে সন্নিবেশিত যাহা ১ জুলাই ২০০৯ তারিখ হইতে কার্যকর।
               </p>
-              <p className="text-xs text-gray-600 italic mb-2">
+              <p className="mb-2 text-xs italic text-gray-600">
                 <sup className="font-bold">৮</sup>উপ-ধারা (৩) অর্থ আইন, ২০০৩ (২০০৩ সনের ১৭ নং আইন) এর ৪০ ধারাবলে প্রতিস্থাপিত
               </p>
-              <p className="text-xs text-gray-600 italic">
+              <p className="text-xs italic text-gray-600">
                 <sup className="font-bold">৯</sup>উপ ধারা (৪) অর্থ আইন, ২০১০ ( ২০১০ সনের ৩৩ নং আইন) এর ৭৭ ধারাবলে সংযোজিত।
               </p>
             </div>
