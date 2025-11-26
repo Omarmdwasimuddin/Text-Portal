@@ -102,9 +102,9 @@ const sections = [
   { href: '/laws/law1991/section/section70.1', text: 'মূল্য সংযোজন কর তথ্য প্রক্রিয়াকরণ, ইত্যাদি', number: '৭০.ক' },
   { href: '/laws/law1991/section/section71', text: 'করণিক ত্রুটি সংশোধন, ইত্যাদি', number: '৭১' },
   { href: '/laws/law1991/section/section71.1', text: 'সরকারী পাওনা অবলোপনের ক্ষমতা', number: '৭১.ক' },
-  { href: '/laws/law1991/section/section71.2', text: 'কর ফাঁকি, আইন লংঘন ইত্যাদির উদ্‌ঘাটনের জন্য পুরস্কার প্রদান', number: '৭১.কক' },
-  { href: '/laws/law1991/section/section71.3', text: 'মূল্য সংযোজন কর কর্মকর্তা কর্মচারীদেরকে আর্থিক প্রণোদনা প্রদান।', number: '৭১.খ' },
-  { href: '/laws/law1991/section/section72', text: 'কর ফেরত প্রদান এবং পুরস্কার ও আর্থিক প্রণোদনা সংক্রান্ত তহবিল', number: '৭১গ' },
+  { href: '/laws/law1991/section/section71.11', text: 'কর ফাঁকি, আইন লংঘন ইত্যাদির উদ্‌ঘাটনের জন্য পুরস্কার প্রদান', number: '৭১.কক' },
+  { href: '/laws/law1991/section/section71.2', text: 'মূল্য সংযোজন কর কর্মকর্তা কর্মচারীদেরকে আর্থিক প্রণোদনা প্রদান।', number: '৭১.খ' },
+  { href: '/laws/law1991/section/section71.3', text: 'কর ফেরত প্রদান এবং পুরস্কার ও আর্থিক প্রণোদনা সংক্রান্ত তহবিল', number: '৭১গ' },
   { href: '/laws/law1991/section/section72', text: 'বিধি প্রণয়নের ক্ষমতা', number: '৭২' },
   { href: '/laws/law1991/section/section72.1', text: 'ইংরেজিতে অনূদিত পাঠ প্রকাশ, ইত্যাদি', number: '৭২.ক' },
   { href: '/laws/law1991/section/section73', text: 'রহিতকরণ ও হেফাজত', number: '৭৩' },
@@ -179,13 +179,13 @@ const Law1991 = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50">
       {/* Header */}
-      <header className="bg-gradient-to-r from-green-600 to-blue-700 text-white shadow-lg relative">
-        <div className="container mx-auto max-w-5xl px-6 py-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-2">মূল্য সংযোজন কর আইন, ১৯৯১</h1>
+      <header className="relative text-white shadow-lg bg-gradient-to-r from-green-600 to-blue-700">
+        <div className="container max-w-5xl px-6 py-8 mx-auto">
+          <h1 className="mb-2 text-3xl font-bold md:text-4xl">মূল্য সংযোজন কর আইন, ১৯৯১</h1>
           <p className="text-lg opacity-90">Value Added Tax Act, 1991</p>
           
           {/* Search Bar */}
-          <div className="mt-6 max-w-2xl relative">
+          <div className="relative max-w-2xl mt-6">
             <div className="relative" onClick={(e) => e.stopPropagation()}>
               <input
                 type="text"
@@ -196,11 +196,11 @@ const Law1991 = () => {
                   setIsSearchOpen(true);
                 }}
                 onFocus={() => setIsSearchOpen(true)}
-                className="w-full px-4 py-3 pl-12 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent"
+                className="w-full px-4 py-3 pl-12 text-white border rounded-lg bg-white/10 backdrop-blur-sm border-white/20 placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent"
               />
               
               <svg 
-                className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/70 w-5 h-5" 
+                className="absolute w-5 h-5 transform -translate-y-1/2 left-4 top-1/2 text-white/70" 
                 fill="none" 
                 stroke="currentColor" 
                 viewBox="0 0 24 24"
@@ -219,7 +219,7 @@ const Law1991 = () => {
                     setSearchTerm('');
                     setIsSearchOpen(false);
                   }}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white/70 hover:text-white"
+                  className="absolute transform -translate-y-1/2 right-4 top-1/2 text-white/70 hover:text-white"
                 >
                   ✕
                 </button>
@@ -229,7 +229,7 @@ const Law1991 = () => {
             {/* Search Results Dropdown */}
             {isSearchOpen && searchTerm && (
               <div 
-                className="absolute top-full left-0 right-0 mt-2 bg-white rounded-lg shadow-xl max-h-96 overflow-y-auto z-50"
+                className="absolute left-0 right-0 z-50 mt-2 overflow-y-auto bg-white rounded-lg shadow-xl top-full max-h-96"
                 onClick={(e) => e.stopPropagation()}
               >
                 {filteredSections.length > 0 ? (
@@ -245,15 +245,15 @@ const Law1991 = () => {
                           setIsSearchOpen(false);
                           setSearchTerm('');
                         }}
-                        className="block px-4 py-3 hover:bg-blue-50 border-b last:border-b-0 transition-colors duration-200"
+                        className="block px-4 py-3 transition-colors duration-200 border-b hover:bg-blue-50 last:border-b-0"
                       >
-                        <div className="flex justify-between items-start">
+                        <div className="flex items-start justify-between">
                           <span className="font-medium text-blue-700">ধারা {section.number}</span>
-                          <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
+                          <span className="px-2 py-1 text-xs text-blue-800 bg-blue-100 rounded">
                             মূল্য সংযোজন কর আইন, ১৯৯১
                           </span>
                         </div>
-                        <p className="text-gray-800 mt-1">{section.text}</p>
+                        <p className="mt-1 text-gray-800">{section.text}</p>
                       </Link>
                     ))}
                   </div>
@@ -269,17 +269,17 @@ const Law1991 = () => {
       </header>
 
       {/* Main Content */}
-      <main className="container mx-auto max-w-7xl px-6 py-8">
+      <main className="container px-6 py-8 mx-auto max-w-7xl">
         {/* Introduction */}
-        <div className="bg-white rounded-xl shadow-md p-6 mb-8 border-l-4 border-green-500">
-          <h2 className="text-md font-semibold text-red-800 mb-3">এই আইন মূল্য সংযোজন কর ও সম্পূরক শুল্ক আইন, ২০১২ (২০১২ সনের  ৪৭নং আইন) দ্বারা রহিত করা হইয়াছে।</h2>
+        <div className="p-6 mb-8 bg-white border-l-4 border-green-500 shadow-md rounded-xl">
+          <h2 className="mb-3 font-semibold text-red-800 text-md">এই আইন মূল্য সংযোজন কর ও সম্পূরক শুল্ক আইন, ২০১২ (২০১২ সনের  ৪৭নং আইন) দ্বারা রহিত করা হইয়াছে।</h2>
           
           {/* Added important legal phrases */}
-          <div className="bg-gray-50 border-l-4 border-red-500 p-4 my-4 rounded-r-lg">
-            <p className="text-black italic mb-3">
+          <div className="p-4 my-4 border-l-4 border-red-500 rounded-r-lg bg-gray-50">
+            <p className="mb-3 italic text-black">
               <span className="font-semibold">পণ্য ও সেবার উপর মূল্য সংযোজন কর আরোপের বিধানকরণকল্পে প্রণীত আইন৷</span>
             </p>
-            <p className="text-black italic">
+            <p className="italic text-black">
               <span className="font-semibold">যেহেতু</span> মূল্য সংযোজন কর আরোপ করার উদ্দেশ্যে বিধান করা সমীচীন ও প্রয়োজনীয়;
               <br />
               <span className="font-semibold">সেহেতু</span> এতদ্‌দ্বারা নিম্নরূপ আইন করা হইল:-
@@ -288,8 +288,8 @@ const Law1991 = () => {
         </div>
 
         {/* Sections Grid */}
-        <div className="bg-white rounded-xl shadow-md overflow-hidden mb-8">
-          <div className="bg-gradient-to-r from-green-900 to-green-500 text-white p-4">
+        <div className="mb-8 overflow-hidden bg-white shadow-md rounded-xl">
+          <div className="p-4 text-white bg-gradient-to-r from-green-900 to-green-500">
             <h2 className="text-2xl">ধারাসমূহ</h2>
             <p className="text-sm opacity-90">মূল্য সংযোজন কর আইন, ১৯৯১ এর সকল ধারা</p>
           </div>
@@ -299,16 +299,16 @@ const Law1991 = () => {
               {sections.map((section, index) => (
                 <div 
                   key={index}
-                  className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow duration-200 hover:border-blue-200"
+                  className="p-4 transition-shadow duration-200 border border-gray-200 rounded-lg hover:shadow-md hover:border-blue-300"
                 >
                   <div className="flex items-start space-x-3">
-                    <div className="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold flex-shrink-0">
+                    <div className="flex items-center justify-center flex-shrink-0 w-8 h-8 text-sm font-bold text-blue-800 bg-blue-100 rounded-full">
                       {section.number}
                     </div>
                     <div>
                       <Link 
                         href={section.href} 
-                        className="text-blue-600 hover:text-blue-800 hover:underline font-medium block mb-1"
+                        className="block mb-1 font-medium text-blue-600 hover:text-blue-800 hover:underline"
                       >
                         {section.text}
                       </Link>
@@ -324,8 +324,8 @@ const Law1991 = () => {
         {/* শুধুমাত্র তফসিল সেকশন */}
         <div className="mt-8">
           {specialSections.map((specialChapter, idx) => (
-            <div key={idx} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-              <div className="bg-gradient-to-r from-green-500 to-green-600 text-white p-4">
+            <div key={idx} className="overflow-hidden transition-shadow duration-300 bg-white shadow-md rounded-xl hover:shadow-lg">
+              <div className="p-4 text-white bg-gradient-to-r from-green-500 to-green-600">
                 <h2 className="text-xl">{specialChapter.title}</h2>
               </div>
               <div className="p-4">
@@ -336,7 +336,7 @@ const Law1991 = () => {
                         <a 
                           href={section.href} 
                           onClick={(e) => handlePdfClick(e, section.href)}
-                          className="text-red-600 hover:text-red-800 hover:underline transition-colors duration-200 flex items-center"
+                          className="flex items-center text-red-600 transition-colors duration-200 hover:text-red-800 hover:underline"
                         >
                           <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -346,7 +346,7 @@ const Law1991 = () => {
                       ) : (
                         <Link 
                           href={section.href} 
-                          className="text-green-600 hover:text-green-800 hover:underline transition-colors duration-200"
+                          className="text-green-600 transition-colors duration-200 hover:text-green-800 hover:underline"
                         >
                           {section.text}
                         </Link>
@@ -360,9 +360,9 @@ const Law1991 = () => {
         </div>
 
         {/* Additional Information */}
-        <div className="mt-8 bg-yellow-50 border border-yellow-200 rounded-xl p-6">
-          <h3 className="text-lg font-semibold text-yellow-800 mb-3">গুরুত্বপূর্ণ তথ্য</h3>
-          <div className="text-sm text-yellow-700 space-y-2">
+        <div className="p-6 mt-8 border border-yellow-200 bg-yellow-50 rounded-xl">
+          <h3 className="mb-3 text-lg font-semibold text-yellow-800">গুরুত্বপূর্ণ তথ্য</h3>
+          <div className="space-y-2 text-sm text-yellow-700">
             <p>• এই আইনটি ২০১২ সালের মূল্য সংযোজন কর ও সম্পূরক শুল্ক আইন দ্বারা প্রতিস্থাপিত হয়েছে</p>
             <p>• কিছু ধারা এখনও প্রাসঙ্গিক এবং প্রয়োগযোগ্য</p>
             <p>• আইনটি বিভিন্ন সময়ে সংশোধিত হয়েছে</p>

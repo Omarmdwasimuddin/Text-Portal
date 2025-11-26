@@ -40,22 +40,14 @@ export default function LawPage() {
 
 
         {/* Header Section */}
-        <div className="border-b border-gray-300">
+        <div className="">
           <div className="flex flex-col md:flex-row">
-            {/* Left Side - Heading */}
-            <div className="p-6 border-r border-gray-300 md:w-2/5 bg-blue-50">
-              <h1>
-                
-              </h1>
-            </div>
-            
-            {/* Right Side - Law Text */}
-            <div className="p-6 md:w-3/5">
-              <div className="space-y-6 text-gray-700">
+            <div className="p-6">
+              <div className="space-y-6 text-black text-justify">
                 {/* Section 1 */}
                 <div>
                   <p className="mb-4">
-                    <sup className="text-blue-500" title='ধারা ৮ঘ অর্থ আইন, ২০০৪ (২০০৪ সনের ১৬ নং আইন) এর ৪৭ ধারাবলে সন্নিবেশিত'>১</sup>[<span className="text-xl font-bold leading-tight text-gray-800 md:text-xl">৮ঘ৷ বৃহত্ করদাতা ইউনিট গঠন---</span> বোর্ড, সরকারী গেজেটে প্রজ্ঞাপন দ্বারা, দেশের সমগ্র এলাকা বা কোন নির্দিষ্ট এলাকায় নির্দিষ্ট পরিসীমা বা শ্রেণীর করদাতার নিকট হইতে মূল্য সংযোজন কর <sup className='text-blue-500' title='“, সম্পূরক শুল্ক ও আবগারী শুল্ক” কমা এবং শব্দগুলি “মূল্য সংযোজন কর” শব্দগুলির পর অর্থ আইন, ২০০৯ (২০০৯ সনের ১০ নং আইন) এর ৪১ ধারাবলে প্রতিস্থাপিত যাহা ১ জুলাই ২০০৮ তারিখ হইতে কার্যকর।'>২</sup>[, সম্পূরক শুল্ক ও আবগারী শুল্ক] আদায় ও তত্ত্বাবধানের জন্য উক্ত শ্রেণীর করদাতাদের সমন্বয়ে প্রয়োজনীয় সংখ্যক বৃহত্ করদাতা ইউনিটে (Large Taxpayer Unit বা LTU) গঠন করিতে পারিবে৷]
+                    <sup className="text-blue-500" title='ধারা ৮ঘ অর্থ আইন, ২০০৪ (২০০৪ সনের ১৬ নং আইন) এর ৪৭ ধারাবলে সন্নিবেশিত'>১</sup>[<span className="text-xl font-bold leading-tight text-gray-950 md:text-xl">৮ঘ৷ বৃহত্ করদাতা ইউনিট গঠন---</span> বোর্ড, সরকারী গেজেটে প্রজ্ঞাপন দ্বারা, দেশের সমগ্র এলাকা বা কোন নির্দিষ্ট এলাকায় নির্দিষ্ট পরিসীমা বা শ্রেণীর করদাতার নিকট হইতে মূল্য সংযোজন কর <sup className='text-blue-500' title='“, সম্পূরক শুল্ক ও আবগারী শুল্ক” কমা এবং শব্দগুলি “মূল্য সংযোজন কর” শব্দগুলির পর অর্থ আইন, ২০০৯ (২০০৯ সনের ১০ নং আইন) এর ৪১ ধারাবলে প্রতিস্থাপিত যাহা ১ জুলাই ২০০৮ তারিখ হইতে কার্যকর।'>২</sup>[, সম্পূরক শুল্ক ও আবগারী শুল্ক] আদায় ও তত্ত্বাবধানের জন্য উক্ত শ্রেণীর করদাতাদের সমন্বয়ে প্রয়োজনীয় সংখ্যক বৃহত্ করদাতা ইউনিটে (Large Taxpayer Unit বা LTU) গঠন করিতে পারিবে৷]
                   </p>
                 </div>
               </div>
@@ -65,9 +57,9 @@ export default function LawPage() {
         </div>
 
         {/* Footer Section */}
-        <div className="border-t border-gray-300">
+        <div className="">
           <div className="p-6">
-            <div className="pb-2 mb-4 border-b border-gray-400">
+            <div className="pb-2 mb-4 border-b border-gray-400 w-1/2">
               {/* Horizontal line */}
             </div>
             <p className="mt-2 text-xs italic text-gray-600">

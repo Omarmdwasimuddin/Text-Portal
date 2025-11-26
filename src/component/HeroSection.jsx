@@ -51,10 +51,10 @@ const ProductCard = ({ book, isActive, onClick }) => {
           />
           
           {/* Overlay Gradient */}
-          <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent group-hover:opacity-100" />
           
           {/* Quick Actions */}
-          <div className="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-200">
+          <div className="absolute flex flex-col gap-2 transition-all duration-300 delay-200 opacity-0 top-3 right-3 group-hover:opacity-100">
             <button
               onClick={handleLike}
               className={`p-2 rounded-full backdrop-blur-sm transition-all duration-300 ${
@@ -69,7 +69,7 @@ const ProductCard = ({ book, isActive, onClick }) => {
 
           {/* Category Badge */}
           <div className="absolute top-3 left-3">
-            <span className="px-2 py-1 text-xs font-medium bg-red-500 text-white rounded-full">
+            <span className="px-2 py-1 text-xs font-medium text-white bg-red-500 rounded-full">
               {book.category}
             </span>
           </div>
@@ -83,13 +83,13 @@ const ProductCard = ({ book, isActive, onClick }) => {
             {book.name}
           </h3>
           
-          <p className="text-gray-400 text-sm mb-2">By {book.writer}</p>
+          <p className="mb-2 text-sm text-gray-400">By {book.writer}</p>
           
           <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-1">
-            <FaStar className="text-yellow-400 text-sm" />
-            <span className="text-gray-300 font-medium">{book.rating}</span>
-            <span className="text-gray-500 text-sm">/5</span>
+            <FaStar className="text-sm text-yellow-400" />
+            <span className="font-medium text-gray-300">{book.rating}</span>
+            <span className="text-sm text-gray-500">/5</span>
           </div>
 
           <div className="text-right">
@@ -111,7 +111,7 @@ const ProductCard = ({ book, isActive, onClick }) => {
             <div className="flex gap-2">
               <button
                 onClick={handleAddToCart}
-                className="flex-1 flex items-center justify-center px-3 py-2 bg-red-500 text-white rounded-lg font-semibold hover:bg-red-600 transform hover:scale-105 transition-all duration-300 text-sm"
+                className="flex items-center justify-center flex-1 px-3 py-2 text-sm font-semibold text-white transition-all duration-300 transform bg-red-500 rounded-lg hover:bg-red-600 hover:scale-105"
               >
                 <FaCartPlus className="mr-2" />
                 Add to Cart
@@ -119,7 +119,7 @@ const ProductCard = ({ book, isActive, onClick }) => {
               
               <button
                 onClick={handleAddToCart}
-                className="flex items-center justify-center px-3 py-2 bg-blue-500 text-white rounded-lg font-semibold hover:bg-blue-600 transform hover:scale-105 transition-all duration-300 text-sm"
+                className="flex items-center justify-center px-3 py-2 text-sm font-semibold text-white transition-all duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-600 hover:scale-105"
               >
                 <FaBookOpen className="text-sm" />
               </button>
@@ -274,9 +274,9 @@ export default function HeroSection() {
     <section className="relative bg-[url('/Img/law.jpg')] bg-cover bg-center bg-no-repeat py-16 px-6 lg:px-12 min-h-screen">
       <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto">
+      <div className="relative z-10 mx-auto max-w-7xl">
         {/* Main Grid Container */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+        <div className="grid items-start grid-cols-1 gap-8 lg:grid-cols-3">
           
           {/* 1st Grid (80%) - Fixed height container */}
           <div className="lg:col-span-2">
@@ -287,10 +287,10 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
-                className="flex flex-col md:flex-row items-center justify-center gap-3 w-full max-w-3xl mx-auto"
+                className="flex flex-col items-center justify-center w-full max-w-3xl gap-3 mx-auto md:flex-row"
               >
                 <div className="relative w-full md:w-2/3">
-                  <FiSearch className="absolute left-5 top-1/2 transform -translate-y-1/2 text-gray-900" />
+                  <FiSearch className="absolute text-gray-900 transform -translate-y-1/2 left-5 top-1/2" />
                   <input
                     type="text"
                     value={search}
@@ -333,19 +333,19 @@ export default function HeroSection() {
                   <select
                     value={filter}
                     onChange={(e) => setFilter(e.target.value)}
-                    className="px-5 py-3 pr-10 rounded-full text-gray-400 bg-white/10 backdrop-blur-md border border-gray-300 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none"
+                    className="px-5 py-3 pr-10 text-gray-400 border border-gray-300 rounded-full shadow-md appearance-none bg-white/10 backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                   >
                     <option value="all">All Laws</option>
                     <option value="vat">VAT</option>
                     <option value="customs">Customs</option>
                     <option value="income-tax">Income Tax</option>
                   </select>
-                  <FiArrowDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none" />
+                  <FiArrowDown className="absolute text-gray-400 transform -translate-y-1/2 pointer-events-none right-3 top-1/2" />
                 </div>
 
                 <button
                   type="submit"
-                  className="px-8 py-3 rounded-full bg-gradient-to-r from-green-600 to-green-800 text-white font-medium shadow-lg hover:scale-105 transition-transform flex items-center gap-2"
+                  className="flex items-center gap-2 px-8 py-3 font-medium text-white transition-transform rounded-full shadow-lg bg-gradient-to-r from-green-600 to-green-800 hover:scale-105"
                 >
                   <FiSearch size={18} />
                   Search
@@ -357,9 +357,9 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7 }}
-                className="text-3xl md:text-3xl font-extrabold text-white  leading-snug text-center mb-2"
+                className="mb-2 text-3xl font-bold leading-snug text-center text-white md:text-3xl"
               >
-                <span className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">
+                <span className="text-transparent bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text">
                   বাংলাদেশের ট্যাক্স, ভ্যাট, কাস্টমস আইন
                 </span>{' '}
                 — এক প্ল্যাটফর্মে
@@ -373,13 +373,13 @@ export default function HeroSection() {
                 className="relative mt-0"
               >
                 {/* Section Title */}
-                <div className="text-center mb-10">
-                  <h2 className="text-2xl md:text-2xl font-bold myFont text-white mb-2">
-                    <span className="bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
+                <div className="mb-10 text-center">
+                  <h2 className="mb-2 text-2xl font-bold text-white md:text-2xl myFont">
+                    <span className="text-transparent bg-gradient-to-r from-red-400 to-red-600 bg-clip-text">
                       জনপ্রিয় বইসমূহ
                     </span>
                   </h2>
-                  <p className="text-gray-300 text-lg">আমাদের সেরা বিক্রিত বইগুলি দেখুন</p>
+                  <p className="text-lg text-gray-300">আমাদের সেরা বিক্রিত বইগুলি দেখুন</p>
                 </div>
 
                 {/* Slider Container */}
@@ -387,20 +387,20 @@ export default function HeroSection() {
                   {/* Navigation Buttons */}
                   <button
                     onClick={handlePrevProduct}
-                    className="absolute left-4 z-20 p-3 bg-white/20 backdrop-blur-md rounded-full hover:bg-white/30 transition-all duration-300 text-white hover:scale-110"
+                    className="absolute z-20 p-3 text-white transition-all duration-300 rounded-full left-4 bg-white/20 backdrop-blur-md hover:bg-white/30 hover:scale-110"
                   >
                     <FiChevronLeft size={24} />
                   </button>
 
                   <button
                     onClick={handleNextProduct}
-                    className="absolute right-4 z-20 p-3 bg-white/20 backdrop-blur-md rounded-full hover:bg-white/30 transition-all duration-300 text-white hover:scale-110"
+                    className="absolute z-20 p-3 text-white transition-all duration-300 rounded-full right-4 bg-white/20 backdrop-blur-md hover:bg-white/30 hover:scale-110"
                   >
                     <FiChevronRight size={24} />
                   </button>
 
                   {/* Products Slider */}
-                  <div className="flex items-center justify-center gap-4 px-12 h-64">
+                  <div className="flex items-center justify-center h-64 gap-4 px-12">
                     {visibleProducts.map((product, index) => (
                       <ProductCard
                         key={product.id}
@@ -416,7 +416,7 @@ export default function HeroSection() {
                 </div>
 
                 {/* Dots Indicator */}
-                <div className="flex justify-center mt-12 gap-2">
+                <div className="flex justify-center gap-2 mt-12">
                   {products.map((_, index) => (
                     <button
                       key={index}
@@ -441,7 +441,7 @@ export default function HeroSection() {
             className="lg:col-span-1 bg-white/90 backdrop-blur-lg p-6 rounded-2xl shadow-2xl flex flex-col max-h-[600px] lg:max-h-[800px] overflow-hidden border border-gray-200"
           >
             {/* Tab Buttons */}
-            <div className="flex flex-row flex-wrap gap-2 mb-4 flex-shrink-0">
+            <div className="flex flex-row flex-wrap flex-shrink-0 gap-2 mb-4">
               {calculators.map((calc) => (
                 <button
                   key={calc.title}

@@ -1,9 +1,5 @@
 @import "tailwindcss";
 
-.myFont {
-  font-family:var(--font-bangla);
-}
-
 
 html, body {
   margin: 0;
