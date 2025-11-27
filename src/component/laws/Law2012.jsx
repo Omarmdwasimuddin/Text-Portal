@@ -441,128 +441,147 @@ const HomePage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50">
       {/* Header */}
-      <header className="bg-gradient-to-r from-green-600 to-blue-700 text-white shadow-lg relative">
-        <div className="container mx-auto max-w-7xl px-6 py-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-2">মূল্য সংযোজন কর ও সম্পূরক শুল্ক আইন, ২০১২</h1>
-          <p className="text-lg opacity-90">Value Added Tax and Supplementary Duty Act, 2012</p>
-          
-          {/* Search Bar */}
-          <div className="mt-6 max-w-2xl relative">
-            <div className="relative" onClick={(e) => e.stopPropagation()}>
-              <input
-                type="text"
-                placeholder="আইন অনুসন্ধান করুন... (বাংলা বা ইংরেজি)"
-                value={searchTerm}
-                onChange={(e) => {
-                  setSearchTerm(e.target.value);
-                  setIsSearchOpen(true);
-                }}
-                onFocus={() => setIsSearchOpen(true)}
-                className="w-full px-4 py-3 pl-12 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent"
-              />
-              
-              <svg 
-                className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/70 w-5 h-5" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" 
-                />
-              </svg>
-              
-              {searchTerm && (
-                <button
-                  onClick={() => {
-                    setSearchTerm('');
-                    setIsSearchOpen(false);
-                  }}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white/70 hover:text-white"
-                >
-                  ✕
-                </button>
-              )}
-            </div>
-
-            {/* Search Results Dropdown */}
-            {isSearchOpen && searchTerm && (
-              <div 
-                className="absolute top-full left-0 right-0 mt-2 bg-white rounded-lg shadow-xl max-h-96 overflow-y-auto z-50"
-                onClick={(e) => e.stopPropagation()}
-              >
-                {filteredSections.length > 0 ? (
-                  <div className="py-2">
-                    <div className="px-4 py-2 text-sm text-gray-500 border-b">
-                      {filteredSections.length}টি ফলাফল পাওয়া গেছে
-                      <span className="text-xs ml-2 bg-blue-100 text-blue-800 px-2 py-1 rounded">
-                        Exact match: {filteredSections.filter(s => s.priority === 1).length}
-                      </span>
-                    </div>
-                    {filteredSections.map((section, index) => (
-                      <Link
-                        key={index}
-                        href={section.href}
+        <header className="relative overflow-hidden text-white shadow-lg bg-gradient-to-r from-green-600 to-green-700">
+          <div className="container px-6 py-8 mx-auto max-w-7xl">
+            <div className="flex flex-col items-start justify-between lg:flex-row lg:items-center">
+              {/* Text Content */}
+              <div className="flex-1 lg:pr-8">
+                <h1 className="mb-2 text-3xl font-bold md:text-4xl">মূল্য সংযোজন কর ও সম্পূরক শুল্ক আইন, ২০১২</h1>
+                <p className="text-lg opacity-90">Value Added Tax and Supplementary Duty Act, 2012</p>
+                
+                {/* Search Bar */}
+                <div className="relative max-w-2xl mt-6">
+                  <div className="relative" onClick={(e) => e.stopPropagation()}>
+                    <input
+                      type="text"
+                      placeholder="আইন অনুসন্ধান করুন... (বাংলা বা ইংরেজি)"
+                      value={searchTerm}
+                      onChange={(e) => {
+                        setSearchTerm(e.target.value);
+                        setIsSearchOpen(true);
+                      }}
+                      onFocus={() => setIsSearchOpen(true)}
+                      className="w-full px-4 py-3 pl-12 text-white border rounded-lg bg-white/10 backdrop-blur-sm border-white/20 placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent"
+                    />
+                    
+                    <svg 
+                      className="absolute w-5 h-5 transform -translate-y-1/2 left-4 top-1/2 text-white/70" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        strokeWidth={2} 
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" 
+                      />
+                    </svg>
+                    
+                    {searchTerm && (
+                      <button
                         onClick={() => {
-                          setIsSearchOpen(false);
                           setSearchTerm('');
+                          setIsSearchOpen(false);
                         }}
-                        className={`block px-4 py-3 hover:bg-blue-50 border-b last:border-b-0 transition-colors duration-200 ${
-                          section.priority === 1 ? 'bg-yellow-50 border-l-4 border-yellow-400' : ''
-                        }`}
+                        className="absolute transform -translate-y-1/2 right-4 top-1/2 text-white/70 hover:text-white"
                       >
-                        <div className="flex justify-between items-start">
-                          <span className="font-medium text-blue-700">ধারা {section.number}</span>
-                          <div className="flex items-center space-x-2">
-                            <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
-                              {section.chapterTitle}
+                        ✕
+                      </button>
+                    )}
+                  </div>
+
+                  {/* Search Results Dropdown */}
+                  {isSearchOpen && searchTerm && (
+                    <div 
+                      className="absolute left-0 right-0 z-50 mt-2 overflow-y-auto bg-white rounded-lg shadow-xl top-full max-h-96"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      {filteredSections.length > 0 ? (
+                        <div className="py-2">
+                          <div className="px-4 py-2 text-sm text-gray-500 border-b">
+                            {filteredSections.length}টি ফলাফল পাওয়া গেছে
+                            <span className="px-2 py-1 ml-2 text-xs text-blue-800 bg-blue-100 rounded">
+                              Exact match: {filteredSections.filter(s => s.priority === 1).length}
                             </span>
-                            {section.priority === 1 && (
-                              <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">
-                                Exact Match
-                              </span>
-                            )}
                           </div>
+                          {filteredSections.map((section, index) => (
+                            <Link
+                              key={index}
+                              href={section.href}
+                              onClick={() => {
+                                setIsSearchOpen(false);
+                                setSearchTerm('');
+                              }}
+                              className={`block px-4 py-3 hover:bg-blue-50 border-b last:border-b-0 transition-colors duration-200 ${
+                                section.priority === 1 ? 'bg-yellow-50 border-l-4 border-yellow-400' : ''
+                              }`}
+                            >
+                              <div className="flex items-start justify-between">
+                                <span className="font-medium text-blue-700">ধারা {section.number}</span>
+                                <div className="flex items-center space-x-2">
+                                  <span className="px-2 py-1 text-xs text-blue-800 bg-blue-100 rounded">
+                                    {section.chapterTitle}
+                                  </span>
+                                  {section.priority === 1 && (
+                                    <span className="px-2 py-1 text-xs text-green-800 bg-green-100 rounded">
+                                      Exact Match
+                                    </span>
+                                  )}
+                                </div>
+                              </div>
+                              <p className="mt-1 text-gray-800">{section.text}</p>
+                              {section.sectionSubtitle && (
+                                <p className="mt-1 text-sm text-gray-600">{section.sectionSubtitle}</p>
+                              )}
+                              <p className="mt-1 text-xs text-gray-500">{section.chapterSubtitle}</p>
+                            </Link>
+                          ))}
                         </div>
-                        <p className="text-gray-800 mt-1">{section.text}</p>
-                        {section.sectionSubtitle && (
-                          <p className="text-sm text-gray-600 mt-1">{section.sectionSubtitle}</p>
-                        )}
-                        <p className="text-xs text-gray-500 mt-1">{section.chapterSubtitle}</p>
-                      </Link>
-                    ))}
-                  </div>
-                ) : (
-                  <div className="p-4 text-center text-gray-500">
-                    কোন ফলাফল পাওয়া যায়নি। অন্য শব্দ দিয়ে চেষ্টা করুন।
-                  </div>
-                )}
+                      ) : (
+                        <div className="p-4 text-center text-gray-500">
+                          কোন ফলাফল পাওয়া যায়নি। অন্য শব্দ দিয়ে চেষ্টা করুন।
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
               </div>
-            )}
+
+              {/* Right Side Image */}
+              <div className="flex-shrink-0 mt-6 lg:mt-0 lg:ml-6">
+                <div className="w-full lg:w-64 xl:w-80">
+                  <img 
+                    src="/law-banner/law-banner-img.png" 
+                    alt="Law Banner" 
+                    className="object-contain w-full h-32 rounded-lg lg:h-40"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </header>
+        </header>
 
       {/* Main Content */}
-      <main className="container mx-auto max-w-7xl px-6 py-8">
+      <main className="container px-6 py-8 mx-auto max-w-7xl">
         {/* Introduction */}
-        <div className="bg-white rounded-xl shadow-md p-6 mb-8 border-l-4 border-blue-500">
-          <h2 className="text-xl font-semibold text-gray-800 mb-3">আইনের সংক্ষিপ্ত বিবরণ</h2>
-          <p className="text-gray-600">
-            এই আইনটি মূল্য সংযোজন কর, সম্পূরক শুল্ক এবং টার্নওভার কর সম্পর্কিত বিধানাবলী সমন্বিত একটি পূর্ণাঙ্গ আইন। 
-            আইনটি ২০১২ সালে প্রণীত হয় এবং বাংলাদেশের কর ব্যবস্থায় গুরুত্বপূর্ণ ভূমিকা পালন করে আসছে।
+        <div className="p-6 mb-8 bg-white border-l-4 border-green-500 shadow-md rounded-xl">
+          <h2 className="mb-3 text-xl font-semibold text-gray-950">মূল্য সংযোজন কর, সম্পূরক শুল্ক এবং টার্নওভার কর আরোপের ক্ষেত্র বিস্তৃতকরণ এবং কর আদায় প্রক্রিয়া সহজীকরণ সংক্রান্ত বিধি-বিধান সুসংহতকরণ এবং আনুষঙ্গিক অন্যান্য বিষয়ে বিধান প্রণয়নকল্পে আনীত আইন।</h2>
+          <p className="text-black">
+            যেহেতু মূল্য সংযোজন কর, সম্পূরক শুল্ক এবং টার্নওভার কর আরোপের ক্ষেত্র বিস্তৃতকরণ এবং কর আদায় প্রক্রিয়া সহজীকরণ সংক্রান্ত বিধি-বিধান সুসংহতকরণ এবং আনুষঙ্গিক অন্যান্য বিষয়ে বিধান করা সমীচীন ও প্রয়োজনীয়;
+          </p>
+          <br/>
+          <p className="text-black">
+            সেহেতু এতদ্‌দ্বারা নিম্নরূপ আইন করা হইল:―
           </p>
         </div>
 
         {/* Chapters Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-6">
           {regularChapters.map((chapter, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-              <div className="bg-gradient-to-r from-green-500 to-blue-600 text-white p-4">
-                <h2 className="text-lg font-bold">{chapter.title}</h2>
+            <div key={index} className="overflow-hidden transition-shadow duration-300 bg-white shadow-md rounded-xl hover:shadow-lg">
+              <div className="p-4 text-white bg-gradient-to-r from-green-900 to-green-600">
+                <h2 className="text-2xl">{chapter.title}</h2>
                 <p className="text-sm opacity-90">{chapter.subtitle}</p>
               </div>
               
@@ -571,7 +590,7 @@ const HomePage = () => {
                   <div className="space-y-4">
                     {chapter.sections.map((section, idx) => (
                       <div key={idx}>
-                        <h3 className="text-md font-semibold text-blue-800 mb-2 border-b border-blue-100 pb-1">
+                        <h3 className="pb-1 mb-2 font-semibold text-blue-800 border-b border-blue-100 text-md">
                           {section.subtitle}
                         </h3>
                         <ul className="space-y-1">
@@ -580,7 +599,7 @@ const HomePage = () => {
                               <span className="font-medium text-blue-700 min-w-[2.5rem]">{subsection.number}.</span>
                               <Link 
                                 href={subsection.href} 
-                                className="text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-200"
+                                className="text-blue-600 transition-colors duration-200 hover:text-blue-800 hover:underline"
                               >
                                 {subsection.text}
                               </Link>
@@ -597,7 +616,7 @@ const HomePage = () => {
                         <span className="font-medium text-blue-700 min-w-[2.5rem]">{section.number}.</span>
                         <Link 
                           href={section.href} 
-                          className="text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-200"
+                          className="text-blue-600 transition-colors duration-200 hover:text-green-800 hover:underline"
                         >
                           {section.text}
                         </Link>
@@ -611,11 +630,11 @@ const HomePage = () => {
         </div>
 
         {/* Special Chapters */}
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2">
           {specialChapters.map((specialChapter, idx) => (
-            <div key={idx} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-              <div className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white p-4">
-                <h2 className="text-lg font-bold">{specialChapter.title}</h2>
+            <div key={idx} className="overflow-hidden transition-shadow duration-300 bg-white shadow-md rounded-xl hover:shadow-lg">
+              <div className="p-4 text-white bg-gradient-to-r from-green-500 to-green-600">
+                <h2 className="text-xl">{specialChapter.title}</h2>
                 <p className="text-sm opacity-90">{specialChapter.subtitle}</p>
               </div>
               <div className="p-4">
@@ -626,7 +645,7 @@ const HomePage = () => {
                         <a 
                           href={section.href} 
                           onClick={(e) => handlePdfClick(e, section.href)}
-                          className="text-purple-600 hover:text-purple-800 hover:underline transition-colors duration-200 flex items-center"
+                          className="flex items-center text-blue-600 transition-colors duration-200 hover:text-green-800 hover:underline"
                         >
                           <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -636,7 +655,7 @@ const HomePage = () => {
                       ) : (
                         <Link 
                           href={section.href} 
-                          className="text-purple-600 hover:text-purple-800 hover:underline transition-colors duration-200"
+                          className="text-purple-600 transition-colors duration-200 hover:text-purple-800 hover:underline"
                         >
                           {section.text}
                         </Link>
