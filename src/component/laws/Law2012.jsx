@@ -7,7 +7,7 @@ const chapters = [
     title: 'প্রথম অধ্যায়',
     subtitle: 'প্রারম্ভিক',
     sections: [
-      { href: '/section1', text: 'সংক্ষিপ্ত শিরোনাম ও প্রবর্তন', number: '১' },
+      { href: '/laws/law2012/section/section01', text: 'সংক্ষিপ্ত শিরোনাম ও প্রবর্তন', number: '১' },
       { href: '/section2', text: 'সংজ্ঞা', number: '২' },
       { href: '/section3', text: 'আইনের প্রাধান্য', number: '৩' },
     ],
