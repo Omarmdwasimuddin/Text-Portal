@@ -1,16 +1,31 @@
-import { Noto_Sans_Bengali } from 'next/font/google'
+import localFont from 'next/font/local'
 import "./globals.css";
 
-const notoSansBengali = Noto_Sans_Bengali({
-  weight: ['400'],
-  subsets: ['bengali'],
+const myFont = localFont({
+  src: [
+    {
+      path: './fonts/SolaimanLipi/SolaimanLipi-Normal.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: './fonts/SolaimanLipi/SolaimanLipi-Thin.ttf',
+      weight: '100',
+      style: 'normal',
+    },
+    {
+      path: './fonts/SolaimanLipi/SolaimanLipi-Bold.ttf',
+      weight: '700',
+      style: 'normal',
+    }
+  ]
 })
 
 
 
 export const metadata = {
   metadataBase: new URL("https://taxportalbd.vercel.app/"), // Canonical Base URL
-  title: "Tax & Trade Solutions",
+  title: "ট্যাক্স এন্ড ট্রেড সলিউশনস",
   description:
     "One-stop digital platform for VAT, Customs & Income Tax laws, rules, SROs, orders, schedules, circulars, and amendments with consolidated and point-in-time views. Reliable references for officers, practitioners, taxpayers, and students.",
   keywords:
@@ -64,10 +79,36 @@ export function generateViewportMetadata() {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${notoSansBengali.className}`}>
+    <html lang="en" className={myFont.className}>
       <body>
         {children}
       </body>
     </html>
   );
 }
+
+
+
+/* 
+
+const myFont = localFont({
+  src: [
+    {
+      path: './fonts/SolaimanLipi/SolaimanLipi-Normal.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: './fonts/SolaimanLipi/SolaimanLipi-Thin.ttf',
+      weight: '100',
+      style: 'normal',
+    },
+    {
+      path: './fonts/SolaimanLipi/SolaimanLipi-Bold.ttf',
+      weight: '700',
+      style: 'normal',
+    }
+  ]
+})
+
+*/

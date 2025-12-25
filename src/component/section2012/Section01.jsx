@@ -21,7 +21,7 @@ export default function LawPage() {
 
           {/* Back to Home Button */}
           <Link
-            href="/regulations/acts/vat-acts/value-added-tax-act"
+            href="/regulations/acts/vat-acts/value-added-tax-and-supplementary-duty-act"
             className="absolute flex items-center gap-2 px-3 py-2 text-green-700 transition-all bg-white rounded-full shadow top-4 left-4 hover:bg-green-100"
           >
             <svg
@@ -60,12 +60,12 @@ export default function LawPage() {
               <div className="space-y-6 text-justify text-black">
                 
 
-              <div className="py-2 text-white bg-gradient-to-r from-green-600 to-green-600 md:px-8">
+              <div className="py-2 text-black bg-gradient-to-r from-green-500 to-green-500 md:px-8">
                 <div className="text-center">
-                  <h1 className="text-2xl ">
+                  <h1 className="text-lg font-semibold ">
                     প্রথম অধ্যায়
                   </h1>
-                  <p className="text-lg md:text-lg opacity-90">
+                  <p className="text-md md:text-md">
                     প্রারম্ভিক
                   </p>
                 </div>
@@ -74,19 +74,19 @@ export default function LawPage() {
                 
                 {/* Section 1 */}
                 <div>
-                  <p className="mb-4">
-                    <span className='text-xl font-bold leading-tight text-gray-950 md:text-xl'>১৷ সংক্ষিপ্ত শিরোনাম ও প্রবর্তন</span>---(১) এই আইন <Link href="/regulations/acts/vat-acts/value-added-tax-act" className='text-blue-500'>মূল্য সংযোজন কর ও সম্পূরক শুল্ক আইন, ২০১২</Link> নামে অভিহিত হইবে৷
+                  <p className="mb-4 text-lg">
+                    <span className='text-xl font-bold leading-tight text-gray-950 md:text-xl'>১৷ সংক্ষিপ্ত শিরোনাম ও প্রবর্তন</span>---(১) এই আইন <Link href="/regulations/acts/vat-acts/value-added-tax-act" className='text-blue-600 hover:underline hover:text-blue-700'>মূল্য সংযোজন কর ও সম্পূরক শুল্ক আইন, ২০১২</Link> নামে অভিহিত হইবে৷
                   </p>
                   
-                  <p className="mb-4">
+                  <p className="mb-4 ml-10 text-lg">
                     (২) এই আইনের দ্বিতীয় অধ্যায়, দ্বাদশ অধ্যায় ও পঞ্চদশ অধ্যায় এবং ধারা ১২৮, ১৩২, ১৩৪ ও ১৩৫ অবিলম্বে কার্যকর হইবে।
                   </p>
                   
-                 <p className='mb-4'>
+                 <p className='mb-4 ml-10 text-lg'>
                     (৩) উপ-ধারা (২) এ উল্লিখিত অধ্যায় ও ধারাসমূহ ব্যতীত এই আইনের অন্যান্য অধ্যায় ও ধারাসমূহ সরকার, সরকারি গেজেটে প্রজ্ঞাপন দ্বারা, যে তারিখ নির্ধারণ করিবে, সেই তারিখে কার্যকর হইবে।
                  </p>
                     
-                 <p className='ml-4'>
+                 <p className='ml-10 text-lg '>
                     * এস, আর, ও নং ১৬৮-আইন/২০১৯/২৫-মূসক, তারিখঃ ১৩ জুন, ২০১৯ ইং দ্বারা ৩০ জ্যৈষ্ঠ, ১৪২৬ বঙ্গাব্দ মোতাবেক ১ জুলাই, ২০১৯ খ্রিষ্টাব্দ তারিখ হতে উক্ত উল্লিখিত অধ্যায় ও ধারাসমূহ কার্যকর ।
                 </p>
                   
@@ -99,7 +99,7 @@ export default function LawPage() {
         {/* Footer Section */}
         <div className="">
           <div className="p-6">
-            <div className="w-1/2 pb-2 mb-4 border-b border-gray-400">
+            <div className="w-1/2 pb-2 mb-4 border-b border-gray-700">
               {/* Horizontal line */}
             </div>
             

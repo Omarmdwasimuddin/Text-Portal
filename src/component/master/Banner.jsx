@@ -22,7 +22,7 @@ export default function Banner() {
   }
 
   return (
-    <div className="relative isolate flex items-center justify-center overflow-hidden bg-green-900/80 px-4 py-3 sm:px-6">
+    <div className="relative flex items-center justify-center px-4 py-3 overflow-hidden isolate bg-green-900/80 sm:px-6">
       {/* Gradient BG Shapes */}
       <div
         aria-hidden="true"
@@ -37,9 +37,9 @@ export default function Banner() {
         />
       </div>
 
-      <div className="max-w-5xl w-full flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
+      <div className="flex flex-col items-center justify-between w-full max-w-5xl gap-4 sm:flex-row sm:gap-6">
         {/* Left: Logo + Site Name */}
-        <div className="flex items-center gap-2 flex-shrink-0">
+        <div className="flex items-center flex-shrink-0 gap-2">
           <Image
             src="/logo.jpeg"
             alt="Tax & Trade Solutions"
@@ -47,20 +47,20 @@ export default function Banner() {
             height={32}
             className="rounded-full"
           />
-          <p className="text-sm text-white font-bold whitespace-nowrap">{t('siteName')}</p>
+          <p className="text-lg text-white whitespace-nowrap">{t('siteName')}</p>
         </div>
 
         {/* Center: Search Bar */}
-        <div className="flex-1 w-full sm:max-w-md lg:max-w-xl mx-0 sm:mx-6">
+        <div className="flex-1 w-full mx-0 sm:max-w-md lg:max-w-xl sm:mx-6">
           <div className="relative">
             <input
               type="text"
               value={searchValue}
               onChange={handleSearchChange}
-              className="w-full rounded-full border border-gray-400 bg-white/20 px-4 py-2 text-sm text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent"
+              className="w-full px-4 py-2 text-sm text-white placeholder-gray-300 border border-gray-400 rounded-full bg-white/20 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent"
             />
             {!searchValue && (
-              <div className="absolute inset-0 flex items-center pointer-events-none pl-4">
+              <div className="absolute inset-0 flex items-center pl-4 pointer-events-none">
                 <TypeAnimation
                   key={lang}
                   sequence={[
@@ -84,17 +84,17 @@ export default function Banner() {
         </div>
 
         {/* Right: Language Toggle */}
-        <div className="flex items-center gap-3 flex-shrink-0">
+        <div className="flex items-center flex-shrink-0 gap-3">
           <button
             onClick={toggleLang}
-            className="flex items-center gap-2 rounded-full border border-gray-400 bg-white/20 px-3 py-1 text-sm font-medium text-white hover:bg-white/30 transition-colors"
+            className="flex items-center gap-2 px-3 py-1 text-sm font-medium text-white transition-colors border border-gray-400 rounded-full bg-white/20 hover:bg-white/30"
           >
             <Image
               src={lang === 'bn' ? '/flags/bnflag.png' : '/flags/enflag.png'}
               alt={lang === 'bn' ? 'Bangla' : 'English'}
               width={20}
               height={20}
-              className="rounded-full border"
+              className="border rounded-full"
             />
             <span className="uppercase">{lang}</span>
           </button>
