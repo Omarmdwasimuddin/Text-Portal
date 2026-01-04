@@ -1,11 +1,11 @@
 import React from 'react';
-import Section31 from '@/component/section2012/Section31';
+import Section3201 from '@/component/section2012/Section3201';
 import Master from '@/component/laws/Master';
 
 const page = () => {
     return (
         <Master>
-            <Section31 />
+            <Section3201 />
         </Master>
     );
 };
