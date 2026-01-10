@@ -29,7 +29,7 @@ const menuItems = [
         submenu: [
           { name: 'Finance Act', href: '/regulations/acts/finance-acts' },
           { name: 'VAT Act', href: '/regulations/acts/vat-acts' },
-          { name: 'Customs Act', href: '/regulations/instructions/customs' },
+          { name: 'Customs Act', href: '/regulations/acts/customs-acts' },
           { name: 'Income Tax Act', href: '/regulations/instructions/customs' },
           { name: 'Excise and Salt Act', href: '/regulations/instructions/customs' },
           { name: 'Others Acts', href: '/regulations/instructions/customs' },
