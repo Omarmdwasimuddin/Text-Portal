@@ -19,9 +19,11 @@ npx create-next-app@latest
 Follow the prompts to configure:
 
 * Project name
+* JavaScript
 * App Router (recommended)
 * ESLint
-* Tailwind CSS (recommended)
+* Tailwind CSS
+* src/ dir
 
 ---
 
