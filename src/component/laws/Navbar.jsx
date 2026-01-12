@@ -15,10 +15,10 @@ const menuItems = [
   { name: 'Service', 
     submenu: [
       { name: 'VAT', href:'/service/vat'},
-      { name: 'Cusotoms', href:'/service/customs'},
+      { name: 'Customs', href:'/service/customs'},
       { name: 'Income Tax', href:'/service/income-tax'},
-      { name: 'RJSC', href:'/service/income-tax'},
-      { name: 'Trade Solutions', href:'/service/income-tax'},
+      { name: 'RJSC', href:'/service/rjsc'},
+      { name: 'Trade Solutions', href:'/service/trade-solutions'},
     ],
    },
   {
@@ -29,7 +29,7 @@ const menuItems = [
         submenu: [
           { name: 'Finance Act', href: '/regulations/acts/finance-acts' },
           { name: 'VAT Act', href: '/regulations/acts/vat-acts' },
-          { name: 'Customs Act', href: '/regulations/instructions/customs' },
+          { name: 'Customs Act', href: '/regulations/acts/customs-acts' },
           { name: 'Income Tax Act', href: '/regulations/instructions/customs' },
           { name: 'Excise and Salt Act', href: '/regulations/instructions/customs' },
           { name: 'Others Acts', href: '/regulations/instructions/customs' },
@@ -115,7 +115,12 @@ const menuItems = [
       { name: 'Others', href: '/publications/research-analysis' },
     ]
    },
-  { name: 'Login', href: '/login', icon: UserIcon },
+  { name: 'Login', 
+    submenu: [
+      { name: 'Login', href: '/publications/annual-report' },
+      { name: 'Subscribe', href: '/subscribe' },
+    ]
+   },
   { name: 'Cart', href: '/cart', icon: ShoppingCartIcon, onlyIcon: true },
 ]
 
@@ -141,43 +146,43 @@ function Navbar() {
 
     return (
     <nav className={`w-full transition-all duration-300 ${isSticky ? 'fixed top-0 left-0 z-50 bg-gradient-to-r from-green-400/95 to-red-400/95 shadow-lg' : 'bg-green-800 relative'}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16 items-center">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
           {/* Mobile Hamburger */}
           <div className="md:hidden">
             <MobileMenu items={menuItems} isSticky={isSticky} />
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-4 items-center justify-center w-full z-50">
+          <div className="z-50 items-center justify-center hidden w-full space-x-4 md:flex">
             {menuItems.map((item, idx) => (
               <div key={idx} className="relative group/menu">
                 {item.submenu ? (
                   <>
                     <button className={`px-3 py-2 whitespace-nowrap ${isSticky ? 'text-gray-900' : 'text-white'} hover:bg-green-600 rounded-md transition-colors duration-200 flex items-center`}>
                       {item.name}
-                      <ChevronRightIcon className="w-4 h-4 ml-1 transform group-hover/menu:rotate-90 transition-transform" />
+                      <ChevronRightIcon className="w-4 h-4 ml-1 transition-transform transform group-hover/menu:rotate-90" />
                     </button>
-                    <div className="absolute left-0 top-full pt-1 opacity-0 invisible group-hover/menu:opacity-100 group-hover/menu:visible group-hover/menu:pointer-events-auto transition-all duration-300 transform group-hover/menu:translate-y-0">
+                    <div className="absolute left-0 invisible pt-1 transition-all duration-300 transform opacity-0 top-full group-hover/menu:opacity-100 group-hover/menu:visible group-hover/menu:pointer-events-auto group-hover/menu:translate-y-0">
                       <div className="bg-green-700 text-white rounded-md min-w-[200px] py-1">
                         {item.submenu.map((subItem, subIdx) => (
                           <div key={subIdx} className="relative group/subitem">
                             {subItem.submenu ? (
                               <>
-                                <div className="flex justify-between items-center px-4 py-2 text-white hover:bg-green-600 cursor-pointer">
+                                <div className="flex items-center justify-between px-4 py-2 text-white cursor-pointer hover:bg-green-600">
                                   {subItem.name}
                                   <ChevronRightIcon className="w-4 h-4 ml-2" />
                                 </div>
-                                <div className="absolute left-full top-0 pl-1 opacity-0 invisible group-hover/subitem:opacity-100 group-hover/subitem:visible transition-all duration-300 transform translate-x-2 group-hover/subitem:translate-x-0">
+                                <div className="absolute top-0 invisible pl-1 transition-all duration-300 transform translate-x-2 opacity-0 left-full group-hover/subitem:opacity-100 group-hover/subitem:visible group-hover/subitem:translate-x-0">
                                   <div className="bg-green-700 text-white rounded-md min-w-[200px] py-1">
                                     {subItem.submenu.map((subSubItem, subSubIdx) => (
                                       subSubItem.submenu ? (
                                         <div key={subSubIdx} className="relative group/subsubitem">
-                                          <div className="flex justify-between items-center px-4 py-2 text-white hover:bg-green-600 cursor-pointer">
+                                          <div className="flex items-center justify-between px-4 py-2 text-white cursor-pointer hover:bg-green-600">
                                             {subSubItem.name}
                                             <ChevronRightIcon className="w-4 h-4 ml-2" />
                                           </div>
-                                          <div className="absolute left-full top-0 pl-1 opacity-0 invisible group-hover/subsubitem:opacity-100 group-hover/subsubitem:visible transition-all duration-300 transform translate-x-2 group-hover/subsubitem:translate-x-0">
+                                          <div className="absolute top-0 invisible pl-1 transition-all duration-300 transform translate-x-2 opacity-0 left-full group-hover/subsubitem:opacity-100 group-hover/subsubitem:visible group-hover/subsubitem:translate-x-0">
                                             <div className="bg-green-700 text-white rounded-md min-w-[200px] py-1">
                                               {subSubItem.submenu.map((subSubSubItem, subSubSubIdx) => (
                                                 <Link
@@ -266,7 +271,7 @@ function MobileMenu({ items, isSticky }) {
             <>
               <button
                 onClick={() => toggleSubMenu(item.name)}
-                className="w-full text-left py-2 px-2 text-white hover:bg-green-600 rounded flex justify-between items-center"
+                className="flex items-center justify-between w-full px-2 py-2 text-left text-white rounded hover:bg-green-600"
               >
                 {item.name} <ChevronRightIcon className={`w-4 h-4 ml-2 transition-transform ${openSubMenus[item.name] ? 'rotate-90' : ''}`} />
               </button>
@@ -275,7 +280,7 @@ function MobileMenu({ items, isSticky }) {
           ) : item.icon ? (
             <Link
               href={item.href}
-              className="py-2 px-2 text-white hover:bg-green-600 rounded flex items-center"
+              className="flex items-center px-2 py-2 text-white rounded hover:bg-green-600"
               onClick={() => setOpen(false)}
             >
               <item.icon className="w-5 h-5" />
@@ -284,7 +289,7 @@ function MobileMenu({ items, isSticky }) {
           ) : item.name === 'Home' ? (
             <Link
               href={item.href}
-              className="py-2 px-2 text-white hover:bg-green-600 rounded flex items-center"
+              className="flex items-center px-2 py-2 text-white rounded hover:bg-green-600"
               onClick={() => setOpen(false)}
             >
               <HomeIcon className="w-5 h-5 mr-2" />
@@ -292,7 +297,7 @@ function MobileMenu({ items, isSticky }) {
           ) : (
             <Link
               href={item.href}
-              className="block py-2 px-2 text-white hover:bg-green-600 rounded"
+              className="block px-2 py-2 text-white rounded hover:bg-green-600"
               onClick={() => setOpen(false)}
             >
               {item.name}
@@ -313,7 +318,7 @@ function MobileMenu({ items, isSticky }) {
       </button>
 
       {/* Overlay */}
-      {open && <div className="fixed inset-0 bg-black/30 z-40" onClick={() => setOpen(false)}></div>}
+      {open && <div className="fixed inset-0 z-40 bg-black/30" onClick={() => setOpen(false)}></div>}
 
       {/* Sidebar */}
       <div
@@ -322,7 +327,7 @@ function MobileMenu({ items, isSticky }) {
         <div className="p-4">
           <button
             onClick={() => setOpen(false)}
-            className="text-white mb-4 px-2 py-1 border border-white rounded-md"
+            className="px-2 py-1 mb-4 text-white border border-white rounded-md"
           >
             ✕ Close
           </button>
@@ -333,7 +338,7 @@ function MobileMenu({ items, isSticky }) {
                   <>
                     <button
                       onClick={() => toggleSubMenu(item.name)}
-                      className="w-full text-left py-2 px-2 text-white hover:bg-green-600 rounded flex justify-between items-center"
+                      className="flex items-center justify-between w-full px-2 py-2 text-left text-white rounded hover:bg-green-600"
                     >
                       {item.name} <ChevronRightIcon className={`w-4 h-4 ml-2 transition-transform ${openSubMenus[item.name] ? 'rotate-90' : ''}`} />
                     </button>
@@ -342,7 +347,7 @@ function MobileMenu({ items, isSticky }) {
                 ) : item.icon ? (
                   <Link
                     href={item.href}
-                    className="py-2 px-2 text-white hover:bg-green-600 rounded flex items-center"
+                    className="flex items-center px-2 py-2 text-white rounded hover:bg-green-600"
                     onClick={() => setOpen(false)}
                   >
                     <item.icon className="w-5 h-5" />
@@ -351,7 +356,7 @@ function MobileMenu({ items, isSticky }) {
                 ) : item.name === 'Home' ? (
                   <Link
                     href={item.href}
-                    className="py-2 px-2 text-white hover:bg-green-600 rounded flex items-center"
+                    className="flex items-center px-2 py-2 text-white rounded hover:bg-green-600"
                     onClick={() => setOpen(false)}
                   >
                     <HomeIcon className="w-5 h-5 mr-2" />
@@ -359,7 +364,7 @@ function MobileMenu({ items, isSticky }) {
                 ) : (
                   <Link
                     href={item.href}
-                    className="block py-2 px-2 text-white hover:bg-green-600 rounded"
+                    className="block px-2 py-2 text-white rounded hover:bg-green-600"
                     onClick={() => setOpen(false)}
                   >
                     {item.name}

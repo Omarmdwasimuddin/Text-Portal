@@ -1,25 +1,54 @@
-import localFont from 'next/font/local'
+import { Inter, Roboto } from 'next/font/google';
+import localFont from 'next/font/local';
 import "./globals.css";
 
-const myFont = localFont({
+const interFont = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
+const robotoFont = Roboto({
+  subsets: ['latin'],
+  variable: '--font-roboto',
+  display: 'swap',
+});
+
+const solaimanFont = localFont({
   src: [
     {
-      path: './fonts/SolaimanLipi/SolaimanLipi-Normal.ttf',
+      path: '../../public/local fonts/SolaimanLipi/SolaimanLipi-Thin.ttf',
+      weight: '100',
+      style: 'thin',
+    },
+    {
+      path: '../../public/local fonts/SolaimanLipi/SolaimanLipi-Normal.ttf',
       weight: '400',
       style: 'normal',
     },
     {
-      path: './fonts/SolaimanLipi/SolaimanLipi-Thin.ttf',
-      weight: '100',
+      path: '../../public/local fonts/SolaimanLipi/SolaimanLipi-Bold.ttf',
+      weight: '700',
+      style: 'bold',
+    },
+  ],
+  variable: '--font-solaiman',
+  display: 'swap',
+});
+
+const nikoshFont = localFont({
+  src: [
+    {
+      path: '../../public/local fonts/Nikosh/Nikosh.ttf',
+      weight: '400',
       style: 'normal',
     },
-    {
-      path: './fonts/SolaimanLipi/SolaimanLipi-Bold.ttf',
-      weight: '700',
-      style: 'normal',
-    }
-  ]
-})
+  ],
+  variable: '--font-nikosh',
+  display: 'swap',
+});
+
+export { solaimanFont, nikoshFont, interFont, robotoFont };
 
 
 
@@ -79,36 +108,10 @@ export function generateViewportMetadata() {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={myFont.className}>
-      <body>
+    <html lang="en" className={`${solaimanFont.variable} ${nikoshFont.variable} ${interFont.variable} ${robotoFont.variable}`}>
+      <body className={`${nikoshFont.className} ${robotoFont.className} text-sm`}>
         {children}
       </body>
     </html>
   );
 }
-
-
-
-/* 
-
-const myFont = localFont({
-  src: [
-    {
-      path: './fonts/SolaimanLipi/SolaimanLipi-Normal.ttf',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: './fonts/SolaimanLipi/SolaimanLipi-Thin.ttf',
-      weight: '100',
-      style: 'normal',
-    },
-    {
-      path: './fonts/SolaimanLipi/SolaimanLipi-Bold.ttf',
-      weight: '700',
-      style: 'normal',
-    }
-  ]
-})
-
-*/
