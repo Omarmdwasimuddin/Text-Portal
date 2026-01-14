@@ -34,32 +34,32 @@ const ConsultancyForm = () => {
       {/* Left Content Section */}
       <div className="space-y-6">
         <header>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-snug">
+          <h1 className="text-xl font-extrabold leading-snug sm:text-xl md:text-2xl">
             আজই নিন আপনার ফ্রি <br />
             <span className="text-cyan-400">কনসালটেশন সেবা!</span>
           </h1>
-          <p className="text-sm sm:text-base mt-4 text-gray-300">
+          <p className="mt-4 text-sm text-gray-300 sm:text-sm">
             Tax & Trade Solution একটি নির্ভরযোগ্য কনসালটেন্সি সেবা প্রদানকারী প্রতিষ্ঠান। আমরা কর, ট্রেড এবং ব্যবসা সংক্রান্ত বিভিন্ন সমস্যার সমাধান প্রদান করি।
           </p>
         </header>
 
         {/* Student Avatars Section */}
         <div className="flex items-center">
-          <div className="flex -space-x-2 mr-3">
+          <div className="flex mr-3 -space-x-2">
             <img 
               src="/Consultancy/ismalimg.jpg" 
               alt="Student 1" 
-              className="w-10 h-10 rounded-full border-2 border-gray-900 object-cover" 
+              className="object-cover w-10 h-10 border-2 border-gray-900 rounded-full" 
             />
             <img 
               src="/Consultancy/prantoimg.jpg" 
               alt="Student 2" 
-              className="w-10 h-10 rounded-full border-2 border-gray-900 object-cover" 
+              className="object-cover w-10 h-10 border-2 border-gray-900 rounded-full" 
             />
             <img 
               src="/Consultancy/Wasim-removebg.png" 
               alt="Student 3" 
-              className="w-10 h-10 rounded-full border-2 border-gray-900 object-cover" 
+              className="object-cover w-10 h-10 border-2 border-gray-900 rounded-full" 
             />
           </div>
           <p className="text-sm text-gray-300">1500+ students got consultation</p>
@@ -68,10 +68,10 @@ const ConsultancyForm = () => {
 
       {/* Right Form Section */}
       <div className="bg-[#1a2d2f] p-6 rounded-xl shadow-lg">
-        <h2 className="text-xl font-semibold mb-6 text-gray-200">Book the call</h2>
+        <h2 className="mb-6 text-xl font-semibold text-gray-200">Book the call</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium mb-1 text-gray-200">
+            <label htmlFor="name" className="block mb-1 text-sm font-medium text-gray-200">
               Full Name
             </label>
             <input
@@ -82,12 +82,12 @@ const ConsultancyForm = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder-gray-400 transition-colors"
+              className="w-full px-4 py-2 text-white placeholder-gray-400 transition-colors bg-gray-900 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400"
             />
           </div>
           
           <div>
-            <label htmlFor="email" className="block text-sm font-medium mb-1 text-gray-200">
+            <label htmlFor="email" className="block mb-1 text-sm font-medium text-gray-200">
               Email
             </label>
             <input
@@ -98,12 +98,12 @@ const ConsultancyForm = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder-gray-400 transition-colors"
+              className="w-full px-4 py-2 text-white placeholder-gray-400 transition-colors bg-gray-900 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400"
             />
           </div>
           
           <div>
-            <label htmlFor="phone" className="block text-sm font-medium mb-1 text-gray-200">
+            <label htmlFor="phone" className="block mb-1 text-sm font-medium text-gray-200">
               Phone Number
             </label>
             <input
@@ -114,13 +114,13 @@ const ConsultancyForm = () => {
               value={formData.phone}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder-gray-400 transition-colors"
+              className="w-full px-4 py-2 text-white placeholder-gray-400 transition-colors bg-gray-900 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400"
             />
           </div>
           
           <button
             type="submit"
-            className="w-full bg-green-600 text-white py-2 rounded-md font-semibold hover:bg-green-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-[#1a2d2f]"
+            className="w-full bg-green-600 text-white py-2 rounded-md  hover:bg-green-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-[#1a2d2f]"
           >
             Schedule Now
           </button>

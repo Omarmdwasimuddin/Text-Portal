@@ -54,17 +54,17 @@ export const blogs = [
 export default function BlogListPage() {
   return (
     <section className="py-16 sm:py-20" id="blogs">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="mx-auto max-w-3xl text-center mb-16">
+        <div className="max-w-3xl mx-auto mb-16 text-center">
         
-          <p className="mt-4 text-xl text-gray-600 leading-relaxed">
+          <p className="mt-4 text-lg leading-relaxed text-black">
             ভ্যাট, কাস্টমস, আয়করসহ বিভিন্ন আইন ও বিধিমালার বিশ্লেষণ, আপডেট এবং সহজ ব্যাখ্যা পড়ুন আমাদের বিশেষজ্ঞদের লেখায়।
           </p>
         </div>
 
         {/* Blog Grid */}
-        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid max-w-6xl grid-cols-1 gap-8 mx-auto md:grid-cols-2 lg:grid-cols-3">
           {blogs.map((blog) => (
             <article
               key={blog.id}
@@ -75,9 +75,9 @@ export default function BlogListPage() {
                 <img
                   src={blog.coverImage}
                   alt={blog.title}
-                  className="w-full h-64 object-cover rounded-t-2xl group-hover:scale-105 transition-transform duration-300"
+                  className="object-cover w-full h-64 transition-transform duration-300 rounded-t-2xl group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/50 to-transparent group-hover:opacity-100" />
               </div>
 
               {/* Content Container */}
@@ -86,20 +86,20 @@ export default function BlogListPage() {
                 <div className="flex items-center justify-between mb-4">
                   <time 
                     dateTime={blog.datetime} 
-                    className="text-sm text-gray-400 font-medium"
+                    className="text-sm font-medium text-gray-400"
                   >
                     {new Date(blog.publishedAt).toLocaleDateString('bn-BD')}
                   </time>
                   <Link
                     href={blog.category.href}
-                    className="inline-flex items-center rounded-full bg-green-900/50 px-4 py-2 text-sm font-medium text-green-200 hover:bg-green-800 hover:text-white transition-colors duration-200 border border-green-700/30"
+                    className="inline-flex items-center px-4 py-2 text-sm font-medium text-green-200 transition-colors duration-200 border rounded-full bg-green-900/50 hover:bg-green-800 hover:text-white border-green-700/30"
                   >
                     {blog.category.title}
                   </Link>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold text-white group-hover:text-green-400 transition-colors duration-200 mb-3 line-clamp-2 leading-tight">
+                <h3 className="mb-3 text-lg font-bold leading-tight text-white transition-colors duration-200 group-hover:text-green-400 line-clamp-2">
                   <Link 
                     href={`/blog/${blog.slug}`}
                     className="hover:no-underline"
@@ -109,7 +109,7 @@ export default function BlogListPage() {
                 </h3>
 
                 {/* Excerpt */}
-                <p className="text-gray-300 leading-relaxed mb-6 line-clamp-3">
+                <p className="mb-6 text-sm leading-relaxed text-gray-200 line-clamp-3">
                   {blog.excerpt}
                 </p>
 
@@ -119,20 +119,20 @@ export default function BlogListPage() {
                     <img
                       src={blog.author.imageUrl}
                       alt={blog.author.name}
-                      className="h-12 w-12 rounded-full border-2 border-green-700/50 object-cover"
+                      className="object-cover w-12 h-12 border-2 rounded-full border-green-700/50"
                     />
                     <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-[#1a2d2f]"></div>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-semibold text-white truncate">
+                    <p className="text-sm text-white truncate">
                       <Link 
                         href={blog.author.href}
-                        className="hover:text-green-400 transition-colors duration-200"
+                        className="transition-colors duration-200 hover:text-green-400"
                       >
                         {blog.author.name}
                       </Link>
                     </p>
-                    <p className="text-sm text-gray-400 truncate">{blog.author.role}</p>
+                    <p className="text-xs text-gray-400 truncate">{blog.author.role}</p>
                   </div>
                 </div>
               </div>

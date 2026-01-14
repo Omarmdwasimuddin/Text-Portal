@@ -357,7 +357,7 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7 }}
-                className="mb-2 text-3xl font-bold leading-snug text-center text-white md:text-3xl"
+                className="mb-2 text-2xl font-bold leading-snug text-center text-white md:text-2xl"
               >
                 <span className="text-transparent bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text">
                   বাংলাদেশের ট্যাক্স, ভ্যাট, কাস্টমস আইন
@@ -374,12 +374,12 @@ export default function HeroSection() {
               >
                 {/* Section Title */}
                 <div className="mb-10 text-center">
-                  <h2 className="mb-2 text-2xl font-bold text-white md:text-2xl myFont">
+                  <h2 className="mb-2 text-xl font-bold text-white md:text-xl myFont">
                     <span className="text-transparent bg-gradient-to-r from-red-400 to-red-600 bg-clip-text">
                       জনপ্রিয় বইসমূহ
                     </span>
                   </h2>
-                  <p className="text-lg text-gray-300">আমাদের সেরা বিক্রিত বইগুলি দেখুন</p>
+                  <p className="text-gray-300 text-md">আমাদের সেরা বিক্রিত বইগুলি দেখুন</p>
                 </div>
 
                 {/* Slider Container */}
@@ -424,7 +424,7 @@ export default function HeroSection() {
                       className={`w-3 h-3 rounded-full transition-all duration-300 ${
                         index === activeProductIndex
                           ? 'bg-red-500 scale-125'
-                          : 'bg-white/50 hover:bg-white/70'
+                          : 'bg-white/100 hover:bg-white/70'
                       }`}
                     />
                   ))}
@@ -438,7 +438,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
-            className="lg:col-span-1 bg-white/90 backdrop-blur-lg p-6 rounded-2xl shadow-2xl flex flex-col max-h-[600px] lg:max-h-[800px] overflow-hidden border border-gray-200"
+            className="lg:col-span-1 bg-white/10 backdrop-blur-lg p-6 rounded-2xl shadow-2xl flex flex-col max-h-[600px] lg:max-h-[800px] overflow-hidden border border-gray-200"
           >
             {/* Tab Buttons */}
             <div className="flex flex-row flex-wrap flex-shrink-0 gap-2 mb-4">
@@ -448,8 +448,8 @@ export default function HeroSection() {
                   onClick={() => setActiveTab(calc.title)}
                   className={`px-4 py-2 rounded text-sm font-medium text-left ${
                     activeTab === calc.title
-                      ? 'bg-blue-600 text-white'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                      ? 'bg-green-600 text-white'
+                      : 'bg-gray-100 text-gray-950 hover:bg-gray-200'
                   }`}
                 >
                   {calc.title}

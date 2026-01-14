@@ -39,13 +39,13 @@ export default function NewsletterSection() {
   };
 
   return (
-    <section className="relative isolate overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-16 sm:py-24 lg:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:max-w-none lg:grid-cols-2 lg:items-center">
+    <section className="relative py-16 overflow-hidden isolate bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 sm:py-24 lg:py-32">
+      <div className="px-6 mx-auto max-w-7xl lg:px-8">
+        <div className="grid max-w-2xl grid-cols-1 mx-auto gap-x-12 gap-y-16 lg:max-w-none lg:grid-cols-2 lg:items-center">
           {/* Left: Text + Form */}
           <div className="max-w-xl lg:max-w-lg">
             <div className="mb-8">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+              <h2 className="text-xl font-bold tracking-tight text-transparent sm:text-2xl bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text">
                 নিউজলেটার সাবস্ক্রাইব করুন
               </h2>
               <p className="mt-4 text-lg leading-8 text-gray-300">
@@ -54,7 +54,7 @@ export default function NewsletterSection() {
             </div>
 
             <form onSubmit={handleSubscribe} className="space-y-4">
-              <div className="flex flex-col sm:flex-row gap-3">
+              <div className="flex flex-col gap-3 sm:flex-row">
                 <div className="flex-1">
                   <label htmlFor="email-address" className="sr-only">
                     ইমেইল ঠিকানা
@@ -80,7 +80,7 @@ export default function NewsletterSection() {
                 >
                   {status === 'loading' ? (
                     <span className="flex items-center justify-center">
-                      <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4 mr-2 -ml-1 text-white animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                       </svg>
@@ -110,22 +110,22 @@ export default function NewsletterSection() {
 
           {/* Right: Features */}
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:pt-2">
-            <div className="flex flex-col items-start p-6 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300">
-              <div className="rounded-lg bg-gradient-to-br from-cyan-500/10 to-blue-500/10 p-3 ring-1 ring-cyan-500/20">
-                <CalendarDaysIcon aria-hidden="true" className="h-6 w-6 text-cyan-400" />
+            <div className="flex flex-col items-start p-6 transition-all duration-300 border rounded-xl bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10">
+              <div className="p-3 rounded-lg bg-gradient-to-br from-cyan-500/10 to-blue-500/10 ring-1 ring-cyan-500/20">
+                <CalendarDaysIcon aria-hidden="true" className="w-6 h-6 text-cyan-400" />
               </div>
-              <dt className="mt-4 text-lg font-semibold text-white">সাপ্তাহিক আপডেট</dt>
-              <dd className="mt-2 text-base text-gray-400 leading-relaxed">
+              <dt className="mt-4 text-lg text-white">সাপ্তাহিক আপডেট</dt>
+              <dd className="mt-2 text-sm leading-relaxed text-gray-400">
                 সপ্তাহিক প্রাসঙ্গিক আর্টিকেল, টিউটোরিয়াল এবং পেশাদার গাইডেন্স।
               </dd>
             </div>
 
-            <div className="flex flex-col items-start p-6 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300">
-              <div className="rounded-lg bg-gradient-to-br from-green-500/10 to-emerald-500/10 p-3 ring-1 ring-green-500/20">
-                <HandRaisedIcon aria-hidden="true" className="h-6 w-6 text-green-400" />
+            <div className="flex flex-col items-start p-6 transition-all duration-300 border rounded-xl bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10">
+              <div className="p-3 rounded-lg bg-gradient-to-br from-green-500/10 to-emerald-500/10 ring-1 ring-green-500/20">
+                <HandRaisedIcon aria-hidden="true" className="w-6 h-6 text-green-400" />
               </div>
-              <dt className="mt-4 text-lg font-semibold text-white">স্প্যাম মুক্ত</dt>
-              <dd className="mt-2 text-base text-gray-400 leading-relaxed">
+              <dt className="mt-4 text-lg text-white">স্প্যাম মুক্ত</dt>
+              <dd className="mt-2 text-sm leading-relaxed text-gray-400">
                 কেবল মানসম্মত, প্রয়োজনীয় কন্টেন্ট — কোন অনাবশ্যক স্প্যাম বা বিজ্ঞাপন নেই।
               </dd>
             </div>
@@ -134,7 +134,7 @@ export default function NewsletterSection() {
       </div>
 
       {/* Enhanced background effects */}
-      <div aria-hidden="true" className="absolute top-0 left-1/2 -z-10 -translate-x-1/2 blur-3xl xl:-top-6">
+      <div aria-hidden="true" className="absolute top-0 -translate-x-1/2 left-1/2 -z-10 blur-3xl xl:-top-6">
         <div
           style={{
             clipPath:
@@ -145,8 +145,8 @@ export default function NewsletterSection() {
       </div>
       
       {/* Additional background elements */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute -top-40 -right-32 transform translate-x-1/2 translate-y-1/2">
+      <div className="absolute inset-0 overflow-hidden -z-10">
+        <div className="absolute transform translate-x-1/2 translate-y-1/2 -top-40 -right-32">
           <div className="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-20 dark:opacity-10 blur-3xl"></div>
         </div>
       </div>

@@ -7,13 +7,13 @@ const popularLaws = [
   {
     title: "VAT Act & Rules",
     description: "সর্বশেষ ভ্যাট আইন ও বিধিমালা একসাথে দেখুন",
-    icon: <ScaleIcon className="h-7 w-7 text-indigo-600" />,
+    icon: <ScaleIcon className="text-indigo-600 h-7 w-7" />,
     href: "/vat",
   },
   {
     title: "Customs Act",
     description: "কাস্টমস আইন, শিডিউল, এসআরও",
-    icon: <GlobeAltIcon className="h-7 w-7 text-green-600" />,
+    icon: <GlobeAltIcon className="text-green-600 h-7 w-7" />,
     href: "/customs",
   },
   {
@@ -25,19 +25,19 @@ const popularLaws = [
   {
     title: "Import & Export",
     description: "আমদানি ও রপ্তানি নীতি নির্দেশিকা",
-    icon: <BookOpenIcon className="h-7 w-7 text-blue-600" />,
+    icon: <BookOpenIcon className="text-blue-600 h-7 w-7" />,
     href: "/import-export",
   },
   {
     title: "Excise Duty",
     description: "এক্সসাইজ শুল্ক ও সারচার্জ আইন",
-    icon: <ScaleIcon className="h-7 w-7 text-red-600" />,
+    icon: <ScaleIcon className="text-red-600 h-7 w-7" />,
     href: "/excise",
   },
   {
     title: "Other Laws",
     description: "বন্ড, মানি লন্ডারিং, দুর্নীতি দমন আইন",
-    icon: <BookOpenIcon className="h-7 w-7 text-gray-600" />,
+    icon: <BookOpenIcon className="text-gray-600 h-7 w-7" />,
     href: "/others",
   },
 ]
@@ -45,23 +45,23 @@ const popularLaws = [
 export default function QuickAccess() {
   return (
     <section className="py-12 bg-gradient-to-b from-[#E6ECEA] to-[#F9E6D7]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl md:text-3xl font-bold text-[#1F2A44] mb-8 text-center">
-          Quick Access / Popular Laws
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <h2 className="text-xl md:text-xl font-bold text-[#1F2A44] mb-8 text-center">
+          জনপ্রিয় আইনসমূহ
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
           {popularLaws.map((law) => (
             <a
               key={law.title}
               href={law.href}
-              className="transform transition duration-300 hover:scale-105 hover:shadow-xl"
+              className="transition duration-300 transform hover:scale-105 hover:shadow-xl"
             >
-              <Card className="rounded-xl border border-gray-200 bg-white h-full p-3 shadow-md hover:bg-gray-50">
+              <Card className="h-full p-3 bg-white border border-gray-200 shadow-2xl rounded-xl hover:bg-gray-50">
                 <CardContent className="flex flex-col items-center gap-3 p-2">
-                  <div className="bg-gray-100 p-2 rounded-full flex items-center justify-center">
+                  <div className="flex items-center justify-center p-2 bg-gray-100 rounded-full">
                     {law.icon}
                   </div>
-                  <h3 className="text-base font-semibold text-[#1F2A44] text-center leading-tight">
+                  <h3 className="text-sm font-semibold text-[#1F2A44] text-center leading-tight">
                     {law.title}
                   </h3>
                   <p className="text-xs text-[#4A5568] text-center leading-tight">

@@ -47,7 +47,7 @@ export default function Banner() {
             height={32}
             className="rounded-full"
           />
-          <p className="text-lg text-white whitespace-nowrap">{t('siteName')}</p>
+          <p className="text-sm text-white whitespace-nowrap">{t('siteName')}</p>
         </div>
 
         {/* Center: Search Bar */}

@@ -6,52 +6,52 @@ import PublicationCard from '@/component/publication/PublicationCard';
 const books = [
   {
     id: '1',
-    name: 'VAT Guide',
-    writer: 'John Doe',
+    name: 'ভ্যাট গাইড',
+    writer: 'আবু সুফিয়ান',
     image: '/Books/vatguide.jpeg',
-    price: 29.99,
+    price: 300,
     rating: 4.5,
-    description: 'Complete guide to Value Added Tax',
+    description: 'মূল্য সংযোজন করের সম্পূর্ণ নির্দেশিকা',
     category: 'VAT'
   },
   {
     id: '2',
-    name: 'Customs Guide',
-    writer: 'Jane Smith',
+    name: 'কাস্টমস গাইড',
+    writer: 'আবু সুফিয়ান',
     image: '/Books/customguide.jpeg',
-    price: 34.99,
+    price: 299,
     rating: 4.7,
-    description: 'Comprehensive customs regulations guide',
+    description: 'ব্যাপক শুল্ক প্রবিধান নির্দেশিকা',
     category: 'Customs'
   },
   {
     id: '3',
-    name: 'Porikkha Sohayika',
-    writer: 'Alice Johnson',
+    name: 'পরীক্ষা সহায়িকা',
+    writer: 'আবু সুফিয়ান',
     image: '/Books/porikkhasohayika.jpeg',
-    price: 19.99,
+    price: 299,
     rating: 4.2,
-    description: 'Exam preparation guide',
+    description: 'পরীক্ষার প্রস্তুতির নির্দেশিকা',
     category: 'Education'
   },
   {
     id: '4',
-    name: 'Bond Guide',
-    writer: 'Bob Brown',
+    name: 'বন্ড গাইড',
+    writer: 'আবু সুফিয়ান',
     image: '/Books/nan.jpeg',
-    price: 24.99,
+    price: 199,
     rating: 4.8,
-    description: 'Complete bond management guide',
+    description: 'সম্পূর্ণ বন্ড পরিচালনার গাইড',
     category: 'Finance'
   },
   {
     id: '5',
-    name: 'Advanced Taxation',
-    writer: 'Charlie Davis',
+    name: 'ট্যাক্সেশন প্রিন্সিপলস',
+    writer: 'আবু সুফিয়ান',
     image: '/Books/porikkhasohayika.jpeg',
-    price: 15.99,
+    price: 250,
     rating: 4.0,
-    description: 'Advanced taxation principles',
+    description: 'উন্নত কর নীতি',
     category: 'Tax'
   },
 ];
@@ -65,20 +65,20 @@ export default function PublicationPage() {
     : books.filter(book => book.category === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-green-50 to-green-100 py-8">
-      <div className="container mx-auto px-4">
+    <div className="min-h-screen py-8 bg-gradient-to-br from-white via-green-50 to-green-100">
+      <div className="container px-4 mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-green-600 via-red-500 to-green-700 bg-clip-text text-transparent">
+        <div className="mb-12 text-center">
+          <h1 className="mb-4 text-2xl font-bold md:text-2xl">
+            <span className="text-transparent bg-gradient-to-r from-green-600 via-red-500 to-green-700 bg-clip-text">
               আমাদের প্রকাশনা
             </span>
           </h1>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="max-w-2xl mx-auto text-sm text-black">
             Discover our collection of professional tax and finance guides
           </p>
-          <div className="mt-4 flex justify-center">
-            <div className="w-32 h-1 bg-gradient-to-r from-green-600 to-red-500 rounded-full" />
+          <div className="flex justify-center mt-4">
+            <div className="w-32 h-1 rounded-full bg-gradient-to-r from-green-600 to-red-500" />
           </div>
         </div>
 
@@ -100,7 +100,7 @@ export default function PublicationPage() {
         </div>
 
         {/* Books Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
           {filteredBooks.map((book) => (
             <PublicationCard key={book.id} book={book} />
           ))}
@@ -108,8 +108,8 @@ export default function PublicationPage() {
 
         {/* Empty State */}
         {filteredBooks.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-gray-500 text-xl">No books found in this category.</p>
+          <div className="py-12 text-center">
+            <p className="text-xl text-gray-500">No books found in this category.</p>
           </div>
         )}
       </div>

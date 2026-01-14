@@ -42,7 +42,7 @@ export default function PublicationCard({ book }) {
 
   return (
     <div
-      className="group relative bg-white border border-green-800 rounded-2xl shadow-md hover:shadow-xl overflow-hidden transition-all duration-500 hover:-translate-y-2"
+      className="relative overflow-hidden transition-all duration-500 bg-white border border-green-800 shadow-md group rounded-2xl hover:shadow-xl hover:-translate-y-2"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -56,10 +56,10 @@ export default function PublicationCard({ book }) {
         />
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-green-900/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-green-900/70 via-transparent to-transparent group-hover:opacity-100" />
 
         {/* Actions */}
-        <div className="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-200">
+        <div className="absolute flex flex-col gap-2 transition-all duration-300 delay-200 opacity-0 top-3 right-3 group-hover:opacity-100">
           <button
             onClick={handleLike}
             className={`p-2 rounded-full backdrop-blur-sm transition-all duration-300 ${
@@ -72,7 +72,7 @@ export default function PublicationCard({ book }) {
           </button>
           <button
             onClick={handleShare}
-            className="p-2 rounded-full bg-white text-green-700 border border-green-300 hover:bg-green-600 hover:text-white transition-all duration-300"
+            className="p-2 text-green-700 transition-all duration-300 bg-white border border-green-300 rounded-full hover:bg-green-600 hover:text-white"
           >
             <FaShare className="text-sm" />
           </button>
@@ -81,7 +81,7 @@ export default function PublicationCard({ book }) {
         {/* Category Badge */}
         {book.category && (
           <div className="absolute top-3 left-3">
-            <span className="px-2 py-1 text-xs font-medium bg-green-600 text-white rounded-full shadow-md">
+            <span className="px-2 py-1 text-xs font-medium text-white bg-green-600 rounded-full shadow-md">
               {book.category}
             </span>
           </div>
@@ -90,25 +90,25 @@ export default function PublicationCard({ book }) {
 
       {/* Details */}
       <div className="p-5">
-        <h3 className="font-bold text-gray-800 text-lg mb-2 line-clamp-2 leading-tight">
+        <h3 className="mb-2 text-lg font-bold leading-tight text-gray-800 line-clamp-2">
           {book.name}
         </h3>
         
-        <p className="text-gray-500 text-sm mb-3">By {book.writer}</p>
+        <p className="mb-3 text-xs text-gray-500">{book.writer}</p>
         
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-1">
-            <FaStar className="text-yellow-400 text-sm" />
-            <span className="text-green-700 font-medium">{book.rating}</span>
-            <span className="text-gray-500 text-sm">/5</span>
+            <FaStar className="text-sm text-yellow-400" />
+            <span className="font-medium text-green-700">{book.rating}</span>
+            <span className="text-sm text-gray-500">/5</span>
           </div>
           <div className="text-right">
-            <p className="text-2xl font-bold text-green-700">${book.price.toFixed(2)}</p>
+            <p className="text-xl font-bold text-green-700">৳{book.price.toFixed(2)}</p>
           </div>
         </div>
 
         {book.description && (
-          <p className="text-gray-600 text-sm line-clamp-2 mb-4">
+          <p className="mb-4 text-sm text-gray-600 line-clamp-2">
             {book.description}
           </p>
         )}
@@ -120,7 +120,7 @@ export default function PublicationCard({ book }) {
       }`}>
         <button
           onClick={handleAddToCart}
-          className="flex items-center justify-center w-full px-6 py-3 bg-green-600 text-white rounded-xl font-semibold hover:bg-green-700 transform hover:scale-105 transition-all duration-300 shadow-lg shadow-green-400/25"
+          className="flex items-center justify-center w-full px-6 py-3 font-semibold text-white transition-all duration-300 transform bg-green-600 shadow-lg rounded-xl hover:bg-green-700 hover:scale-105 shadow-green-400/25"
         >
           <FaCartPlus className="mr-3 text-lg" />
           Add to Cart
@@ -128,7 +128,7 @@ export default function PublicationCard({ book }) {
         
         <button
           onClick={handleRead}
-          className="flex items-center justify-center w-full px-6 py-3 bg-red-500 text-white rounded-xl font-semibold hover:bg-red-600 transform hover:scale-105 transition-all duration-300 shadow-lg shadow-red-400/25"
+          className="flex items-center justify-center w-full px-6 py-3 font-semibold text-white transition-all duration-300 transform bg-red-500 shadow-lg rounded-xl hover:bg-red-600 hover:scale-105 shadow-red-400/25"
         >
           <FaBookOpen className="mr-3 text-lg" />
           Read Preview
@@ -136,7 +136,7 @@ export default function PublicationCard({ book }) {
         
         <button
           onClick={handleDetails}
-          className="flex items-center justify-center w-full px-6 py-3 bg-white text-green-700 border border-green-300 rounded-xl font-semibold hover:bg-green-50 transform hover:scale-105 transition-all duration-300"
+          className="flex items-center justify-center w-full px-6 py-3 font-semibold text-green-700 transition-all duration-300 transform bg-white border border-green-300 rounded-xl hover:bg-green-50 hover:scale-105"
         >
           <FaInfoCircle className="mr-3 text-lg" />
           View Details
