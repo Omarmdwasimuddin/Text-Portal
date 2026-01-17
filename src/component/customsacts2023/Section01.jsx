@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default function LawPage() {
   return (
     <div className="min-h-screen px-4 py-8 bg-gray-50">
-      <div className="max-w-6xl mx-auto overflow-hidden bg-white border border-gray-200 rounded-lg shadow-sm">
+      <div className="max-w-6xl mx-auto overflow-hidden bg-white border border-gray-200 rounded-lg shadow-xl">
         {/* Banner Section */}
         <div className="relative px-4 py-8 text-white bg-gradient-to-r from-green-700 to-green-700 md:px-8">
           <div className="text-center">
