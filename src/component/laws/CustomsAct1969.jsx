@@ -610,8 +610,8 @@ const HomePage = () => {
             <div className="flex flex-col items-start justify-between lg:flex-row lg:items-center">
               {/* Text Content */}
               <div className="flex-1 lg:pr-8">
-                <h1 className="mb-2 text-3xl font-bold md:text-4xl">কাস্টমস আইন, ২০২৩</h1>
-                <p className="text-lg opacity-90">( ২০২৩ সনের ৫৭ নং আইন )</p>
+                <h1 className="mb-2 text-3xl font-bold md:text-4xl">কাস্টমস আইন, ১৯৬৯</h1>
+                <p className="text-lg opacity-90">( ৮ই মার্চ, ১৯৬৯ )</p>
                 
                 {/* Search Bar */}
                 <div className="relative max-w-2xl mt-6">

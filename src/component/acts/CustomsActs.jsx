@@ -38,6 +38,7 @@ const lawsData = [
     id: 6, 
     title: "শুল্ক আইন-১৯৬৯ (বাংলা)", 
     slug: "customs-act-1969-bengali",
+    pdfUrl: "/pdfs/8.pdf"
   },
   { 
     id: 7, 
