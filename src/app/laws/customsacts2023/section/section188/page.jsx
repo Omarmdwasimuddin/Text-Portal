@@ -1,12 +1,12 @@
 import React from 'react';
-import Section03 from '@/component/customsacts2023/Section03';
+import Section188 from '@/component/customsacts2023/Section188';
 import Master3 from '@/component/laws/Master3';
 
 
 const page = () => {
     return (
         <Master3>
-            <Section03 />
+            <Section188 />
         </Master3>
     );
 };
