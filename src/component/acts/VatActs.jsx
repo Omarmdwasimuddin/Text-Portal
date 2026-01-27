@@ -24,9 +24,9 @@ export default function LawsPage() {
         <div className="overflow-hidden bg-white border border-gray-200 shadow-lg rounded-2xl">
           <div className="px-6 py-4 border-b border-gray-200 bg-gradient-to-r from-green-600 to-green-600">
             <div className="flex items-center justify-between">
-              <h2 className="text-xl text-white">Vat Acts</h2>
+              <h2 className="text-lg text-white">ভ্যাট আইন</h2>
               <div className="flex items-center space-x-2">
-                <span className="text-sm text-blue-100">Last updated: {new Date().toLocaleDateString()}</span>
+                <span className="text-xs text-blue-100">Last updated: {new Date().toLocaleDateString()}</span>
               </div>
             </div>
           </div>
@@ -65,7 +65,7 @@ export default function LawsPage() {
                       <div className="flex flex-col">
                         <button 
                           onClick={() => handleLawClick(law)}
-                          className="text-lg text-left text-black transition-colors duration-200 transform cursor-pointer group-hover:translate-x-1"
+                          className="text-sm text-left text-black transition-colors duration-200 transform cursor-pointer group-hover:translate-x-1"
                         >
                           {law.title}
                         </button>
@@ -75,7 +75,7 @@ export default function LawsPage() {
                       <div className="flex items-center space-x-2">
                         <button 
                           onClick={() => handleLawClick(law)}
-                          className="inline-flex items-center px-4 py-2 text-sm font-medium text-white transition-colors duration-200 bg-green-500 rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                          className="inline-flex items-center px-4 py-2 text-xs font-medium text-white transition-colors duration-200 bg-green-500 rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                         >
                           <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />

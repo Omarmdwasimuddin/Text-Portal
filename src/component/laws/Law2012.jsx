@@ -566,23 +566,28 @@ const HomePage = () => {
       <main className="container px-6 py-8 mx-auto max-w-7xl">
         {/* Introduction */}
         <div className="p-6 mb-8 bg-white border-l-4 border-green-500 shadow-md rounded-xl">
-          <h2 className="mb-3 text-lg font-semibold text-center text-gray-950">মূল্য সংযোজন কর, সম্পূরক শুল্ক এবং টার্নওভার কর আরোপের ক্ষেত্র বিস্তৃতকরণ এবং কর আদায় প্রক্রিয়া সহজীকরণ সংক্রান্ত বিধি-বিধান সুসংহতকরণ এবং আনুষঙ্গিক অন্যান্য বিষয়ে বিধান প্রণয়নকল্পে আনীত আইন।</h2>
-          <p className="text-black">
-            যেহেতু মূল্য সংযোজন কর, সম্পূরক শুল্ক এবং টার্নওভার কর আরোপের ক্ষেত্র বিস্তৃতকরণ এবং কর আদায় প্রক্রিয়া সহজীকরণ সংক্রান্ত বিধি-বিধান সুসংহতকরণ এবং আনুষঙ্গিক অন্যান্য বিষয়ে বিধান করা সমীচীন ও প্রয়োজনীয়;
-          </p>
-          <br/>
-          <p className="text-black">
-            সেহেতু এতদ্‌দ্বারা নিম্নরূপ আইন করা হইল:―
-          </p>
+          <h2 className="mb-3 font-semibold text-center text-black text-md">
+            মূল্য সংযোজন কর, সম্পূরক শুল্ক এবং টার্নওভার কর আরোপের ক্ষেত্র বিস্তৃতকরণ এবং কর আদায় প্রক্রিয়া সহজীকরণ সংক্রান্ত বিধি-বিধান সুসংহতকরণ এবং আনুষঙ্গিক অন্যান্য বিষয়ে বিধান প্রণয়নকল্পে আনীত আইন।
+          </h2>
+
+          {/* Added important legal phrases */}
+          <div className="p-4 my-4 border-l-4 rounded-r-lg bg-gray-50">
+            <p className="italic text-black">
+              <span className="font-semibold">যেহেতু</span> মূল্য সংযোজন কর, সম্পূরক শুল্ক এবং টার্নওভার কর আরোপের ক্ষেত্র বিস্তৃতকরণ এবং কর আদায় প্রক্রিয়া সহজীকরণ সংক্রান্ত বিধি-বিধান সুসংহতকরণ এবং আনুষঙ্গিক অন্যান্য বিষয়ে বিধান করা সমীচীন ও প্রয়োজনীয়;
+              <br />
+              <span className="font-semibold">সেহেতু</span> এতদ্‌দ্বারা নিম্নরূপ আইন করা হইল:―
+            </p>
+          </div>
         </div>
+
 
         {/* Chapters Grid */}
         <div className="grid grid-cols-1 gap-6">
           {regularChapters.map((chapter, index) => (
             <div key={index} className="overflow-hidden transition-shadow duration-300 bg-white shadow-md rounded-xl hover:shadow-lg">
-              <div className="p-4 text-white bg-gradient-to-r from-green-900 to-green-600">
-                <h2 className="text-2xl">{chapter.title}</h2>
-                <p className="text-sm opacity-90">{chapter.subtitle}</p>
+              <div className="p-4 font-bold text-black bg-gradient-to-r from-green-300 to-green-300">
+                <h2 className="text-xl text-center">{chapter.title}</h2>
+                <p className="text-sm text-center opacity-90">{chapter.subtitle}</p>
               </div>
               
               <div className="p-4">
@@ -633,7 +638,7 @@ const HomePage = () => {
         <div className="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2">
           {specialChapters.map((specialChapter, idx) => (
             <div key={idx} className="overflow-hidden transition-shadow duration-300 bg-white shadow-md rounded-xl hover:shadow-lg">
-              <div className="p-4 text-white bg-gradient-to-r from-green-500 to-green-600">
+              <div className="p-4 font-bold text-center text-black bg-gradient-to-r from-green-300 to-green-300">
                 <h2 className="text-xl">{specialChapter.title}</h2>
                 <p className="text-sm opacity-90">{specialChapter.subtitle}</p>
               </div>

@@ -179,91 +179,107 @@ const Law1991 = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50">
       {/* Header */}
-      <header className="relative text-white shadow-lg bg-gradient-to-r from-green-600 to-blue-700">
-        <div className="container max-w-5xl px-6 py-8 mx-auto">
-          <h1 className="mb-2 text-3xl font-bold md:text-4xl">মূল্য সংযোজন কর আইন, ১৯৯১</h1>
-          <p className="text-lg opacity-90">Value Added Tax Act, 1991</p>
-          
-          {/* Search Bar */}
-          <div className="relative max-w-2xl mt-6">
-            <div className="relative" onClick={(e) => e.stopPropagation()}>
-              <input
-                type="text"
-                placeholder="আইন অনুসন্ধান করুন... (ধারা নম্বর বা শিরোনাম)"
-                value={searchTerm}
-                onChange={(e) => {
-                  setSearchTerm(e.target.value);
-                  setIsSearchOpen(true);
-                }}
-                onFocus={() => setIsSearchOpen(true)}
-                className="w-full px-4 py-3 pl-12 text-white border rounded-lg bg-white/10 backdrop-blur-sm border-white/20 placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent"
-              />
+      <header className="relative overflow-hidden text-white shadow-lg bg-gradient-to-r from-green-600 to-green-700">
+        <div className="container px-6 py-8 mx-auto max-w-7xl">
+          <div className="flex flex-col items-start justify-between lg:flex-row lg:items-center">
+            {/* Text Content */}
+            <div className="flex-1 lg:pr-8">
+              <h1 className="mb-2 text-3xl font-bold md:text-4xl">মূল্য সংযোজন কর আইন, ১৯৯১</h1>
+              <p className="text-lg opacity-90">Value Added Tax Act, 1991</p>
               
-              <svg 
-                className="absolute w-5 h-5 transform -translate-y-1/2 left-4 top-1/2 text-white/70" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" 
-                />
-              </svg>
-              
-              {searchTerm && (
-                <button
-                  onClick={() => {
-                    setSearchTerm('');
-                    setIsSearchOpen(false);
-                  }}
-                  className="absolute transform -translate-y-1/2 right-4 top-1/2 text-white/70 hover:text-white"
-                >
-                  ✕
-                </button>
-              )}
-            </div>
+              {/* Search Bar */}
+              <div className="relative max-w-2xl mt-6">
+                <div className="relative" onClick={(e) => e.stopPropagation()}>
+                  <input
+                    type="text"
+                    placeholder="আইন অনুসন্ধান করুন... (ধারা নম্বর বা শিরোনাম)"
+                    value={searchTerm}
+                    onChange={(e) => {
+                      setSearchTerm(e.target.value);
+                      setIsSearchOpen(true);
+                    }}
+                    onFocus={() => setIsSearchOpen(true)}
+                    className="w-full px-4 py-3 pl-12 text-white border rounded-lg bg-white/10 backdrop-blur-sm border-white/20 placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent"
+                  />
+                  
+                  <svg 
+                    className="absolute w-5 h-5 transform -translate-y-1/2 left-4 top-1/2 text-white/70" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      strokeWidth={2} 
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" 
+                    />
+                  </svg>
+                  
+                  {searchTerm && (
+                    <button
+                      onClick={() => {
+                        setSearchTerm('');
+                        setIsSearchOpen(false);
+                      }}
+                      className="absolute transform -translate-y-1/2 right-4 top-1/2 text-white/70 hover:text-white"
+                    >
+                      ✕
+                    </button>
+                  )}
+                </div>
 
-            {/* Search Results Dropdown */}
-            {isSearchOpen && searchTerm && (
-              <div 
-                className="absolute left-0 right-0 z-50 mt-2 overflow-y-auto bg-white rounded-lg shadow-xl top-full max-h-96"
-                onClick={(e) => e.stopPropagation()}
-              >
-                {filteredSections.length > 0 ? (
-                  <div className="py-2">
-                    <div className="px-4 py-2 text-sm text-gray-500 border-b">
-                      {filteredSections.length}টি ফলাফল পাওয়া গেছে
-                    </div>
-                    {filteredSections.map((section, index) => (
-                      <Link
-                        key={index}
-                        href={section.href}
-                        onClick={() => {
-                          setIsSearchOpen(false);
-                          setSearchTerm('');
-                        }}
-                        className="block px-4 py-3 transition-colors duration-200 border-b hover:bg-blue-50 last:border-b-0"
-                      >
-                        <div className="flex items-start justify-between">
-                          <span className="font-medium text-blue-700">ধারা {section.number}</span>
-                          <span className="px-2 py-1 text-xs text-blue-800 bg-blue-100 rounded">
-                            মূল্য সংযোজন কর আইন, ১৯৯১
-                          </span>
+                {/* Search Results Dropdown */}
+                {isSearchOpen && searchTerm && (
+                  <div 
+                    className="absolute left-0 right-0 z-50 mt-2 overflow-y-auto bg-white rounded-lg shadow-xl top-full max-h-96"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    {filteredSections.length > 0 ? (
+                      <div className="py-2">
+                        <div className="px-4 py-2 text-sm text-gray-500 border-b">
+                          {filteredSections.length}টি ফলাফল পাওয়া গেছে
                         </div>
-                        <p className="mt-1 text-gray-800">{section.text}</p>
-                      </Link>
-                    ))}
-                  </div>
-                ) : (
-                  <div className="p-4 text-center text-gray-500">
-                    কোন ফলাফল পাওয়া যায়নি। অন্য শব্দ দিয়ে চেষ্টা করুন।
+                        {filteredSections.map((section, index) => (
+                          <Link
+                            key={index}
+                            href={section.href}
+                            onClick={() => {
+                              setIsSearchOpen(false);
+                              setSearchTerm('');
+                            }}
+                            className="block px-4 py-3 transition-colors duration-200 border-b hover:bg-blue-50 last:border-b-0"
+                          >
+                            <div className="flex items-start justify-between">
+                              <span className="font-medium text-blue-700">ধারা {section.number}</span>
+                              <span className="px-2 py-1 text-xs text-blue-800 bg-blue-100 rounded">
+                                মূল্য সংযোজন কর আইন, ১৯৯১
+                              </span>
+                            </div>
+                            <p className="mt-1 text-gray-800">{section.text}</p>
+                          </Link>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="p-4 text-center text-gray-500">
+                        কোন ফলাফল পাওয়া যায়নি। অন্য শব্দ দিয়ে চেষ্টা করুন।
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
-            )}
+            </div>
+
+            {/* Right Side Image - এখানে যোগ করুন */}
+            <div className="flex-shrink-0 mt-6 lg:mt-0 lg:ml-6">
+              <div className="w-full lg:w-64 xl:w-80">
+                <img 
+                  src="/law-banner/law-banner-img.png" 
+                  alt="Value Added Tax Act" 
+                  className="object-contain w-full h-32 rounded-lg lg:h-40"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </header>
@@ -272,10 +288,10 @@ const Law1991 = () => {
       <main className="container px-6 py-8 mx-auto max-w-7xl">
         {/* Introduction */}
         <div className="p-6 mb-8 bg-white border-l-4 border-green-500 shadow-md rounded-xl">
-          <h2 className="mb-3 font-semibold text-red-800 text-md">এই আইন মূল্য সংযোজন কর ও সম্পূরক শুল্ক আইন, ২০১২ (২০১২ সনের  ৪৭নং আইন) দ্বারা রহিত করা হইয়াছে।</h2>
+          <h2 className="mb-3 font-semibold text-center text-black text-md">এই আইন মূল্য সংযোজন কর ও সম্পূরক শুল্ক আইন, ২০১২ (২০১২ সনের  ৪৭নং আইন) দ্বারা রহিত করা হইয়াছে।</h2>
           
           {/* Added important legal phrases */}
-          <div className="p-4 my-4 border-l-4 border-red-500 rounded-r-lg bg-gray-50">
+          <div className="p-4 my-4 border-l-4 rounded-r-lg bg-gray-50">
             <p className="mb-3 italic text-black">
               <span className="font-semibold">পণ্য ও সেবার উপর মূল্য সংযোজন কর আরোপের বিধানকরণকল্পে প্রণীত আইন৷</span>
             </p>
@@ -289,9 +305,9 @@ const Law1991 = () => {
 
         {/* Sections Grid */}
         <div className="mb-8 overflow-hidden bg-white shadow-md rounded-xl">
-          <div className="p-4 text-white bg-gradient-to-r from-green-900 to-green-500">
-            <h2 className="text-2xl">ধারাসমূহ</h2>
-            <p className="text-sm opacity-90">মূল্য সংযোজন কর আইন, ১৯৯১ এর সকল ধারা</p>
+          <div className="p-4 font-bold text-black bg-gradient-to-r from-green-300 to-green-300">
+            <h2 className="text-xl text-center">ধারাসমূহ</h2>
+            <p className="text-sm text-center opacity-90">মূল্য সংযোজন কর আইন, ১৯৯১ এর সকল ধারা</p>
           </div>
           
           <div className="p-6">
@@ -299,16 +315,16 @@ const Law1991 = () => {
               {sections.map((section, index) => (
                 <div 
                   key={index}
-                  className="p-4 transition-shadow duration-200 border border-gray-200 rounded-lg hover:shadow-md hover:border-blue-300"
+                  className="p-2 transition-shadow duration-200 border border-gray-200 rounded-lg hover:shadow-md hover:border-blue-300"
                 >
                   <div className="flex items-start space-x-3">
-                    <div className="flex items-center justify-center flex-shrink-0 w-8 h-8 text-sm font-bold text-blue-800 bg-blue-100 rounded-full">
+                    <div className="flex items-center justify-center flex-shrink-0 w-10 h-10 text-sm font-bold text-blue-800 bg-blue-100 rounded-full">
                       {section.number}
                     </div>
                     <div>
                       <Link 
                         href={section.href} 
-                        className="block mb-1 font-medium text-blue-600 hover:text-blue-800 hover:underline"
+                        className="block mt-3 font-medium text-blue-600 hover:text-blue-800 hover:underline"
                       >
                         {section.text}
                       </Link>
@@ -325,8 +341,8 @@ const Law1991 = () => {
         <div className="mt-8">
           {specialSections.map((specialChapter, idx) => (
             <div key={idx} className="overflow-hidden transition-shadow duration-300 bg-white shadow-md rounded-xl hover:shadow-lg">
-              <div className="p-4 text-white bg-gradient-to-r from-green-500 to-green-600">
-                <h2 className="text-xl">{specialChapter.title}</h2>
+              <div className="p-4 font-bold text-black bg-gradient-to-r from-green-300 to-green-300">
+                <h2 className="text-xl text-center">{specialChapter.title}</h2>
               </div>
               <div className="p-4">
                 <ul className="space-y-2">
@@ -336,7 +352,7 @@ const Law1991 = () => {
                         <a 
                           href={section.href} 
                           onClick={(e) => handlePdfClick(e, section.href)}
-                          className="flex items-center text-red-600 transition-colors duration-200 hover:text-red-800 hover:underline"
+                          className="flex items-center text-xs text-blue-600 transition-colors duration-200 hover:text-green-800 hover:underline"
                         >
                           <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
