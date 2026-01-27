@@ -428,7 +428,7 @@ const chapters = [
       { href: '/laws/customsacts2023/section/section262', text: 'পরামর্শ', number: '২৬২' },
       { href: '/laws/customsacts2023/section/section263', text: 'বিধি প্রণয়নের ক্ষমতা', number: '২৬৩' },
       { href: '/laws/customsacts2023/section/section264', text: 'বিশেষ বিধান', number: '২৬৪' },
-      { href: '/laws/customsacts2023/section/section264A', text: 'বিশেষায়িত কার্যকরী ইউনিট', number: '২৬৪ক' },
+      { href: '/laws/customsacts2023/section/section26401', text: 'বিশেষায়িত কার্যকরী ইউনিট', number: '২৬৪ক' },
       { href: '/laws/customsacts2023/section/section265', text: 'ইলেকট্রনিকভাবে কার্যসম্পাদন ও ইলেকট্রনিক মাধ্যমে প্রকাশ', number: '২৬৫' },
       { href: '/laws/customsacts2023/section/section266', text: 'আদেশ, ফরম, নোটিশ, ব্যাখ্যা বা সার্কুলার জারির ক্ষমতা', number: '২৬৬' },
       { href: '/laws/customsacts2023/section/section267', text: 'অসুবিধা দূরীকরণ', number: '২৬৭' },
