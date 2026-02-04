@@ -15,7 +15,7 @@ i18n.use(initReactI18next).init({
     },
     bn: {
       translation: {
-        siteName: "ট্যাক্স ও ট্রেড সলিউশনস",
+        siteName: "ট্যাক্স এন্ড ট্রেড সলিউশনস",
         searchPlaceholder: "বই, গাইড, ব্লগ খুঁজুন...",
         searchExample1: "'ট্যাক্স গাইড' অনুসন্ধান করুন",
         searchExample2: "'বাণিজ্য নিয়ম' অনুসন্ধান করুন",
