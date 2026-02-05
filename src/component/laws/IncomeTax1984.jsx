@@ -1158,21 +1158,21 @@ const chapters = [
     ],
   },
   {
-    title: 'তফসিল',
+    title: 'Schedule',
     sections: [
       { 
         href: '/pdfs/schedule.pdf', 
-        text: 'তফসিল',
+        text: 'SCHEDULE',
         isPdf: true
       },
     ],
   },
   {
-    title: 'গেজেটেড অনুলিপি',
+    title: '',
     sections: [
       { 
-        href: '/pdfs/gazette.pdf', 
-        text: 'কাস্টমস আইন, ২০২৩',
+        href: '', 
+        text: '',
         isPdf: true
       },
     ],
