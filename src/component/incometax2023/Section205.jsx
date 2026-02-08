@@ -1,0 +1,100 @@
+import React from 'react';
+import Link from 'next/link';
+
+export default function LawPage() {
+  return (
+    <div className="min-h-screen px-4 py-8 bg-gray-50">
+      <div className="max-w-6xl mx-auto overflow-hidden bg-white border border-gray-200 rounded-lg shadow-xl">
+        {/* Banner Section */}
+        <div className="relative px-4 py-8 text-white bg-gradient-to-r from-green-700 to-green-700 md:px-8">
+          <div className="text-center">
+            <h1 className="mb-2 text-xl md:text-2xl">
+              কাস্টমস আইন, ২০২৩
+            </h1>
+            <p className="text-sm md:text-sm opacity-90">
+              ( ২০২৩ সনের ৫৭ নং আইন )
+            </p>
+            <div className="inline-block px-4 py-1 mt-3 bg-green-500 rounded-full shadow-md">
+              <p className="text-sm font-medium md:text-sm">[ ১৩ নভেম্বর, ২০২৩ ]</p>
+            </div>
+          </div>
+
+          {/* Back to Home Button */}
+          <Link
+            href="/regulations/acts/customs-acts/customs-act-2023"
+            className="absolute flex items-center gap-2 px-3 py-2 text-green-700 transition-all bg-white rounded-full shadow top-4 left-4 hover:bg-green-100"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+              className="w-5 h-5"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </Link>
+        </div>
+
+        {/* Header Section */}
+        <div className="">
+          <div className="flex flex-col md:flex-row">
+            <div className="p-6">
+              <div className="space-y-6 text-justify text-black">
+                
+
+              <div className="py-2 text-black bg-gradient-to-r from-green-300 to-green-300 md:px-8">
+                <div className="text-center">
+                  <h1 className="text-lg font-bold">
+                    চতুর্বিংশ অধ্যায়
+                  </h1>
+                  <p className="text-sm md:text-sm">
+                    কাস্টমস কর্মকর্তা কর্তৃক ক্ষমতা প্রয়োগ (enforcement)
+                  </p>
+                </div>
+              </div>
+
+                
+                {/*Section*/}
+              <div>
+                <p className="mb-4 text-sm">
+                  <span className='text-lg font-bold leading-tight text-black md:text-lg'>২০৫। বাজেয়াপ্তকৃত পণ্যের পরিবর্তে জরিমানা পরিশোধ---</span> (১) এই আইনের অধীন কোনো পণ্য বাজেয়াপ্তকরণের আদেশ প্রদানকারী কর্মকর্তা পণ্য বাজেয়াপ্তির পরিবর্তে যেরূপ উপযুক্ত বিবেচনা করিবেন পণ্যের মালিককে সেইরূপ জরিমানা পরিশোধ করিবার জন্য ঐচ্ছিক বিকল্পের সুযোগ প্রদান করিতে পারিবেন:
+                </p>
+
+                <p className="mb-4 ml-10 text-sm">
+                  তবে শর্ত থাকে যে, উক্ত জরিমানার পরিমাণ এই আইনের ত্রয়োবিংশ অধ্যায়ে সংশ্লিষ্ট অপরাধের বিপরীতে আরোপযোগ্য জরিমানার পরিমাণ হইতে অধিক হইবে না।
+                </p>
+
+                <p className="mb-4 ml-10 text-sm">
+                  (২) এই ধারার কোনো কিছুই কোনো আইনের দ্বারা অথবা অধীন আমদানি নিষিদ্ধ কোনো পণ্যের ক্ষেত্রে প্রযোজ্য হইবে না।
+                </p>
+
+                <p className="mb-4 ml-10 text-sm">
+                  (৩) এই ধারার অধীন পণ্য বাজেয়াপ্তির পরিবর্তে আরোপিত কোনো জরিমানা উক্ত পণ্যের ক্ষেত্রে প্রদেয় কোনো শুল্ক ও চার্জ এবং পণ্য বাজেয়াপ্তির জন্য অতিরিক্ত কোনো জরিমানা আরোপিত হইয়া থাকিলে উহা তাহার অতিরিক্ত হইবে।
+                </p>
+
+              </div>
+                
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Footer Section */}
+        <div className="">
+          <div className="p-6">
+            <div className="w-1/2 pb-2 mb-4 border-b border-gray-700">
+              {/* Horizontal line */}
+            </div>
+            <p className="text-xs italic text-gray-950">
+              
+            </p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  );
+}

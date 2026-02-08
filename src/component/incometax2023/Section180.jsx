@@ -1,0 +1,116 @@
+import React from 'react';
+import Link from 'next/link';
+
+export default function LawPage() {
+  return (
+    <div className="min-h-screen px-4 py-8 bg-gray-50">
+      <div className="max-w-6xl mx-auto overflow-hidden bg-white border border-gray-200 rounded-lg shadow-xl">
+        {/* Banner Section */}
+        <div className="relative px-4 py-8 text-white bg-gradient-to-r from-green-700 to-green-700 md:px-8">
+          <div className="text-center">
+            <h1 className="mb-2 text-xl md:text-2xl">
+              কাস্টমস আইন, ২০২৩
+            </h1>
+            <p className="text-sm md:text-sm opacity-90">
+              ( ২০২৩ সনের ৫৭ নং আইন )
+            </p>
+            <div className="inline-block px-4 py-1 mt-3 bg-green-500 rounded-full shadow-md">
+              <p className="text-sm font-medium md:text-sm">[ ১৩ নভেম্বর, ২০২৩ ]</p>
+            </div>
+          </div>
+
+          {/* Back to Home Button */}
+          <Link
+            href="/regulations/acts/customs-acts/customs-act-2023"
+            className="absolute flex items-center gap-2 px-3 py-2 text-green-700 transition-all bg-white rounded-full shadow top-4 left-4 hover:bg-green-100"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+              className="w-5 h-5"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </Link>
+        </div>
+
+        {/* Header Section */}
+        <div className="">
+          <div className="flex flex-col md:flex-row">
+            <div className="p-6">
+              <div className="space-y-6 text-justify text-black">
+                
+
+              <div className="py-2 text-black bg-gradient-to-r from-green-300 to-green-300 md:px-8">
+                <div className="text-center">
+                  <h1 className="text-lg font-bold">
+                    চতুর্বিংশ অধ্যায়
+                  </h1>
+                  <p className="text-sm md:text-sm">
+                    কাস্টমস কর্মকর্তা কর্তৃক ক্ষমতা প্রয়োগ (enforcement)
+                  </p>
+                </div>
+              </div>
+
+                
+                {/*Section*/}
+              <div>
+                <p className="mb-4 text-sm">
+                  <span className='text-lg font-bold leading-tight text-black md:text-lg'>১৮০। গ্রেফতার করিবার ক্ষমতা---</span> (১) এতদুদ্দেশ্যে ক্ষমতাপ্রাপ্ত কোনো কাস্টমস কর্মকর্তার যদি বিশ্বাস করিবার কারণ থাকে যে, কোনো ব্যক্তি এই আইনের অধীন কোনো অপরাধ সংঘটন করিয়াছেন, তাহা হইলে তিনি উক্ত ব্যক্তিকে গ্রেফতার করিতে পারিবেন।
+                </p>
+
+                <p className="mb-4 ml-10 text-sm">
+                  (২) এই আইনের অধীন চোরাচালান নিরোধ কাজে যথাযথভাবে ক্ষমতাপ্রাপ্ত কোনো কাস্টমস কর্মকর্তার যদি এইরূপ বিশ্বাস করিবার কারণ থাকে যে, কোনো ব্যক্তি এই আইনের অধীন কোনো চোরাচালানের অপরাধ সংঘটন করিয়াছেন, তাহা হইলে তিনি উক্ত ব্যক্তিকে গ্রেফতার করিতে পারিবেন।
+                </p>
+
+                <p className="mb-4 ml-10 text-sm">
+                  (৩) এই আইনের অধীন গ্রেফতারকৃত প্রত্যেক ব্যক্তিকে গ্রেফতারের সঙ্গে সঙ্গে, এইরূপ মামলায় ব্যবস্থা গ্রহণের জন্য, কমিশনার অব কাস্টমস কর্তৃক ক্ষমতাপ্রাপ্ত নিকটতম কাস্টমস কর্মকর্তার সম্মুখে উপস্থিত করিতে হইবে অথবা, যদি যুক্তিসংগত দূরত্বের মধ্যে কোনো কাস্টমস কর্মকর্তা না থাকেন তাহা হইলে নিকটতম থানার ভারপ্রাপ্ত কর্মকর্তার নিকট লইয়া যাইতে হইবে।
+                </p>
+
+                <p className="mb-4 ml-10 text-sm">
+                  (৪) এই ধারার অধীন কোনো ব্যক্তিকে কাস্টমস কর্মকর্তা অথবা থানার ভারপ্রাপ্ত কর্মকর্তার সম্মুখে আনয়ন করা হইলে এবং সংশ্লিষ্ট অপরাধটি জামিনযোগ্য হইলে, উক্ত কর্মকর্তা, তাহাকে এখতিয়ারভুক্ত প্রথম শ্রেণির জুডিশিয়াল ম্যাজিস্ট্রেটের সম্মুখে জামিনের জন্য উপস্থিত হওয়ার অনুমতি প্রদান করিবেন অথবা তাহাকে উক্ত ম্যাজিস্ট্রেটের তত্ত্বাবধানে প্রেরণ করিবেন।
+                </p>
+
+                <p className="mb-4 ml-10 text-sm">
+                  (৫) উপ- ধারা (৪) এর অধীন কোনো ব্যক্তিকে পূর্বোল্লিখিত কোনো কাস্টমস কর্মকর্তার সম্মুখে আনয়ন করা হইলে, উক্ত কর্মকর্তা উক্ত ব্যক্তির বিরুদ্ধে আনীত অভিযোগ তদন্ত করিবার কার্যক্রম গ্রহণ করিবেন।
+                </p>
+
+                <p className="mb-4 ml-10 text-sm">
+                  (৬) উপ- ধারা (৫) এর অধীন কোনো তদন্তের উদ্দেশ্যে কাস্টমস কর্মকর্তা, কোনো আমলযোগ্য অপরাধ তদন্তের ক্ষেত্রে থানার ভারপ্রাপ্ত কর্মকর্তা ফৌজদারি কার্যবিধির অধীন যে ক্ষমতা প্রয়োগ করিতে পারেন এবং যে বিধানসমূহের অধীন থাকেন, সেই একই ক্ষমতা প্রয়োগ করিতে পারিবেন এবং সেই একই বিধানসমূহের অধীন থাকিবেন:
+                </p>
+
+                <p className="mb-4 ml-10 text-sm">
+                  তবে শর্ত থাকে যে, কাস্টমস কর্মকর্তা যদি এই অভিমত পোষণ করেন যে, অভিযুক্ত ব্যক্তির বিরুদ্ধে যথেষ্ট সাক্ষ্য রহিয়াছে অথবা সন্দেহের যুক্তিসংগত কারণ রহিয়াছে, তাহা হইলে তিনি, অপরাধটি যদি জামিনযোগ্য হয়, তাহাকে এখতিয়ারসম্পন্ন প্রথম শ্রেণির জুডিশিয়াল ম্যাজিস্ট্রেটের সম্মুখে হাজির হইবার জন্য অনুমতি প্রদান করিবেন অথবা উক্ত ম্যাজিস্ট্রেটের তত্ত্বাবধানে প্রেরণ করিবেন।
+                </p>
+
+                <p className="mb-4 ml-10 text-sm">
+                  (৭) যদি কাস্টমস কর্মকর্তার নিকট এইরূপ প্রতীয়মান হয় যে, অভিযুক্ত ব্যক্তির বিরুদ্ধে যথেষ্ট সাক্ষ্য নাই অথবা সন্দেহের যুক্তিসংগত কারণ নাই, তাহা হইলে উক্ত কর্মকর্তা কর্তৃক নির্দেশিত জামানত সহকারে অথবা জামানত ব্যতীত, একটি বন্ড সম্পাদন সাপেক্ষে, এখতিয়ারসম্পন্ন প্রথম শ্রেণির জুডিশিয়াল ম্যাজিস্ট্রেট তলব করিলে তৎক্ষণাৎ তাহার সম্মুখে হাজির হইবার জন্য উক্ত ব্যক্তিকে জামিনে মুক্তি প্রদান করিবেন এবং মামলাটির একটি পূর্ণাঙ্গ প্রতিবেদন তাহার পরবর্তী ধাপের উর্ধ্বতন কর্মকর্তার নিকট পেশ করিবেন।
+                </p>
+
+              </div>
+                
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Footer Section */}
+        <div className="">
+          <div className="p-6">
+            <div className="w-1/2 pb-2 mb-4 border-b border-gray-700">
+              {/* Horizontal line */}
+            </div>
+            <p className="text-xs italic text-gray-950">
+              
+            </p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  );
+}
