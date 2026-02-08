@@ -34,7 +34,7 @@ const chapters = [
         number: '4',
       },
       {
-        href: '/laws/incometax1984/section/section04A',
+        href: '/laws/incometax1984/section/section4A',
         text: 'Delegation of powers',
         number: '4A',
       },
