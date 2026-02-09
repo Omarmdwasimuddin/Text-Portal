@@ -31,7 +31,7 @@ const menuItems = [
           { name: 'VAT Act', href: '/regulations/acts/vat-acts' },
           { name: 'Customs Act', href: '/regulations/acts/customs-acts' },
           { name: 'Income Tax Act', href: '/regulations/acts/income-tax' },
-          { name: 'Excise and Salt Act', href: '/regulations/instructions/customs' },
+          { name: 'Excise and Salt Act', href: '/regulations/acts/excises&saltact' },
           { name: 'Others Acts', href: '/regulations/instructions/customs' },
         ],
       },
