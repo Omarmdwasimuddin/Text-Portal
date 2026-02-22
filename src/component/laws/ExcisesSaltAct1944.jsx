@@ -48,27 +48,27 @@ const chapters = [
         number: '3C',
       },
       {
-        href: '/laws/excisessaltact1944/section/section4',
+        href: '/laws/excisessaltact1944/section/section04',
         text: 'Determination of value for the purposes of duty',
         number: '4',
       },
       {
-        href: '/laws/excisessaltact1944/section/section5',
+        href: '/laws/excisessaltact1944/section/section05',
         text: '[Omitted.]',
         number: '5',
       },
       {
-        href: '/laws/excisessaltact1944/section/section6',
+        href: '/laws/excisessaltact1944/section/section06',
         text: 'Certain operations to be subject to licence',
         number: '6',
       },
       {
-        href: '/laws/excisessaltact1944/section/section7',
+        href: '/laws/excisessaltact1944/section/section07',
         text: 'Form and conditions of licence',
         number: '7',
       },
       {
-        href: '/laws/excisessaltact1944/section/section8',
+        href: '/laws/excisessaltact1944/section/section08',
         text: 'Restriction on possession of excisable goods',
         number: '8',
       },
@@ -78,7 +78,7 @@ const chapters = [
         number: '9A',
       },
       {
-        href: '/laws/excisessaltact1944/section/section9',
+        href: '/laws/excisessaltact1944/section/section09',
         text: 'Offences and penalties',
         number: '9',
       },

@@ -6,22 +6,22 @@ export default function LawPage() {
     <div className="min-h-screen px-4 py-8 bg-gray-50">
       <div className="max-w-6xl mx-auto overflow-hidden bg-white border border-gray-200 rounded-lg shadow-sm">
         {/* Banner Section */}
-        <div className="relative px-4 py-8 text-white bg-gradient-to-r from-green-600 to-green-800 md:px-8">
+        <div className="relative px-4 py-8 text-white bg-gradient-to-r from-green-800 to-green-800 md:px-8">
           <div className="text-center">
-            <h1 className="mb-2 text-2xl font-bold md:text-4xl">
-              মূল্য সংযোজন কর আইন, ১৯৯১
+            <h1 className="mb-2 text-xl font-bold md:text-xl">
+              The Excises and Salt Act, 1944
             </h1>
-            <p className="text-lg md:text-xl opacity-90">
-              ( ১৯৯১ সনের ২২ নং আইন )
+            <p className="text-sm md:text-sm opacity-90">
+              ( ACT NO. I OF 1944 )
             </p>
-            <div className="inline-block px-4 py-1 mt-3 bg-green-500 rounded-full shadow-md">
-              <p className="text-sm font-medium md:text-base">[ ৩০ জুন, ১৯৯১ ]</p>
+            <div className="inline-block px-4 py-1 mt-3 bg-green-700 rounded-full shadow-md">
+              <p className="text-xs font-medium md:text-xs">[ 24th February, 1944 ]</p>
             </div>
           </div>
 
           {/* Back to Home Button */}
           <Link
-            href="/regulations/acts/vat-acts/value-added-tax-act"
+            href="/regulations/acts/excises&saltact/excise-and-salt-act-1944"
             className="absolute flex items-center gap-2 px-3 py-2 text-green-700 transition-all bg-white rounded-full shadow top-4 left-4 hover:bg-green-100"
           >
             <svg
@@ -37,132 +37,109 @@ export default function LawPage() {
           </Link>
         </div>
 
-        {/* Header Section */}
-        <div className="">
-          <div className="flex flex-col md:flex-row">
-              <div className="p-6">
-                <div className="space-y-6 text-justify text-black">
-                  {/* Section 1 */}
-                  <div>
-                    <p className="mb-4">
-                      <span className="text-xl font-bold leading-tight text-gray-950 md:text-xl">৩৷ মূল্য সংযোজন কর আরোপ---</span> (১) প্রথম তফসিলে উল্লিখিত পণ্যসমূহ ব্যতীত বাংলাদেশে আমদানিকৃত সকল পণ্য এবং উক্ত তফসিলে উল্লিখিত পণ্যসমূহ ব্যতীত সকল পণ্যের সরবরাহের উপর এবং <sup className='text-blue-500 cursor-pointer' title='“দ্বিতীয় তফসিলে উল্লিখিত সেবাসমূহ ব্যতীত” শব্দগুলি “দ্বিতীয় তফসিলে উল্লিখিত” শব্দগুলির পরিবর্তে অর্থ আইন, ২০০০ (২০০০ সনের ১৫ নং আইন) এর ৮৬ ধারাবলে প্রতিস্থাপিত'>1</sup>[দ্বিতীয় তফসিলে উল্লিখিত সেবাসমূহ ব্যতীত]<sup className='text-blue-500 cursor-pointer' title='‘‘বাংলাদেশে আমদানিকৃত বা’’ শব্দগুলি ‘‘সেবাসমুহ ব্যতীত’’ শব্দগুলির পর অর্থ আইন, ২০১২ এর ৫৯ ধারাবলে সন্নিবেশিত।
 
-        '>2</sup>[বাংলাদেশে আমদানিকৃত বা] <sup className='text-blue-500 cursor-pointer' title='“বাংলাদেশ প্রদত্ত” শব্দগুলি অর্থ আইন, ১৯৯৮ (১৯৯৮ সনের ১৪ নং আইন) এর ৭ ধারাবলে সংযোজিত'>3</sup>[বাংলাদেশে প্রদত্ত] সকল সেবার উপর ধারা ৫ এ বর্ণিত মূল্যের ভিত্তিতে পনের শতাংশ হারে মূল্য সংযোজন কর ধার্য ও প্রদেয় হইবে৷
+        {/* Header Section */}
+        <div className="py-5">
+
+          <div className="px-6 py-2 bg-green-300">
+            <h2 className="font-bold text-center text-black text-md">CHAPTER II</h2>
+            <p className='text-xs font-bold text-center'>LEVY AND COLLECTION OF DUTY</p>
+          </div>
+          
+          <div className="flex flex-col md:flex-row">
+            <div className="p-6">
+              <div className="space-y-6 text-justify text-black">
+                
+                {/* Section */}
+                <div>
+                <p className="mb-4 text-sm">
+                  <span className='text-sm font-bold leading-tight text-black md:text-sm'>3. Duties specified in the First Schedule to be levied</span>---(1) There shall be levied and collected in such manner as may be prescribed duties of excise on all excisable goods, produced or manufactured, and on all excisable services provided or rendered, in Bangladesh, as, and at the rates, set forth in the First Schedule.
+                </p>
+                
+                <div className="space-y-3 text-sm">
+                  <div className="pl-4">
+                    <p>
+                      <sup className='text-blue-500' title='The Explanation was added by section 6 of অর্থ আইন, ২০০০ (২০০০ সনের ১৫ নং আইন)'>1</sup>[Explanation.- For the purpose of levy and collection of duties under this section, classification and description of excisable goods shall be as per First Schedule of the <a className='text-blue-500' href='/regulations/acts/customs-acts'>Customs Act, 1969</a> (IV of 1969).]
+                    </p>
+                  </div>
+                  
+                  <p className="pl-4">
+                    (2) The <sup className='text-blue-500' title='The word “Board” was substituted for the words “National Board of Revenue” by section 5 of the Finance Act, 1979 (Act No. V of 1979)'>2</sup>[Board] may, by notification in the official Gazette fix, for the purpose of levying the said duties, tariff values of any articles enumerated, either specifically or under general headings, in the First Schedule as chargeable with duty ad valorem and may alter any tariff values for the time being in force.
+                  </p>
+                  
+                  <p className="pl-4">
+                    (3) Different tariff values may be fixed for different classes or descriptions of the same article.
+                  </p>
+                  
+                  <div className="pl-4">
+                    <p>
+                      <sup className='text-blue-500' title='The original sub-section (4) was substiutted as sub-sections (4), (5), (6) and (7) by section 4 of the Finance Act, 1966 (Act No. XI of 1966)'>3</sup>[ <sup className='text-blue-500' title='Sub-section (4) was substituted by section 9 of the Finance Ordinance, 1977 (Ordinance No. XXIII of 1977)'>4</sup>[(4) With the prior approval of the Government, the <sup className='text-blue-500' title='The word “Board” was substituted for the words “National Board of Revenue” by section 5 of the Finance Act, 1979 (Act No. V of 1979)'>5</sup>[Board] may, in lieu of levying and collecting under sub-section (1) duties of excise on excisable goods and services,
                     </p>
                     
-                    <p className="mb-4 ">
-                      (২) উপ-ধারা (১) এ যাহা কিছুই থাকুক না কেন, নিম্নবর্ণিত পণ্য বা সেবার উপর শূন্য হারে কর আরোপিত হইবে; যথা:-
+                    <p className="mt-2">
+                      by notification in the official Gazette, levy and collect duties on the capacity of plants, machinery, undertakings, establishments, installations or premises producing or manufacturing such goods, or providing or rendering such services; and such notifications shall specify-
                     </p>
                     
-                    <div className="mb-4 ml-6 ">
-                      <p className="mb-2">(ক) বাংলাদেশ হইতে রপ্তানিকৃত বা রপ্তানিকৃত বলিয়া গণ্য কোন পণ্য বা সেবা;</p>
-                      
-                      <p className="mb-2"><sup className='text-blue-500 cursor-pointer' title='দফা(কক) অর্থ আইন, ২০১০ (২০১০ সনের ৩৩ নং আইন) এর ৭২ ধারাবলে বিলুপ্ত।'>4</sup>[ *** ]</p>
-                      
-                      <p className="mb-2">
-                        <sup className='text-blue-500 cursor-pointer' title='দফা(খ) অর্থ আইন, ২০১০ (২০১০ সনের ৩৩ নং আইন) এর ৭২ ধারাবলে প্রতিস্থাপিত।'>5</sup>[(খ) <Link href='/' className='text-blue-500'>Customs Act, 1969</Link> (IV of 1969), অতঃপর Customs Act বলিয়া উল্লিখিত, এর Section 24 মোতাবেক বাংলাদেশ হইতে বিদেশগামী কোন যানবাহনে বাংলাদেশের বাহিরে ভোগের জন্য সরবরাহকৃত খাদ্য ও অন্যান্য সামগ্রী:
-                      </p>
-                      
-                      <p className="mb-2">
-                        তবে শর্ত থাকে যে, নিম্নবর্ণিত পণ্যের বা সেবার ক্ষেত্রে এই উপ-ধারা প্রযোজ্য হইবে না, যথা:-
-                      </p>
-                      
-                      <div className="ml-6">
-                        <p className="mb-2">(অ) বাংলাদেশে পুনঃ আমদানিকৃত বা পুনঃ আমদানির জন্য অভিপ্রেত কোন পণ্য বা সেবা;</p>
-                        
-                        <p className="mb-2">
-                          (আ) Customs Act এর Section 131 মোতাবেক রপ্তানির জন্য উপস্থাপন করা হইয়াছে, কিন্তু রপ্তানি চালান (bill of export) দাখিলের ৩০ দিন বা কমিশনার কর্তৃক এতদুদ্দেশ্যে বর্ধিত সময়ের মধ্যে রপ্তানি হয় নাই, এইরূপ কোন পণ্য বা সেবা।]
-                        </p>
-                      </div>
+                    <div className="pl-8 mt-2 space-y-1">
+                      <p>(a) the guiding principles for the determination of capacity,</p>
+                      <p>(b) the capacity, as determined in accordance with such guiding principles of the plants, machinery, undertakings, establishments, installations or premises affected by it,</p>
+                      <p>(c) the duty or the rate of duty on such capacity as determined, and</p>
+                      <p>(d) the manner of collection of such duty.]</p>
                     </div>
-                    
-                    <p className="mb-4">
-                      <sup className='text-blue-500 cursor-pointer' title='উপ-ধারা (৩) অর্থ আইন, ১৯৯৬ (১৯৯৬ সনের ১৮ নং আইন) এর ৬ ধারাবলে প্রতিস্থাপিত'>6</sup>[(৩) মূল্য সংযোজন কর প্রদান করিবেন,-
+                  </div>
+                  
+                  <div className="pl-4">
+                    <p>
+                      <sup className='text-blue-500' title='Sub-section (5) was substituted by section 9 of the Finance Ordinance, 1977 (Ordinance No. XXIII of 1977)'>6</sup>[(5) The capacity of any plant or machinery or part thereof or establishments or premises producing or manufacturing excisable goods, or providing or rendering excisable services, specified in a notification under sub-section (4) shall, upon an application made to the Government within thirty days of the notification by any aggrieved person, be reviewed by a Standing Tribunal constituted under sub-section (6) to which the application shall be referred; and the decision of the Standing Tribunal confirming, reducing or increasing the capacity shall be final.]
+                    </p>
+                  </div>
+                  
+                  <div className="pl-4">
+                    <p>
+                      <sup className='text-blue-500' title='Sub-section(6) was substituted by section 3 of the Finance (1971-72) Order, 1972 (President’s Order No. 52 of 1972)'>7</sup>[(6) The Government shall, for the purpose of sub-section (5), constitute a Standing Tribunal consisting of not less than two persons each of whom may be either an officer not below the rank of a Joint Secretary to the said Government or a person who held such rank at the time of his retirement from service.]
+                    </p>
+                  </div>
+                  
+                  <div className="pl-4">
+                    <p>
+                      [(7) The <sup className='text-blue-500' title='The word “Board” was substituted for the words “National Board of Revenue” by section 5 of the Finance Act, 1979 (Act No. V of 1979)'>8</sup>[Board] may, by notification in the official Gazette, at any time, cancel a notification under sub-section (4); and where a notification is so cancelled or, for any reason
                     </p>
                     
-                    <div className="mb-4 ml-6">
-                      <p className="mb-2">(ক) আমদানীকৃত পণ্যের ক্ষেত্রে, আমদানী পর্যায়ে আমদানীকারক;</p>
-                      
-                      <p className="mb-2">(খ) বাংলাদেশে প্রস্তুতকৃত বা উত্পাদিত পণ্যের ক্ষেত্রে, প্রস্তুতকরণ বা উত্পাদন পর্যায়ে সরবরাহকারী;</p>
-                      
-                      <p className="mb-2">(গ) সেবা প্রদানের ক্ষেত্রে, সেবা প্রদানকারী; এবং</p>
-                      
-                      <p className="mb-2">
-                        <sup className='text-blue-500 cursor-pointer' title='দফা(ঘ) ও (ঙ), দফা (ঘ) এর পরিবর্তে অর্থ আইন, ২০১০ (২০১০ সনের ৩৩ নং আইন) এর ৭২ ধারাবলে প্রতিস্থাপিত ।'>7</sup>[(ঘ) বাংলাদেশের ভৌগলিক সীমারেখার বাহির হইতে সেবা সরবরাহের ক্ষেত্রে, সেবা গ্রহণকারী; এবং
-                      </p>
-                      
-                      <p className="mb-2">
-                        (ঙ) অন্যান্য ক্ষেত্রে, <sup className='text-blue-500 cursor-pointer' title='দফা(ঘ) ও (ঙ), দফা (ঘ) এর পরিবর্তে অর্থ আইন, ২০১০ (২০১০ সনের ৩৩ নং আইন) এর ৭২ ধারাবলে প্রতিস্থাপিত ।'>8</sup>[সরবরাহকারী ও সেবাগ্রহণকারী]।]]
-                      </p>
-                    </div>
-                    
-                    <p className="mb-4">
-                      (৩ক) <Link href='/' className='text-blue-500'>অর্থ আইন, ২০০১</Link> (২০০১ সনের ৩০ নং আইন) এর ৭২ ধারাবলে বিলুপ্ত৷
+                    <p className="mt-2">
+                      whatsoever, cannot be given effect to, the duty under sub-section (1), in lieu whereof the duty under sub-section (4) was levied by such notification, shall be levied and, with necessary adjustment, collected for the financial year during which such notification is cancelled or for the period for which it cannot be given effect to.]
                     </p>
                     
-                    <p className="mb-4 ">
-                      <sup className='text-blue-500 cursor-pointer' title='উপ-ধারা (৪) অর্থ আইন, ১৯৯২ (১৯৯২ সনের ২১ নং আইন) এর ১১ ধারাবলে সংযোজিত'>9</sup>[(৪) এই ধারার অধীন মূল্য সংযোজন কর ধার্য ও প্রদানের উদ্দেশ্যে কোন আমদানিকৃত বা সরবরাহকৃত পণ্যের শ্রেণীবিন্যাস (Classification) এর ক্ষেত্রে Customs Act এর অধীন উক্ত পণ্যের শ্রেণীবিন্যাস প্রযোজ্য হইবে৷]
+                    <p className="mt-2">
+                      Explanation.- For the purposes of this sub-section, an order of a Court suspending or staying the collection of the whole or any part of the duty under sub-section (4) shall be deemed to be a reason for which a notification under sub-section (4) cannot be given effect to.
                     </p>
-                    
-                    <p className="mb-4 ">
-                      <sup className='text-blue-500 cursor-pointer' title='উপ-ধারা (৫) অর্থ আইন, ২০০০ (২০০০ সনের ১৫ নং আইন) এর ৮৬ ধারাবলে সংযোজিত'>10</sup>[(৫) এই ধারার উদ্দেশ্য পূরণকল্পে বোর্ড, জনস্বার্থে, সরকারী গেজেটে প্রজ্ঞাপন দ্বারা-
-                    </p>
-                    
-                    <div className="ml-6 ">
-                      <p className="mb-2">
-                        (ক) যে কোন করযোগ্য পণ্য বা পণ্য শ্রেণীকে করযোগ্য সেবা এবং যে কোন করযোগ্য সেবাকে করযোগ্য পণ্য হিসাবে ঘোষণা করিতে পারিবে; এবং
-                      </p>
-                      
-                      <p className="mb-2">
-                        (খ) করযোগ্য যে কোন সেবার, পরিধি নির্ধারণের লক্ষ্যে, ব্যাখ্যা প্রদান করিতে পারিবে৷]
-                      </p>
-                    </div>
                   </div>
                 </div>
               </div>
-
+                
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Footer Section */}
-          <div className="">
-            <div className="p-6">
-              <div className="w-1/2 pb-2 mb-4 border-b border-gray-400">
-                {/* Horizontal line */}
-              </div>
-              <p className="text-xs italic text-gray-600">
-                <sup className="font-bold">১</sup>“দ্বিতীয় তফসিলে উল্লিখিত সেবাসমূহ ব্যতীত” শব্দগুলি “দ্বিতীয় তফসিলে উল্লিখিত” শব্দগুলির পরিবর্তে অর্থ আইন, ২০০০ (২০০০ সনের ১৫ নং আইন) এর ৮৬ ধারাবলে প্রতিস্থাপিত
-              </p>
-              <p className="mt-2 text-xs italic text-gray-600">
-                <sup className="font-bold">২</sup>‘‘বাংলাদেশে আমদানিকৃত বা’’ শব্দগুলি ‘‘সেবাসমুহ ব্যতীত’’ শব্দগুলির পর অর্থ আইন, ২০১২ এর ৫৯ ধারাবলে সন্নিবেশিত।
-              </p>
-              <p className="mt-2 text-xs italic text-gray-600">
-                <sup className="font-bold">৩</sup>“বাংলাদেশ প্রদত্ত” শব্দগুলি অর্থ আইন, ১৯৯৮ (১৯৯৮ সনের ১৪ নং আইন) এর ৭ ধারাবলে সংযোজিত
-              </p>
-              <p className="mt-2 text-xs italic text-gray-600">
-                <sup className="font-bold">৪</sup>দফা(কক) অর্থ আইন, ২০১০ (২০১০ সনের ৩৩ নং আইন) এর ৭২ ধারাবলে বিলুপ্ত।
-              </p>
-              <p className="mt-2 text-xs italic text-gray-600">
-                <sup className="font-bold">৫</sup>দফা(খ) অর্থ আইন, ২০১০ (২০১০ সনের ৩৩ নং আইন) এর ৭২ ধারাবলে প্রতিস্থাপিত।
-              </p>
-              <p className="mt-2 text-xs italic text-gray-600">
-                <sup className="font-bold">৬</sup>উপ-ধারা (৩) অর্থ আইন, ১৯৯৬ (১৯৯৬ সনের ১৮ নং আইন) এর ৬ ধারাবলে প্রতিস্থাপিত
-              </p>
-              <p className="mt-2 text-xs italic text-gray-600">
-                <sup className="font-bold">৭</sup>দফা(ঘ) ও (ঙ), দফা (ঘ) এর পরিবর্তে অর্থ আইন, ২০১০ (২০১০ সনের ৩৩ নং আইন) এর ৭২ ধারাবলে প্রতিস্থাপিত ।
-              </p>
-              <p className="mt-2 text-xs italic text-gray-600">
-                <sup className="font-bold">৮</sup>‘‘সরবরাহকারী ও সেবাগ্রহণকারী’’ শব্দগুলি ‘‘সরবরাহকারী’’ শব্দের পরিবর্তে অর্থ আইন, ২০১১ (২০১১ সনের ১২ নং আইন) এর ৬৪ ধারাবলে প্রতিস্থাপিত।
-              </p>
-              <p className="mt-2 text-xs italic text-gray-600">
-                <sup className="font-bold">৯</sup>উপ-ধারা (৪) অর্থ আইন, ১৯৯২ (১৯৯২ সনের ২১ নং আইন) এর ১১ ধারাবলে সংযোজিত
-              </p>
-              <p className="mt-2 text-xs italic text-gray-600">
-                <sup className="font-bold">১০</sup>উপ-ধারা (৫) অর্থ আইন, ২০০০ (২০০০ সনের ১৫ নং আইন) এর ৮৬ ধারাবলে সংযোজিত
-              </p>
+        <div className="">
+          <div className="p-6">
+            <div className="w-1/2 pb-2 mb-4 border-b border-gray-900">
+              {/* Horizontal line */}
             </div>
-          </div>
+            <p className="text-xs italic text-black">
+              1. The Explanation was added by section 6 of অর্থ আইন, ২০০০ (২০০০ সনের ১৫ নং আইন) <br/>
+              2. The word "Board" was substituted for the words "National Board of Revenue" by section 5 of the Finance Act, 1979 (Act No. V of 1979) <br/>
+              3. The original sub-section (4) was substituted as sub-sections (4), (5), (6) and (7) by section 4 of the Finance Act, 1966 (Act No. XI of 1966) <br/>
+              4. Sub-section (4) was substituted by section 9 of the Finance Ordinance, 1977 (Ordinance No. XXIII of 1977) <br/>
+              5. The word "Board" was substituted for the words "National Board of Revenue" by section 5 of the Finance Act, 1979 (Act No. V of 1979) <br/>
+              6. Sub-section (5) was substituted by section 9 of the Finance Ordinance, 1977 (Ordinance No. XXIII of 1977) <br/>
+              7. Sub-section (6) was substituted by section 3 of the Finance (1971-72) Order, 1972 (President's Order No. 52 of 1972) <br/>
+              8. The word "Board" was substituted for the words "National Board of Revenue" by section 5 of the Finance Act, 1979 (Act No. V of 1979) <br/>
+            </p>
 
+          </div>
+        </div>
       </div>
     </div>
   );

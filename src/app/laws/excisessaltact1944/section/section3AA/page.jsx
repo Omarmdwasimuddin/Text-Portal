@@ -1,12 +1,12 @@
 import React from 'react';
 import Section3AA from '@/component/excisessaltact1944/Section3AA';
-import Master2 from '@/component/laws/Master2';
+import Master4 from '@/component/laws/Master4';
 
 const page = () => {
     return (
-        <Master2>
+        <Master4>
             <Section3AA />
-        </Master2>
+        </Master4>
     );
 };
 

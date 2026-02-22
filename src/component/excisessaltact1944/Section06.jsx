@@ -6,22 +6,22 @@ export default function LawPage() {
     <div className="min-h-screen px-4 py-8 bg-gray-50">
       <div className="max-w-6xl mx-auto overflow-hidden bg-white border border-gray-200 rounded-lg shadow-sm">
         {/* Banner Section */}
-        <div className="relative px-4 py-8 text-white bg-gradient-to-r from-green-600 to-green-800 md:px-8">
+        <div className="relative px-4 py-8 text-white bg-gradient-to-r from-green-800 to-green-800 md:px-8">
           <div className="text-center">
-            <h1 className="mb-2 text-2xl font-bold md:text-4xl">
-              মূল্য সংযোজন কর আইন, ১৯৯১
+            <h1 className="mb-2 text-xl font-bold md:text-xl">
+              The Excises and Salt Act, 1944
             </h1>
-            <p className="text-lg md:text-xl opacity-90">
-              ( ১৯৯১ সনের ২২ নং আইন )
+            <p className="text-sm md:text-sm opacity-90">
+              ( ACT NO. I OF 1944 )
             </p>
-            <div className="inline-block px-4 py-1 mt-3 bg-green-500 rounded-full shadow-md">
-              <p className="text-sm font-medium md:text-base">[ ৩০ জুন, ১৯৯১ ]</p>
+            <div className="inline-block px-4 py-1 mt-3 bg-green-700 rounded-full shadow-md">
+              <p className="text-xs font-medium md:text-xs">[ 24th February, 1944 ]</p>
             </div>
           </div>
 
           {/* Back to Home Button */}
           <Link
-            href="/regulations/acts/vat-acts/value-added-tax-act"
+            href="/regulations/acts/excises&saltact/excise-and-salt-act-1944"
             className="absolute flex items-center gap-2 px-3 py-2 text-green-700 transition-all bg-white rounded-full shadow top-4 left-4 hover:bg-green-100"
           >
             <svg
@@ -37,179 +37,49 @@ export default function LawPage() {
           </Link>
         </div>
 
+
         {/* Header Section */}
-        <div className="">
+        <div className="py-5">
+
+          <div className="px-6 py-2 bg-green-300">
+            <h2 className="font-bold text-center text-black text-md">CHAPTER II</h2>
+            <p className='text-xs font-bold text-center'>LEVY AND COLLECTION OF DUTY</p>
+          </div>
+          
           <div className="flex flex-col md:flex-row">
             <div className="p-6">
               <div className="space-y-6 text-justify text-black">
-                {/* Section 1 */}
+                
+                {/* Section */}
                 <div>
-                  <p className="mb-4">
-                    <span className="text-xl font-bold leading-tight text-gray-950 md:text-xl">৬৷ পরিশোধের সময় ও পদ্ধতি---</span>(১) আমদানিকৃত পণ্যের উপর মূল্য সংযোজন কর Customs Act এবং উহার অধীন প্রণীত বিধি মোতাবেক আমদানি শুল্কের মত এইরূপ একই পদ্ধতি ও সময়ে প্রদত্ত হইবে যেন উহা উক্ত Act এর অধীন একটি আমদানি শুল্ক; এবং উক্ত মূল্য সংযোজন কর বা, ক্ষেত্রমত, সম্পূরক শুল্ক সংক্রান্ত কোন বিষয় নিয়ন্ত্রণের জন্য এই আইনের অধীন প্রদত্ত বা জারীকৃত বিধিমালা, আদেশসমূহ বা নির্দেশাবলী, যদি থাকে, সাপেক্ষে উক্ত Act এবং তদধীনে জারীকৃত বা প্রদত্ত বিধিমালা, আদেশসমূহ বা নির্দেশাবলী, যতদূর সম্ভব, মূল্য সংযোজন কর বা, ক্ষেত্রমত, সম্পূরক শুল্কের প্রতি এইরূপে প্রযোজ্য হইবে যেইরূপে উহা আমদানি শুল্কের প্রতি প্রযোজ্য হয়৷
-                  </p>
-                  <p className="mb-4">
-                    (২) কোন নিবন্ধিত বা নিবন্ধনযোগ্য ব্যক্তি কর্তৃক ব্যবসায় কার্য পরিচালনা বা সম্প্রসারণের লক্ষ্যে <sup className='text-blue-500 cursor-pointer' title='“প্রস্তুতকৃত বা উত্পাদিত পণ্য বা আমদানীকৃত, ক্রয়কৃত, অর্জিত বা অন্য কোনভাবে সংগৃহীত পণ্যের” শব্দগুলি ও কমাগুলি “প্রস্তুতকৃত বা উত্পাদিত পণ্যের” শব্দগুলির পরিবর্তে অর্থ আইন, ১৯৯৬ (১৯৯৬ সনের ১৮ নং আইন) এর ৬ ধারাবলে প্রতিস্থাপিত'>১</sup>[প্রস্তুতকৃত বা উৎপাদিত পণ্য বা আমদানীকৃত, ক্রয়কৃত, অর্জিত বা অন্য কোনভাবে সংগৃহীত পণ্যের] উপর মূল্য সংযোজন কর প্রদেয় হইবে নিম্নবর্ণিত কার্যাবলীর মধ্যে যাহা সর্বাগ্রে ঘটে, উহা সংঘটিত হওয়ার সময়ে-
-                  </p>
-                  <p className="mb-4">
-                    (ক) যখন পণ্য অর্পণ (delivery) বা সরবরাহ করা হয়;
-                  </p>
-                  <p className="mb-4">
-                    (খ) যখন পণ্য সরবরাহ সংক্রান্ত চালানপত্র প্রদান করা হয়;
-                  </p>
-                  <p className="mb-4">
-                    (গ) যখন কোন পণ্য ব্যক্তিগতভাবে ব্যবহার করা হয় বা অন্যের ব্যবহারের জন্য প্রদান করা হয়;
-                  </p>
-                  <p className="mb-4">
-                    (ঘ) যখন আংশিক বা পূর্ণ মূল্য পাওয়া যায়৷
-                  </p>
-                  <p className="mb-4">
-                    (৩) কোন নিবন্ধিত বা নিবন্ধনযোগ্য ব্যক্তি কর্তৃক ব্যবসায় পরিচালনা বা সম্প্রসারণকালে প্রদত্ত সেবার উপর মূল্য সংযোজন কর প্রদেয় হইবে নিম্নবর্ণিত কার্যাবলীর মধ্যে যাহা সর্বাগ্রে ঘটে, উহা সংঘটিত হওয়ার সময়ে-
-                  </p>
-                  <p className="mb-4">
-                    (ক) যখন সেবা প্রদান করা হয়;
-                  </p>
-                  <p className="mb-4">
-                    (খ) যখন সেবা প্রদান সংশ্লিষ্ট চালানপত্র প্রদান করা হয়;
-                  </p>
-                  <p className="mb-4">
-                    (গ) যখন আংশিক বা পূর্ণ মূল্য পাওয়া যায় <sup className='text-blue-500 cursor-pointer' title='দফা (গ) এর প্রান্তস্থিত “।“ দাড়ির পরিব্রর্তে “;” সেমি-কোলোন প্রতিস্থাপিত এবং অতঃপর দফা (ঘ) অর্থ আইন, ২০১০ (২০১০ সনের ৩৩ নং আইন) এর ৭৫ ধারাবলে সংযোজিত।'>২</sup>[;
-                  </p>
-                  <p className="mb-4">
-                    (ঘ) বাংলাদেশে ভৌগলিক সীমানার বাহির হইতে বাংলাদেশে সেবার সরবরাহ গ্রহণ করা হইলে যখন আংশিক বা পূর্ণ মূল্য পরিশোধ করা হয়।]
-                  </p>
-                  <p className="mb-4">
-                    <sup className='text-blue-500 cursor-pointer' title='উপ-ধারা (৪) অর্থ আইন, ১৯৯৯ (১৯৯৯ সনের ১৬ নং আইন) এর ৭ ধারাবলে প্রতিস্থাপিত'>৩</sup>[ (৪) এই ধারায় যাহা কিছুই থাকুক না কেন, বোর্ড, বিধি দ্বারা নির্ধারিত পদ্ধতিতে, যে কোন পণ্য, পণ্যশ্রেণী বা সেবার ক্ষেত্রে মূল্য সংযোজন কর বা ক্ষেত্রমত, সম্পূরক শুল্ক পরিশোধের সময় ও পদ্ধতি নির্ধারণসহ, অগ্রিম পরিশোধের <sup className='text-blue-500 cursor-pointer' title='“বা উৎসে কর্তনের” শব্দগুলি অর্থ আইন, ২০১০ (২০১০ সনের ৩৩ নং আইন) এর ৭৫ ধারাবলে সন্নিবেশিত।'>৪</sup>[বা উৎসে কর্তনের] বিধান করিতে পারিবে৷]
-                  </p>
-                  <p className="mb-4">
-                    <sup className='text-blue-500 cursor-pointer' title='উপ-ধারা (৪ক), (৪খ) এবং (৪গ) অর্থ আইন, ১৯৯৩ (১৯৯৩ সনের ১৮ নং আইন) এর ৮ ধারাবলে সন্নিবেশিত'>৫</sup>[ <sup className='text-blue-500 cursor-pointer' title='উপ-ধারা (৪ক), (৪কক) পূর্ববর্তী উপ-ধারা (৪ক) এর পরিবর্তে অর্থ আইন, ২০০০ (২০০০ সনের ১৫ নং আইন) এর ৮৮ ধারাবলে প্রতিস্থাপিত'>৬</sup>[(৪ক) উপ-ধারা (৪) এ যাহা কিছুই থাকুক না কেন, বোর্ড, সরকারী গেজেটে প্রজ্ঞাপন দ্বারা, উক্ত প্রজ্ঞাপনে নির্ধারণকৃত তারিখ হইতে যে কোন পণ্য বা পণ্য শ্রেণীর উপর প্রযোজ্য মূল্য সংযোজন কর বা, ক্ষেত্রমত, মূল্য সংযোজন কর এবং সম্পূরক শুল্ক আদায়ের উদ্দেশ্যে নির্দিষ্টকৃত মূল্য মানের নিরাপত্তামূলক ব্যবস্থা সম্বলিত বিশেষ আকার ও ডিজাইনের স্ট্যাম্প (Stamp) বা ব্যাণ্ডরোল (Bandrol) বা বিশেষ চিহ্ন বা ছাপ উক্ত পণ্যের মোড়ক বা ধারক বা পাত্রের গায়ে ব্যবহার করার নির্দেশ প্রদান করিতে পারিবে; এবং এইরূপ স্ট্যাম্প বা ব্যাণ্ডরোল বা বিশেষ চিহ্ন বা ছাপ এর ব্যবহার, বিতরণ, সংরক্ষণ, তদারকি, পর্যবেক্ষণ, হিসাব সংরক্ষণ ও মোড়কজাতকরণ বিষয়ে সংশ্লিষ্ট সকল পদ্ধতি নির্ধারণ করিতে পারিবে৷
-                  </p>
-                  <p className="mb-4">
-                    ব্যাখ্যা৷- এই উপ-ধারায় <sup className='text-blue-500 cursor-pointer' title='“স্ট্যাম্প বা ব্যাণ্ডরোল” শব্দগুলি “ব্যাণ্ডরোল” শব্দটির পরিবর্তে অর্থ আইন, ২০০১ (২০০১ সনের ৩০ নং আইন) এর ৭৪ ধারাবলে প্রতিস্থাপিত'>৭</sup>[স্ট্যাম্প বা ব্যাণ্ডরোল] অর্থে বোর্ড কর্তৃক নির্দিষ্ট রং, ডিজাইন, পরিমাপ ও নিরাপত্তামূলক ব্যবস্থা সম্বলিত দলিল (Security Instrument)- কে বুঝাইবে৷
-                  </p>
-                  <p className="mb-4">
-                    <sup className='text-blue-500 cursor-pointer' title='“(৪কক), (৪খ) এবং  (৪ঘ) ” উপ-ধারা গুলি “(৪কক),(৪খ)এবং (৪ঘ)     ” উপ-ধারার পরিবর্তে অর্থ আইন, (২০১১ সনের ১২ নং আইন) এর ৬৫ ধারাবলে প্রতিস্থাপিত।'>৮</sup>[(৪কক) এই ধারার অন্যান্য বিধানাবলী সত্ত্বেও, কোন নিবন্ধিত ব্যক্তি কর্তৃক প্রদেয় মূল্য সংযোজন কর বোর্ড কর্তৃক, বিধি দ্বারা নির্ধারিত পদ্ধতিতে, সেবা গ্রহণকারী বা, ক্ষেত্রমত, সেবার মূল্য বা কমিশন পরিশোধকারী কর্তৃক সেবার মূল্য বা কমিশন পরিশোধকালে <sup className='text-blue-500 cursor-pointer' title=', প্রযোজ্য হারে,” শব্দগুলি ও কমাগুলি “সেবার মূল্য বা কমিশন পরিশোধকালে” শব্দগুলির পর অর্থ আইন, ২০১৩ (২০১৩ সনের ২৫ নং আইন) এর ৩৮ (ক) ধারাবলে সন্নিবেশিত।'>৯</sup>[, প্রযোজ্য হারে,] উৎসে আদায় বা কর্তনপূর্বক সরকারী ট্রেজারীতে জমা করিতে হইবেঃ
-                  </p>
-                  <p className="mb-4">
-                    তবে শর্ত থাকে যে, <sup className='text-blue-500 cursor-pointer' title='বৈদেশিক সাহায্যপুষ্ট” শব্দগুলি অর্থ আইন, ২০১৩ (২০১৩ সনের ২৫ নং আইন) এর ৩৮ (খ) ধারাবলে বিলুপ্ত।'>১০</sup>[***] কোন প্রকল্পের আওতায় কোন সেবা গ্রহণকারী কর্তৃক প্রদেয় মূল্য সংযোজন কর যদি সেবা গ্রহণকারী বা, ক্ষেত্রমত, সেবার মূল্য বা কমিশন পরিশোধনকারী ব্যক্তি সেবার মূল্য বা কমিশন পরিশোধকালে বোর্ড কতৃর্ক , বিধি দ্বারা নির্ধারিত পদ্ধতিতে উৎসে আদায় বা কর্তনপূর্বক সরকারী ট্রেজারীতে জমা করেন এবং উক্ত সেবা সরবরাহকারী ব্যক্তি কর্তৃক উক্ত সমুদয় সেবার অংশবিশেষ সরবরাহের কোন সাব-কন্ট্রাক্টর, এজেন্ট বা অন্য কোন সেবা সরবরাহকারী ব্যক্তিকে নিয়োগ করেন, সেইক্ষেত্রে উক্ত সেবা সরবরাহকারীর সাব-কন্ট্রাক্টর, এজেন্ট বা নিয়োগকৃত অন্য কোন সেবা সরবরাহকারী ব্যক্তির নিকট হইতে, উক্ত সেবার উপর প্রাথমিক পর্যায়ে প্রযোজ্য মূল্য সংযোজন কর আদায় বা কর্তন এবং সরকারী ট্রেজারীতে জমা প্রদানের দালিলিক প্রমাণাদি উপস্থাপন সাপেক্ষে পুনরায় উৎসে মূল্য সংযোজন কর আদায় করা যাইবে না।
-                  </p>
-                  <p className="mb-4">
-                    <sup className='text-blue-500 cursor-pointer' title='উপ-ধারা (৪ককক) অর্থ আইন, ২০১১ (২০১১ সনের ১২ নং আইন) এর ৬৫(গ) ধারাবলে সন্নিবেশিত। '>১১</sup>[(৪ককক) বোর্ড, আদেশ দ্বারা সরকারি, আধা-সরকারি বা স্বায়ত্তশাসিত প্রতিষ্ঠান, এনজিও, ব্যাংক, বীমা প্রতিষ্ঠান বা অন্য কোন আর্থিক প্রতিষ্ঠান, লিমিটেড কোম্পানী, শিক্ষা প্রতিষ্ঠান এবংক্ষেত্রমত, অন্য কোন দপ্তর বা প্রতিষ্ঠান কর্তৃক সেবা গ্রহণের ক্ষেত্রে সেবাগ্রহণকারী কতৃর্ক উৎসে মূল্য সংযোজন কর আদায়, কর্তন ও সরকারি ট্রেজারীতে জমা প্রদানের উদ্দেশ্যে সেবার কোড উল্লেখসহ সেবাপ্রদানকারীর তালিকা নির্ধারণ করিতে পারিবে।]
-                  </p>
-                  <p className="mb-4">
-                    (৪খ) উপ-ধারা (৪কক) এর অধীন উৎসে মূল্য সংযোজন কর আদায় বা কর্তনকারী ব্যক্তি সংশ্লিষ্ট সেবা সরবরাহকারী ব্যক্তিকে অনুরূপ আদায় বা কর্তন সম্পর্কে, বিধি দ্বারা নির্ধারিত পদ্ধতিতে, একটি প্রত্যয়নপত্র প্রদান করিবেন, যাহাতে নিম্নবর্ণিত তথ্যাদি অন্তর্ভুক্ত থাকিবে। যথাঃ―
-                  </p>
-                  <p className="mb-4">
-                    (অ) মূল্য সংযোজন করদাতার নিবন্ধন সংখ্যা;
-                  </p>
-                  <p className="mb-4">
-                    (আ) প্রদত্ত সেবা বাবদ পরিশোধিত মোট সেবা মূল্য বা কমিশন;
-                  </p>
-                  <p className="mb-4">
-                    (ই) মূল্য সংযোজন কর নিরূপনযোগ্য সেবা মূল্য বা কমিশন;
-                  </p>
-                  <p className="mb-4">
-                    (ঈ) আদায় বা কর্তনকৃত মূল্য সংযোজন কর এর পরিমাণ; এবং
-                  </p>
-                  <p className="mb-4">
-                    (উ) প্রয়োজনীয় অন্য কোন তথ্য।
-                  </p>
-                  <p className="mb-4">
-                    <sup className='text-blue-500 cursor-pointer' title='উপ-ধারা (৪গ) অর্থ আইন, ২০১২ এর ৬০ ধারাবলে বিলুপ্ত।'>১২</sup>[***]
-                  </p>
-                  <p className="mb-4">
-                    (৪ঘ) আইনের ধারা ৫ এর উপ-ধারা (৪) এর বিধান অনুযায়ী উৎসে কর্তনকারী সরকারি গেজেটে প্রজ্ঞাপনের মাধ্যমে নির্ধারিত হারের ভিত্তিতে প্রদেয় মূল্য সংযোজন কর সেবা সরবরাহকারীর নিকট হইতে সেবা গ্রহণের ক্ষেত্রে উৎসে কর্তন করিবে।
-                  </p>
-                  <p className="mb-4">
-                    (৪ঙ) উৎসে কর্তনকারী এবং পণ্য বা সেবা সরবরাহকারী,মূল্য সংযোজন করের উৎসে কর্তনযোগ্য পরিমাণের জন্য, যৌথভাবে দায়বদ্ধ থাকিবেন।
-                  </p>
-                  <p className="mb-4">
-                    (৪চ) পণ্য বা সেবা সরবরাহকারী কর্তৃক সরবরাহের বিপরীতে প্রদেয় মূল্য সংযোজন কর আংশিক উৎসে কর্তনের ফলে সরবরাহকারী অবশিষ্ট মূল্য সংযোজন কর প্রদানের বাধ্যবাধকতা হইতে অব্যাহতি পাইবে না।]
-                  </p>
-                  <p className="mb-4">
-                    <sup className='text-blue-500 cursor-pointer' title='উপ-ধারা (৪ছ) অর্থ আইন, ২০১১ (২০১১ সনের ১২ নং আইন) এর ৬৫(ঙ) ধারাবলে সন্নিবেশিত।'>১৩</sup>[(৪ছ) উপ-ধারা (৪কক) অনুযায়ী উৎসে মূল্য সংযোজন কর আদায়, কর্তন এবং জমা প্রদানের বাধ্যবাধকতা থাকা সত্ত্বেও যদি উক্ত উপ-ধারার অধীন সেবার মূল্য বা কমিশন পরিশোধকারী ব্যক্তি মূল্য সংযোজন কর আদায়, কর্তন ও জমা প্রদানে ব্যর্থ হন তাহা হইলে,
-                  </p>
-                  <p className="mb-4">
-                    (অ) উক্ত মূল্য সংযোজন কর, সেবার মূল্য বা কমিশন উক্ত ব্যক্তির নিকট হইতে মাসিক দুই শতাংশ হারে, সুদসহ, আদায়যোগ্য হইবে এবং উহা এইরূপে আদায় করা হইবে যেন তিনি উপ-ধারা (৪কক) এর অধীন একজন নিবন্ধিত ব্যক্তি;
-                  </p>
-                  <p className="mb-4">
-                    (আ) উপ-ধারা (৪কক) এর অধীন উৎসে আদায়কৃত, কর্তিত ও জমাকৃত মূল্য সংযোজন কর, এই আইনের বিধানাবলী অনুযায়ী সংশ্লিষ্ট নিবন্ধিত ব্যক্তি কর্তৃক প্রদত্ত প্রত্যয়নপত্র বলবৎ থাকা সাপেক্ষে, ধারা ৩৫ এ উল্লিখিত দাখিলপত্রে সংশ্লিষ্ট সেবাপ্রদানকারী কর্তৃক পরিশোধিত কর হিসাবে উল্লেখ করা যাইবে।]
-                  </p>
-                  <p className="mb-4">
-                    <sup className='text-blue-500 cursor-pointer' title='উপ-ধারা(৫) অর্থ আইন, ২০১০ (২০১০ সনের ৩৩ নং আইন) এর ৭৫ ধারাবলে  প্রতিস্থাপিত।'>১৪</sup>[(৫) বিধি দ্বারা নির্ধারিত পদ্ধতিতে নিম্নবর্ণিত ক্ষেত্রে কর প্রদান করিতে হইবে,যথাঃ-
-                  </p>
-                  <p className="mb-4">
-                    (ক) আমদানির পর্যায়ে, আমদানির শুল্কের সাথে;
-                  </p>
-                  <p className="mb-4">
-                    (খ) উৎপাদন পর্যায়ে এবং ক্ষেত্রমত, ব্যবসায়ী পর্যায়ে, চলতি হিসাব ও দাখিলপত্রের মাধ্যমে; এবং
-                  </p>
-                  <p className="mb-4">
-                    (গ) অন্যান্য পণ্য ও সেবা সরবরাহের ক্ষেত্রে দাখিলপত্রের মাধ্যমে।]
-                  </p>
-                  <p className="mb-4">
-                    <sup className='text-blue-500 cursor-pointer' title='উপ-ধারা (৬) অর্থ আইন, ২০১১ (২০১১ সনের ১২ নং আইন) এর ৬৫(চ) ধারাবলে সংযোজিত। '>১৫</sup>[(৬) বোর্ড, আদেশ দ্বারা কোন নির্দিষ্ট সেবার ক্ষেত্রে সেবাগ্রহণকারী কতৃর্ক কর পরিশোধের বিধান করিতে পারিবে।]
-                  </p>
-                </div>
+                <p className="mb-4 text-sm">
+                  <span className='text-sm font-bold leading-tight text-black md:text-sm'>6. Certain operations to be subject to licence---</span> The <sup className='text-blue-500' title='The word “Board” was substituted for the words “National Board of Revenue” by section 5 of the Finance Act, 1979 (Act No. V of 1979)'>1</sup>[Board] may, by notification in the official Gazette, provide that, from such date as may be specified in the notification, no person shall, except under the authority and in accordance with the terms and conditions of a licence granted under this Act, engage in-
+                  <br /><br />
+                  (a) the production or manufacture or any process of the production or manufacture of any specified excisable goods or of saltpetre or of any specified component parts or ingredients of such goods or of specified containers of such goods,
+                  <br /><br />
+                  (b) the wholesale purchase or sale (whether on his own account or as a broker or commission agent) or the storage of any excisable goods specified in this behalf in Part A of the Second Schedule, or
+                  <br /><br />
+                  (c) providing or rendering any excisable services.
+                </p>
+              </div>
+                
               </div>
             </div>
-
           </div>
         </div>
 
         {/* Footer Section */}
-          <div className="">
-            <div className="p-6">
-              <div className="w-1/2 pb-2 mb-4 border-b border-gray-400">
-                {/* Horizontal line */}
-              </div>
-              <p className="text-xs italic text-gray-600">
-                <sup className="font-bold">১</sup>"প্রস্তুতকৃত বা উত্পাদিত পণ্য বা আমদানীকৃত, ক্রয়কৃত, অর্জিত বা অন্য কোনভাবে সংগৃহীত পণ্যের" শব্দগুলি ও কমাগুলি "প্রস্তুতকৃত বা উত্পাদিত পণ্যের" শব্দগুলির পরিবর্তে অর্থ আইন, ১৯৯৬ (১৯৯৬ সনের ১৮ নং আইন) এর ৬ ধারাবলে প্রতিস্থাপিত
-              </p>
-              <p className="mt-2 text-xs italic text-gray-600">
-                <sup className="font-bold">২</sup>দফা (গ) এর প্রান্তস্থিত "।" দাড়ির পরিব্রর্তে ";" সেমি-কোলোন প্রতিস্থাপিত এবং অতঃপর দফা (ঘ) অর্থ আইন, ২০১০ (২০১০ সনের ৩৩ নং আইন) এর ৭৫ ধারাবলে সংযোজিত।
-              </p>
-              <p className="mt-2 text-xs italic text-gray-600">
-                <sup className="font-bold">৩</sup>উপ-ধারা (৪) অর্থ আইন, ১৯৯৯ (১৯৯৯ সনের ১৬ নং আইন) এর ৭ ধারাবলে প্রতিস্থাপিত
-              </p>
-              <p className="mt-2 text-xs italic text-gray-600">
-                <sup className="font-bold">৪</sup>"বা উৎসে কর্তনের" শব্দগুলি অর্থ আইন, ২০১০ (২০১০ সনের ৩৩ নং আইন) এর ৭৫ ধারাবলে সন্নিবেশিত।
-              </p>
-              <p className="mt-2 text-xs italic text-gray-600">
-                <sup className="font-bold">৫</sup>উপ-ধারা (৪ক), (৪খ) এবং (৪গ) অর্থ আইন, ১৯৯৩ (১৯৯৩ সনের ১৮ নং আইন) এর ৮ ধারাবলে সন্নিবেশিত
-              </p>
-              <p className="mt-2 text-xs italic text-gray-600">
-                <sup className="font-bold">৬</sup>উপ-ধারা (৪ক), (৪কক) পূর্ববর্তী উপ-ধারা (৪ক) এর পরিবর্তে অর্থ আইন, ২০০০ (২০০০ সনের ১৫ নং আইন) এর ৮৮ ধারাবলে প্রতিস্থাপিত
-              </p>
-              <p className="mt-2 text-xs italic text-gray-600">
-                <sup className="font-bold">৭</sup>"স্ট্যাম্প বা ব্যাণ্ডরোল" শব্দগুলি "ব্যাণ্ডরোল" শব্দটির পরিবর্তে অর্থ আইন, ২০০১ (২০০১ সনের ৩০ নং আইন) এর ৭৪ ধারাবলে প্রতিস্থাপিত
-              </p>
-              <p className="mt-2 text-xs italic text-gray-600">
-                <sup className="font-bold">৮</sup>"(৪কক), (৪খ) এবং (৪ঘ) " উপ-ধারা গুলি "(৪কক),(৪খ)এবং (৪ঘ) " উপ-ধারার পরিবর্তে অর্থ আইন, (২০১১ সনের ১২ নং আইন) এর ৬৫ ধারাবলে প্রতিস্থাপিত।
-              </p>
-              <p className="mt-2 text-xs italic text-gray-600">
-                <sup className="font-bold">৯</sup>, প্রযোজ্য হারে," শব্দগুলি ও কমাগুলি "সেবার মূল্য বা কমিশন পরিশোধকালে" শব্দগুলির পর অর্থ আইন, ২০১৩ (২০১৩ সনের ২৫ নং আইন) এর ৩৮ (ক) ধারাবলে সন্নিবেশিত।
-              </p>
-              <p className="mt-2 text-xs italic text-gray-600">
-                <sup className="font-bold">১০</sup>বৈদেশিক সাহায্যপুষ্ট" শব্দগুলি অর্থ আইন, ২০১৩ (২০১৩ সনের ২৫ নং আইন) এর ৩৮ (খ) ধারাবলে বিলুপ্ত।
-              </p>
-              <p className="mt-2 text-xs italic text-gray-600">
-                <sup className="font-bold">১১</sup>উপ-ধারা (৪ককক) অর্থ আইন, ২০১১ (২০১১ সনের ১২ নং আইন) এর ৬৫(গ) ধারাবলে সন্নিবেশিত।
-              </p>
-              <p className="mt-2 text-xs italic text-gray-600">
-                <sup className="font-bold">১২</sup>উপ-ধারা (৪গ) অর্থ আইন, ২০১২ এর ৬০ ধারাবলে বিলুপ্ত।
-              </p>
-              <p className="mt-2 text-xs italic text-gray-600">
-                <sup className="font-bold">১৩</sup>উপ-ধারা (৪ছ) অর্থ আইন, ২০১১ (২০১১ সনের ১২ নং আইন) এর ৬৫(ঙ) ধারাবলে সন্নিবেশিত।
-              </p>
-              <p className="mt-2 text-xs italic text-gray-600">
-                <sup className="font-bold">১৪</sup>উপ-ধারা(৫) অর্থ আইন, ২০১০ (২০১০ সনের ৩৩ নং আইন) এর ৭৫ ধারাবলে প্রতিস্থাপিত।
-              </p>
-              <p className="mt-2 text-xs italic text-gray-600">
-                <sup className="font-bold">১৫</sup>উপ-ধারা (৬) অর্থ আইন, ২০১১ (২০১১ সনের ১২ নং আইন) এর ৬৫(চ) ধারাবলে সংযোজিত।
-              </p>
+        <div className="">
+          <div className="p-6">
+            <div className="w-1/2 pb-2 mb-4 border-b border-gray-900">
+              {/* Horizontal line */}
             </div>
-          </div>
+            <p className="text-xs italic text-black">
+              1. The word “Board” was substituted for the words “National Board of Revenue” by section 5 of the Finance Act, 1979 (Act No. V of 1979) <br/><br/>
+            </p>
 
+          </div>
+        </div>
       </div>
     </div>
   );
